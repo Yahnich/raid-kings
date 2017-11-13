@@ -1,0 +1,12 @@
+"AddonInfo"
+{
+	maps			"raid_kings_graveyard"
+	"IsPlayable"	"1"
+	"raid_kings_graveyard"
+	{
+		"MaxPlayers"                    "5"
+		"Lives"							"7"
+		"Difficulty"					"2"
+	}
+}
+

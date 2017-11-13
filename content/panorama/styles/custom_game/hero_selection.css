@@ -1,0 +1,318 @@
+.HeroSelectionRoot {
+	width: 100%;
+	height: 100%;
+	z-index: 10;
+	flow-children: right;
+}
+
+.HorizontalSeperator {
+	width: 90%;
+	height: 2px;
+	horizontal-align: middle;
+	background-color: #000000FF;
+}
+
+.AbilityIcon {
+	width: 90px;
+	height: 90px;
+	margin: 2px;
+}
+
+.AspectRatio4x3 .AbilityIcon {
+	width: 80px;
+	height: 80px;
+	margin: 2px;
+}
+
+.InnateIcon {
+
+	margin: 10px;
+	margin-right: 60px;
+	width: 150px;
+	height: 150px;
+}
+
+.AspectRatio4x3 .InnateIcon {
+
+	margin: 10px;
+	margin-right: 40px;
+	width: 150px;
+	height: 150px;
+}
+
+#HeroSkillContainer
+{
+	margin-left: 15px;
+	flow-children: right-wrap;
+}
+
+#SkillContainer
+{
+	height: 195px;
+	width: 375px;
+	margin-left: 15px;
+	horizontal-align: middle;
+
+	flow-children: right-wrap;
+}
+
+.HeroList
+{
+	height: 100%;
+	width: 76%;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #111111FF ), color-stop( .2, #25282aFF), color-stop( .6, #25282aFF), to( #111111FF ) );
+	border-right: 2px solid #121212FF;
+	flow-children: down;
+}
+
+.AspectRatio4x3 .HeroList 
+{
+	width: 72%;
+}
+
+.AspectRatio16x10 .HeroList
+{
+	width: 74%;
+}
+
+.HeroListTop
+{
+	height: 28.8%;
+	width: 100%;
+	flow-children: right;
+}
+
+#SelectionTimerContainer
+{
+	width: 156px;
+	height: 156px;
+	vertical-align: middle;
+
+	border: 4px solid #AFAFAFFF;
+	border-radius: 128px 128px;
+	margin-left: 30px;
+}
+
+#SelectionTimer
+{
+	vertical-align: center;
+	horizontal-align: center;
+	margin-top: 15px;
+	margin-left: 2px;
+	color: #FFFFFF;
+	font-size: 80px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 9px 3 #00000000;
+}
+
+.ButtonContainer
+{
+	width: 450px;
+	height: 150px;
+	vertical-align: bottom;
+	horizontal-align: middle;
+	flow-children: right;
+}
+
+.PickButton
+{
+	border: 3px solid #AFAFAFFF;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #977316FF ), color-stop( .2, #DAA520FF), color-stop( .8, #DAA520FF), to( #977316FF ) );
+	width: 200px;
+	margin: 10px;
+}
+
+.ButtonText
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #FFFFFF;
+	font-size: 24px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 3px 3 #333333b0;
+	margin: 5px;
+}
+
+
+.HeroPortraitContainer
+{
+	width: fit-children;
+	horizontal-align: middle;
+	vertical-align: middle;
+
+	flow-children: right;
+	margin-right: 165px;
+}
+
+.HeroUnselected
+{
+	saturation: 0;
+}
+
+.SelectedHeroPortrait
+{
+	border: 2px solid #555555FF;
+	vertical-align: middle;
+	margin: 5px;
+	padding: 2px;
+	width: 142px;
+	height: 188px; 
+}
+
+.HeroListBottom
+{
+	height: fill-parent-flow(1.0);
+	width: 100%;
+	flow-children: down;
+}
+
+.HeroRoleContainer
+{
+	horizontal-align: middle;
+	max-width: 75%;
+	flow-children: right-wrap;
+
+	margin: 50px;
+}
+
+.AspectRatio16x10 .HeroRoleContainer {
+
+	horizontal-align: middle;
+	max-width: 80%;
+	flow-children: right-wrap;
+
+	margin: 50px;
+}
+
+.HeroRoleContainerRow
+{
+	horizontal-align: middle;
+	flow-children: right-wrap;
+
+	margin: 15px;
+}
+
+.SelectedableHero
+{
+	border: 2px solid #555555FF;
+	margin: 5px;
+	padding: 2px;
+	
+}
+
+.RoleDescriptor
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #FFFFFF;
+	font-size: 36px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 3px 3 #333333b0;
+}
+
+#HeroDescriptor
+{
+	width: fill-parent-flow(1.0);
+	height: 100%;
+	background-color: gradient( linear, 0% 0%, 0% 0%, from( #111111FF ), color-stop( .2, #25282aFF), color-stop( .8, #25282aFF), to( #111111FF ) );
+	border: 1px solid #121212FF;
+	flow-children: down;
+}
+
+#HeroPortrait
+{
+	width: 213px;
+	height: 282px; 
+	border: 4px solid #DDDD11AA;
+	border-radius: 5px;
+	margin-top: 20px;
+	horizontal-align: middle;
+}
+
+
+#HeroInfoContainer
+{
+	margin-top: 20px;
+	height: 100%;
+	width: 100%;
+	horizontal-align: middle;
+
+	flow-children: down;
+}
+
+.HeroUniqueInfoContainer
+{
+	height: fit-children;
+	width: 100%;
+	flow-children: right;
+}
+
+#HeroInfoName
+{
+	horizontal-align: center;
+	color: #FFFFFF;
+	font-size: 40px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 3px 3 #333333b0;
+}
+
+#HeroInfoMain
+{
+	horizontal-align: center;
+	color: #FFFFFF;
+	height: 100%;
+	font-size: 24px;
+	font-family: "Radiance";
+	text-shadow: 2px 2px 1px 3 #333333b0;
+	margin: 25px;
+}
+
+.RoleContainer
+{
+	margin: 10px;
+	height: fit-children;
+	width: fill-parent-flow(1);
+	horizontal-align: left;
+	vertical-align: bottom;
+
+	flow-children: down;
+	
+}
+
+.GenericRoleContainer
+{
+	margin: 2px;
+	margin-left: 20px;
+	height: fit-children;
+	width: 100%;
+
+	flow-children: right;
+}
+
+.TextContainer
+{
+	margin: 2px;
+	height: fill-parent-flow(1);
+	width: 100%;
+
+}
+
+.GenericText
+{
+	vertical-align: center;
+	color: #FFFFFF;
+	font-size: 24px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 3px 3 #333333b0;
+}
+
+.RoleImage
+{
+	height: 48px;
+	width: 48px;
+}

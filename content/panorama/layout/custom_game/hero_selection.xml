@@ -1,0 +1,75 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/hero_selection.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/hero_selection.js" />
+    </scripts>
+    <Panel class="HeroSelectionRoot" hittest="false">
+        <Panel class="HeroList" hittest="false">
+			<Panel class="HeroListTop" hittest="false">
+				<Panel id="SelectionTimerContainer" hittest="false">
+					<Label id="SelectionTimer" text="80" hittest="false"/>
+				</Panel>
+				<Panel class="HeroPortraitContainer" id="HeroPortraitHolder" hittest="false">
+				</Panel>
+			</Panel>
+			<Panel class="HorizontalSeperator"/>
+			<Panel class="HeroListBottom" hittest="false">
+				<Panel class="HeroRoleContainer" id="HeroContainer">
+				</Panel>
+				<Panel class="ButtonContainer">
+					<Button class="PickButton" id="AcceptButton" onactivate="ConfirmHeroSelection()">
+						<Label class="ButtonText" id="AcceptButtonLabel" text="Select" />
+					</Button>
+					<Button class="PickButton" id="RandomButton">
+						<Label class="ButtonText" id="RandomButtonLabel" text="Random" onactivate="RandomHeroSelection()"/>
+					</Button>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="HeroDescriptor" hittest="false">
+			<DOTAHeroMovie id="HeroPortrait" heroname="npc_dota_hero_wisp" hittest="false"/>
+			<Panel id="HeroInfoContainer">
+				<Label id="HeroInfoName" text="The Unchosen"/>
+				<Panel class="HorizontalSeperator"/>
+				<Panel class="HeroUniqueInfoContainer">
+					<Panel class="RoleContainer">
+						<Panel class="GenericRoleContainer" id="TankRoleContainer">
+							<Image class="RoleImage" id="tank_image" hittest="false" src="file://{images}/custom_game/tank_icon.png"/>
+							<Label class="GenericText" id="TankRoleLabel" text=""/>
+						</Panel>
+						<Panel class="GenericRoleContainer" id="DPSRoleContainer">
+							<Image class="RoleImage" id="dps_image" hittest="false" src="file://{images}/custom_game/dps_icon.png"/>
+							<Label class="GenericText" id="DamageRoleLabel" text=""/>
+						</Panel>
+						<Panel class="GenericRoleContainer" id="UtilityRoleContainer">
+							<Image class="RoleImage" id="utility_image" hittest="false" src="file://{images}/custom_game/utility_icon.png"/>
+							<Label class="GenericText" id="UtilityRoleLabel" text=""/>
+						</Panel>
+					</Panel>
+					<DOTAAbilityImage class="InnateIcon" id="AbilitySlotInnate" abilityname="no_ability"/>
+				</Panel>
+				<Panel class="HorizontalSeperator"/>
+				<Panel id="HeroSkillContainer" hittest="false">
+					<Panel id="SkillContainer" hittest="false">
+						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot1" abilityname="no_ability"/>
+						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot2" abilityname="no_ability"/>
+						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot3" abilityname="no_ability"/>
+						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot4" abilityname="no_ability"/>
+						
+						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot5" abilityname="no_ability"/>
+						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot6" abilityname="no_ability"/>
+						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot7" abilityname="no_ability"/>
+						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot8" abilityname="no_ability"/>
+					</Panel>
+				</Panel>
+				<Panel class="HorizontalSeperator"/>
+				<Panel class="TextContainer">
+					<Label id="HeroInfoMain" text="The Unchosen is waiting to transform."/>
+				</Panel>
+				<Panel class= "HorizontalSeperator"/>
+			</Panel>
+		</Panel>
+    </Panel>
+</root>

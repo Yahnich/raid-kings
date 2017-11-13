@@ -1,0 +1,11 @@
+<root>
+    <styles>
+        <include src="file://{resources}/styles/custom_game/skill_selection.css" />
+    </styles>
+    <scripts>
+        <include src="file://{resources}/scripts/custom_game/skill_selection.js" />
+    </scripts>
+    <Panel class="SkillSelectionRoot" hittest="false">
+ 
+    </Panel>
+</root>
