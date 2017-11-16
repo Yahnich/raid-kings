@@ -6,6 +6,22 @@
         <include src="file://{resources}/scripts/custom_game/skill_selection.js" />
     </scripts>
     <Panel class="SkillSelectionRoot" hittest="false">
- 
+		<Panel class="SkillMainContainer" hittest="false">
+			<Panel class="SkillInfoContainer" hittest="false">
+				<Panel id="SelectionTimerContainer" hittest="false">
+					<Label id="SelectionTimer" text="80" hittest="false"/>
+				</Panel>
+				<Panel class="ButtonContainer">
+					<Button class="PickButton" id="AcceptButton" onactivate="ConfirmSkillSelection()">
+						<Label class="ButtonText" id="AcceptButtonLabel" text="Select" />
+					</Button>
+					<Button class="PickButton" id="RandomButton">
+						<Label class="ButtonText" id="RandomButtonLabel" text="Random" onactivate="RandomSkillSelection()"/>
+					</Button>
+				</Panel>
+			</Panel>
+			<Panel class="SkillRowContainer" id="HeroRowContainer" hittest="false">
+			</Panel>
+		</Panel>
     </Panel>
 </root>

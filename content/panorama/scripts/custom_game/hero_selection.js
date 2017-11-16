@@ -1,6 +1,4 @@
 "use strict";
-var heroHasBeenSelected;
-var alliedSelectedHeroes = [];
 
 (function(){
 	// Fix DOTA buttons
@@ -17,7 +15,6 @@ var alliedSelectedHeroes = [];
 		}
 		
 		var preFilterHeroes = CustomNetTables.GetTableValue( "hero_selection", "herolist" );
-		var possibleHeroes = [];
 
 		var internalCounter = 1;
 		var rows = 1;
@@ -40,11 +37,12 @@ var alliedSelectedHeroes = [];
 		
 		UpdateHeroSelectionTimer()
 	} else {
-		$.GetContextPanel().style.visibility = "collapse";
+		EndHeroSelection(null)
 	}
 })();
 
-CustomNetTables.SubscribeNetTableListener( "hero_selection", UpdateHeroSelectionTimer);
+var heroCallback = CustomNetTables.SubscribeNetTableListener( "hero_selection", UpdateHeroSelectionTimer);
+
 function UpdateHeroSelectionTimer(){
 	var heroTimer = CustomNetTables.GetTableValue("hero_selection", "heroPickPhaseParams")
 	var timeLeft = heroTimer["pickTimeRemaining"]
@@ -84,6 +82,7 @@ GameEvents.Subscribe( "UpdatedHeroSelections", RefreshHeroPortraits);
 GameEvents.Subscribe( "EndHeroSelection", EndHeroSelection);
 
 function EndHeroSelection(args){
+	CustomNetTables.UnsubscribeNetTableListener( heroCallback )
 	$.GetContextPanel().DeleteAsync(1)
 }
 

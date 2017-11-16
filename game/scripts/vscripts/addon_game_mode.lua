@@ -11,7 +11,8 @@ DOTA_LIFESTEAL_SOURCE_ABILITY = 2
 CUSTOM_GAME_STATE_HERO_SELECTION = 1
 CUSTOM_GAME_STATE_SKILL_SELECTION = 2
 CUSTOM_GAME_STATE_GAME = 3
-HERO_SELECTION_TIME = 80
+_G["HERO_SELECTION_TIME"] = 80
+_G["SKILL_SELECTION_TIME"] = 80
 
 MAP_CENTER = Vector(332, -1545)
 
@@ -19,12 +20,12 @@ if CRaidKings == nil then
 	CRaidKings = class({})
 end
 
-require( "abilitymanager" )
-
 require( "libraries/Timers" )
 require( "libraries/notifications" )
 require("libraries/utility")
 require("libraries/animations")
+require("hero_selection")
+require("skill_selection")
 
 -- require("relics/relic")
 -- require("relics/relicpool")
@@ -44,7 +45,7 @@ end
 
 function CRaidKings:InitGameMode()
 	print ("Raid Kings Loaded")
-	GameRules.abilityManager = AbilityManager()
+	GameRules.CRaidKings = CRaidKings()
 	
 	-- Load unit KVs into main kv
 	GameRules.UnitKV = LoadKeyValues("scripts/npc/npc_heroes_custom.txt")
@@ -195,100 +196,13 @@ function CRaidKings:InitGameMode()
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(MAXIMUM_ATTACK_SPEED)
 	GameRules:GetGameModeEntity():SetMinimumAttackSpeed(MINIMUM_ATTACK_SPEED)
 	
+	HeroSelection:StartHeroSelection()
 	
-	CustomGameEventManager:RegisterListener('QueryHeroInformation', Context_Wrap( CRaidKings, 'ProcessHeroInformation'))
-	CustomGameEventManager:RegisterListener('TryConfirmHero', Context_Wrap( CRaidKings, 'TryConfirmHero'))
-	CustomGameEventManager:RegisterListener('TryRandomHero', Context_Wrap( CRaidKings, 'TryRandomHero'))
-	CustomNetTables:SetTableValue("hero_selection", "hasPlayerSelected", {})
-	CustomNetTables:SetTableValue("hero_selection", "heroPickPhaseParams", {pickTimeRemaining = HERO_SELECTION_TIME})
-	GameRules.gameState = CUSTOM_GAME_STATE_HERO_SELECTION
-	
-	GameRules:GetGameModeEntity():SetThink( "HeroSelectionPhase", self, 0.25 ) 
 	ListenToGameEvent("dota_player_pick_hero", Dynamic_Wrap( CRaidKings, "OnHeroPick"), CRaidKings )
 end
 
 function CRaidKings:OnHeroPick(event)
 	local hero = EntIndexToHScript(event.heroindex)
 	if not hero or hero:GetName() == "npc_dota_hero_wisp" then return end
-end
-
-function CRaidKings:HeroSelectionPhase()
-	if GameRules:IsGamePaused() then return 0.25 end
-	local pickParams = CustomNetTables:GetTableValue("hero_selection", "heroPickPhaseParams") or {}
-	pickParams.pickTimeRemaining = math.max(0, (pickParams.pickTimeRemaining or HERO_SELECTION_TIME) - 0.25)
-
-	if not pickParams.heroPickPhaseFinished then
-		if tonumber(pickParams.pickTimeRemaining) <= 0 then
-			pickParams.heroPickPhaseFinished = true
-		end
-		CustomNetTables:SetTableValue("hero_selection", "heroPickPhaseParams", pickParams)
-		return 0.25
-	else
-		for _, hero in ipairs(HeroList:GetAllHeroes()) do
-			if hero:GetName() == "npc_dota_hero_wisp" then
-				self:TryRandomHero(nil, {playerID = hero:GetPlayerID()})
-			end
-		end
-		CustomGameEventManager:Send_ServerToAllClients("EndHeroSelection", {} )
-	end
-end
-
-function CRaidKings:TryRandomHero(catch, event)
-	local pID = event.playerID
-	local randomTable = {}
-	for hero, id in pairs(GameRules.HeroList) do
-		table.insert(randomTable, hero)
-	end
-	local randomedHero = RandomInt(1, 10)
-	local hero = randomTable[randomedHero]
-	local data = {}
-	data.playerID = pID
-	data.heroname = hero
-	self:ProcessHeroInformation(catch, data)
-	self:TryConfirmHero(catch, data)
-end
-
-function CRaidKings:TryConfirmHero(catch, event)
-	local pID = event.playerID
-	local hero = event.heroname
-	local heroUnit = PlayerResource:GetSelectedHeroEntity(pID)
-	local playerSelectTable = CustomNetTables:GetTableValue("hero_selection", "hasPlayerSelected") or {}
-	playerSelectTable[tostring(pID)] = true
-	CustomNetTables:SetTableValue("hero_selection", "hasPlayerSelected", playerSelectTable)
-	print(pID, hero)
-	CustomGameEventManager:Send_ServerToAllClients("UpdatedHeroSelections", {} )
-	PlayerResource:ReplaceHeroWith(pID, hero, 0, 0)
-	UTIL_Remove(heroUnit)
-	local allPlayersPicked = true
-	for _, hero in ipairs( HeroList:GetAllHeroes()) do
-		if hero:GetName() == "npc_dota_hero_wisp" then
-			allPlayersPicked = false
-		end
-	end
-	Timers:CreateTimer(1, function () 
-		if allPlayersPicked then
-			local pickParams = CustomNetTables:GetTableValue("hero_selection", "heroPickPhaseParams") or {}
-			pickParams.heroPickPhaseFinished = true
-			CustomNetTables:SetTableValue("hero_selection", "heroPickPhaseParams", pickParams)
-			CustomGameEventManager:Send_ServerToAllClients("EndHeroSelection", {} )
-		end
-	end)
-end
-
-function CRaidKings:ProcessHeroInformation(catch, event)
-	local pID = event.playerID
-	local hero = event.heroname
-	local player = PlayerResource:GetPlayer(pID)
-	CustomGameEventManager:Send_ServerToAllClients("UpdatedHeroSelections", {} )
-	if player and tonumber(CustomNetTables:GetTableValue("hero_selection", "hasPlayerSelected")[tostring(pID)]) ~= 1 then
-		local selectedHeroes = CustomNetTables:GetTableValue("hero_selection", "selected_heroes") or {}
-		selectedHeroes[tostring(pID)] = hero
-		CustomNetTables:SetTableValue("hero_selection", "selected_heroes", selectedHeroes)
-		data = {}
-		data.heroName = hero
-		data.roleStrength = GameRules.UnitKV[hero]["HeroValues"]
-		data.innateAbility = GameRules.UnitKV[hero]["Ability4"]
-		data.abilityList = GameRules.UnitKV[hero]["Abilities"]
-		CustomGameEventManager:Send_ServerToPlayer( player, "SendHeroProcessedInformation", data )
-	end
+	print("Hero loaded in: "..hero:GetName())
 end

@@ -32,6 +32,14 @@
 	height: 150px;
 }
 
+.AspectRatio16x10 .InnateIcon {
+
+	margin: 10px;
+	margin-right: 22px;
+	width: 150px;
+	height: 150px;
+}
+
 .AspectRatio4x3 .InnateIcon {
 
 	margin: 10px;
@@ -49,7 +57,7 @@
 #SkillContainer
 {
 	height: 195px;
-	width: 375px;
+	width: 380px;
 	margin-left: 15px;
 	horizontal-align: middle;
 
@@ -72,7 +80,7 @@
 
 .AspectRatio16x10 .HeroList
 {
-	width: 74%;
+	width: 75%;
 }
 
 .HeroListTop
@@ -186,6 +194,15 @@
 	margin: 50px;
 }
 
+.AspectRatio4x3 .HeroRoleContainer {
+
+	horizontal-align: middle;
+	max-width: 90%;
+	flow-children: right-wrap;
+
+	margin: 50px;
+}
+
 .HeroRoleContainerRow
 {
 	horizontal-align: middle;
@@ -199,7 +216,8 @@
 	border: 2px solid #555555FF;
 	margin: 5px;
 	padding: 2px;
-	
+	width: 128px;
+	height: 72px;
 }
 
 .RoleDescriptor
