@@ -68,7 +68,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_wraith_one_for_all:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_ALL
+	return DOTA_UNIT_TARGET_HERO
 end
 
 function modifier_wraith_one_for_all:GetAuraEntityReject( entity )
@@ -201,7 +201,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_wraith_all_for_one:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_ALL
+	return DOTA_UNIT_TARGET_HERO
 end
 
 function modifier_wraith_all_for_one:GetAuraEntityReject( entity )
