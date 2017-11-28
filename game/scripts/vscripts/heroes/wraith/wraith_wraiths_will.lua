@@ -1,9 +1,14 @@
 wraith_wraiths_will = class({})
+LinkLuaModifier("modifier_wraith_wraiths_will_talent", "heroes/wraith/wraith_wraiths_will.lua", 0)
+LinkLuaModifier("modifier_wraith_wraiths_will_taunt", "heroes/wraith/wraith_wraiths_will.lua", 0)
+LinkLuaModifier("modifier_wraith_wraiths_will_buff", "heroes/wraith/wraith_wraiths_will.lua", 0)
+LinkLuaModifier("modifier_wraith_wraiths_will_debuff", "heroes/wraith/wraith_wraiths_will.lua", 0)
 
 function wraith_wraiths_will:OnSpellStart()
 	local caster = self:GetCaster()
 	local duration = self:GetSpecialValueFor("duration")
 	if caster:HasTalent("wraith_wraiths_will_talent_1") then
+		caster:AddNewModifier(caster, self, "modifier_wraith_wraiths_will_debuff", {duration = duration})
 		local allies = caster:FindFriendlyUnitsInRadius(caster:GetAbsOrigin(), self:GetSpecialValueFor("radius"))
 		for _, ally in ipairs(allies) do
 			if ally ~= caster then
@@ -11,6 +16,7 @@ function wraith_wraiths_will:OnSpellStart()
 			end
 		end
 	else
+		caster:AddNewModifier(caster, self, "modifier_wraith_wraiths_will_buff", {duration = duration})
 		local enemies = caster:FindEnemyUnitsInRadius(caster:GetAbsOrigin(), self:GetSpecialValueFor("radius"))
 		for _, enemy in ipairs(enemies) do
 			enemy:AddNewModifier(caster, self, "modifier_wraith_wraiths_will_taunt", {duration = duration})
@@ -46,8 +52,17 @@ function wraith_wraiths_will:GetTetheredCount()
 	return count
 end
 
+modifier_wraith_wraiths_will_buff = class({})
+function modifier_wraith_wraiths_will_buff:IsDebuff()
+	return false
+end
+
+modifier_wraith_wraiths_will_debuff = class({})
+function modifier_wraith_wraiths_will_debuff:IsDebuff()
+	return true
+end
+
 modifier_wraith_wraiths_will_talent = class({})
-LinkLuaModifier("modifier_wraith_wraiths_will_talent", "heroes/wraith/wraith_wraiths_will.lua", 0)
 
 if IsServer() then
 	function modifier_wraith_wraiths_will_talent:OnCreated()
@@ -55,7 +70,7 @@ if IsServer() then
 		self.damage = self:GetSpecialValueFor("damage")
 		if self:GetAbility():GetTetheredCount() == 1 then self:GetAbility():StartDelayedCooldown() end
 		
-		local fx = ParticleManager:CreateParticle("particles/heroes/wraith/wraith_wraiths_will_ally_blade_golden.vpcf", PATTACH_POINT_FOLLOW, self:GetParent())
+		local fx = ParticleManager:CreateParticle("particles/heroes/wraith/wraiths_will_ally_2/wraiths_will_ally_2.vpcf", PATTACH_POINT_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControlEnt(fx, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(fx, 1, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetAbsOrigin(), true)
 		self:AddEffect(fx)
@@ -65,14 +80,13 @@ if IsServer() then
 	
 	function modifier_wraith_wraiths_will_talent:OnIntervalThink()
 		self:GetParent():HealEvent(self.heal, self:GetAbility(), self:GetCaster())
-		self:GetAbility():DealDamage(self:GetCaster(), self:GetCaster(), self.damage / math.max(self:GetAbility():GetTetheredCount(), 1), {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL} )
+		self:GetAbility():DealDamage(self:GetCaster(), self:GetCaster(), self.damage / math.max(self:GetAbility():GetTetheredCount(), 1), OVERHEAD_ALERT_BONUS_POISON_DAMAGE, {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL})
 		EmitSoundOn("Hero_Necrolyte.PreAttack", self:GetParent())
 	end
 end
 
 
 modifier_wraith_wraiths_will_taunt = class({})
-LinkLuaModifier("modifier_wraith_wraiths_will_taunt", "heroes/wraith/wraith_wraiths_will.lua", 0)
 
 if IsServer() then
 	function modifier_wraith_wraiths_will_taunt:OnCreated()
@@ -90,7 +104,7 @@ if IsServer() then
 	
 	function modifier_wraith_wraiths_will_taunt:OnIntervalThink()
 		self:GetCaster():HealEvent(self.heal, self:GetAbility(), self:GetCaster())
-		self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self.damage)
+		self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self.damage, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, {})
 		EmitSoundOn("Hero_Necrolyte.PreAttack", self:GetParent())
 	end
 end

@@ -132,8 +132,8 @@ function modifier_wraith_one_for_all_aura:GetModifierIncomingDamage_Percentage(p
 		local spread = math.abs(params.damage * self.damage_redirection) / 100
 		local hp = math.abs(params.damage / self:GetParent():GetMaxHealth() * (self.damage_redirection / 100)) * self:GetCaster():GetMaxHealth()
 		local damage = math.ceil( math.min(spread, hp) )
-		ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_all_for_one_damage.vpcf", PATTACH_POINT_FOLLOW, self:GetParent(), self:GetCaster())
-		ApplyDamage({attacker = params.attacker, victim = self:GetCaster(), damage = damage, damage_type = params.damage_type, ability = params.inflictor, damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_REFLECTION})
+		ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_all_for_one_steal.vpcf", PATTACH_POINT_FOLLOW, self:GetParent(), self:GetCaster())
+		self:GetAbility():DealDamage(params.attacker, self:GetCaster(), damage, 0, {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_REFLECTION}})
 		return self.damage_redirection
 	end
 end
@@ -258,7 +258,7 @@ function modifier_wraith_all_for_one:GetModifierIncomingDamage_Percentage(params
 				local altSpread = math.abs(damagePct * ally:GetMaxHealth() * allyPct / 100)
 				local damage = math.ceil(math.min(altSpread, spreadDamage))
 				ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_all_for_one_damage.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster(), ally)
-				ApplyDamage({attacker = params.attacker, victim = ally, damage = damage, damage_type = params.damage_type, ability = params.inflictor, damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_REFLECTION})
+				self:GetAbility():DealDamage(params.attacker, ally, damage, 0, {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_REFLECTION}})
 			end
 			return self.damage_redirection
 		end
@@ -288,7 +288,7 @@ function modifier_wraith_all_for_one_aura:OnHealRedirect(params)
 	if params.target == self:GetCaster() then
 		local redirectedHeal = math.abs(params.amount*self.hp_steal)
 		self:GetParent():HealEvent(redirectedHeal, params.source, params.healer)
-		ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_all_for_one_steal.vpcf", PATTACH_POINT_FOLLOW, self:GetParent(), self:GetCaster())
+		ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_all_for_one_damage.vpcf", PATTACH_POINT_FOLLOW, self:GetParent(), self:GetCaster())
 		return -redirectedHeal
 	end
 end

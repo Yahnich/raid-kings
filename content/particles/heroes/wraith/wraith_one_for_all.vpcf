@@ -5,7 +5,7 @@
 	m_nMaxParticles = 64
 	m_BoundingBoxMax = [ 64.0, 64.0, 64.0 ]
 	m_flConstantRadius = 15.0
-	m_ConstantColor = [ 255, 255, 255, 200 ]
+	m_ConstantColor = [ 3, 142, 85, 255 ]
 	m_bShouldSort = false
 	m_Renderers = 
 	[
@@ -99,6 +99,7 @@
 			_class = "C_INIT_RandomColor"
 			m_ColorMin = [ 232, 251, 244, 255 ]
 			m_ColorMax = [ 3, 142, 85, 255 ]
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_InitialVelocityNoise"
@@ -175,10 +176,11 @@
 			m_drivers = 
 			[
 				{
-					m_iControlPoint = 0
 					m_iAttachType = "PATTACH_ABSORIGIN_FOLLOW"
 					m_entityName = "parent"
 					m_attachmentName = "attach_weapon"
+					m_vecOffset = [ null, null, null ]
+					m_angOffset = [ null, null, null ]
 				},
 			]
 		},
