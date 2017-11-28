@@ -1,8 +1,9 @@
 wraith_wraithfire = class({})
+LinkLuaModifier( "modifier_wraith_wraithfire_dot", "heroes/wraith/wraith_wraithfire.lua" ,LUA_MODIFIER_MOTION_NONE )
 
 function wraith_wraithfire:OnAbilityPhaseStart()
-	self.warmUp = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_warmup.vpcf", PATTACH_CUSTOMORIGIN_FOLLOW, self:GetCaster())
-		ParticleManager:SetParticleControlEnt(self.warmUp, 0, self:GetCaster(), PATTACH_CUSTOMORIGIN_FOLLOW, "attach_attack2", self:GetCaster():GetAbsOrigin(), true)
+	self.warmUp = ParticleManager:CreateParticle("particles/heroes/wraith/wraith_wraithfire_warmup.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster())
+		ParticleManager:SetParticleControlEnt(self.warmUp, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack2", self:GetCaster():GetAbsOrigin(), true)
 	return true
 end
 
@@ -14,46 +15,67 @@ end
 function wraith_wraithfire:OnSpellStart()
 	ParticleManager:DestroyParticle(self.warmUp ,false)
 	ParticleManager:ReleaseParticleIndex(self.warmUp)
-	local projectile = {
-		Target = self:GetCursorTarget(),
-		Source = self:GetCaster(),
-		Ability = self,
-		EffectName = "particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast.vpcf",
-		bDodgable = true,
-		bProvidesVision = false,
-		iMoveSpeed = self:GetTalentSpecialValueFor("blast_speed"),
-		iSourceAttachment = DOTA_PROJECTILE_ATTACHMENT_ATTACK_2,
-	}
-	ProjectileManager:CreateTrackingProjectile(projectile)
+	local caster = self:GetCaster()
+	local abiltarget = self:GetCursorTarget()
+	local direction = CalculateDirection(abiltarget, caster)
+
+	local radius = self:GetTalentSpecialValueFor("blast_dot_radius")
+	local blast_damage = self:GetTalentSpecialValueFor("blast_damage")
+
+	local speed = 1000
+
+	local projectileLife = 15
+
+	local vVelocity = direction * speed * FrameTime()
+	local ProjectileThink = function(self)
+		local position = self:GetPosition()
+		local velocity = self:GetVelocity()
+		local speed = self:GetSpeed()
+		velocity = CalculateDirection(abiltarget, position) * speed * FrameTime()
+		if velocity:Length2D() ~= speed then velocity = velocity:Normalized() * speed end
+
+		self:SetVelocity(velocity)
+		self:SetPosition( GetGroundPosition(position, nil) + Vector(0,0,128) + velocity*FrameTime() )
+		
+	end	--projectileThink
+
+	local ProjectileHit = function(self, target, position)
+		if target == abiltarget then
+			EmitSoundOn("Hero_SkeletonKing.Hellfire_BlastImpact", target)
+			local caster = self:GetCaster()
+			
+			self:GetAbility():DealDamage(caster, target, damage, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
+			
+			local enemies = caster:FindEnemyUnitsInRadius(target:GetAbsOrigin(), radius, {})
+			local duration = self:GetAbility():GetSpecialValueFor("blast_dot_duration")
+			target:AddNewModifier(caster, self:GetAbility(), "modifier_stunned_generic", {duration = self:GetAbility():GetSpecialValueFor("blast_stun_duration")})
+			for _, enemy in pairs(enemies) do
+				enemy:AddNewModifier(caster, self:GetAbility(), "modifier_wraith_wraithfire_dot", {duration = duration})
+			end
+			local explosion = ParticleManager:CreateParticle("particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast_explosion_ebf.vpcf", PATTACH_POINT_FOLLOW, target)
+				ParticleManager:SetParticleControl(explosion, 1, Vector(radius,0,0))
+				--ParticleManager:SetParticleControl(explosion, 3, target:GetAbsOrigin())
+				ParticleManager:SetParticleControlEnt(explosion, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+				ParticleManager:ReleaseParticleIndex(explosion)
+			return false
+		else
+			return true
+		end
+	end --projectilehit
+
+	ProjectileHandler:CreateProjectile(ProjectileThink, ProjectileHit, {  FX = "particles/heroes/wraith/wraith_wraithfire.vpcf",
+																  position = caster:GetAbsOrigin(),
+																  caster = caster,
+																  ability = self,
+																  speed = speed,
+																  radius = 10,
+																  velocity = vVelocity,
+																  duration = projectileLife,
+																  hitUnits = {},
+																  damage = blast_damage})
 	EmitSoundOn("Hero_SkeletonKing.Hellfire_Blast", self:GetCaster())
 end
 
-function wraith_wraithfire:OnProjectileHit(target, position)
-	EmitSoundOn("Hero_SkeletonKing.Hellfire_BlastImpact", target)
-	local caster = self:GetCaster()
-	local radius = self:GetTalentSpecialValueFor("blast_dot_radius")
-	ApplyDamage({victim = target, attacker = caster, damage = self:GetSpecialValueFor("blast_damage"), damage_type = self:GetAbilityDamageType(), ability = self})
-	local enemies = FindUnitsInRadius(caster:GetTeam(),
-						  target:GetAbsOrigin(),
-						  nil,
-						  radius,
-						  DOTA_UNIT_TARGET_TEAM_ENEMY,
-						  DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-						  DOTA_UNIT_TARGET_FLAG_NONE,
-						  FIND_ANY_ORDER,
-						  false)
-	local duration = self:GetSpecialValueFor("blast_dot_duration")
-	target:AddNewModifier(caster, self, "modifier_stunned_generic", {duration = self:GetSpecialValueFor("blast_stun_duration")})
-	for _, enemy in pairs(enemies) do
-		enemy:AddNewModifier(caster, self, "modifier_wraith_wraithfire_dot", {duration = duration})
-	end
-	local explosion = ParticleManager:CreateParticle("particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast_explosion_ebf.vpcf", PATTACH_POINT_FOLLOW, target)
-		ParticleManager:SetParticleControl(explosion, 1, Vector(radius,0,0))
-		ParticleManager:SetParticleControl(explosion, 3, target:GetAbsOrigin())
-	ParticleManager:ReleaseParticleIndex(explosion)
-end
-
-LinkLuaModifier( "modifier_wraith_wraithfire_dot", "heroes/wraith/wraith_wraithfire.lua" ,LUA_MODIFIER_MOTION_NONE )
 modifier_wraith_wraithfire_dot = class({})
 
 function modifier_wraith_wraithfire_dot:OnCreated()
@@ -65,11 +87,11 @@ function modifier_wraith_wraithfire_dot:OnCreated()
 end
 
 function modifier_wraith_wraithfire_dot:OnIntervalThink()
-	ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), damage = self.damage, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
+	self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self.damage, OVERHEAD_ALERT_BONUS_POISON_DAMAGE)
 end
 
 function modifier_wraith_wraithfire_dot:GetEffectName()
-	return "particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
+	return "particles/heroes/wraith/wraith_wraithfire_debuff.vpcf"
 end
 
 function modifier_wraith_wraithfire_dot:DeclareFunctions()
