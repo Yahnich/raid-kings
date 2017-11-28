@@ -1,0 +1,175 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 64
+	m_BoundingBoxMax = [ 64.0, 64.0, 64.0 ]
+	m_flConstantRadius = 15.0
+	m_ConstantColor = [ 255, 255, 255, 50 ]
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			VisibilityInputs = 
+			{
+				m_flCameraBias = 16.0
+			}
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_flStartFadeSize = 0.2
+			m_flEndFadeSize = 0.25
+			m_flMaxSize = 0.25
+			m_hTexture = resource:"materials/particle/smoke/maya_wispy/wispy_v2.vtex"
+			m_flAnimationRate = 0.75
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -80.0 ]
+		},
+		{
+			_class = "C_OP_Decay"
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.4
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 0.1
+		},
+		{
+			_class = "C_OP_Noise"
+			m_fl4NoiseScale = 0.00131
+			m_nFieldOutput = 4
+			m_flOutputMax = 130.0
+			m_bAdditive = true
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 3.0
+			m_flBias = 0.75
+			m_flStartScale = 0.25
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_nOpEndCapState = 1
+			m_Rate = 150.0
+			m_flEndTime = 9999.0
+		},
+		{
+			_class = "C_OP_RampScalarLinearSimple"
+			m_nOpEndCapState = 1
+			m_nField = 16
+			m_Rate = -2.0
+			m_flEndTime = 99999.0
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_flFadeStartTime = 0.2
+			m_ColorFade = [ 0, 76, 41, 255 ]
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_flStartTime_min = 0.0
+			m_flStartTime_max = 0.0
+			m_flEndTime_min = 0.25
+			m_flEndTime_max = 0.5
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 1.0
+			m_fLifetimeMin = 0.75
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 3, 142, 85, 255 ]
+			m_ColorMin = [ 232, 251, 244, 255 ]
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_vecOutputMax = [ 64.0, 64.0, 64.0 ]
+			m_vecOutputMin = [ -64.0, -64.0, -64.0 ]
+			m_bLocalSpace = true
+		},
+		{
+			_class = "C_INIT_CreationNoise"
+			m_flOutputMax = 18.0
+			m_flOutputMin = 11.0
+			m_flNoiseScale = 2.0
+		},
+		{
+			_class = "C_INIT_RandomRotation"
+		},
+		{
+			_class = "C_INIT_RandomYaw"
+			m_flDegreesMax = 4.0
+			m_flDegreesMin = -4.0
+		},
+		{
+			_class = "C_INIT_RandomYawFlip"
+		},
+		{
+			_class = "C_INIT_RemapParticleCountToScalar"
+			m_flOutputMin = 1.5
+			m_nInputMax = 50
+			m_bScaleInitialRange = true
+			m_bActiveRange = true
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_fRadiusMax = 12.0
+			m_fSpeedMax = 24.0
+		},
+		{
+			_class = "C_INIT_InheritVelocity"
+			m_flVelocityScale = 0.05
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmissionDuration = 1.25
+			m_flOpEndFadeOutTime = 1.25
+			m_flOpStartFadeOutTime = 0.7
+			m_flEmitRate = 32.0
+		},
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 4
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_warmup_light.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_warmup_smoke.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_warmup_b.vpcf"
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}

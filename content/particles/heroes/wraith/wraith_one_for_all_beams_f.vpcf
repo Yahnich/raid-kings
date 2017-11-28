@@ -50,6 +50,10 @@
 			m_flBias = 0.65
 			m_flEndScale = 0.0
 		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 0, 76, 41, 255 ]
+		},
 	]
 	m_Initializers = 
 	[
@@ -104,6 +108,21 @@
 		{
 			_class = "C_OP_ContinuousEmitter"
 			m_flEmitRate = 80.0
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

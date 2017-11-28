@@ -9,9 +9,8 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bAdditive = true
 			m_flOverbrightFactor = 3.0
-			m_hTexture = resource:"materials/particle/blood_decal/blood_decal.vtex"
+			m_hTexture = resource:"materials/particle/blood_splatter/bloodsplatter.vtex"
 		},
 	]
 	m_Operators = 
@@ -44,7 +43,7 @@
 		},
 		{
 			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 3
+			m_nSequenceMax = 62
 		},
 		{
 			_class = "C_INIT_RandomRotation"
@@ -70,10 +69,8 @@
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 50.0
 		},
 	]
-	m_ConstantColor = [ 139, 0, 0, 255 ]
 	m_controlPointConfigurations = 
 	[
 		{

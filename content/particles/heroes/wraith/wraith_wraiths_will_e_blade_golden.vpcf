@@ -4,20 +4,20 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 32
 	m_flConstantRadius = 24.0
-	m_ConstantColor = [ 30, 225, 34, 155 ]
 	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderRopes"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bMod2X = true
-			m_flOverbrightFactor = 100.0
-			m_hTexture = resource:"materials/particle/rope_intestine_01.vtex"
+			m_hTexture = resource:"materials/particle/beam_liquid_01_normal.vtex"
 			m_flRadiusScale = 0.5
 			m_flFinalTextureScaleU = -1.0
 			m_flFinalTextureOffsetU = 1.0
 			m_flTextureVWorldSize = 200.0
 			m_nMaxTesselation = 1
+			m_bRefract = true
+			m_nRefractBlurRadius = 10
+			m_nRefractBlurType = "BLURFILTER_GAUSSIAN"
 		},
 	]
 	m_Operators = 
@@ -35,6 +35,12 @@
 		{
 			_class = "C_OP_FadeInSimple"
 		},
+		{
+			_class = "C_OP_OscillateVector"
+			m_RateMin = [ 5.0, 5.0, 5.0 ]
+			m_RateMax = [ 5.0, 5.0, 5.0 ]
+			m_FrequencyMax = [ 10.0, 10.0, 10.0 ]
+		},
 	]
 	m_Initializers = 
 	[
@@ -48,8 +54,7 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 47.432
-			m_flRadiusMax = 28.322
+			m_flRadiusMax = 20.0
 		},
 	]
 	m_Emitters = 
