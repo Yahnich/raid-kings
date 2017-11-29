@@ -83,8 +83,6 @@ function SetSkillContainers(args){
 
 function EndSkillSelection(args){
 	var dotaHud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements");
-	var abilityHud = dotaHud.FindChildTraverse("lower_hud");
-	abilityHud.style.visibility = "visible";
 	dotaHud.style.zIndex = 0;
 	CustomNetTables.UnsubscribeNetTableListener( skillCallback )
 	if(currentDragPanel != null){currentDragPanel.DeleteAsync(0)}

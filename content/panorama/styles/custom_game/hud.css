@@ -1,6 +1,199 @@
 .GameHudRoot {
 	width: 100%;
 	height: 100%;
-	z-index: 10;
+}
+
+/*SELECTION INFO*/
+.MainSelectionInfoContainer {
+	background-color: #12DF12FF;
+	vertical-align: bottom;
+	horizontal-align: left;
+	height: 235px;
+	width: 100%;
+}
+
+#MainSelectionHeroPortrait {
+	width: 178px;
+	height: 100%;
+}
+
+#MainSelectionHeroPortraitContainer {
+	width: 200px;
+	height: 100%;
+}
+
+#MainSelectionResourceHolder{
+	background-color: #12DF12FF;
+	vertical-align: bottom;
+	horizontal-align: middle;
+	flow-children: down;
+	height: 100px;
+}
+
+#MainSelectionHealthBar {
+	background-color: #CC1111FF;
+
+	width: 300px;
+	height: 50%;
+}
+
+#MainSelectionManaBar {
+	background-color: #1111CCFF;
+
+	width: 300px;
+	height: 50%;
+}
+
+
+
+/*TEAM INFO*/
+
+.GameHudTeamInfoContainer {
+	margin-top: 60px;
+	horizontal-align: left;
 	flow-children: right;
+	margin-left: -10px;
+	
+	transition-timing-function: ease-in-out;
+	transition-property: transform;
+	transition-duration: 0.3s;
+}
+
+.TeamHidden
+{
+    transform: translate3d( -225px, 0px, 0px );
+}
+
+.PlayerInfoContainerHolder {
+	flow-children: down;
+
+	/* background-color: gradient( linear, 0% 0%, 100% 0%, from( #11111199 ), color-stop( .2, #25282a99), color-stop( .6, #25282a99), to( #11111199 ) ); */
+	border-bottom-right-radius: 5px;
+	
+}
+
+.PlayerInfoBuffDebuffContainer {
+	margin-left: 3px;
+	width: 100%;
+	height: 100%;
+	flow-children: right-wrap;
+}
+
+.PlayerInfoModifier {
+	width: 32px;
+	height: 32px;
+}
+
+.PlayerInfoModifierHolder {
+	margin-left: 4px;
+	margin-bottom: 2px;
+}
+
+.IsBuff
+{
+	width: 100%;
+	height: 100%;
+	border: 3px solid #00cc00FF;
+}
+
+.IsDebuff {
+	width: 100%;
+	height: 100%;
+	border: 3px solid #e50000FF;
+}
+
+.PlayerInfoModifierLabel
+{
+	vertical-align: center;
+	horizontal-align: center;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 1px 2 #000000d0;
+	z-index: 5;
+}
+
+
+.PlayerInfoContainer {
+	margin: 5px;
+	flow-children: right;
+}
+
+.PlayerInfoPortrait {
+	background-color: #12DF12FF;
+	vertical-align: middle;
+	border-radius: 3px;
+	width: 79px;
+	height: 105px;
+}
+
+.PlayerInfoResourceBar {
+	vertical-align: top;
+	width: 150px;
+	height: 100%;
+	flow-children: down;
+	z-index: -1;
+	margin-left: -5px;
+	margin-top: 2px;
+}
+
+.PlayerInfoResourcePanel{
+	height: 35px;
+	width: 100%;
+	border-right: 2px solid #555555FF;
+	border-bottom: 2px solid #555555FF;
+	background-color: #121212FF;
+}
+
+
+.PlayerInfoHealth
+{
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #800000FF ), color-stop( .5, #e60000FF), color-stop( .5, #e60000FF), to( #800000FF ) );
+	height: fill-parent-flow( 1 );
+	width: 100%;
+}
+
+
+.PlayerInfoMana{
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #2b60a1FF ), color-stop( .5, #75a2daFF), color-stop( .5, #75a2daFF), to( #2b60a1FF ) );
+	vertical-align: middle;
+	height: fill-parent-flow( 1 );
+	width: 100%;
+}
+
+.ResourceText
+{
+	vertical-align: center;
+	horizontal-align: center;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 22px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 1px 2 #000000d0;
+	z-index: 5;
+}
+
+.PlayerInfoContainerClose
+{
+	vertical-align: top;
+	horizontal-align: right;
+	height: 40px;
+	width: 40px;
+	margin-top: 5px;
+	margin-left: -5px;
+	
+	background-color: #11111199;
+	z-index: -1;
+}
+
+.CloseImage
+{
+	vertical-align: center;
+	horizontal-align: center;
+	width: 35px;
+	height: 35px;
+	wash-color: #464646;
 }

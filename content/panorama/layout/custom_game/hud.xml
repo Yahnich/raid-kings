@@ -6,6 +6,21 @@
         <include src="file://{resources}/scripts/custom_game/hud.js" />
     </scripts>
     <Panel class="GameHudRoot" hittest="false">
- 
+		<Panel class="GameHudTeamInfoContainer" id="GameHudTeamInfo" hittest="false">
+			<Panel class="PlayerInfoContainerHolder" id="PlayerContainerTeamInfo" hittest="false">
+			</Panel>
+			<Button class="PlayerInfoContainerClose" id="PlayerInfoContainerCloseID" onactivate="ToggleTeamInfo()">
+				<Image src="file://{images}/custom_game/slideRight.png" id="CloseImageID" class="CloseImage" hittest="false"/>
+			</Button>
+		</Panel>
+		<Panel class="MainSelectionInfoContainer" id="GameHudMainSelectionInfo" hittest="false">
+			<Panel id="MainSelectionHeroPortraitContainer" hittest="false">
+				<DOTAHeroMovie id="MainSelectionHeroPortrait" heroname="npc_dota_hero_lina"/>
+			</Panel>
+			<Panel id="MainSelectionResourceHolder">
+				<ProgressBar id="MainSelectionHealthBar"/>
+				<ProgressBar id="MainSelectionManaBar"/>
+			</Panel>
+		</Panel>
     </Panel>
 </root>
