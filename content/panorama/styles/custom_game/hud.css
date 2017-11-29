@@ -5,44 +5,165 @@
 
 /*SELECTION INFO*/
 .MainSelectionInfoContainer {
-	background-color: #12DF12FF;
 	vertical-align: bottom;
 	horizontal-align: left;
-	height: 235px;
+	height: 260px;
 	width: 100%;
+	margin-bottom: -65px;
 }
 
 #MainSelectionHeroPortrait {
 	width: 178px;
 	height: 100%;
+	opacity-mask: url( "file://{images}/custom_game/portraitmask.tga" );
 }
 
 #MainSelectionHeroPortraitContainer {
-	width: 200px;
 	height: 100%;
+	background-color: gradient( linear, 0% 0%, 100% 0%, from( #111111AA ), color-stop( .0, #25282aAA), color-stop( .1, #25282a55), to( #11111100 ) );
+	border-radius: 10px;
+	margin-left: -5px;
+	padding: 5px;
+	flow-children: right;
 }
 
+#MainSelectionCurrentStateContainer
+{
+	flow-children: up;
+	vertical-align: bottom;
+	width: 350px;
+}
+
+#MainSelectionBuffDebuffContainer
+{
+	flow-children:down;
+	width: 100%;
+}
+
+#MainSelectionBuffContainer
+{
+	flow-children: right;
+	height: 40px;
+	width: 100%;
+}
+
+#MainSelectionDebuffContainer
+{
+	flow-children: right;
+	height: 40px;
+	width: 100%;
+}
+
+
 #MainSelectionResourceHolder{
-	background-color: #12DF12FF;
 	vertical-align: bottom;
 	horizontal-align: middle;
 	flow-children: down;
 	height: 100px;
+	width: 100%;
+	margin-bottom: 65px;
+	padding: 2px;
 }
 
 #MainSelectionHealthBar {
-	background-color: #CC1111FF;
-
-	width: 300px;
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #991111FF ), color-stop( .4, #CC1111FF), color-stop( .6, #CC1111FF), to( #991111FF ) );
+	border-radius: 5px;
+	width: 100%;
 	height: 50%;
+	border: 3px solid #881111FF;
 }
 
 #MainSelectionManaBar {
-	background-color: #1111CCFF;
-
-	width: 300px;
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #111199FF ), color-stop( .4, #1111CCFF), color-stop( .6, #1111CCFF), to( #111199FF ) );
+	border-radius: 5px;
+	width: 100%;
 	height: 50%;
+	border: 3px solid #111188FF;
 }
+
+.AttributeContainer{
+	flow-children: down;
+	margin-top: 5px;
+	margin-right: 2px;
+}
+
+.StatContainer
+{
+	flow-children: right;
+}
+
+.StatsImage
+{
+	width: 18px;
+	height: 18px;
+	margin: 2px;
+	
+}
+
+.StatsText
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 9px 3 #00000000;
+	margin-top: 1px;
+}
+
+
+.ResourceText
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #FFFFFF;
+	font-size: 20px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 9px 3 #00000000;
+	margin-top: 1px;
+}
+
+.RegenLabel
+{
+	horizontal-align: right;
+	vertical-align: center;
+	color: #FFFFFF;
+	font-size: 20px;
+	font-family: "Radiance";
+	text-shadow: 2px 2px 1px 2 #000000d0;
+	margin-right: 15px;
+}
+
+.MainLabel
+{
+	horizontal-align: left;
+	vertical-align: center;
+	color: #FFFFFF;
+	font-size: 20px;
+	font-family: "Radiance";
+	text-shadow: 2px 2px 1px 2 #000000d0;
+	margin-left: 15px;
+}
+
+
+.IsPlayerBuff
+{
+	width: 36px;
+	height: 36px;
+	margin-left: 4px;
+	margin-bottom: 2px;
+	border: 3px solid #00cc00FF;
+}
+
+.IsPlayerDebuff {
+	width: 36px;
+	height: 36px;
+	margin-left: 4px;
+	border: 3px solid #e50000FF;
+}
+
 
 
 
@@ -161,19 +282,6 @@
 	vertical-align: middle;
 	height: fill-parent-flow( 1 );
 	width: 100%;
-}
-
-.ResourceText
-{
-	vertical-align: center;
-	horizontal-align: center;
-	text-align: center;
-	color: #FFFFFF;
-	font-size: 22px;
-	font-family: "Radiance";
-	text-align: center;
-	text-shadow: 2px 2px 1px 2 #000000d0;
-	z-index: 5;
 }
 
 .PlayerInfoContainerClose

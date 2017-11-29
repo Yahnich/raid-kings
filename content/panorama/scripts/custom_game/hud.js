@@ -15,14 +15,13 @@ var localID = Game.GetLocalPlayerID();
 	topbar.style.visibility = "collapse";
 	glyph.style.visibility = "collapse";
 	
-	var minimapCont = dotaHud.FindChildTraverse("minimap_container");
-	minimapCont.style.horizontalAlign = "right";
-	dotaHud.FindChildTraverse("minimap_block").style.horizontalAlign = "right";
-	dotaHud.FindChildTraverse("minimap").style.horizontalAlign = "right";
 	
 	var skillSelectionDone = CustomNetTables.GetTableValue("skill_selection", "skillPickPhaseFinished")
 	if( (skillSelectionDone != null && skillSelectionDone["skillPickPhaseFinished"] && skillSelectionDone["skillPickPhaseFinished"] == 1) ){
-		
+		var minimapCont = dotaHud.FindChildTraverse("minimap_container");
+		minimapCont.style.align = "right top";
+		dotaHud.FindChildTraverse("minimap_block").style.align = "right top";
+		dotaHud.FindChildTraverse("minimap").style.align = "right top";
 	}
 	
 	CreateTeamInfo()

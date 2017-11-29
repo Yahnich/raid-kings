@@ -16,10 +16,70 @@
 		<Panel class="MainSelectionInfoContainer" id="GameHudMainSelectionInfo" hittest="false">
 			<Panel id="MainSelectionHeroPortraitContainer" hittest="false">
 				<DOTAHeroMovie id="MainSelectionHeroPortrait" heroname="npc_dota_hero_lina"/>
-			</Panel>
-			<Panel id="MainSelectionResourceHolder">
-				<ProgressBar id="MainSelectionHealthBar"/>
-				<ProgressBar id="MainSelectionManaBar"/>
+				<Panel class="AttributeContainer" id="MainSelectionStatsContainer">
+					<Panel class="StatContainer">
+						<Image src="s2r://panorama/images/hud/reborn/icon_damage_psd.vtex" id="StatsStrength" class="StatsImage" hittest="false"/>
+						<Label class="StatsText" text="300"/>
+					</Panel>
+					<Panel class="StatContainer">
+						<Image src="s2r://panorama/images/hud/reborn/icon_armor_psd.vtex" id="StatsAgility" class="StatsImage" hittest="false"/>
+						<Label class="StatsText" text="20"/>
+					</Panel>
+					<Panel class="StatContainer">
+						<Image src="s2r://panorama/images/hud/reborn/icon_speed_psd.vtex" id="StatsIntelligence" class="StatsImage" hittest="false"/>
+						<Label class="StatsText" text="300"/>
+					</Panel>
+					<Panel class="StatContainer">
+						<Image src="file://{images}/custom_game/strength.png" id="StatsStrength" class="StatsImage" hittest="false"/>
+						<Label class="StatsText" text="5000"/>
+					</Panel>
+					<Panel class="StatContainer">
+						<Image src="file://{images}/custom_game/agility.png" id="StatsAgility" class="StatsImage" hittest="false"/>
+						<Label class="StatsText" text="5000"/>
+					</Panel>
+					<Panel class="StatContainer">
+						<Image src="file://{images}/custom_game/intelligence.png" id="StatsIntelligence" class="StatsImage" hittest="false"/>
+						<Label class="StatsText" text="5000"/>
+					</Panel>
+					<Panel class="StatContainer">
+						<Image src="file://{images}/custom_game/luck.png" id="StatsLuck" class="StatsImage" hittest="false"/>
+						<Label class="StatsText" text="5000"/>
+					</Panel>
+					<Panel class="StatContainer">
+						<Image src="file://{images}/custom_game/vitality.png" id="StatsVitality" class="StatsImage" hittest="false"/>
+						<Label class="StatsText" text="5000"/>
+					</Panel>
+				</Panel>
+				<Panel id="MainSelectionCurrentStateContainer">
+					<Panel id="MainSelectionResourceHolder">
+						<ProgressBar id="MainSelectionHealthBar">
+							<Label class="MainLabel" id="HealthLabel" text="5000000000/5000000000"/>
+							<Label class="RegenLabel" id="HealthRegenLabel" text="+50"/>
+						</ProgressBar>
+						<ProgressBar id="MainSelectionManaBar">
+							<Label class="MainLabel" id="ManaLabel" text="5000000000/5000000000"/>
+							<Label class="RegenLabel" id="ManaRegenLabel" text="+50"/>
+						</ProgressBar>
+					</Panel>
+					<Panel id="MainSelectionBuffDebuffContainer">
+						<Panel id="MainSelectionBuffContainer">
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerBuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerBuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerBuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerBuff"/>
+						</Panel>
+						<Panel id="MainSelectionDebuffContainer">
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerDebuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerDebuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerDebuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerDebuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerDebuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerDebuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerDebuff"/>
+							<DOTAAbilityImage abilityname="ifrit_fire_surge" class="IsPlayerDebuff"/>
+						</Panel>
+					</Panel>
+				</Panel>
 			</Panel>
 		</Panel>
     </Panel>
