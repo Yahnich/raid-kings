@@ -22,6 +22,7 @@ function ifrit_fire_surge:OnSpellStart()
 	self.minDamage = self:GetTalentSpecialValueFor( "min_damage" ) + self:GetCaster().selfImmolationDamageBonus / 2
 	
 	self.projectileTable = {}
+	currentdamage = self.maxDamage
 
 	EmitSoundOn( "Hero_Lina.DragonSlave.Cast", caster )
 
@@ -32,7 +33,7 @@ function ifrit_fire_surge:OnSpellStart()
 		vPos = self:GetCursorPosition()
 	end
 
-	local vDirection = vPos - caster:GetOrigin()
+	local vDirection = CalculateDirection(vPos, caster:GetOrigin())
 	vDirection.z = 0.0
 	vDirection = vDirection:Normalized()
 
@@ -50,56 +51,53 @@ function ifrit_fire_surge:OnSpellStart()
 end
 
 function ifrit_fire_surge:CreateFireSurge(vDirection)
-	local info = {
-		EffectName = "particles/units/heroes/hero_lina/lina_spell_dragon_slave.vpcf",
-		Ability = self,
-		vSpawnOrigin = self:GetCaster():GetOrigin(), 
-		fStartRadius = self.width_initial,
-		fEndRadius = self.width_end,
-		vVelocity = vDirection * self.speed,
-		fDistance = self.distance,
-		Source = self:GetCaster(),
-		iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-		iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-	}
-	ProjectileManager:CreateLinearProjectile( info )
-end
---------------------------------------------------------------------------------
-
-function ifrit_fire_surge:OnProjectileHitHandle( hTarget, vLocation, projectileID )
-	if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
-		self.projectileTable[projectileID] = self.projectileTable[projectileID] or self.maxDamage
-		local damage = {
-			victim = hTarget,
-			attacker = self:GetCaster(),
-			damage = self.projectileTable[projectileID],
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self
-		}
-
-		ApplyDamage( damage )
-		hTarget:AddNewModifier( self:GetCaster(), self, "modifier_ifrit_fire_surge_fire_debuff", { duration = self:GetTalentSpecialValueFor("dot_duration"), damage = self.projectileTable[projectileID] * self:GetTalentSpecialValueFor("dot_dmg_pct") / 100} )
-		local vDirection = vLocation - self:GetCaster():GetOrigin()
-		vDirection.z = 0.0
-		vDirection = vDirection:Normalized()
-		local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_dragon_slave_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, hTarget )
-		ParticleManager:SetParticleControlForward( nFXIndex, 1, vDirection )
-		ParticleManager:ReleaseParticleIndex( nFXIndex )
-	end
-	self.projectileTable[projectileID] = nil -- clear memory space
-	return false
-end
-
-function ifrit_fire_surge:OnProjectileThinkHandle( projectileID )
-	if not self:GetCaster():HasTalent("ifrit_fire_surge_talent_1") then
-		self.projectileTable[projectileID] = self.projectileTable[projectileID] or self.maxDamage
-		if self.projectileTable[projectileID] > self.minDamage then
-			self.projectileTable[projectileID] = (self.projectileTable[projectileID] or self.maxDamage) - self.damage_falloff
-		elseif self.projectileTable[projectileID] < self.minDamage then
-			self.projectileTable[projectileID] = self.minDamage
+	local ProjectileThink = function(self)
+		local position = self:GetPosition()
+		local velocity = self:GetVelocity()
+		if velocity.z > 0 then velocity.z = 0 end
+		self:SetPosition( position + (velocity*FrameTime()) )
+		if not self:GetCaster():HasTalent("ifrit_fire_surge_talent_1") then
+			--self:GetAbility().projectileTable[projectileID] = self:GetAbility().maxDamage
+			if currentdamage > self:GetAbility().minDamage then
+				currentdamage = currentdamage - self:GetAbility().damage_falloff
+			elseif currentdamage < self:GetAbility().minDamage then
+				currentdamage = self:GetAbility().minDamage
+			end
+		else
+			currentdamage = self:GetAbility().maxDamage
 		end
-	end
-	return false
+		--print(currentdamage)
+	end--projectilethink
+
+	local ProjectileHit = function(self, target, position)
+		if not target then return end
+		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) then
+			--currentdamage = currentdamage or self:GetAbility().maxDamage
+			if not self.hitUnits[target:entindex()] then
+				self:GetAbility():DealDamage(self:GetCaster(), target, currentdamage, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, {})
+				target:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_ifrit_fire_surge_fire_debuff", { duration = self:GetAbility():GetSpecialValueFor("dot_duration"), damage = currentdamage * self:GetAbility():GetSpecialValueFor("dot_dmg_pct") / 100} )
+				local vDirection = position - self:GetCaster():GetOrigin()
+				local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_dragon_slave_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
+				ParticleManager:SetParticleControlForward( nFXIndex, 1, vDirection )
+				ParticleManager:ReleaseParticleIndex( nFXIndex )
+				self.hitUnits[target:entindex()] = true
+			end
+		end
+		--self:GetAbility().projectileTable[projectileID] = nil -- clear memory space
+		return true
+	end--projectilehit
+
+	ProjectileHandler:CreateProjectile(ProjectileThink, ProjectileHit, {  FX = "particles/heroes/ifrit/ifrit_fire_surge/ifrit_fire_surge.vpcf",
+																  position = self:GetCaster():GetAbsOrigin(),
+																  caster = self:GetCaster(),
+																  ability = self,
+																  speed = self.speed,
+																  radius = self.width_initial,
+																  velocity = vDirection * self.speed,
+																  duration = 10,
+																  distance = self.distance,
+																  hitUnits = {},
+																  damage = currentdamage})
 end
 
 --------------------------------------------------------------------------------
@@ -110,22 +108,17 @@ modifier_ifrit_fire_surge_fire_debuff = class({})
 function modifier_ifrit_fire_surge_fire_debuff:OnCreated(kv)
 	self.damage_over_time = tonumber(kv.damage)
 	self.tick_interval = 1
-	self.damage_tick = ( self.damage_over_time / self:GetRemainingTime() ) * self.tick_interval
 	if self:GetCaster():HasScepter() then self.damage_over_time = (self.damage_over_time or 0) * 2 end
 	if IsServer() then self:StartIntervalThink(self.tick_interval) end
 end
 
 function modifier_ifrit_fire_surge_fire_debuff:OnRefresh(kv)
-	self.damage_over_time = self.damage_over_time + tonumber(kv.damage)
-	self.damage_tick = ( self.damage_over_time / self:GetRemainingTime() ) * self.tick_interval
+	self.damage_over_time = tonumber(kv.damage)
 	if self:GetCaster():HasScepter() then self.damage_over_time = (self.damage_over_time or 0) * 2 end
 end
 
 function modifier_ifrit_fire_surge_fire_debuff:OnIntervalThink()
-	self.damage_over_time = math.max(0, self.damage_over_time - self.damage_tick)
-	local damage = self.damage_tick
-	if self:GetCaster():HasScepter() then damage = damage * 2 end
-	ApplyDamage( {victim = self:GetParent(), attacker = self:GetCaster(), damage = self.damage_tick, damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()} )
+	ApplyDamage( {victim = self:GetParent(), attacker = self:GetCaster(), damage = self.damage_over_time, damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()} )
 end
 
 --------------------------------------------------------------------------------
