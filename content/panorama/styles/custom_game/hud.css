@@ -3,6 +3,73 @@
 	height: 100%;
 }
 
+/*ABILITY BAR*/
+#MainSelectionAbilityContainer
+{
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 15px;
+	flow-children: right;
+}
+
+.AbilityBarAbility
+{
+	width: 80px;
+	height: 80px;
+	margin: 3px;
+	border: 2px solid #565656FF;
+	border-radius: 3px;
+}
+
+#AbilityBarInnate
+{
+	width: 80px;
+	height: 80px;
+	margin-right: 20px;
+	border: 3px solid #eeb70cFF;
+	border-radius: 3px;
+}
+
+.AbilityToggledOn
+{
+	border: 5px solid #898989FF;
+}
+
+.AbilityLevelFlair{
+	width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+	horizontal-align: left;
+	background-color: #555555FF;
+	border: 1px solid #121212FF;
+}
+
+.AbilityLevelImage{
+	width: 100%;
+	height: 100%;
+	wash-color: #e5c100FF;
+	border: 3px solid #eeb70cFF;
+}
+
+.AbilityHotkeyFlair{
+	width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+	horizontal-align:right;
+	background-color: #555555FF;
+	border: 1px solid #121212FF;
+}
+
+.AbilityMiniLabel{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #FFFFFF;
+	font-size: 16px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 9px 3 #00000000;
+}
+
 /*SELECTION INFO*/
 .MainSelectionInfoContainer {
 	vertical-align: bottom;
@@ -66,19 +133,49 @@
 }
 
 #MainSelectionHealthBar {
-	background-color: gradient( linear, 0% 100%, 0% 0%, from( #991111FF ), color-stop( .4, #CC1111FF), color-stop( .6, #CC1111FF), to( #991111FF ) );
 	border-radius: 5px;
 	width: 100%;
 	height: 50%;
 	border: 3px solid #881111FF;
 }
 
+#MainSelectionHealthBar_Left
+{
+  /*background-color: gradient( linear, 0% 0%, 0% 100%, from( #326114 ), color-stop( 0.3, #54BA07 ), color-stop( .5, #54BA07 ), to( #326114 ) );*/
+  background-color: gradient( linear, 0% 100%, 0% 0%, from( #991111FF ), color-stop( .4, #CD2626FF), color-stop( .6, #CD2626FF), to( #991111FF ) );
+  box-shadow: inset #000 1px 1px 3px 3px;
+  border-radius: 2px;
+}
+
+#MainSelectionHealthBar_Right
+{
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #222222FF ), to( black ) );
+}
+
 #MainSelectionManaBar {
-	background-color: gradient( linear, 0% 100%, 0% 0%, from( #111199FF ), color-stop( .4, #1111CCFF), color-stop( .6, #1111CCFF), to( #111199FF ) );
 	border-radius: 5px;
 	width: 100%;
 	height: 50%;
-	border: 3px solid #111188FF;
+	border: 3px solid #354456FF;
+}
+
+#MainSelectionManaBar_Left
+{
+  /*background-color: gradient( linear, 0% 0%, 0% 100%, from( #326114 ), color-stop( 0.3, #54BA07 ), color-stop( .5, #54BA07 ), to( #326114 ) );*/
+  background-color: gradient( linear, 0% 100%, 0% 0%, from( #1c4875FF ), color-stop( .4, #26619cFF), color-stop( .6, #26619cFF), to( #1c4875FF ) );
+  box-shadow: inset #000 1px 1px 3px 3px;
+  border-radius: 2px;
+}
+
+#MainSelectionManaBar_Right
+{
+  background-color: gradient( linear, 0% 0%, 100% 0%, from( #222222FF ), to( black ) );
+}
+
+#HeroStatsContainer
+{
+	width: fit-children;
+	flow-children: down;
 }
 
 .AttributeContainer{
@@ -148,22 +245,25 @@
 }
 
 
-.IsPlayerBuff
+.PlayerMainModifier {
+	width: 36px;
+	height: 36px;
+}
+
+
+.PlayerMainModifierLabel
 {
-	width: 36px;
-	height: 36px;
-	margin-left: 4px;
-	margin-bottom: 2px;
-	border: 3px solid #00cc00FF;
+	vertical-align: center;
+	horizontal-align: center;
+	text-align: center;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: "Radiance";
+	text-align: center;
+	margin-right: 3px;
+	text-shadow: 2px 2px 1px 2 #000000d0;
+	z-index: 5;
 }
-
-.IsPlayerDebuff {
-	width: 36px;
-	height: 36px;
-	margin-left: 4px;
-	border: 3px solid #e50000FF;
-}
-
 
 
 
