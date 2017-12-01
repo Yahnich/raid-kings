@@ -67,6 +67,17 @@
 			"ifrit_blaze_geyser"					"true"
 		}
 		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"13"
+		"AttackDamageMax"		"31"
+		"AttackRate"		"1.600000"
+		"AttackAnimationPoint"		"0.750000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"670"
+		"ProjectileModel"		"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+		"ProjectileSpeed"		"1000"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_INTELLECT"
 		"BaseStrength"								"15"
@@ -87,8 +98,9 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementTurnRate"			"1.5"
-		
+		"MovementSpeed"			"295"
+		"MovementTurnRate"		"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 	}
 	"npc_dota_hero_phantom_assassin" // Shinigami
 	{
@@ -157,6 +169,15 @@
 			"shinigami_grievous_strike"				"true"
 		}
 		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"25"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_AGILITY"
 		"BaseStrength"								"23"
@@ -177,7 +198,9 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementTurnRate"			"1.5"
+		"MovementSpeed"			"305"
+		"MovementTurnRate"		"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		
 	}
 	"npc_dota_hero_windrunner" // Sylph
@@ -247,6 +270,17 @@
 			"sylph_updraft"							"true"
 		}
 		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"34"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+		"ProjectileSpeed"		"1250"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_AGILITY"
 		"BaseStrength"								"18"
@@ -267,8 +301,9 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementTurnRate"			"1.5"
-		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"MovementSpeed"			"295"
+		"MovementTurnRate"		"1.5"
 	}
 	"npc_dota_hero_treant" // Forest
 	{
@@ -337,6 +372,15 @@
 			"forest_become_one"				"true"
 		}
 		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"62"
+		"AttackDamageMax"		"70"
+		"AttackRate"		"1.900000"
+		"AttackAnimationPoint"		"0.600000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_STRENGTH"
 		"BaseStrength"								"30"
@@ -357,6 +401,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"				"270"
 		"MovementTurnRate"			"1.5"
 	}
 	"npc_dota_hero_omniknight" // Justicar
@@ -426,6 +471,15 @@
 			"justicar_avenging_wrath"				"true"
 		}
 		
+		"ArmorPhysical"		"3"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.433000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_STRENGTH"
 		"BaseStrength"								"27"
@@ -446,7 +500,9 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"				"305"
 		"MovementTurnRate"			"1.5"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		
 	}
 	//=================================================================================================================
@@ -519,6 +575,15 @@
 			"gladiatrix_leg_sweep"					"true"
 		}
 		
+		"ArmorPhysical"		"0.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"35"
+		"AttackDamageMax"		"39"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
 		// Custom Attributes
 		"BaseStrength"								"27"
 		"BaseIntellect"								"10"
@@ -538,6 +603,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"		"320"
 		"MovementTurnRate"			"1.5"
 	}
 	"npc_dota_hero_skeleton_king" // Wraith
@@ -607,6 +673,16 @@
 			"wraith_wraiths_will"				"true"
 		}
 		
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"39"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.560000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		
 		// Custom Attributes
 		"BaseStrength"								"30"
 		"BaseIntellect"								"15"
@@ -626,8 +702,8 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"		"300"
 		"MovementTurnRate"			"1.5"
-		
 	}
 	"npc_dota_hero_necrolyte"
 	{
@@ -696,6 +772,15 @@
 			"puppeteer_pestilence"					"true"
 		}
 		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"26"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.530000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"550"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_INTELLECT"
 		"BaseStrength"								"20"
@@ -716,6 +801,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"				"285"
 		"MovementTurnRate"			"1.5"
 		
 	}
@@ -786,6 +872,16 @@
 			"guardian_stone_fortress"				"true"
 		}
 		
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"41"
+		"AttackDamageMax"		"43"
+		"AttackRate"		"1.800000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		
 		// Custom Attributes
 		"BaseStrength"								"38"
 		"BaseIntellect"								"18"
@@ -805,6 +901,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"				"290"
 		"MovementTurnRate"			"1.5"
 	}
 	"npc_dota_hero_dazzle" // Mystic -> need to do it like this for mergetables
@@ -874,6 +971,17 @@
 			"mystic_unyielding"						"true"
 		}
 		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"14"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"550"
+		"ProjectileModel"		"particles/units/heroes/hero_dazzle/dazzle_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_INTELLECT"
 		"BaseStrength"								"16"
@@ -894,6 +1002,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementTurnRate"			"1.5"
+		"MovementSpeed"					"305"
+		"MovementTurnRate"				"1.5"
 	}
 }
