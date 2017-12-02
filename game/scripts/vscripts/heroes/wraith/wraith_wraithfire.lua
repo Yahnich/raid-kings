@@ -40,11 +40,12 @@ function wraith_wraithfire:OnSpellStart()
 	end	--projectileThink
 
 	local ProjectileHit = function(self, target, position)
+		if not target then return end
 		if target == abiltarget then
 			EmitSoundOn("Hero_SkeletonKing.Hellfire_BlastImpact", target)
 			local caster = self:GetCaster()
 			
-			self:GetAbility():DealDamage(caster, target, damage, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
+			self:GetAbility():DealDamage(caster, target, damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 			
 			local enemies = caster:FindEnemyUnitsInRadius(target:GetAbsOrigin(), radius, {})
 			local duration = self:GetAbility():GetSpecialValueFor("blast_dot_duration")
@@ -87,7 +88,7 @@ function modifier_wraith_wraithfire_dot:OnCreated()
 end
 
 function modifier_wraith_wraithfire_dot:OnIntervalThink()
-	self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self.damage, OVERHEAD_ALERT_BONUS_POISON_DAMAGE)
+	self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self.damage, {}, OVERHEAD_ALERT_BONUS_POISON_DAMAGE)
 end
 
 function modifier_wraith_wraithfire_dot:GetEffectName()

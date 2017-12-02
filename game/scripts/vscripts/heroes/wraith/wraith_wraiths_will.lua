@@ -80,7 +80,7 @@ if IsServer() then
 	
 	function modifier_wraith_wraiths_will_talent:OnIntervalThink()
 		self:GetParent():HealEvent(self.heal, self:GetAbility(), self:GetCaster())
-		self:GetAbility():DealDamage(self:GetCaster(), self:GetCaster(), self.damage / math.max(self:GetAbility():GetTetheredCount(), 1), OVERHEAD_ALERT_BONUS_POISON_DAMAGE, {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL})
+		self:GetAbility():DealDamage(self:GetCaster(), self:GetCaster(), self.damage / math.max(self:GetAbility():GetTetheredCount(), 1), {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL}, OVERHEAD_ALERT_BONUS_POISON_DAMAGE)
 		EmitSoundOn("Hero_Necrolyte.PreAttack", self:GetParent())
 	end
 end
@@ -104,7 +104,7 @@ if IsServer() then
 	
 	function modifier_wraith_wraiths_will_taunt:OnIntervalThink()
 		self:GetCaster():HealEvent(self.heal, self:GetAbility(), self:GetCaster())
-		self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self.damage, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, {})
+		self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self.damage, {}, OVERHEAD_ALERT_BONUS_POISON_DAMAGE)
 		EmitSoundOn("Hero_Necrolyte.PreAttack", self:GetParent())
 	end
 end
