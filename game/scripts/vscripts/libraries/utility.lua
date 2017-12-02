@@ -14,6 +14,38 @@ function HasValInTable(checkTable, val)
 	return false
 end
 
+function MergeTables( t1, t2 )		
+	for name,info in pairs(t2) do		
+		if type(info) == "table"  and type(t1[name]) == "table" then		
+ 			MergeTables(t1[name], info)		
+ 		else		
+ 			t1[name] = info		
+ 		end		
+	end		
+end		
+ 		
+function PrintAll(t)		
+	for k,v in pairs(t) do		
+		print(k,v)		
+	end		
+end		
+		
+function table.removekey(t1, key)		
+    for k,v in pairs(t1) do		
+		if k == key then		
+			table.remove(t1,k)		
+		end		
+	end		
+end		
+		
+function table.removeval(t1, val)		
+    for k,v in pairs(t1) do		
+		if t1[k] == val then		
+			table.remove(t1,k)		
+		end		
+	end		
+end
+
 function GetPerpendicularVector(vector)
 	return Vector(vector.y, -vector.x)
 end

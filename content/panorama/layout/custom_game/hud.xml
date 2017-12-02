@@ -19,36 +19,36 @@
 				<Panel class="AttributeContainer" id="MainSelectionStatsContainer">
 					<Panel class="StatContainer">
 						<Image src="s2r://panorama/images/hud/reborn/icon_damage_psd.vtex" id="StatsDamage" class="StatsImage" hittest="false"/>
-						<Label class="StatsText" text="300"/>
+						<Label class="StatsText" id="StatsDamageLabel" text="300" hittest="false"/>
 					</Panel>
 					<Panel class="StatContainer">
 						<Image src="s2r://panorama/images/hud/reborn/icon_armor_psd.vtex" id="StatsArmor" class="StatsImage" hittest="false"/>
-						<Label class="StatsText" text="20"/>
+						<Label class="StatsText" id="StatsArmorLabel" text="20" hittest="false"/>
 					</Panel>
 					<Panel class="StatContainer">
 						<Image src="s2r://panorama/images/hud/reborn/icon_speed_psd.vtex" id="StatsSpeed" class="StatsImage" hittest="false"/>
-						<Label class="StatsText" text="300"/>
+						<Label class="StatsText"  id="StatsSpeedLabel" text="300" hittest="false"/>
 					</Panel>
 					<Panel id="HeroStatsContainer">
 						<Panel class="StatContainer">
 							<Image src="file://{images}/custom_game/strength.png" id="StatsStrength" class="StatsImage" hittest="false"/>
-							<Label class="StatsText" text="5000"/>
+							<Label class="StatsText" id="StatsStrengthLabel" text="5000" hittest="false"/>
 						</Panel>
 						<Panel class="StatContainer">
 							<Image src="file://{images}/custom_game/agility.png" id="StatsAgility" class="StatsImage" hittest="false"/>
-							<Label class="StatsText" text="5000"/>
+							<Label class="StatsText" id="StatsAgilityLabel" text="5000" hittest="false"/>
 						</Panel>
 						<Panel class="StatContainer">
 							<Image src="file://{images}/custom_game/intelligence.png" id="StatsIntelligence" class="StatsImage" hittest="false"/>
-							<Label class="StatsText" text="5000"/>
+							<Label class="StatsText" id="StatsIntelligenceLabel" text="5000" hittest="false"/>
 						</Panel>
 						<Panel class="StatContainer">
 							<Image src="file://{images}/custom_game/luck.png" id="StatsLuck" class="StatsImage" hittest="false"/>
-							<Label class="StatsText" text="5000"/>
+							<Label class="StatsText" id="StatsLuckLabel" text="5000" hittest="false"/>
 						</Panel>
 						<Panel class="StatContainer">
 							<Image src="file://{images}/custom_game/vitality.png" id="StatsVitality" class="StatsImage" hittest="false"/>
-							<Label class="StatsText" text="5000"/>
+							<Label class="StatsText" id="StatsVitalityLabel" text="5000" hittest="false"/>
 						</Panel>
 					</Panel>
 				</Panel>

@@ -249,7 +249,7 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 		
 			var abilityresource = $.CreatePanel( "Panel", ability, "AbilityResourceCostUnit"+unitID+"Ability"+abilityID);
 			abilityresource.AddClass("AbilityResourceFlair");
-			abilityresource.style.backgroundColor = "#49AAE488"
+			abilityresource.style.backgroundColor = "#49AAE4CC"
 			abilityHolder.manaPanel = abilityresource
 			
 			var abilityresourcelabel = $.CreatePanel( "Label", abilityresource, "AbilityResourceCostLabelUnit"+unitID+"Ability"+abilityID);
@@ -301,8 +301,29 @@ function UpdateMainContainer()
 	healthBar.value = Entities.GetHealth( currUnit )
 	
 	var stats = $("#HeroStatsContainer")
+	
+	var damage = $("#StatsDamageLabel")
+	damage.text = Math.floor((Entities.GetDamageMin( currUnit ) + Entities.GetDamageMax( currUnit ))/2 + 0.5)
+	if (Entities.GetDamageBonus( currUnit ) > 0){ damage.text =+ " + " + Entities.GetDamageBonus( currUnit )}
+	var armor = $("#StatsArmorLabel")
+	armor.text = Entities.GetPhysicalArmorValue( currUnit ).toFixed(0)
+	var speed = $("#StatsSpeedLabel")
+	speed.text = Entities.GetIdealSpeed( currUnit ).toFixed(0)
 	if( Entities.IsHero( currUnit ) ){
-		stats.style.visibility = "visible";
+		var heroInfo = CustomNetTables.GetTableValue("hero_properties", Entities.GetUnitName( currUnit ) + currUnit)
+		if(heroInfo){
+			stats.style.visibility = "visible";
+			var strength = $("#StatsStrengthLabel")
+			strength.text = heroInfo.strength.toFixed(0)
+			var agility = $("#StatsAgilityLabel")
+			agility.text = heroInfo.agility.toFixed(0)
+			var intelligence = $("#StatsIntelligenceLabel")
+			intelligence.text = heroInfo.intellect.toFixed(0)
+			var vitality = $("#StatsVitalityLabel")
+			vitality.text = heroInfo.vitality.toFixed(0)
+			var luck = $("#StatsLuckLabel")
+			luck.text = heroInfo.luck.toFixed(0)
+		}
 	} else {
 		stats.style.visibility = "collapse";
 	}

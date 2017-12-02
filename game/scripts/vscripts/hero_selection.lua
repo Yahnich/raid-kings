@@ -47,7 +47,11 @@ function HeroSelection:HeroSelectionPhase()
 		CustomGameEventManager:UnregisterListener(self.confirmListener)
 		CustomGameEventManager:UnregisterListener(self.randomListener)
 		
+		local pickParams = CustomNetTables:GetTableValue("hero_selection", "heroPickPhaseParams") or {}
+		pickParams.heroPickPhaseFinished = true
+		CustomNetTables:SetTableValue("hero_selection", "heroPickPhaseParams", pickParams)
 		
+		StatsManager:start()
 		
 		CustomGameEventManager:Send_ServerToAllClients("EndHeroSelection", {} )
 		SkillSelection:StartSkillSelection()

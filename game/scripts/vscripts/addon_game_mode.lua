@@ -26,6 +26,7 @@ require("libraries/utility")
 require("libraries/animations")
 require("hero_selection")
 require("skill_selection")
+require("statsmanager")
 
 -- require("relics/relic")
 -- require("relics/relicpool")
@@ -205,4 +206,5 @@ function CRaidKings:OnHeroPick(event)
 	local hero = EntIndexToHScript(event.heroindex)
 	if not hero or hero:GetName() == "npc_dota_hero_wisp" then return end
 	print("Hero loaded in: "..hero:GetName())
+	StatsManager:CreateCustomStatsForHero(hero)
 end

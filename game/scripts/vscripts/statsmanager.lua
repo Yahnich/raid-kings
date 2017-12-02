@@ -1,7 +1,7 @@
 require("stats")
 
 if StatsManager == nil then
-  print ( 'creating projectile manager' )
+  print ( 'creating stats manager' )
   StatsManager = {}
   StatsManager.__index = StatsManager
 end
@@ -16,7 +16,7 @@ STATS_THINK = 0.3
 
 function StatsManager:start()
   StatsManager = self
-  self.heroes = {}
+  self.heroes = self.heroes or {}
   GameRules:GetGameModeEntity():SetThink("StatsThink", self, DoUniqueString("statThinker"), STATS_THINK)
 end
 
@@ -36,13 +36,10 @@ function StatsManager:CreateCustomStatsForHero(hero)
 	if not hero.customStatEntity then 
 		hero.customStatEntity = Stats(hero)
 		hero.customStatEntity:ManageStats(hero)
+		if not self.heroes then self.heroes = {} end
 		table.insert( self.heroes, hero )
 	end
 	return hero.customStatEntity
-end
-
-if not StatsManager.heroes then 
-	StatsManager:start() 
 end
 
 function CDOTA_BaseNPC_Hero:GetStrength()
