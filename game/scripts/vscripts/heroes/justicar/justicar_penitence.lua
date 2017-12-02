@@ -9,7 +9,8 @@ function justicar_penitence:OnSpellStart()
 	local hpDamage = (self:GetTalentSpecialValueFor("hp_damage") / 100) * caster:GetHealth()
 	local damage = hpDamage * hpToDamage + self:GetTalentSpecialValueFor("base_damage") 
 	
-	local penitenceFX = ParticleManager:CreateParticle("particles/heroes/justicar/justicar_penitence.vpcf", PATTACH_POINT_FOLLOW, caster)
+	local penitenceFX = ParticleManager:CreateParticle("particles/heroes/justicar/justicar_penitence.vpcf", PATTACH_POINT, caster)
+	ParticleManager:SetParticleControlEnt(penitenceFX, 0, caster, PATTACH_POINT, "attach_hitloc", caster:GetAbsOrigin(), true)
 	ParticleManager:ReleaseParticleIndex(penitenceFX)
 	
 	caster:SetHealth( math.max(1, caster:GetHealth() - hpDamage) )
