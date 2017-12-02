@@ -60,6 +60,7 @@ end
 
 function HeroSelection:TryRandomHero(userid, event)
 	local pID = event.playerID
+	if PlayerResource:GetSelectedHeroEntity(pID):GetUnitName() ~= "npc_dota_hero_wisp" then return end
 	local randomTable = {}
 	for hero, id in pairs(GameRules.HeroList) do
 		table.insert(randomTable, hero)

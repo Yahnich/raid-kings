@@ -87,11 +87,6 @@ function EndSkillSelection(args){
 	CustomNetTables.UnsubscribeNetTableListener( skillCallback )
 	if(currentDragPanel != null){currentDragPanel.DeleteAsync(0)}
 	$.GetContextPanel().DeleteAsync(0)
-	
-	var minimapCont = dotaHud.FindChildTraverse("minimap_container");
-	minimapCont.style.align = "right top";
-	dotaHud.FindChildTraverse("minimap_block").style.align = "right top";
-	dotaHud.FindChildTraverse("minimap").style.align = "right top";
 }
 
 function CreateSkillContainer(id){

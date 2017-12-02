@@ -4,6 +4,9 @@ var localID = Game.GetLocalPlayerID();
 GameEvents.Subscribe("dota_player_update_query_unit", UpdateSelectedUnit);
 GameEvents.Subscribe("dota_player_update_selected_unit", UpdateSelectedUnit);
 GameEvents.Subscribe( "EndSkillSelection", UpdateSelectedUnit);
+GameEvents.Subscribe( "EndSkillSelection", SetHud);
+
+var dotaHud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements");
 
 (function(){
 	// Fix DOTA buttons
@@ -15,22 +18,31 @@ GameEvents.Subscribe( "EndSkillSelection", UpdateSelectedUnit);
 	var glyph = dotaHud.FindChildTraverse("GlyphScanContainer");
 	
 	abilityHud.style.visibility = "collapse";
-	netgraph.style.visibility = "collapse";
 	stats.style.visibility = "collapse";
 	topbar.style.visibility = "collapse";
 	glyph.style.visibility = "collapse";
 	
 	
-	var skillSelectionDone = CustomNetTables.GetTableValue("skill_selection", "skillPickPhaseFinished")
+	var skillSelectionDone = CustomNetTables.GetTableValue("skill_selection", "skillPickPhaseParams")
 	if( (skillSelectionDone != null && skillSelectionDone["skillPickPhaseFinished"] && skillSelectionDone["skillPickPhaseFinished"] == 1) ){
-		var minimapCont = dotaHud.FindChildTraverse("minimap_container");
-		minimapCont.style.align = "right top";
-		dotaHud.FindChildTraverse("minimap_block").style.align = "right top";
-		dotaHud.FindChildTraverse("minimap").style.align = "right top";
+		SetHud()
 	}
+
 	CreateTeamInfo()
 	UpdateSelectedUnit()
 })();
+
+function SetHud()
+{
+	var minimapCont = dotaHud.FindChildTraverse("minimap_container");
+	minimapCont.style.align = "right top";
+	dotaHud.FindChildTraverse("minimap_block").style.align = "right top";
+	dotaHud.FindChildTraverse("minimap").style.align = "right top";
+	
+	dotaHud.FindChildTraverse("minimap_block").style.marginRight = "10px";
+	minimapCont.style.marginTop = "50px";
+	dotaHud.FindChildTraverse("minimap_block").style.borderRadius = "50%";
+}
 
 function CreateTeamInfo(){
 	var playerCount = Game.GetAllPlayerIDs(); 
