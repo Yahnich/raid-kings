@@ -74,7 +74,7 @@ function ifrit_fire_surge:CreateFireSurge(vDirection)
 		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) then
 			--currentdamage = currentdamage or self:GetAbility().maxDamage
 			if not self.hitUnits[target:entindex()] then
-				self:GetAbility():DealDamage(self:GetCaster(), target, currentdamage, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, {})
+				self:GetAbility():DealDamage(self:GetCaster(), target, currentdamage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 				target:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_ifrit_fire_surge_fire_debuff", { duration = self:GetAbility():GetSpecialValueFor("dot_duration"), damage = currentdamage * self:GetAbility():GetSpecialValueFor("dot_dmg_pct") / 100} )
 				local vDirection = position - self:GetCaster():GetOrigin()
 				local nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_lina/lina_spell_dragon_slave_impact.vpcf", PATTACH_ABSORIGIN_FOLLOW, target )
@@ -87,7 +87,7 @@ function ifrit_fire_surge:CreateFireSurge(vDirection)
 		return true
 	end--projectilehit
 
-	ProjectileHandler:CreateProjectile(ProjectileThink, ProjectileHit, {  FX = "particles/heroes/ifrit/ifrit_fire_surge/ifrit_fire_surge.vpcf",
+	ProjectileHandler:CreateProjectile(ProjectileThink, ProjectileHit, {  FX = "particles/heroes/ifrit/ifrit_fire_surge_2_base.vpcf",
 																  position = self:GetCaster():GetAbsOrigin(),
 																  caster = self:GetCaster(),
 																  ability = self,
