@@ -4,7 +4,7 @@ function justicar_blessed_aegis:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	
-	local launch = ParticleManager:CreateParticle("particles/heroes/justicar/justicar_absolution_beam/justicar_absolution_beam.vpcf", PATTACH_POINT, caster)
+	local launch = ParticleManager:CreateParticle("particles/heroes/justicar/justicar_absolution_beam_2.vpcf", PATTACH_POINT, caster)
 	ParticleManager:SetParticleControlEnt(launch, 0, caster, PATTACH_POINT, "attach_attack2", caster:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(launch, 1, target, PATTACH_POINT, "attach_hitloc", target:GetAbsOrigin(), true)
 	

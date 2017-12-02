@@ -81,7 +81,7 @@ function justicar_avenging_wrath:CreateWave(vDir, fVelocity, fWidth, fDistance)
 		return true
 	end--projectilehit
 
-	ProjectileHandler:CreateProjectile(ProjectileThink, ProjectileHit, {  FX = "particles/heroes/justicar/justicar_avenging_wrath_projectile/justicar_avenging_wrath_projectile.vpcf",
+	ProjectileHandler:CreateProjectile(ProjectileThink, ProjectileHit, {  FX = "particles/heroes/justicar/justicar_avenging_wrath_projectile.vpcf",
 																  position = projPos,
 																  caster = hCaster,
 																  ability = self,
