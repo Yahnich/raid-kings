@@ -43,7 +43,7 @@ function sylph_mistral_breeze:OnSpellStart()
 		return true
 	end--projectilehit
 
-	ProjectileHandler:CreateProjectile(PROJECTILE_LINEAR, ProjectileHit, {  FX = "particles/heroes/sylph/sylph_mistral_breeze/sylph_mistral_breeze_base_1.vpcf",
+	ProjectileHandler:CreateProjectile(PROJECTILE_LINEAR, ProjectileHit, {  FX = "particles/heroes/sylph/sylph_mistral_breeze_base_1.vpcf",
 																  position = caster:GetAbsOrigin()+Vector(0,0,100),
 																  caster = caster,
 																  ability = self,

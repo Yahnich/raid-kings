@@ -49,7 +49,7 @@ function sylph_rapid_fire:ShootArrow( vDir )
 			return true
 		end--projectilehit
 
-		ProjectileHandler:CreateProjectile(PROJECTILE_LINEAR, ProjectileHit, {  FX = "particles/heroes/sylph/sylph_rapid_fire/sylph_rapid_fire_base.vpcf",
+		ProjectileHandler:CreateProjectile(PROJECTILE_LINEAR, ProjectileHit, {  FX = "particles/heroes/sylph/sylph_rapid_fire_base.vpcf",
 																	  position = self:GetCaster():GetAbsOrigin() + vDir*50 + Vector(0,0,100),
 																	  caster = self:GetCaster(),
 																	  ability = self,
