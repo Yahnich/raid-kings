@@ -5,7 +5,6 @@
 	m_nMaxParticles = 4
 	m_nInitialParticles = 1
 	m_flConstantRadius = 24.0
-	m_ConstantColor = [ 231, 189, 0, 255 ]
 	m_nConstantSequenceNumber = 1
 	m_Renderers = 
 	[
@@ -78,6 +77,10 @@
 			m_nFieldOutput = 7
 			m_flLerpTime = 0.25
 		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 255, 215, 0, 255 ]
+		},
 	]
 	m_Initializers = 
 	[
@@ -86,13 +89,12 @@
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 1.0
-			m_fLifetimeMin = 1.0
+			m_fLifetimeMax = 2.0
 		},
 		{
 			_class = "C_INIT_RandomRadius"
 			m_flRadiusMax = 150.0
-			m_flRadiusMin = 21.0
+			m_flRadiusMin = 0.0
 		},
 		{
 			_class = "C_INIT_InitialVelocityNoise"
@@ -109,12 +111,17 @@
 			m_nAlphaMin = 32
 			m_nAlphaMax = 64
 		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 255, 140, 0, 255 ]
+			m_ColorMax = [ 255, 0, 0, 255 ]
+		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 3.0
+			m_flEmitRate = 4.0
 		},
 	]
 	m_Children = 
