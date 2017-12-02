@@ -12,6 +12,12 @@
 	flow-children: right;
 }
 
+.AbilityBarAbilityContainer
+{
+	width: fit-children;
+	height: fit-children;
+}
+
 .AbilityBarAbility
 {
 	width: 80px;
@@ -19,6 +25,36 @@
 	margin: 3px;
 	border: 2px solid #565656FF;
 	border-radius: 3px;
+}
+
+.AbilityBarCooldown
+{
+	width: 100%;
+	height: 100%;
+	background-color: #565656CC;
+}
+
+.AbilityBarToggle
+{
+	width: 100%;
+	height: 100%;
+}
+
+.AbilityDisabled
+{
+	saturation: 0.4;
+	wash-color: #121212AA;
+}
+
+.AbilityBarCooldownLabel
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #FFFFFF;
+	font-size: 22px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 9px 3 #00000000;
 }
 
 #AbilityBarInnate
@@ -32,14 +68,14 @@
 
 .AbilityToggledOn
 {
-	border: 5px solid #898989FF;
+	border: 2px solid #00cc00FF;
 }
 
 .AbilityLevelFlair{
 	width: 20px;
 	height: 20px;
-	vertical-align: bottom;
-	horizontal-align: left;
+	vertical-align: top;
+	horizontal-align: right;
 	background-color: #555555FF;
 	border: 1px solid #121212FF;
 }
@@ -54,10 +90,29 @@
 .AbilityHotkeyFlair{
 	width: 20px;
 	height: 20px;
-	vertical-align: bottom;
-	horizontal-align:right;
+	vertical-align: top;
+	horizontal-align: left;
 	background-color: #555555FF;
 	border: 1px solid #121212FF;
+}
+
+.AbilityResourceFlair{
+	min-width: 20px;
+	height: 20px;
+	vertical-align: bottom;
+	horizontal-align: right;
+	margin-right: 1px;
+}
+
+.AbilityResourceLabel{
+	vertical-align: center;
+	horizontal-align: center;
+	font-size: 16px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 9px 3 #00000000;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 .AbilityMiniLabel{

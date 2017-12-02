@@ -15,7 +15,7 @@
 		</Panel>
 		<Panel class="MainSelectionInfoContainer" id="GameHudMainSelectionInfo" hittest="false">
 			<Panel id="MainSelectionHeroPortraitContainer" hittest="false">
-				<DOTAHeroMovie id="MainSelectionHeroPortrait" heroname="npc_dota_hero_lina"/>
+				<DOTAScenePanel id="MainSelectionHeroPortrait" unit="npc_dota_hero_pudge" environment="default" particleonly="false" antialias="true" onactivate="SetLocalCameraTarget()"/>
 				<Panel class="AttributeContainer" id="MainSelectionStatsContainer">
 					<Panel class="StatContainer">
 						<Image src="s2r://panorama/images/hud/reborn/icon_damage_psd.vtex" id="StatsDamage" class="StatsImage" hittest="false"/>

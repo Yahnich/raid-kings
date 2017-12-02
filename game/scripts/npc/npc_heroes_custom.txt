@@ -8,7 +8,7 @@
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
 		"Ability4"					"ifrit_kindled_soul"
-		"Ability5"					"class_filler"
+		"Ability5"					"generic_hidden"
 		"Ability6"					"class_empty_4"
 		// Talents
 		"Ability11"		"generic_empty_talent_1"
@@ -110,7 +110,7 @@
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
 		"Ability4"					"shinigami_deep_wounds"
-		"Ability5"					"class_filler"
+		"Ability5"					"generic_hidden"
 		"Ability6"					"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_hp_150"
@@ -211,7 +211,7 @@
 		"Ability2"				"class_empty_2"
 		"Ability3"				"class_empty_3"
 		"Ability4"				"sylph_zephyr"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_attack_damage_15"
@@ -313,7 +313,7 @@
 		"Ability2"				"class_empty_2"
 		"Ability3"				"class_empty_3"
 		"Ability4"				"forest_iron_bark"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents 
 		"Ability10"		"generic_empty_talent_1"
@@ -412,7 +412,7 @@
 		"Ability2"				"class_empty_2"
 		"Ability3"				"class_empty_3"
 		"Ability4"				"justicar_inner_sun"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_armor_5"
@@ -516,7 +516,7 @@
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
 		"Ability4"				"gladiatrix_fearless_assault"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"generic_empty_talent_1"
@@ -614,7 +614,7 @@
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
 		"Ability4"					"wraith_one_for_all"
-		"Ability5"					"class_filler"
+		"Ability5"					"generic_hidden"
 		"Ability6"					"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_attack_damage_15"
@@ -713,7 +713,7 @@
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
 		"Ability4"					"puppeteer_black_plague"
-		"Ability5"					"class_filler"
+		"Ability5"					"generic_hidden"
 		"Ability6"					"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_attack_damage_40"
@@ -813,7 +813,7 @@
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
 		"Ability4"				"guardian_fortitude"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"guardian_fortitude_talent_1"
@@ -912,7 +912,7 @@
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
 		"Ability4"				"mystic_life_weaver"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"generic_empty_talent_1"

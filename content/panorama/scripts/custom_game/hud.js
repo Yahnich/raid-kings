@@ -1,10 +1,9 @@
 "use strict";
 var localID = Game.GetLocalPlayerID();
 
-GameEvents.Subscribe("dota_player_update_query_unit", UpdateAbilityBar);
-GameEvents.Subscribe("dota_player_update_selected_unit", UpdateAbilityBar);
-GameEvents.Subscribe("dota_player_gained_level", UpdateAbilityBar);
-GameEvents.Subscribe( "EndSkillSelection", UpdateAbilityBar);
+GameEvents.Subscribe("dota_player_update_query_unit", UpdateSelectedUnit);
+GameEvents.Subscribe("dota_player_update_selected_unit", UpdateSelectedUnit);
+GameEvents.Subscribe( "EndSkillSelection", UpdateSelectedUnit);
 
 (function(){
 	// Fix DOTA buttons
@@ -30,7 +29,7 @@ GameEvents.Subscribe( "EndSkillSelection", UpdateAbilityBar);
 		dotaHud.FindChildTraverse("minimap").style.align = "right top";
 	}
 	CreateTeamInfo()
-	UpdateAbilityBar()
+	UpdateSelectedUnit()
 })();
 
 function CreateTeamInfo(){
@@ -92,17 +91,54 @@ function UpdateHUD(){
 		if(pID != localID){UpdateInfoContainer(pID);}
 	}
 	UpdateMainContainer()
+	UpdateAbilityBar()
 }
 
 function UpdateAbilityBar()
 {
 	var currUnit = 	Players.GetLocalPlayerPortraitUnit()
+	var abilityBar = $("#MainSelectionAbilityContainer")
+	for(var abilityHolder of abilityBar.Children()){
+		if( abilityHolder.id != "AbilityBarInnate" && abilityHolder.abilityname != Abilities.GetAbilityName( Entities.GetAbility( currUnit, 3 ) ))
+		{
+			var abilityID = abilityHolder.abilityID
+			
+			var onCooldown =  Abilities.GetCooldownTimeRemaining( abilityID ) > 0
+			var isActivated = Abilities.IsActivated( abilityID )
+			abilityHolder.ability.SetHasClass("AbilityDisabled", onCooldown || !isActivated)
+			abilityHolder.toggleState.SetHasClass("AbilityToggledOn", Abilities.GetToggleState( abilityID ))
+			if( abilityID != null && onCooldown && isActivated) {
+				abilityHolder.cooldownPanel.style.visibility = "visible"
+				abilityHolder.cooldownPanelLabel.style.visibility = "visible"
+				abilityHolder.cooldownPanelLabel.text = Abilities.GetCooldownTimeRemaining( abilityID ).toFixed(1)
+				var completion = Abilities.GetCooldownTimeRemaining( abilityID ) /  Abilities.GetCooldownLength( abilityID ) * 360
+				abilityHolder.cooldownPanel.style.clip = "radial(50% 50%, 0deg, " + Math.floor(completion) + "deg)";
+			} else{
+				abilityHolder.cooldownPanel.style.visibility = "collapse"
+				abilityHolder.cooldownPanelLabel.style.visibility = "collapse"
+			}
+			
+			if( Abilities.GetManaCost( abilityID ) > 0)
+			{
+				abilityHolder.manaPanel.style.visibility = "visible"
+			}
+			abilityHolder.manaLabel.text = Abilities.GetManaCost( abilityID );
+			abilityHolder.levelPanel.text = Abilities.GetLevel( abilityID );
+		}
+	}
+}
+
+function UpdateSelectedUnit()
+{
+	var currUnit = 	Players.GetLocalPlayerPortraitUnit()
 	var localPlayerOwned = (currUnit == Players.GetPlayerHeroEntityIndex( localID ))
+	var portrait = $("#MainSelectionHeroPortrait")
+	
 	var abilityBar = $("#MainSelectionAbilityContainer")
 	var innate = $("#AbilityBarInnate")
 	var currInnate = Abilities.GetAbilityName( Entities.GetAbility( currUnit, 3 ) )
 	
-	if( innate.abilityname != currInnate){
+	if( portrait.unitID != currUnit || innate.abilityname != currInnate ){
 		innate.abilityname = currInnate
 		innate.showTooltip = function(){
 			$.DispatchEvent("DOTAShowAbilityTooltipForEntityIndex", innate, innate.abilityname, Players.GetPlayerHeroEntityIndex( currUnit ));
@@ -115,13 +151,19 @@ function UpdateAbilityBar()
 		innate.SetPanelEvent("onmouseout", innate.hideTooltip );
 	}
 	
+	portrait.unitID = currUnit
+	portrait.SetUnit(Entities.GetUnitName( currUnit ), "default")
+	
+	
+	
 	if( Entities.IsHero( currUnit ) ){
 		innate.style.visibility = "visible";
 	} else {
 		innate.style.visibility = "collapse";
 	}
+	
 	for(var ability of abilityBar.Children()){
-		if( ability.id != "AbilityBarInnate")
+		if( ability.id != "AbilityBarInnate" && ability.abilityname != Abilities.GetAbilityName( Entities.GetAbility( currUnit, 3 ) ))
 		{
 			ability.style.visibility = "collapse";
 			ability.DeleteAsync(0)
@@ -131,7 +173,8 @@ function UpdateAbilityBar()
 	for (var i = 0; i < Entities.GetAbilityCount( currUnit ); i++) {
 		var abilityID = Entities.GetAbility( currUnit, i )
 		var isTalent = (Abilities.GetAbilityType( abilityID ) & ABILITY_TYPES.ABILITY_TYPE_ATTRIBUTES) == ABILITY_TYPES.ABILITY_TYPE_ATTRIBUTES
-		if (!Abilities.IsHidden(currUnit, abilityID) && !isTalent && !Abilities.IsPassive( abilityID ) && i != 3){
+		var isHidden = (Abilities.GetBehavior( abilityID ) & DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_HIDDEN) == DOTA_ABILITY_BEHAVIOR.DOTA_ABILITY_BEHAVIOR_HIDDEN
+		if (!Abilities.IsHidden(currUnit, abilityID) && !isHidden && !isTalent && i != 3){
 			CreateAbility(currUnit, abilityID, localPlayerOwned)
 		}
 	}
@@ -141,12 +184,39 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 {
 	var abilityBar = $("#MainSelectionAbilityContainer")
 	
-	var ability = $.CreatePanel( "DOTAAbilityImage", abilityBar, "AbilityUnit"+unitID+"Ability"+abilityID);
-	ability.AddClass("AbilityBarAbility")
+	var abilityHolder = $.CreatePanel( "Panel", abilityBar, "AbilityHolderUnit"+unitID+"Ability"+abilityID);
+	abilityHolder.abilityID = abilityID
+	abilityHolder.AddClass("AbilityBarAbilityContainer");
+	
+	var ability = $.CreatePanel( "DOTAAbilityImage", abilityHolder, "AbilityUnit"+unitID+"Ability"+abilityID);
+	ability.AddClass("AbilityBarAbility");
+	abilityHolder.ability = ability
+	
+	var toggleState = $.CreatePanel( "Panel", abilityHolder, "AbilityUnit"+unitID+"Ability"+abilityID);
+	toggleState.AddClass("AbilityBarToggle");
+	abilityHolder.toggleState = toggleState
+	abilityHolder.toggleState.SetHasClass("AbilityToggledOn", Abilities.GetToggleState( abilityID ))
+	
+	var abilityCooldown = $.CreatePanel( "Panel", abilityHolder, "AbilityUnitCooldown"+unitID+"Ability"+abilityID);
+	abilityCooldown.AddClass("AbilityBarCooldown")
+	abilityHolder.cooldownPanel = abilityCooldown
+	
+	var abilityCooldownLabel = $.CreatePanel( "Label", abilityHolder, "AbilityUnitCDLabel"+unitID+"Ability"+abilityID);
+	abilityCooldownLabel.AddClass("AbilityBarCooldownLabel")
+	abilityHolder.cooldownPanelLabel = abilityCooldownLabel
+	
+	if( Abilities.GetCooldownTimeRemaining( abilityHolder.abilityID ) > 0) {
+		abilityCooldownLabel.text = Abilities.GetCooldownTimeRemaining( abilityID )
+		var completion = Abilities.GetCooldownTimeRemaining( abilityHolder.abilityID ) /  Abilities.GetCooldownLength( abilityID )
+		abilityCooldown.style.clip = "radial(50% 50%, 0deg, " + Math.floor(completion) + "deg)";
+	} else{
+		abilityCooldown.style.visibility = "collapse"
+		abilityCooldownLabel.style.visibility = "collapse"
+	}
 	
 	if(localPlayerOwned)
 	{
-		var abilityhotkey = $.CreatePanel( "Panel", ability, "AbilityHotkeyUnit"+unitID+"Ability"+abilityID);
+		var abilityhotkey = $.CreatePanel( "Panel", abilityHolder, "AbilityHotkeyUnit"+unitID+"Ability"+abilityID);
 		abilityhotkey.AddClass("AbilityHotkeyFlair")
 		
 		var abilityhotkeylabel = $.CreatePanel( "Label", abilityhotkey, "AbilityHotkeyLabelUnit"+unitID+"Ability"+abilityID);
@@ -154,8 +224,9 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 		abilityhotkeylabel.text = Abilities.GetKeybind(abilityID)
 		
 		
-		var abilitylevel = $.CreatePanel( "Panel", ability, "AbilityLevelUnit"+unitID+"Ability"+abilityID);
+		var abilitylevel = $.CreatePanel( "Panel", abilityHolder, "AbilityLevelUnit"+unitID+"Ability"+abilityID);
 		abilitylevel.AddClass("AbilityLevelFlair")
+		abilityHolder.levelPanel = abilitylevel
 		if( Entities.GetAbilityPoints( unitID ) > 0 && 	Entities.GetLevel( unitID ) >= Abilities.GetHeroLevelRequiredToUpgrade( abilityID ) && Abilities.GetLevel( abilityID ) < Abilities.GetMaxLevel( abilityID ) )
 		{
 			var abilitycross = $.CreatePanel( "Image", abilitylevel, "AbilityLevelLabelUnit"+unitID+"Ability"+abilityID);
@@ -175,25 +246,50 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 			abilitylevellabel.AddClass("AbilityMiniLabel")
 			abilitylevellabel.text = Abilities.GetLevel( abilityID )
 		}
+		
+			var abilityresource = $.CreatePanel( "Panel", ability, "AbilityResourceCostUnit"+unitID+"Ability"+abilityID);
+			abilityresource.AddClass("AbilityResourceFlair");
+			abilityresource.style.backgroundColor = "#49AAE488"
+			abilityHolder.manaPanel = abilityresource
+			
+			var abilityresourcelabel = $.CreatePanel( "Label", abilityresource, "AbilityResourceCostLabelUnit"+unitID+"Ability"+abilityID);
+			abilityresourcelabel.AddClass("AbilityResourceLabel");
+			abilityresourcelabel.text = Abilities.GetManaCost( abilityID );
+			abilityresourcelabel.style.color = "#FFFFFF"
+			abilityHolder.manaLabel = abilityresourcelabel
+			
+			if( Abilities.GetManaCost( abilityID ) == 0)
+			{
+				abilityresource.style.visibility = "collapse"
+			}
 	}
 	
 	ability.abilityname = Abilities.GetAbilityName( abilityID );
-	ability.showTooltip = function(){
-		$.DispatchEvent("DOTAShowAbilityTooltipForEntityIndex", ability, ability.abilityname, Players.GetPlayerHeroEntityIndex( unitID ));
+	abilityHolder.showTooltip = function(){
+		$.DispatchEvent("DOTAShowAbilityTooltipForEntityIndex", abilityHolder, ability.abilityname, unitID);
 	}
-	ability.hideTooltip = function(){ 
-		$.DispatchEvent("DOTAHideAbilityTooltip", ability);
+	abilityHolder.hideTooltip = function(){ 
+		$.DispatchEvent("DOTAHideAbilityTooltip", abilityHolder);
 	}
 	
-	ability.SetPanelEvent("onmouseover", ability.showTooltip );
-	ability.SetPanelEvent("onmouseout", ability.hideTooltip );
+	abilityHolder.tryCast = function(){ 
+		Abilities.ExecuteAbility( abilityID, Abilities.GetCaster( abilityID ), false )
+	}
+	
+	abilityHolder.SetPanelEvent("onmouseover", abilityHolder.showTooltip );
+	abilityHolder.SetPanelEvent("onmouseout", abilityHolder.hideTooltip );
+	abilityHolder.SetPanelEvent("onactivate", abilityHolder.tryCast );
+}
+
+function SetLocalCameraTarget()
+{
+	GameUI.SetCameraTarget( Players.GetLocalPlayerPortraitUnit() )
+	$.Schedule(0.03, function() { GameUI.SetCameraTarget( -1 ) });
 }
 
 function UpdateMainContainer()
 {
 	var currUnit = 	Players.GetLocalPlayerPortraitUnit()
-	var portrait = $("#MainSelectionHeroPortrait")
-	portrait.heroname = Entities.GetUnitName( currUnit )
 	var healthBar = $("#MainSelectionHealthBar")
 	var manaBar = $("#MainSelectionManaBar")
 	var healthLabel = $("#HealthLabel")

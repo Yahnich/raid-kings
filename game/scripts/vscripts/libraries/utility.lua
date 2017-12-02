@@ -7,16 +7,6 @@ function Context_Wrap(o, funcname)
 	return function(...) o[funcname](o, ...) end
 end
 
-function SendClientSync(key, value)
-	CustomNetTables:SetTableValue( "syncing_purposes",key, {value = value} )
-end
-
-function GetClientSync(key)
- 	local value = CustomNetTables:GetTableValue( "syncing_purposes", key).value
-	CustomNetTables:SetTableValue( "syncing_purposes",key, {} )
-	return value
-end
-
 function HasValInTable(checkTable, val)
 	for key, value in pairs(checkTable) do
 		if value == val then return true end
