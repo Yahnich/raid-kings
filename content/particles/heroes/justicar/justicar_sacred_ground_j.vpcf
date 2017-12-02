@@ -13,15 +13,13 @@
 	[
 		{
 			_class = "C_OP_RenderSprites"
-			VisibilityInputs = 
-			{
-				m_flInputMin = 1.0
-			}
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_hTexture = resource:"materials/particle/rubick/bubble_energy_01.vtex"
+			m_hTexture = resource:"materials/particle/monkey_king/ti7_immortal/mk_ti7_immortal_strike_swirl.vtex"
 			m_nOrientationType = 2
 			m_flAnimationRate2 = 0.1
 			m_flAnimationRate = 1.25
+			m_bAdditive = true
+			m_flOverbrightFactor = 3.0
 		},
 	]
 	m_Operators = 
@@ -41,8 +39,6 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 56, 85, 72, 255 ]
-			m_flFadeStartTime = 0.3
 		},
 		{
 			_class = "C_OP_AlphaDecay"
@@ -61,6 +57,11 @@
 		},
 		{
 			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.1
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 5
 		},
 	]
 	m_Initializers = 
@@ -73,14 +74,12 @@
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
-			m_nAlphaMax = 113
-			m_nAlphaMin = 89
+			m_nAlphaMin = 0
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 12, 147, 85, 255 ]
-			m_ColorMin = [ 0, 75, 34, 255 ]
-			m_TintMin = [ 21, 27, 15, 255 ]
+			m_ColorMax = [ 255, 255, 58, 255 ]
+			m_ColorMin = [ 238, 232, 170, 255 ]
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -90,8 +89,8 @@
 		},
 		{
 			_class = "C_INIT_PositionOffset"
-			m_OffsetMin = [ 0.0, 0.0, 144.0 ]
-			m_OffsetMax = [ 0.0, 0.0, 144.0 ]
+			m_OffsetMin = [ -25.0, -25.0, 100.0 ]
+			m_OffsetMax = [ 25.0, 25.0, 100.0 ]
 		},
 		{
 			_class = "C_INIT_RemapCPtoScalar"
@@ -106,6 +105,11 @@
 			m_vInputMax = [ 255.0, 255.0, 255.0 ]
 			m_nCPInput = 15
 			m_nOpScaleCP = 16
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 8
 		},
 	]
 	m_Emitters = 

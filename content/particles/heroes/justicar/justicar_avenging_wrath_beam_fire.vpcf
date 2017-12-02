@@ -74,8 +74,8 @@
 		},
 		{
 			_class = "C_OP_DistanceToCP"
-			m_flInputMin = 50.0
-			m_flInputMax = 100.0
+			m_flInputMin = 100.0
+			m_flInputMax = 200.0
 			m_nStartCP = 1
 			m_bScaleCurrent = true
 		},
@@ -103,7 +103,7 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 255, 228, 181, 255 ]
+			m_ColorMax = [ 238, 232, 170, 255 ]
 			m_ColorMin = [ 255, 255, 0, 255 ]
 		},
 		{

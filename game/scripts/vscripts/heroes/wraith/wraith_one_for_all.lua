@@ -68,7 +68,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_wraith_one_for_all:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO
+	return DOTA_UNIT_TARGET_ALL
 end
 
 function modifier_wraith_one_for_all:GetAuraEntityReject( entity )
@@ -133,7 +133,7 @@ function modifier_wraith_one_for_all_aura:GetModifierIncomingDamage_Percentage(p
 		local hp = math.abs(params.damage / self:GetParent():GetMaxHealth() * (self.damage_redirection / 100)) * self:GetCaster():GetMaxHealth()
 		local damage = math.ceil( math.min(spread, hp) )
 		ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_all_for_one_steal.vpcf", PATTACH_POINT_FOLLOW, self:GetParent(), self:GetCaster())
-		self:GetAbility():DealDamage(params.attacker, self:GetCaster(), damage, 0, {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_REFLECTION}})
+		self:GetAbility():DealDamage(params.attacker, self:GetCaster(), damage, {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_REFLECTION}, 0)
 		return self.damage_redirection
 	end
 end
@@ -201,7 +201,7 @@ end
 --------------------------------------------------------------------------------
 
 function modifier_wraith_all_for_one:GetAuraSearchType()
-	return DOTA_UNIT_TARGET_HERO
+	return DOTA_UNIT_TARGET_ALL
 end
 
 function modifier_wraith_all_for_one:GetAuraEntityReject( entity )
@@ -258,7 +258,7 @@ function modifier_wraith_all_for_one:GetModifierIncomingDamage_Percentage(params
 				local altSpread = math.abs(damagePct * ally:GetMaxHealth() * allyPct / 100)
 				local damage = math.ceil(math.min(altSpread, spreadDamage))
 				ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_all_for_one_damage.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster(), ally)
-				self:GetAbility():DealDamage(params.attacker, ally, damage, 0, {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_REFLECTION}})
+				self:GetAbility():DealDamage(params.attacker, ally, damage, {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL + DOTA_DAMAGE_FLAG_REFLECTION}, 0)
 			end
 			return self.damage_redirection
 		end

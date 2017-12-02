@@ -3,7 +3,6 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 256
-	m_ConstantColor = [ 255, 242, 179, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -54,6 +53,11 @@
 			m_vecOutputMin = [ -64.0, -64.0, -64.0 ]
 			m_flNoiseScaleLoc = 3.0
 			m_flNoiseScale = 3.0
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 238, 232, 170, 255 ]
+			m_ColorMax = [ 255, 255, 0, 255 ]
 		},
 	]
 	m_Emitters = 

@@ -70,6 +70,11 @@
 			_class = "C_INIT_CreateWithinSphere"
 			m_nControlPointNumber = 1
 		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 100.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 100.0 ]
+		},
 	]
 	m_Emitters = 
 	[

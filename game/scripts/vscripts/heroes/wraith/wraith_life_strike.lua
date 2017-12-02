@@ -28,22 +28,8 @@ function wraith_life_strike:OnSpellStart()
 	local damage = self:GetSpecialValueFor("wave_damage")
 	local healPerc = self:GetTalentSpecialValueFor("life_leeched") / 100
 
-	local ProjectileThink = function(self)
-		local position = self:GetPosition()
-		local velocity = self:GetVelocity()
-		local speed = self:GetSpeed()
-		local caster = self:GetCaster()
-		if velocity.z > 0 then velocity.z = 0 end
-		velocity = vDir * speed * FrameTime()
-		if velocity:Length2D() ~= speed then velocity = velocity:Normalized() * speed end
-		
-		self:SetVelocity(velocity)
-		--self:SetPosition( GetGroundPosition(position, nil) + Vector(0,0,128) + velocity*FrameTime() )
-		self:SetPosition( position + (velocity*FrameTime()) )
-	end	--projectileThink
-
 	local ProjectileHit = function(self, target, position)
-		--if not target then return false else return true end
+		if not target then return end
 		local caster = self:GetCaster()
 
 		local heal = damage * healPerc
@@ -91,8 +77,7 @@ function wraith_life_strike:OnSpellStart()
 		end
 		
 		if not self.hitUnits[target:entindex()] then
-			self:GetAbility():DealDamage(caster, target, damage, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
-			
+			self:GetAbility():DealDamage(caster, target, {}, damage, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 			self.hitUnits[target:entindex()] = true
 		end
 		return true

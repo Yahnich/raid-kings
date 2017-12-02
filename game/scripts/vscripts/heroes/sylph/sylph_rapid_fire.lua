@@ -11,7 +11,7 @@ function sylph_rapid_fire:OnSpellStart()
 	local spread = self:GetTalentSpecialValueFor("spread_rad")
 	local minspread = self:GetTalentSpecialValueFor("min_spread")
 	local spreadDiff = (spread - minspread) * (self.caster:GetIdealSpeed()-self.caster:GetBaseMoveSpeed())/580
-	print(spreadDiff)
+	--print(spreadDiff)
 	spread = math.max(minspread, spread - spreadDiff)
 	
 	self.arrows = self.arrows or 0
@@ -37,32 +37,31 @@ end
 function sylph_rapid_fire:ShootArrow( vDir )
 	if not self.arrows then return end
 	if self.arrows >= 1 then
-		local projectileTable = {
-			Ability = self,
-			EffectName = "particles/heroes/sylph/sylph_rapid_fire.vpcf",
-			vSpawnOrigin = self.caster:GetAbsOrigin() + vDir * 128,
-			fDistance = self.caster:GetAttackRange(),
-			fStartRadius = 200,
-			fEndRadius = 200,
-			Source = self:GetCaster(),
-			iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-			iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-			bDeleteOnHit = false,
-			vVelocity = vDir * self.caster:GetProjectileSpeed(),
-		}
-		ProjectileManager:CreateLinearProjectile( projectileTable )
+		local ProjectileHit = function(self, target, position)
+			if not target then return end
+			if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) then
+				if not self.hitUnits[target:entindex()] then
+					self:GetCaster():PerformAttack( target, true, true, true, true, false, false, false )
+					EmitSoundOn("Hero_Windrunner.PowershotDamage", target)
+					self.hitUnits[target:entindex()] = true
+				end
+			end
+			return true
+		end--projectilehit
+
+		ProjectileHandler:CreateProjectile(PROJECTILE_LINEAR, ProjectileHit, {  FX = "particles/heroes/sylph/sylph_rapid_fire_base.vpcf",
+																	  position = self:GetCaster():GetAbsOrigin() + vDir*50 + Vector(0,0,100),
+																	  caster = self:GetCaster(),
+																	  ability = self,
+																	  speed = self:GetCaster():GetProjectileSpeed(),
+																	  radius = 75,
+																	  velocity = vDir * self:GetCaster():GetProjectileSpeed(),
+																	  duration = 10,
+																	  distance = self:GetCaster():GetAttackRange(),
+																	  hitUnits = {}})
 		self.arrows = self.arrows - 1
 	end
 end
-
-function sylph_rapid_fire:OnProjectileHit(hTarget, vLocation)
-	if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
-		self.caster:PerformAttack( hTarget, true, true, true, true, false, false, false )
-		EmitSoundOn("Hero_Windrunner.PowershotDamage", hTarget)
-		return true
-	end
-end
-
 
 LinkLuaModifier( "modifier_sylph_rapid_fire_talent_1", "heroes/sylph/sylph_rapid_fire.lua", LUA_MODIFIER_MOTION_NONE )
 modifier_sylph_rapid_fire_talent_1 = modifier_sylph_rapid_fire_talent_1 or class({})

@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 64
 	m_flConstantRadius = 64.0
-	m_ConstantColor = [ 255, 236, 140, 255 ]
+	m_ConstantColor = [ 238, 232, 170, 255 ]
 	m_bShouldSort = false
 	m_Renderers = 
 	[
@@ -47,6 +47,11 @@
 			m_nCP1 = 5
 			m_vecCP1Pos = [ 0.0, 0.0, 0.0 ]
 		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 238, 232, 170, 255 ]
+			m_bDisableOperator = true
+		},
 	]
 	m_Initializers = 
 	[
@@ -66,6 +71,11 @@
 			m_flParticlesPerOrbit = 31.5
 			m_bEvenDistribution = true
 			m_flInitialRadius = 8.0
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_OffsetMin = [ 0.0, 0.0, 5.0 ]
+			m_OffsetMax = [ 0.0, 0.0, 5.0 ]
 		},
 	]
 	m_Emitters = 

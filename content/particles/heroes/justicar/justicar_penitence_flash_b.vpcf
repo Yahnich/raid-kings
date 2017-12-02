@@ -3,7 +3,6 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 12
-	m_ConstantColor = [ 255, 215, 0, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -15,6 +14,7 @@
 			m_flMaxSize = 0.25
 			m_hTexture = resource:"materials/particle/smoke/maya_wispy/wispy_v2.vtex"
 			m_flAnimationRate = 1.0
+			m_flOverbrightFactor = 3.0
 		},
 	]
 	m_Operators = 
@@ -69,6 +69,11 @@
 			_class = "C_INIT_PositionOffset"
 			m_OffsetMin = [ 0.0, 0.0, 32.0 ]
 			m_OffsetMax = [ 0.0, 0.0, 64.0 ]
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 238, 232, 170, 255 ]
+			m_ColorMax = [ 255, 255, 0, 255 ]
 		},
 	]
 	m_Emitters = 

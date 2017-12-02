@@ -4,13 +4,10 @@ function justicar_blessed_aegis:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	
-	local cast = ParticleManager:CreateParticle("particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_purification_immortal_cast.vpcf", PATTACH_POINT_FOLLOW, caster)
-	ParticleManager:SetParticleControl(cast, 0, caster:GetAbsOrigin())
-	ParticleManager:SetParticleControl(cast, 1, target:GetAbsOrigin())
-	ParticleManager:ReleaseParticleIndex(cast)
+	local launch = ParticleManager:CreateParticle("particles/heroes/justicar/justicar_absolution_beam_2.vpcf", PATTACH_POINT, caster)
+	ParticleManager:SetParticleControlEnt(launch, 0, caster, PATTACH_POINT, "attach_attack2", caster:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(launch, 1, target, PATTACH_POINT, "attach_hitloc", target:GetAbsOrigin(), true)
 	
-	local launch = ParticleManager:CreateParticle("particles/heroes/justicar/justicar_blessed_aegis_launch.vpcf", PATTACH_POINT_FOLLOW, target)
-	ParticleManager:SetParticleControl(launch, 2, Vector(target:GetModelRadius() * 1.5,0,0))
 	ParticleManager:ReleaseParticleIndex(launch)
 	
 	EmitSoundOn("Hero_Omniknight.Repel", target)
@@ -20,7 +17,7 @@ function justicar_blessed_aegis:OnSpellStart()
 	if caster:HasTalent("justicar_blessed_aegis_talent_1") then
 		barrier = barrier + caster:FindTalentValue("justicar_blessed_aegis_talent_1") / 100 * caster:GetHealth()
 	end
-	print(barrier)
+	--print(barrier)
 	target:AddNewModifier(caster, self, "modifier_justicar_blessed_aegis_barrier", {barrier = barrier})
 end
 
@@ -30,7 +27,7 @@ LinkLuaModifier("modifier_justicar_blessed_aegis_barrier", "heroes/justicar/just
 if IsServer() then
 	function modifier_justicar_blessed_aegis_barrier:OnCreated(kv)
 		self.barrier = kv.barrier or 0
-		print(kv.barrier)
+		--print(kv.barrier)
 		self.particle = ParticleManager:CreateParticle("particles/heroes/justicar/justicar_blessed_aegis.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControl(self.particle, 0, self:GetParent():GetAbsOrigin())
 		ParticleManager:SetParticleControlEnt(self.particle, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_origin", self:GetParent():GetAbsOrigin(), true)

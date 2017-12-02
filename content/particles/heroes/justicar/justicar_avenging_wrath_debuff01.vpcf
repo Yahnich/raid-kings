@@ -4,7 +4,6 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 512
 	m_flConstantRadius = 180.0
-	m_ConstantColor = [ 34, 16, 31, 250 ]
 	m_nConstantSequenceNumber = 1
 	m_nGroupID = 3
 	m_flMaxDrawDistance = 2000.0
@@ -20,6 +19,7 @@
 			m_flOpStrengthMinScale = 0.0
 			m_flAnimationRate2 = 0.5
 			m_flAddSelfAmount = 3.0
+			m_bAdditive = true
 		},
 	]
 	m_Operators = 
@@ -96,8 +96,8 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 255, 255, 0, 255 ]
-			m_ColorMax = [ 255, 215, 0, 255 ]
+			m_ColorMin = [ 238, 232, 170, 255 ]
+			m_ColorMax = [ 255, 255, 0, 255 ]
 			m_TintMin = [ 255, 255, 255, 0 ]
 		},
 		{

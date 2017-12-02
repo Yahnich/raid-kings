@@ -2,7 +2,7 @@ justicar_judgement = class({})
 
 function justicar_judgement:CastFilterResultTarget(target)
 	if IsServer() then
-		if not target:IsSameTeam( self:GetCaster() ) then return UnitFilter(target, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_NONE, self:GetCaster():GetTeam() ) end
+		if not target:IsSameTeam( self:GetCaster() ) then return UnitFilter(target, DOTA_UNIT_TARGET_TEAM_FRIENDLY, DOTA_UNIT_TARGET_ALL, DOTA_UNIT_TARGET_FLAG_NONE, self:GetCaster():GetTeam() ) end
 		if target == self:GetCaster() then return UF_SUCCESS end
 		if target ~= self:GetCaster() and self:GetCaster():HasTalent("justicar_judgement_talent_1") then
 			return UF_SUCCESS
@@ -20,8 +20,22 @@ function justicar_judgement:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	
-	target:AddNewModifier(caster, self, "modifier_justicar_judgement_buff", {duration = self:GetTalentSpecialValueFor("duration")})
+	if target then
+		target:AddNewModifier(caster, self, "modifier_justicar_judgement_buff", {duration = self:GetTalentSpecialValueFor("duration")})
+	else
+		caster:AddNewModifier(caster, self, "modifier_justicar_judgement_buff", {duration = self:GetTalentSpecialValueFor("duration")})
+	end
 	EmitSoundOn("Hero_Omniknight.GuardianAngel.Cast", caster)
+end
+
+modifier_justicar_judgement_gold = class({})
+LinkLuaModifier("modifier_justicar_judgement_gold", "heroes/justicar/justicar_judgement.lua", 0)
+function modifier_justicar_judgement_gold:GetStatusEffectName()
+	return "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold.vpcf"
+end
+
+function modifier_justicar_judgement_gold:IsHidden()
+	return true
 end
 
 modifier_justicar_judgement_buff = class({})
@@ -31,6 +45,8 @@ if IsServer() then
 	function modifier_justicar_judgement_buff:OnCreated()
 		self.damageheal = self:GetAbility():GetTalentSpecialValueFor("damage_to_heal") / 100
 		self.reflect = self:GetAbility():GetTalentSpecialValueFor("reflect_damage")
+
+		self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_justicar_judgement_gold", {})
 	end
 
 	function modifier_justicar_judgement_buff:OnRefresh()
@@ -57,6 +73,7 @@ if IsServer() then
 		if self.healvalue then
 			self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_justicar_judgement_heal", {duration = self:GetAbility():GetTalentSpecialValueFor("heal_duration"), heal = self.healvalue})
 		end
+		self:GetParent():RemoveModifierByName("modifier_justicar_judgement_gold")
 	end
 end
 

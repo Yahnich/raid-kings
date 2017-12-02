@@ -32,11 +32,11 @@ function wraith_blood_ritual:OnSpellStart()
 		local spreadCount = #enemies + 1
 		local heal = baseHeal + pctHeal * target:GetMaxHealth()
 		for _, enemy in ipairs( enemies ) do
-			self:DealDamage(caster, enemy, heal/spreadCount, OVERHEAD_ALERT_DAMAGE, {damage_type = DAMAGE_TYPE_PURE})
+			self:DealDamage(caster, enemy, heal/spreadCount, {damage_type = DAMAGE_TYPE_PURE}, OVERHEAD_ALERT_DAMAGE)
 			ParticleManager:FireRopeParticle("particles/units/heroes/hero_undying/undying_soul_rip_damage.vpcf", PATTACH_POINT_FOLLOW, caster, enemy)
 			ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_lifestrike_heal/wraith_lifestrike_heal.vpcf", PATTACH_POINT_FOLLOW, target, enemy)
 		end
-		self:DealDamage(caster, caster, heal/spreadCount, OVERHEAD_ALERT_DAMAGE, {damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL})
+		self:DealDamage(caster, caster, heal/spreadCount, {damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL}, OVERHEAD_ALERT_DAMAGE)
 		ParticleManager:FireRopeParticle("particles/units/heroes/hero_undying/undying_soul_rip_damage.vpcf", PATTACH_POINT_FOLLOW, caster, caster)
 		ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_lifestrike_heal/wraith_lifestrike_heal.vpcf", PATTACH_POINT_FOLLOW, target, caster)
 		
@@ -53,6 +53,6 @@ function wraith_blood_ritual:OnSpellStart()
 		
 		EmitSoundOn("Hero_Undying.SoulRip.Enemy", target)
 
-		self:DealDamage(caster, target, baseHeal + pctHeal * caster:GetMaxHealth(), OVERHEAD_ALERT_DAMAGE, {damage_type = DAMAGE_TYPE_PURE})
+		self:DealDamage(caster, target, baseHeal + pctHeal * caster:GetMaxHealth(), {damage_type = DAMAGE_TYPE_PURE}, OVERHEAD_ALERT_DAMAGE)
 	end
 end

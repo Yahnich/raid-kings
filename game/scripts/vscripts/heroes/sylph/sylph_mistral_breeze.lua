@@ -1,61 +1,58 @@
 sylph_mistral_breeze = sylph_mistral_breeze or class({})
 
 function sylph_mistral_breeze:OnSpellStart()
-	local direction = (self:GetCursorPosition() - self:GetCaster():GetAbsOrigin()):Normalized() * Vector(1,1,0)
+	local caster = self:GetCaster()
+	local direction = (self:GetCursorPosition() - caster:GetAbsOrigin()):Normalized() * Vector(1,1,0)
 	EmitSoundOn("Hero_Windrunner.Powershot.FalconBow", self:GetCaster())
-	local projectileTable = {
-        Ability = self,
-        EffectName = "particles/heroes/sylph/sylph_mistral_breeze.vpcf",
-        vSpawnOrigin = self:GetCaster():GetAbsOrigin(),
-        fDistance = self:GetSpecialValueFor("projectile_distance"),
-        fStartRadius = self:GetSpecialValueFor("projectile_radius"),
-        fEndRadius = self:GetSpecialValueFor("projectile_radius"),
-        Source = self:GetCaster(),
-        iUnitTargetTeam = DOTA_UNIT_TARGET_TEAM_ENEMY,
-        iUnitTargetType = DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-        bDeleteOnHit = false,
-        vVelocity = direction * self:GetSpecialValueFor("projectile_speed"),
-		ExtraData = {originPointx = self:GetCaster():GetAbsOrigin().x, originPointy = self:GetCaster():GetAbsOrigin().y}
-    }
-    ProjectileManager:CreateLinearProjectile( projectileTable )
-end
 
-function sylph_mistral_breeze:OnProjectileHit_ExtraData( hTarget, vLocation, extraData )
-	if hTarget ~= nil and ( not hTarget:IsMagicImmune() ) and ( not hTarget:IsInvulnerable() ) then
-		local caster = self:GetCaster()
-		local damage = {
-			victim = hTarget,
-			attacker = caster,
-			damage = self:GetSpecialValueFor("projectile_damage") +  caster:GetIdealSpeed() * self:GetSpecialValueFor("ms_damage") / 100,
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self}
-		ApplyDamage( damage )
-		EmitSoundOn("Hero_Windrunner.PowershotDamage", hTarget)
-		local originPoint = Vector(extraData.originPointx, extraData.originPointy)
-		local directionVector = vLocation - originPoint -- Original vectors
-		local rotateVector = Vector(directionVector.y, -directionVector.x, 0) -- Normal vector
-		local compareVector = hTarget:GetAbsOrigin() - originPoint -- Comparative vector
-		local sideResult = rotateVector:Dot(compareVector)
-		local pushDir = (hTarget:GetAbsOrigin() - caster:GetAbsOrigin())
-		local distanceCap = (self:GetSpecialValueFor("projectile_distance") - directionVector:Length2D()) / self:GetSpecialValueFor("projectile_distance")
-		if (hTarget:GetAbsOrigin() - caster:GetAbsOrigin()):Length2D() > 450 or sideResult ~= 0 then
-			if sideResult > 0 then
-				pushDir = Vector(directionVector.y, -directionVector.x, 0)
-			else
-				pushDir = Vector(-directionVector.y, directionVector.x, 0)
+    local ProjectileHit = function(self, target, position)
+		if not target then return end
+		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) then
+			if not self.hitUnits[target:entindex()] then
+				local damage = self:GetAbility():GetSpecialValueFor("projectile_damage") +  caster:GetIdealSpeed() * self:GetAbility():GetSpecialValueFor("ms_damage") / 100
+
+				self:GetAbility():DealDamage(caster, target, damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
+				
+				EmitSoundOn("Hero_Windrunner.PowershotDamage", target)
+				local originPoint = target:GetAbsOrigin()
+				local directionVector = CalculateDirection(position, originPoint) -- Original vectors
+				local rotateVector = Vector(directionVector.y, -directionVector.x, 0) -- Normal vector
+				local compareVector = target:GetAbsOrigin() - originPoint -- Comparative vector
+				local sideResult = rotateVector:Dot(compareVector)
+				local pushDir = (target:GetAbsOrigin() - position)
+				local distanceCap = (self:GetAbility():GetSpecialValueFor("projectile_distance") - directionVector:Length2D()) / self:GetAbility():GetSpecialValueFor("projectile_distance")
+				if (target:GetAbsOrigin() - position):Length2D() > 450 or sideResult ~= 0 then
+					if sideResult > 0 then
+						pushDir = Vector(directionVector.y, -directionVector.x, 0)
+					else
+						pushDir = Vector(-directionVector.y, directionVector.x, 0)
+					end
+				else
+					distanceCap = distanceCap * 1.5
+				end
+				pushDir = pushDir:Normalized()
+					
+				target:AddNewModifier(caster, self:GetAbility(), "modifier_sylph_mistral_breeze_knockback", {pushMod = distanceCap, pushDirx = pushDir.x, pushDiry = pushDir.y})
+				target:AddNewModifier(caster, self:GetAbility(), "modifier_sylph_mistral_breeze_blind", {duration = self:GetAbility():GetSpecialValueFor("blind_duration")})
+				if caster:HasTalent("sylph_mistral_breeze_talent_1") then
+					caster:AddNewModifier(caster, self:GetAbility(), "modifier_sylph_mistral_breeze_talent_buff", {duration = caster:FindSpecificTalentValue("sylph_immaterialize_talent_1", "duration")})
+				end
+				self.hitUnits[target:entindex()] = true
 			end
-		else
-			distanceCap = distanceCap * 1.5
 		end
-		pushDir = pushDir:Normalized()
-			
-		hTarget:AddNewModifier(caster, self, "modifier_sylph_mistral_breeze_knockback", {pushMod = distanceCap, pushDirx = pushDir.x, pushDiry = pushDir.y})
-		hTarget:AddNewModifier(caster, self, "modifier_sylph_mistral_breeze_blind", {duration = self:GetSpecialValueFor("blind_duration")})
-		if caster:HasTalent("sylph_mistral_breeze_talent_1") then
-			caster:AddNewModifier(caster, self, "modifier_sylph_mistral_breeze_talent_buff", {duration = caster:FindSpecificTalentValue("sylph_immaterialize_talent_1", "duration")})
-		end
-	end
-	return false
+		return true
+	end--projectilehit
+
+	ProjectileHandler:CreateProjectile(PROJECTILE_LINEAR, ProjectileHit, {  FX = "particles/heroes/sylph/sylph_mistral_breeze_base_1.vpcf",
+																  position = caster:GetAbsOrigin()+Vector(0,0,100),
+																  caster = caster,
+																  ability = self,
+																  speed = self:GetSpecialValueFor("projectile_speed"),
+																  radius = self:GetSpecialValueFor("projectile_radius"),
+																  velocity = direction * self:GetSpecialValueFor("projectile_speed"),
+																  duration = 10,
+																  distance = self:GetSpecialValueFor("projectile_distance"),
+																  hitUnits = {}})
 end
 
 LinkLuaModifier( "modifier_sylph_mistral_breeze_knockback", "heroes/sylph/sylph_mistral_breeze.lua", LUA_MODIFIER_MOTION_NONE )
