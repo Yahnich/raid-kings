@@ -9,7 +9,7 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_hTexture = resource:"materials/particle/impact/fleks_ember.vtex"
+			m_hTexture = resource:"materials/particle/impact/fleks3.vtex"
 			m_flAnimationRate = 2.0
 		},
 	]
@@ -78,6 +78,11 @@
 			m_flInitialSpeedMax = 2.0
 			m_nOverrideCP = 1
 			m_flInitialRadius = 0.25
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 238, 232, 170, 255 ]
+			m_ColorMax = [ 255, 255, 0, 255 ]
 		},
 	]
 	m_Emitters = 

@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 4
-	m_ConstantColor = [ 238, 232, 170, 255 ]
+	m_ConstantColor = [ 251, 252, 150, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -15,8 +15,8 @@
 		},
 		{
 			_class = "C_OP_RenderDeferredLight"
-			m_flAlphaScale = 4.0
 			m_flRadiusScale = 1.5
+			m_flAlphaScale = 4.0
 			m_hTexture = resource:"materials/particle/particle_glow_05.vtex"
 			m_ColorScale = [ 255, 255, 255 ]
 		},
@@ -29,9 +29,9 @@
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
-			m_flEndScale = 4.0
-			m_flStartScale = 0.0
 			m_flBias = 0.75
+			m_flStartScale = 0.0
+			m_flEndScale = 4.0
 		},
 		{
 			_class = "C_OP_Decay"
@@ -40,25 +40,30 @@
 			_class = "C_OP_FadeOutSimple"
 			m_flFadeOutTime = 1.0
 		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 255, 210, 0, 255 ]
+		},
 	]
 	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 0.15
 			m_fLifetimeMin = 0.1
+			m_fLifetimeMax = 0.15
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
-			m_fSpeedMin = 24.0
-			m_fSpeedMax = 48.0
-			m_LocalCoordinateSystemSpeedMin = [ 0.0, 0.0, 32.0 ]
 			m_LocalCoordinateSystemSpeedMax = [ 0.0, 0.0, 64.0 ]
+			m_LocalCoordinateSystemSpeedMin = [ 0.0, 0.0, 32.0 ]
+			m_fSpeedMax = 48.0
+			m_fSpeedMin = 24.0
+			m_nControlPointNumber = 3
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 134.0
 			m_flRadiusMax = 144.0
+			m_flRadiusMin = 134.0
 		},
 	]
 	m_Emitters = 
@@ -66,21 +71,6 @@
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 3
-		},
-	]
-	m_controlPointConfigurations = 
-	[
-		{
-			m_name = "preview"
-			m_drivers = 
-			[
-				{
-					m_iAttachType = "PATTACH_WORLDORIGIN"
-					m_vecOffset = [ 0.0, 0.0, 0.0 ]
-					m_angOffset = [ null, null, null ]
-					m_entityName = "self"
-				},
-			]
 		},
 	]
 }

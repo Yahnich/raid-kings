@@ -2,26 +2,26 @@
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
-	m_nMaxParticles = 256
+	m_nMaxParticles = 100
+	m_flConstantRadius = 15.0
+	m_ConstantColor = [ 238, 232, 170, 255 ]
 	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
-			m_flOverbrightFactor = 5.0
-			m_hTexture = resource:"materials/particle/particle_glow_05.vtex"
+			m_hTexture = resource:"materials/particle/electrical_arc/electrical_arc02.vtex"
+			m_flOverbrightFactor = 3.0
 		},
 	]
 	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_fDrag = 0.15
-			m_Gravity = [ 0.0, 0.0, -1200.0 ]
 		},
 		{
-			_class = "C_OP_FadeAndKill"
+			_class = "C_OP_Decay"
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
@@ -29,45 +29,57 @@
 			m_flEndScale = 0.0
 			m_flBias = 0.4
 		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_flFadeOutTime = 0.75
+		},
+		{
+			_class = "C_OP_LockToBone"
+			m_nControlPointNumber = 1
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_ColorFade = [ 255, 255, 58, 255 ]
+		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 15
+			m_nSpinRateMinDegrees = 1
+		},
 	]
 	m_Initializers = 
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 0.3
-			m_fLifetimeMin = 0.25
+			m_fLifetimeMin = 0.4
+			m_fLifetimeMax = 0.4
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 10.0
-			m_flRadiusMin = 5.0
+			m_flRadiusMax = 20.0
 		},
 		{
-			_class = "C_INIT_CreateFromParentParticles"
-			m_bRandomDistribution = true
-			m_flVelocityScale = 1.0
+			_class = "C_INIT_CreateOnModel"
+			m_nControlPointNumber = 1
 		},
 		{
-			_class = "C_INIT_InitialVelocityNoise"
-			m_vecOutputMax = [ 64.0, 64.0, 64.0 ]
-			m_vecOutputMin = [ -64.0, -64.0, -64.0 ]
-			m_flNoiseScaleLoc = 3.0
-			m_flNoiseScale = 3.0
+			_class = "C_INIT_RandomRotation"
 		},
 		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 238, 232, 170, 255 ]
-			m_ColorMax = [ 255, 255, 0, 255 ]
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMax = 50
+			m_nAlphaMin = 20
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 3
 		},
 	]
 	m_Emitters = 
 	[
 		{
-			_class = "C_OP_ContinuousEmitter"
-			m_bScalePerParticle = true
-			m_flEmissionScale = 1.0
-			m_flEmissionDuration = 0.25
-			m_flEmitRate = 50.0
+			_class = "C_OP_InstantaneousEmitter"
 		},
 	]
 	m_controlPointConfigurations = 
@@ -77,6 +89,7 @@
 			m_drivers = 
 			[
 				{
+					m_iControlPoint = 1
 					m_iAttachType = "PATTACH_WORLDORIGIN"
 					m_vecOffset = [ 0.0, 0.0, 0.0 ]
 					m_angOffset = [ null, null, null ]

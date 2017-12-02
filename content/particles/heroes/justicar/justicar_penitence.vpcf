@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 16
-	m_ConstantColor = [ 255, 228, 95, 255 ]
+	m_ConstantColor = [ 238, 232, 170, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -32,7 +32,6 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 74, 142, 255, 255 ]
 		},
 		{
 			_class = "C_OP_SetControlPointOrientation"

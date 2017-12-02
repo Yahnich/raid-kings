@@ -17,6 +17,7 @@
 			m_flFinalTextureOffsetU = 1.0
 			m_nMaxTesselation = 3
 			m_nMinTesselation = 3
+			m_bAdditive = true
 		},
 	]
 	m_Operators = 
@@ -69,9 +70,8 @@
 	[
 		{
 			_class = "C_INIT_CreateWithinSphere"
-			m_fSpeedMax = 32.0
-			m_fRadiusMax = 1.0
 			m_nControlPointNumber = 2
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_VelocityFromCP"
@@ -92,13 +92,16 @@
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 255, 219, 158, 255 ]
-			m_ColorMin = [ 255, 255, 173, 255 ]
+			m_ColorMax = [ 255, 255, 0, 255 ]
+			m_ColorMin = [ 238, 232, 170, 255 ]
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
 			m_nAlphaMax = 60
 			m_nAlphaMin = 60
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
 		},
 	]
 	m_Emitters = 
