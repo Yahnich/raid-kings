@@ -8,7 +8,7 @@
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
 		"Ability4"					"ifrit_kindled_soul"
-		"Ability5"					"class_filler"
+		"Ability5"					"generic_hidden"
 		"Ability6"					"class_empty_4"
 		// Talents
 		"Ability11"		"generic_empty_talent_1"
@@ -67,18 +67,29 @@
 			"ifrit_blaze_geyser"					"true"
 		}
 		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"13"
+		"AttackDamageMax"		"31"
+		"AttackRate"		"1.600000"
+		"AttackAnimationPoint"		"0.750000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"670"
+		"ProjectileModel"		"particles/units/heroes/hero_lina/lina_base_attack.vpcf"
+		"ProjectileSpeed"		"1000"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_INTELLECT"
 		"BaseStrength"								"15"
 		"BaseIntellect"								"27"
 		"BaseAgility"								"20"
-		"BaseLuck"									"0"
-		"BaseVitality"								"0"
+		"BaseLuck"									"6"
+		"BaseVitality"								"15"
 		"BaseStrengthGain"							"1.5"
 		"BaseIntellectGain"							"2.4"
 		"BaseAgilityGain"							"2"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.3"
+		"BaseVitalityGain"							"1.2"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -87,8 +98,9 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementTurnRate"			"1.5"
-		
+		"MovementSpeed"			"295"
+		"MovementTurnRate"		"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 	}
 	"npc_dota_hero_phantom_assassin" // Shinigami
 	{
@@ -98,7 +110,7 @@
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
 		"Ability4"					"shinigami_deep_wounds"
-		"Ability5"					"class_filler"
+		"Ability5"					"generic_hidden"
 		"Ability6"					"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_hp_150"
@@ -157,18 +169,27 @@
 			"shinigami_grievous_strike"				"true"
 		}
 		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"25"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_AGILITY"
 		"BaseStrength"								"23"
 		"BaseIntellect"								"15"
 		"BaseAgility"								"31"
-		"BaseLuck"									"0"
-		"BaseVitality"								"0"
+		"BaseLuck"									"13"
+		"BaseVitality"								"25"
 		"BaseStrengthGain"							"2.1"
 		"BaseIntellectGain"							"1.4"
 		"BaseAgilityGain"							"3.5"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.5"
+		"BaseVitalityGain"							"1.5"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -177,7 +198,9 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementTurnRate"			"1.5"
+		"MovementSpeed"			"305"
+		"MovementTurnRate"		"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
 		
 	}
 	"npc_dota_hero_windrunner" // Sylph
@@ -188,7 +211,7 @@
 		"Ability2"				"class_empty_2"
 		"Ability3"				"class_empty_3"
 		"Ability4"				"sylph_zephyr"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_attack_damage_15"
@@ -247,18 +270,29 @@
 			"sylph_updraft"							"true"
 		}
 		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"34"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+		"ProjectileSpeed"		"1250"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_AGILITY"
 		"BaseStrength"								"18"
 		"BaseIntellect"								"30"
 		"BaseAgility"								"20"
-		"BaseLuck"									"0"
-		"BaseVitality"								"0"
+		"BaseLuck"									"3"
+		"BaseVitality"								"15"
 		"BaseStrengthGain"							"1.5"
 		"BaseIntellectGain"							"2.4"
 		"BaseAgilityGain"							"2.4"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.9"
+		"BaseVitalityGain"							"1.2"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -267,8 +301,9 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementTurnRate"			"1.5"
-		
+		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"MovementSpeed"			"295"
+		"MovementTurnRate"		"1.5"
 	}
 	"npc_dota_hero_treant" // Forest
 	{
@@ -278,7 +313,7 @@
 		"Ability2"				"class_empty_2"
 		"Ability3"				"class_empty_3"
 		"Ability4"				"forest_iron_bark"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents 
 		"Ability10"		"generic_empty_talent_1"
@@ -337,18 +372,27 @@
 			"forest_become_one"				"true"
 		}
 		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"62"
+		"AttackDamageMax"		"70"
+		"AttackRate"		"1.900000"
+		"AttackAnimationPoint"		"0.600000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_STRENGTH"
 		"BaseStrength"								"30"
 		"BaseIntellect"								"20"
 		"BaseAgility"								"10"
-		"BaseLuck"									"0"
-		"BaseVitality"								"0"
+		"BaseLuck"									"8"
+		"BaseVitality"								"28"
 		"BaseStrengthGain"							"2.8"
 		"BaseIntellectGain"							"2.8"
 		"BaseAgilityGain"							"0.8"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.4"
+		"BaseVitalityGain"							"2.4"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -357,6 +401,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"				"270"
 		"MovementTurnRate"			"1.5"
 	}
 	"npc_dota_hero_omniknight" // Justicar
@@ -367,7 +412,7 @@
 		"Ability2"				"class_empty_2"
 		"Ability3"				"class_empty_3"
 		"Ability4"				"justicar_inner_sun"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_armor_5"
@@ -426,6 +471,15 @@
 			"justicar_avenging_wrath"				"true"
 		}
 		
+		"ArmorPhysical"		"3"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.433000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_STRENGTH"
 		"BaseStrength"								"27"
@@ -436,8 +490,8 @@
 		"BaseStrengthGain"							"1.5"
 		"BaseIntellectGain"							"2.4"
 		"BaseAgilityGain"							"2"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.6"
+		"BaseVitalityGain"							"1.4"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -446,7 +500,9 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"				"305"
 		"MovementTurnRate"			"1.5"
+		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
 		
 	}
 	//=================================================================================================================
@@ -460,7 +516,7 @@
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
 		"Ability4"				"gladiatrix_fearless_assault"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"generic_empty_talent_1"
@@ -519,17 +575,26 @@
 			"gladiatrix_leg_sweep"					"true"
 		}
 		
+		"ArmorPhysical"		"0.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"35"
+		"AttackDamageMax"		"39"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
 		// Custom Attributes
 		"BaseStrength"								"27"
 		"BaseIntellect"								"10"
 		"BaseAgility"								"27"
-		"BaseLuck"									"0"
-		"BaseVitality"								"0"
+		"BaseLuck"									"6"
+		"BaseVitality"								"25"
 		"BaseStrengthGain"							"3"
 		"BaseIntellectGain"							"0.6"
 		"BaseAgilityGain"							"1.8"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.3"
+		"BaseVitalityGain"							"2.6"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -538,6 +603,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"		"320"
 		"MovementTurnRate"			"1.5"
 	}
 	"npc_dota_hero_skeleton_king" // Wraith
@@ -548,7 +614,7 @@
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
 		"Ability4"					"wraith_one_for_all"
-		"Ability5"					"class_filler"
+		"Ability5"					"generic_hidden"
 		"Ability6"					"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_attack_damage_15"
@@ -607,17 +673,27 @@
 			"wraith_wraiths_will"				"true"
 		}
 		
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"39"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.560000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		
 		// Custom Attributes
 		"BaseStrength"								"30"
 		"BaseIntellect"								"15"
 		"BaseAgility"								"15"
-		"BaseLuck"									"0"
-		"BaseVitality"								"27"
+		"BaseLuck"									"6"
+		"BaseVitality"								"23"
 		"BaseStrengthGain"							"3"
 		"BaseIntellectGain"							"1.5"
 		"BaseAgilityGain"							"1.5"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.8"
+		"BaseVitalityGain"							"1.8"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -626,8 +702,8 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"		"300"
 		"MovementTurnRate"			"1.5"
-		
 	}
 	"npc_dota_hero_necrolyte"
 	{
@@ -637,7 +713,7 @@
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
 		"Ability4"					"puppeteer_black_plague"
-		"Ability5"					"class_filler"
+		"Ability5"					"generic_hidden"
 		"Ability6"					"class_empty_4"
 		// Talents
 		"Ability10"		"special_bonus_attack_damage_40"
@@ -696,18 +772,27 @@
 			"puppeteer_pestilence"					"true"
 		}
 		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"26"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.530000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"550"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_INTELLECT"
 		"BaseStrength"								"20"
 		"BaseIntellect"								"34"
 		"BaseAgility"								"12"
-		"BaseLuck"									"27"
+		"BaseLuck"									"8"
 		"BaseVitality"								"27"
 		"BaseStrengthGain"							"1.5"
 		"BaseIntellectGain"							"3.4"
 		"BaseAgilityGain"							"1.3"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.5"
+		"BaseVitalityGain"							"1.2"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -716,6 +801,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"				"285"
 		"MovementTurnRate"			"1.5"
 		
 	}
@@ -727,7 +813,7 @@
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
 		"Ability4"				"guardian_fortitude"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"guardian_fortitude_talent_1"
@@ -786,17 +872,27 @@
 			"guardian_stone_fortress"				"true"
 		}
 		
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"41"
+		"AttackDamageMax"		"43"
+		"AttackRate"		"1.800000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		
 		// Custom Attributes
-		"BaseStrength"								"38"
+		"BaseStrength"								"28"
 		"BaseIntellect"								"18"
 		"BaseAgility"								"15"
-		"BaseLuck"									"27"
-		"BaseVitality"								"27"
-		"BaseStrengthGain"							"3.2"
+		"BaseLuck"									"13"
+		"BaseVitality"								"38"
+		"BaseStrengthGain"							"2.4"
 		"BaseIntellectGain"							"1.6"
 		"BaseAgilityGain"							"1.2"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.4"
+		"BaseVitalityGain"							"3.2"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -805,6 +901,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
+		"MovementSpeed"				"290"
 		"MovementTurnRate"			"1.5"
 	}
 	"npc_dota_hero_dazzle" // Mystic -> need to do it like this for mergetables
@@ -815,7 +912,7 @@
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
 		"Ability4"				"mystic_life_weaver"
-		"Ability5"				"class_filler"
+		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
 		"Ability10"		"generic_empty_talent_1"
@@ -874,18 +971,29 @@
 			"mystic_unyielding"						"true"
 		}
 		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"14"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"550"
+		"ProjectileModel"		"particles/units/heroes/hero_dazzle/dazzle_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_INTELLECT"
 		"BaseStrength"								"16"
 		"BaseIntellect"								"31"
 		"BaseAgility"								"20"
-		"BaseLuck"									"27"
-		"BaseVitality"								"27"
+		"BaseLuck"									"15"
+		"BaseVitality"								"14"
 		"BaseStrengthGain"							"1.5"
 		"BaseIntellectGain"							"3.2"
 		"BaseAgilityGain"							"1.6"
-		"BaseLuckGain"								"0"
-		"BaseVitalityGain"							"1"
+		"BaseLuckGain"								"0.8"
+		"BaseVitalityGain"							"1.3"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -894,6 +1002,108 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementTurnRate"			"1.5"
+		"MovementSpeed"					"305"
+		"MovementTurnRate"				"1.5"
+	}
+	"npc_dota_hero_templar_assassin" // Mystic -> need to do it like this for mergetables
+	{
+		"override_hero"			"npc_dota_hero_templar_assassin"
+		"DisableWearables"			"0"
+		"Ability1"				"class_empty_1"					// Ability 1
+		"Ability2"				"class_empty_2"					// Ability 2
+		"Ability3"				"class_empty_3"						// Ability 3
+		"Ability4"				"mystic_life_weaver"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"class_empty_4"
+		// Talents
+		"Ability10"		"generic_empty_talent_1"
+		"Ability11"		"special_bonus_hp_125"
+		"Ability12"		"special_bonus_cast_range_100"
+		"Ability13"		"generic_empty_talent_2"
+		"Ability14"		"mystic_life_weaver_talent_1"
+		"Ability15"		"special_bonus_mp_200"
+		"Ability16"		"generic_empty_talent_3"
+		"Ability17"		"generic_empty_talent_4"
+		
+		"HeroValues"
+		{
+			"Support"			"2"
+			"Damage"			"5"
+			"Tank"				"3"
+		}
+		
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_mystic_armor_1"
+				"2"				"item_mystic_armor_2"
+				"3"				"item_mystic_armor_3"
+				"4"				"item_mystic_armor_4"
+				"5"				"item_mystic_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_mystic_weapon_1"
+				"2"				"item_mystic_weapon_2"
+				"3"				"item_mystic_weapon_3"
+				"4"				"item_mystic_weapon_4"
+				"5"				"item_mystic_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_mystic_other_1"
+				"2"				"item_mystic_other_2"
+				"3"				"item_mystic_other_3"
+				"4"				"item_mystic_other_4"
+				"5"				"item_mystic_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"mystic_death_clasp"					"true"
+			"mystic_eternal_feast"					"true"
+			"mystic_grim_harvest"					"true"
+			"mystic_life_swap"						"true"
+			"mystic_mending_wave"					"true"
+			"mystic_mist_barrier"					"true"
+			"mystic_sacrificial_rite"				"true"
+			"mystic_unyielding"						"true"
+		}
+		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"14"
+		"AttackDamageMax"		"32"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"550"
+		"ProjectileModel"		"particles/units/heroes/hero_dazzle/dazzle_base_attack.vpcf"
+		"ProjectileSpeed"		"1200"
+		
+		// Custom Attributes
+		"AttributePrimary"							"DOTA_ATTRIBUTE_INTELLECT"
+		"BaseStrength"								"16"
+		"BaseIntellect"								"31"
+		"BaseAgility"								"20"
+		"BaseLuck"									"15"
+		"BaseVitality"								"14"
+		"BaseStrengthGain"							"1.5"
+		"BaseIntellectGain"							"3.2"
+		"BaseAgilityGain"							"1.6"
+		"BaseLuckGain"								"0.8"
+		"BaseVitalityGain"							"1.3"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"					"305"
+		"MovementTurnRate"				"1.5"
 	}
 }

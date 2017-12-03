@@ -47,7 +47,11 @@ function HeroSelection:HeroSelectionPhase()
 		CustomGameEventManager:UnregisterListener(self.confirmListener)
 		CustomGameEventManager:UnregisterListener(self.randomListener)
 		
+		local pickParams = CustomNetTables:GetTableValue("hero_selection", "heroPickPhaseParams") or {}
+		pickParams.heroPickPhaseFinished = true
+		CustomNetTables:SetTableValue("hero_selection", "heroPickPhaseParams", pickParams)
 		
+		StatsManager:start()
 		
 		CustomGameEventManager:Send_ServerToAllClients("EndHeroSelection", {} )
 		SkillSelection:StartSkillSelection()
@@ -56,6 +60,7 @@ end
 
 function HeroSelection:TryRandomHero(userid, event)
 	local pID = event.playerID
+	if PlayerResource:GetSelectedHeroEntity(pID):GetUnitName() ~= "npc_dota_hero_wisp" then return end
 	local randomTable = {}
 	for hero, id in pairs(GameRules.HeroList) do
 		table.insert(randomTable, hero)

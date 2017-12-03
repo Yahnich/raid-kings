@@ -1,5 +1,5 @@
 if SkillSelection == nil then
-  print ( 'creating projectile manager' )
+  print ( 'creating skill selection manager' )
   SkillSelection = {}
   SkillSelection.__index = SkillSelection
 end
@@ -29,10 +29,9 @@ function SkillSelection:SkillSelectionPhase()
 	if GameRules:IsGamePaused() then return 0.25 end
 	local pickParams = CustomNetTables:GetTableValue("skill_selection", "skillPickPhaseParams") or {}
 	pickParams.pickTimeRemaining = math.max(0, (pickParams.pickTimeRemaining or HERO_SELECTION_TIME) - 0.25)
-
 	if not pickParams.skillPickPhaseFinished then
 		if tonumber(pickParams.pickTimeRemaining) <= 0 then
-			pickParams.skillPickPhaseFinished = true
+			pickParams["skillPickPhaseFinished"] = true
 		end
 		CustomNetTables:SetTableValue("skill_selection", "skillPickPhaseParams", pickParams)
 		return 0.25
@@ -49,8 +48,7 @@ function SkillSelection:SkillSelectionPhase()
 		
 		
 		
-		CustomGameEventManager:Send_ServerToAllClients("EndHeroSelection", {} )
-		self:StartSkillSelection()
+		CustomGameEventManager:Send_ServerToAllClients("EndSkillSelection", {} )
 	end
 end
 
@@ -104,6 +102,23 @@ function SkillSelection:TryConfirmSkills(userid, event)
 		self:LoadHeroSkills(hero)
 		hero.HasBeenInitialized = true
 		hero.hasSkillsSelected = true
+		local selectedPlayers = CustomNetTables:GetTableValue("skill_selection", "hasPlayerSelected")
+		selectedPlayers[tostring(pID)] = true
+		allPlayersDone = true
+		for _, hero in ipairs(HeroList:GetAllHeroes()) do
+			if not selectedPlayers[tostring(hero:GetPlayerID())] then
+				allPlayersDone = false
+				break
+			end
+		end
+		
+		if allPlayersDone then
+			local pickParams = {}
+			pickParams["skillPickPhaseFinished"] = true
+			CustomNetTables:SetTableValue("skill_selection", "skillPickPhaseParams", pickParams)
+		end
+		
+		CustomNetTables:SetTableValue("skill_selection", "hasPlayerSelected", selectedPlayers)
 		CustomGameEventManager:Send_ServerToPlayer(player, "EndSkillSelection", {})
 	end
 end

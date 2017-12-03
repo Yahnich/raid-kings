@@ -180,7 +180,8 @@
 {
 	horizontal-align: middle;
 	max-width: 75%;
-	flow-children: right-wrap;
+	height: fit-children;
+	flow-children: down;
 
 	margin: 50px;
 }

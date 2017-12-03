@@ -1,14 +1,15 @@
 -- Custom Stat Values
-HP_PER_STR = 18
+CRIT_PER_STR = 5
 MR_PER_STR = 0.4
-HP_REGEN_PER_STR = 0.025
-MANA_PER_INT = 10
-MANA_REGEN_PER_INT = 0.035
+
 ARMOR_PER_AGI = 0.07
 ATKSPD_PER_AGI = 0.08
-DMG_PER_AGI = 0.5
+
 CDR_PER_INT = 0.385
 SPELL_AMP_PER_INT = 0.0075
+
+HP_PER_VIT = 20
+HP_REGEN_PER_VIT = 0.05
 
 if Stats == nil then
 	Stats = class({})
@@ -54,23 +55,30 @@ function Stats:ManageStats(hero)
 		end
 	end
 	
+	self.customIntellect = math.floor(self.customIntellect + 0.5)
+	self.customStrength = math.floor(self.customStrength + 0.5)
+	self.customAgility = math.floor(self.customAgility + 0.5)
+	self.customVitality = math.floor(self.customVitality + 0.5)
+	self.customLuck = math.floor(self.customLuck + 0.5)
+	
 	data.intellect = self.customIntellect
 	data.strength = self.customStrength
 	data.agility = self.customAgility
-	-- data.vitality = self.customVitality
-	-- data.luck = self.customLuck
+	data.vitality = self.customVitality
+	data.luck = self.customLuck
+	
 	
 	hero:AddNewModifier(hero, nil, "modifier_stat_handler", {})
-
-	Timers:CreateTimer(function() CustomNetTables:SetTableValue("hero_properties", hero:GetUnitName()..hero:entindex(), data ) end)
+	CustomNetTables:SetTableValue("hero_properties", hero:GetUnitName()..hero:entindex(), data )
+	
+	hero:CalculateStatBonus()
 end
 
 modifier_stat_handler = class({})
 LinkLuaModifier("modifier_stat_handler", "stats.lua", 0)
 
 function modifier_stat_handler:OnCreated()
-    self.HP_PER_STR = 21
-	self.HP_REGEN_PER_STR = 0.12
+    self.HP_PER_STR = 5
 	self.MR_PER_STR = 0.1
 	
 	self.ARMOR_PER_AGI = 0.07
@@ -81,15 +89,22 @@ function modifier_stat_handler:OnCreated()
 	self.MANA_REGEN_PER_INT = 0.08
 	self.SPELL_AMP_PER_INT = 0.05
 	
+	self.HP_PER_VIT = 20
+	self.HP_REGEN_PER_VIT = 0.2
+	
 	self.intelligence = self:GetParent():GetIntellect()
 	self.strength = self:GetParent():GetStrength()
 	self.agility = self:GetParent():GetAgility()
+	self.vitality = self:GetParent():GetVitality()
+	self.luck = self:GetParent():GetLuck()
 end
 
 function modifier_stat_handler:OnRefresh()
     self.intelligence = self:GetParent():GetIntellect()
 	self.strength = self:GetParent():GetStrength()
 	self.agility = self:GetParent():GetAgility()
+	self.vitality = self:GetParent():GetVitality()
+	self.luck = self:GetParent():GetLuck()
 end
 
 function modifier_stat_handler:DeclareFunctions()
@@ -120,12 +135,12 @@ function modifier_stat_handler:GetModifierBaseAttack_BonusDamage()
 	end
 end
 
-function modifier_stat_handler:GetModifierHealthBonus( params )
-    return self.strength * self.HP_PER_STR
+function modifier_stat_handler:GetModifierHealthBonus( )
+    return self.strength * self.HP_PER_STR + self.vitality * self.HP_PER_VIT
 end
 
-function modifier_stat_handler:GetModifierConstantHealthRegen( params )
-    return self.strength * self.HP_REGEN_PER_STR
+function modifier_stat_handler:GetModifierConstantHealthRegen( )
+    return self.vitality * self.HP_REGEN_PER_VIT
 end
 
 function modifier_stat_handler:GetModifierMagicalResistanceBonus( params )
