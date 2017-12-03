@@ -1005,14 +1005,14 @@
 		"MovementSpeed"					"305"
 		"MovementTurnRate"				"1.5"
 	}
-	"npc_dota_hero_templar_assassin" // Mystic -> need to do it like this for mergetables
+	"npc_dota_hero_templar_assassin" // Peacekeeper
 	{
 		"override_hero"			"npc_dota_hero_templar_assassin"
-		"DisableWearables"			"0"
+		"DisableWearables"		"0"
 		"Ability1"				"class_empty_1"					// Ability 1
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
-		"Ability4"				"mystic_life_weaver"
+		"Ability4"				"peacekeeper_lady_justice"
 		"Ability5"				"generic_hidden"
 		"Ability6"				"class_empty_4"
 		// Talents
@@ -1020,7 +1020,7 @@
 		"Ability11"		"special_bonus_hp_125"
 		"Ability12"		"special_bonus_cast_range_100"
 		"Ability13"		"generic_empty_talent_2"
-		"Ability14"		"mystic_life_weaver_talent_1"
+		"Ability14"		"peacekeeper_lady_justice_talent_1"
 		"Ability15"		"special_bonus_mp_200"
 		"Ability16"		"generic_empty_talent_3"
 		"Ability17"		"generic_empty_talent_4"
@@ -1036,45 +1036,45 @@
 		{
 			"Armor"
 			{
-				"1"				"item_mystic_armor_1"
-				"2"				"item_mystic_armor_2"
-				"3"				"item_mystic_armor_3"
-				"4"				"item_mystic_armor_4"
-				"5"				"item_mystic_armor_5"
+				"1"				"item_peacekeeper_armor_1"
+				"2"				"item_peacekeeper_armor_2"
+				"3"				"item_peacekeeper_armor_3"
+				"4"				"item_peacekeeper_armor_4"
+				"5"				"item_peacekeeper_armor_5"
 			}
 			"Weapon"
 			{
-				"1"				"item_mystic_weapon_1"
-				"2"				"item_mystic_weapon_2"
-				"3"				"item_mystic_weapon_3"
-				"4"				"item_mystic_weapon_4"
-				"5"				"item_mystic_weapon_5"
+				"1"				"item_peacekeeper_weapon_1"
+				"2"				"item_peacekeeper_weapon_2"
+				"3"				"item_peacekeeper_weapon_3"
+				"4"				"item_peacekeeper_weapon_4"
+				"5"				"item_peacekeeper_weapon_5"
 			}
 			"Other"
 			{
-				"1"				"item_mystic_other_1"
-				"2"				"item_mystic_other_2"
-				"3"				"item_mystic_other_3"
-				"4"				"item_mystic_other_4"
-				"5"				"item_mystic_other_5"
+				"1"				"item_peacekeeper_other_1"
+				"2"				"item_peacekeeper_other_2"
+				"3"				"item_peacekeeper_other_3"
+				"4"				"item_peacekeeper_other_4"
+				"5"				"item_peacekeeper_other_5"
 			}
 		}
 		
 		"Abilities"
 		{
-			"mystic_death_clasp"					"true"
-			"mystic_eternal_feast"					"true"
-			"mystic_grim_harvest"					"true"
-			"mystic_life_swap"						"true"
-			"mystic_mending_wave"					"true"
-			"mystic_mist_barrier"					"true"
-			"mystic_sacrificial_rite"				"true"
-			"mystic_unyielding"						"true"
+			"peacekeeper_adjudicator"					"true"
+			"peacekeeper_casus_belli"					"true"
+			"peacekeeper_conviction"					"true"
+			"peacekeeper_corpus_juris"					"true"
+			"peacekeeper_indictment"					"true"
+			"peacekeeper_mens_rea"					"true"
+			"peacekeeper_mistrial"				"true"
+			"peacekeeper_vindication"						"true"
 		}
 		
-		"ArmorPhysical"		"-1"
+		"ArmorPhysical"		"1"
 		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
-		"AttackDamageMin"		"14"
+		"AttackDamageMin"		"24"
 		"AttackDamageMax"		"32"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.300000"
@@ -1086,15 +1086,15 @@
 		// Custom Attributes
 		"AttributePrimary"							"DOTA_ATTRIBUTE_INTELLECT"
 		"BaseStrength"								"16"
-		"BaseIntellect"								"31"
-		"BaseAgility"								"20"
-		"BaseLuck"									"15"
-		"BaseVitality"								"14"
+		"BaseIntellect"								"16"
+		"BaseAgility"								"30"
+		"BaseLuck"									"10"
+		"BaseVitality"								"16"
 		"BaseStrengthGain"							"1.5"
-		"BaseIntellectGain"							"3.2"
-		"BaseAgilityGain"							"1.6"
+		"BaseIntellectGain"							"1.3"
+		"BaseAgilityGain"							"2.1"
 		"BaseLuckGain"								"0.8"
-		"BaseVitalityGain"							"1.3"
+		"BaseVitalityGain"							"1.8"
 		// Override Default DOTA
 		"AttributeBaseStrength"			"0"
 		"AttributeStrengthGain"			"0"
@@ -1103,7 +1103,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"					"305"
+		"MovementSpeed"					"310"
 		"MovementTurnRate"				"1.5"
 	}
 }

@@ -170,6 +170,7 @@ function SkillSelection:LoadHeroSkills(hero)
 			hero:RemoveAbility(hero:GetAbilityByIndex(talentIndex):GetName())
 			local talentName = ability.."_talent_1"
 			local talent = hero:AddAbility(talentName)
+			print(talentName)
 			talent:SetAbilityIndex(talentIndex)
 		end
 	end

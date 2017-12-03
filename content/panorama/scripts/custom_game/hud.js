@@ -3,6 +3,7 @@ var localID = Game.GetLocalPlayerID();
 
 GameEvents.Subscribe("dota_player_update_query_unit", UpdateSelectedUnit);
 GameEvents.Subscribe("dota_player_update_selected_unit", UpdateSelectedUnit);
+GameEvents.Subscribe("dota_player_gained_level", UpdateSelectedUnit);
 GameEvents.Subscribe( "EndSkillSelection", UpdateSelectedUnit);
 GameEvents.Subscribe( "EndSkillSelection", SetHud);
 
@@ -203,6 +204,7 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 	var ability = $.CreatePanel( "DOTAAbilityImage", abilityHolder, "AbilityUnit"+unitID+"Ability"+abilityID);
 	ability.AddClass("AbilityBarAbility");
 	abilityHolder.ability = ability
+	ability.abilityname = Abilities.GetAbilityName( abilityID );
 	
 	var toggleState = $.CreatePanel( "Panel", abilityHolder, "AbilityUnit"+unitID+"Ability"+abilityID);
 	toggleState.AddClass("AbilityBarToggle");
@@ -239,6 +241,12 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 		var abilitylevel = $.CreatePanel( "Panel", abilityHolder, "AbilityLevelUnit"+unitID+"Ability"+abilityID);
 		abilitylevel.AddClass("AbilityLevelFlair")
 		abilityHolder.levelPanel = abilitylevel
+		
+		var abilitylevellabel = $.CreatePanel( "Label", abilitylevel, "AbilityLevelLabelUnit"+unitID+"Ability"+abilityID);
+		abilitylevellabel.AddClass("AbilityMiniLabel")
+		abilitylevellabel.text = Abilities.GetLevel( abilityID )
+		abilitylevellabel.style.zIndex = 5
+		
 		if( Entities.GetAbilityPoints( unitID ) > 0 && 	Entities.GetLevel( unitID ) >= Abilities.GetHeroLevelRequiredToUpgrade( abilityID ) && Abilities.GetLevel( abilityID ) < Abilities.GetMaxLevel( abilityID ) )
 		{
 			var abilitycross = $.CreatePanel( "Image", abilitylevel, "AbilityLevelLabelUnit"+unitID+"Ability"+abilityID);
@@ -246,37 +254,31 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 			abilitycross.SetImage("file://{images}/custom_game/cross.png")
 			abilitycross.hittest = false
 			abilitylevel.upgradeAbility = function(){ 
-				$.Msg("Leveled up")
 				Abilities.AttemptToUpgrade( abilityID );
-				UpdateAbilityBar()
+				$.Schedule(0.03, function() { UpdateSelectedUnit() })
 			}
 			
 			abilitylevel.SetPanelEvent("onactivate", abilitylevel.upgradeAbility );
 				
-		} else {
-			var abilitylevellabel = $.CreatePanel( "Label", abilitylevel, "AbilityLevelLabelUnit"+unitID+"Ability"+abilityID);
-			abilitylevellabel.AddClass("AbilityMiniLabel")
-			abilitylevellabel.text = Abilities.GetLevel( abilityID )
-		}
+		} 
 		
-			var abilityresource = $.CreatePanel( "Panel", ability, "AbilityResourceCostUnit"+unitID+"Ability"+abilityID);
-			abilityresource.AddClass("AbilityResourceFlair");
-			abilityresource.style.backgroundColor = "#49AAE4CC"
-			abilityHolder.manaPanel = abilityresource
-			
-			var abilityresourcelabel = $.CreatePanel( "Label", abilityresource, "AbilityResourceCostLabelUnit"+unitID+"Ability"+abilityID);
-			abilityresourcelabel.AddClass("AbilityResourceLabel");
-			abilityresourcelabel.text = Abilities.GetManaCost( abilityID );
-			abilityresourcelabel.style.color = "#FFFFFF"
-			abilityHolder.manaLabel = abilityresourcelabel
-			
-			if( Abilities.GetManaCost( abilityID ) == 0)
-			{
-				abilityresource.style.visibility = "collapse"
-			}
+		var abilityresource = $.CreatePanel( "Panel", ability, "AbilityResourceCostUnit"+unitID+"Ability"+abilityID);
+		abilityresource.AddClass("AbilityResourceFlair");
+		abilityresource.style.backgroundColor = "#49AAE4CC"
+		abilityHolder.manaPanel = abilityresource
+		
+		var abilityresourcelabel = $.CreatePanel( "Label", abilityresource, "AbilityResourceCostLabelUnit"+unitID+"Ability"+abilityID);
+		abilityresourcelabel.AddClass("AbilityResourceLabel");
+		abilityresourcelabel.text = Abilities.GetManaCost( abilityID );
+		abilityresourcelabel.style.color = "#FFFFFF"
+		abilityHolder.manaLabel = abilityresourcelabel
+		
+		if( Abilities.GetManaCost( abilityID ) == 0)
+		{
+			abilityresource.style.visibility = "collapse"
+		}
 	}
 	
-	ability.abilityname = Abilities.GetAbilityName( abilityID );
 	abilityHolder.showTooltip = function(){
 		$.DispatchEvent("DOTAShowAbilityTooltipForEntityIndex", abilityHolder, ability.abilityname, unitID);
 	}
