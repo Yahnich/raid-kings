@@ -15,4 +15,5 @@
   "npc_dota_hero_treant" "1"
   "npc_dota_hero_phantom_assassin" "1"
   "npc_dota_hero_legion_commander" "1"
+  "npc_dota_hero_templar_assassin" "1"
 }

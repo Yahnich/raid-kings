@@ -1,5 +1,5 @@
 if SkillSelection == nil then
-  print ( 'creating projectile manager' )
+  print ( 'creating skill selection manager' )
   SkillSelection = {}
   SkillSelection.__index = SkillSelection
 end
@@ -29,7 +29,6 @@ function SkillSelection:SkillSelectionPhase()
 	if GameRules:IsGamePaused() then return 0.25 end
 	local pickParams = CustomNetTables:GetTableValue("skill_selection", "skillPickPhaseParams") or {}
 	pickParams.pickTimeRemaining = math.max(0, (pickParams.pickTimeRemaining or HERO_SELECTION_TIME) - 0.25)
-	for k,v in pairs(pickParams) do print(k,v) end
 	if not pickParams.skillPickPhaseFinished then
 		if tonumber(pickParams.pickTimeRemaining) <= 0 then
 			pickParams["skillPickPhaseFinished"] = true

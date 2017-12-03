@@ -26,10 +26,11 @@
 		heroRow.AddClass("HeroRoleContainerRow");
 		
 		for (var index in preFilterHeroes) {
-			CreateSelectableHero(preFilterHeroes[index], heroRow	);
+			$.Msg(heroRow.id)
+			CreateSelectableHero(preFilterHeroes[index], heroRow);
 			if(internalCounter++ >= 5){
 				rows++;
-				internalCounter = 0
+				internalCounter = 1
 				heroRow = $.CreatePanel( "Panel", parentPanel, "HeroContainerRow"+rows);
 				heroRow.AddClass("HeroRoleContainerRow");
 			}
@@ -37,7 +38,7 @@
 		
 		UpdateHeroSelectionTimer()
 	} else {
-		EndHeroSelection(null)
+		// EndHeroSelection(null)
 	}
 })();
 
@@ -65,7 +66,7 @@ function CreateSelectableHero(heroName, row){
 	var newHeroPanel = $.CreatePanel( "DOTAHeroImage", row, heroName);
 	newHeroPanel.AddClass("SelectedableHero")
 	newHeroPanel.heroname = heroName
-
+	$.Msg(heroName)
 	newHeroPanel.SetCurrentActiveHero = function SetCurrentActiveHero(){
 		var id = Game.GetLocalPlayerID()
 		QueryHeroInformation(newHeroPanel.heroname, id)
@@ -83,7 +84,7 @@ GameEvents.Subscribe( "EndHeroSelection", EndHeroSelection);
 
 function EndHeroSelection(args){
 	CustomNetTables.UnsubscribeNetTableListener( heroCallback )
-	$.GetContextPanel().DeleteAsync(1)
+	// $.GetContextPanel().DeleteAsync(1)
 }
 
 
