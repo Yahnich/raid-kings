@@ -17,7 +17,9 @@ var dotaHud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildT
 	var stats = dotaHud.FindChildTraverse("quickstats");
 	var topbar = dotaHud.FindChildTraverse("topbar");
 	var glyph = dotaHud.FindChildTraverse("GlyphScanContainer");
+	var fancyMinimap = dotaHud.FindChildTraverse("HUDSkinMinimap");
 	
+	fancyMinimap.style.visibility = "collapse";
 	abilityHud.style.visibility = "collapse";
 	stats.style.visibility = "collapse";
 	topbar.style.visibility = "collapse";
@@ -100,6 +102,10 @@ function CreateInfoContainer(id)
 function UpdateHUD(){
 	$.Schedule(0.1, UpdateHUD);
 	var playerCount = Game.GetAllPlayerIDs();
+	var scoreboard = dotaHud.FindChildTraverse("scoreboard");
+	if( scoreboard.BHasClass("ScoreboardClosed") ){
+		$("#GameHudTeamInfo").style.visibility = "visible"
+	} else{ $("#GameHudTeamInfo").style.visibility = "collapse" }
 	for (var pID of playerCount){
 		if(pID != localID){UpdateInfoContainer(pID);}
 	}
@@ -135,8 +141,12 @@ function UpdateAbilityBar()
 			{
 				abilityHolder.manaPanel.style.visibility = "visible"
 			}
-			abilityHolder.manaLabel.text = Abilities.GetManaCost( abilityID );
-			abilityHolder.levelPanel.text = Abilities.GetLevel( abilityID );
+			if(abilityHolder.manaLabel && abilityHolder.levelPanel)
+			{
+				abilityHolder.manaLabel.text = Abilities.GetManaCost( abilityID );
+				abilityHolder.levelPanel.text = Abilities.GetLevel( abilityID );
+			}
+			
 		}
 	}
 }
@@ -228,16 +238,8 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 		abilityCooldownLabel.style.visibility = "collapse"
 	}
 	
-	if(localPlayerOwned)
+	if(Entities.GetTeamNumber( unitID ) == Entities.GetTeamNumber( Players.GetPlayerHeroEntityIndex( localID ) ))
 	{
-		var abilityhotkey = $.CreatePanel( "Panel", abilityHolder, "AbilityHotkeyUnit"+unitID+"Ability"+abilityID);
-		abilityhotkey.AddClass("AbilityHotkeyFlair")
-		
-		var abilityhotkeylabel = $.CreatePanel( "Label", abilityhotkey, "AbilityHotkeyLabelUnit"+unitID+"Ability"+abilityID);
-		abilityhotkeylabel.AddClass("AbilityMiniLabel")
-		abilityhotkeylabel.text = Abilities.GetKeybind(abilityID)
-		
-		
 		var abilitylevel = $.CreatePanel( "Panel", abilityHolder, "AbilityLevelUnit"+unitID+"Ability"+abilityID);
 		abilitylevel.AddClass("AbilityLevelFlair")
 		abilityHolder.levelPanel = abilitylevel
@@ -247,20 +249,27 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 		abilitylevellabel.text = Abilities.GetLevel( abilityID )
 		abilitylevellabel.style.zIndex = 5
 		
-		if( Entities.GetAbilityPoints( unitID ) > 0 && 	Entities.GetLevel( unitID ) >= Abilities.GetHeroLevelRequiredToUpgrade( abilityID ) && Abilities.GetLevel( abilityID ) < Abilities.GetMaxLevel( abilityID ) )
+		if(localPlayerOwned)
 		{
-			var abilitycross = $.CreatePanel( "Image", abilitylevel, "AbilityLevelLabelUnit"+unitID+"Ability"+abilityID);
-			abilitycross.AddClass("AbilityLevelImage")
-			abilitycross.SetImage("file://{images}/custom_game/cross.png")
-			abilitycross.hittest = false
-			abilitylevel.upgradeAbility = function(){ 
-				Abilities.AttemptToUpgrade( abilityID );
-				$.Schedule(0.03, function() { UpdateSelectedUnit() })
-			}
+			var abilityhotkey = $.CreatePanel( "Panel", abilityHolder, "AbilityHotkeyUnit"+unitID+"Ability"+abilityID);
+			abilityhotkey.AddClass("AbilityHotkeyFlair")
 			
-			abilitylevel.SetPanelEvent("onactivate", abilitylevel.upgradeAbility );
+			var abilityhotkeylabel = $.CreatePanel( "Label", abilityhotkey, "AbilityHotkeyLabelUnit"+unitID+"Ability"+abilityID);
+			abilityhotkeylabel.AddClass("AbilityMiniLabel")
+			abilityhotkeylabel.text = Abilities.GetKeybind(abilityID)
+			
+			if( Entities.GetAbilityPoints( unitID ) > 0 && 	Entities.GetLevel( unitID ) >= Abilities.GetHeroLevelRequiredToUpgrade( abilityID ) && Abilities.GetLevel( abilityID ) < Abilities.GetMaxLevel( abilityID ) )
+			{
+				abilitylevel.AddClass("AbilityLevelImage")
+				abilitylevel.upgradeAbility = function(){ 
+					Abilities.AttemptToUpgrade( abilityID );
+					$.Schedule(0.03, function() { UpdateSelectedUnit() })
+				}
 				
-		} 
+				abilitylevel.SetPanelEvent("onactivate", abilitylevel.upgradeAbility );
+					
+			} 
+		}
 		
 		var abilityresource = $.CreatePanel( "Panel", ability, "AbilityResourceCostUnit"+unitID+"Ability"+abilityID);
 		abilityresource.AddClass("AbilityResourceFlair");
@@ -429,8 +438,9 @@ function UpdateInfoContainer(id)
 		playerPortrait.heroname = Entities.GetUnitName( heroID )
 		
 		var healthBarLabel = $("#PlayerInfoHealthBarLabelPlayer"+id);
-		var hpPerc = Entities.GetHealthPercent( heroID )
-		healthBarLabel.text = hpPerc+"%"
+		var hpPerc = Entities.GetHealth( heroID ) / Entities.GetMaxHealth( heroID ) * 100
+		healthBarLabel.text = hpPerc.toFixed(1)+"%"
+		
 		
 		var healthBar = $("#PlayerInfoHealthBarPlayer"+id);
 		healthBar.style.width = hpPerc.toFixed(1)+"%"

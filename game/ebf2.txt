@@ -909,3 +909,16 @@ Kunkka: Poseidon, the Buccaneer
 
 Aghs:
 Allies standing within 450 radius of a marked unit take -15% damage
+
+
+Shadow Fiend: Skadi, the Collector; 
+-- Innate: Collector's Hoard: Gets 5 damage per trash unit killed, gets 25 per boss, trash unit damage bonus is capped at 25 per level, boss has no limit and does not need to be killed, he merely has to be near the boss
+
+-- Skill 1: Soul Pool - Creates a damaging pool on the floor infront of Collector, upon creating all units in the pool radius take 200% AD damage.
+-- Skill 2: Spirit Release - Releases projectiles that deal 300% AD damage upon impact, after 500 units traveled the souls come back and deal another 150% AD, Collector is healed for damage dealt. Line count is 2 per soul. Always releases a projectile infront of Collector
+-- Skill 3: Oppressive Presence - Passively reduces armor in AOE by amount of souls. Upon activating doubles the armor loss
+-- Skill 4: Sinner's Reach - Damages a unit for 450% AD, adds damage taken by unit to attack range.    Passively grants agility as attack range.                                                                                                                                                                        
+-- Skill 5: Capture Soul - Roots an enemy for 5s and steals 800% AD as max health for 30s. Upon refresh updates max health if new stolen health is higher.
+-- Skill 6: Stolen Voice - Silences enemy for 10s, adds 25 stacks to Collector's Hoard and takes 30% AD per second
+-- Skill 7: Cull the Weak - Instantly kills a trash unit, grants 10 stacks of Collector's Hoard for 15s
+-- Skill 8: Begotten Gifts - Drains 10 stacks, grants +5% AD per stack

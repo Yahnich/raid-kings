@@ -275,6 +275,7 @@
 	text-align: center;
 	text-shadow: 2px 2px 9px 3 #00000000;
 	margin-top: 1px;
+	z-index: 5;
 }
 
 .RegenLabel
