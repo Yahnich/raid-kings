@@ -616,6 +616,17 @@ function CDOTA_BaseNPC:Lifesteal(source, lifestealPct, damage, target, damage_ty
 	ParticleManager:ReleaseParticleIndex(lifesteal)
 end
 
+function CDOTA_BaseNPC:Lifesteal(lifestealPct, damage)
+	local damageDealt = damage or 0
+	local flHeal = damageDealt * lifestealPct / 100
+	self:Heal(flHeal,self)
+	SendOverheadEventMessage(self:GetPlayerOwner(),OVERHEAD_ALERT_HEAL,self,flHeal,self:GetPlayerOwner()) --Substract the starting health by the new health to get exact damage taken values.
+	local lifesteal = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self)
+	ParticleManager:SetParticleControlEnt(lifesteal, 0, self, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(lifesteal, 1, self, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetAbsOrigin(), true)
+	ParticleManager:ReleaseParticleIndex(lifesteal)
+end
+
 function CDOTA_BaseNPC:HealEvent(amount, sourceAb, healer) -- for future shit
 	local healBonus = 1
 	local flAmount = amount
@@ -882,13 +893,22 @@ function CDOTABaseAbility:Stun(target, duration, bDelay)
 	target:AddNewModifier(self:GetCaster(), self, "modifier_stunned_generic", {duration = duration, delay = bDelay})
 end
 
-function CDOTABaseAbility:DealDamage(attacker, victim, damage, data)
+function CDOTABaseAbility:DealDamage(attacker, victim, damage, data, spellText)
+	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
 	local damageType = self:GetAbilityDamageType()
-	local damageFlags = 0
+	local damageFlags = self:GetAbilityTargetFlags()
 	local localdamage = damage or self:GetAbilityDamage()
+	local spellText = spellText or 0
+	--print(spellText)
 	if data and data.damage_type then damageType = data.damage_type end
 	if data then damageFlags = data.damage_flags end
 	if damageType == 0 then damageType = DAMAGE_TYPE_MAGICAL end
 	local hp = victim:GetHealth()
-	ApplyDamage({victim = victim, attacker = attacker, ability = self, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
+	if spellText > 0 then
+		local damage = ApplyDamage({victim = victim, attacker = attacker, ability = self, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
+		SendOverheadEventMessage(attacker:GetPlayerOwner(),spellText,victim,damage,attacker:GetPlayerOwner()) --Substract the starting health by the new health to get exact damage taken values.
+		return damage
+	else
+		return ApplyDamage({victim = victim, attacker = attacker, ability = self, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
+	end
 end
