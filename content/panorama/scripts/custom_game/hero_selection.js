@@ -38,7 +38,7 @@
 		
 		UpdateHeroSelectionTimer()
 	} else {
-		// EndHeroSelection(null)
+		EndHeroSelection(null)
 	}
 })();
 
@@ -84,7 +84,7 @@ GameEvents.Subscribe( "EndHeroSelection", EndHeroSelection);
 
 function EndHeroSelection(args){
 	CustomNetTables.UnsubscribeNetTableListener( heroCallback )
-	// $.GetContextPanel().DeleteAsync(1)
+	$.GetContextPanel().DeleteAsync(1)
 }
 
 
