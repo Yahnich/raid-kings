@@ -4342,48 +4342,6 @@
 			}
 		}
 	}
-	"peacekeeper_lady_justice"
-	{
-	    "BaseClass"                     "ability_lua"
-	    "ScriptFile"                    "heroes/peacekeeper/peacekeeper_lady_justice.lua"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"custom/peacekeeper_lady_justice"
-		"AbilityCastRange"				"450"
-		"MaxLevel"						"1"
-		"InnateAbility"					"1"
-		"HasScepterUpgrade"				"1"
-		
-		"precache"
-		{
-		}
-		
-	    "AbilitySpecial"
-	    {
-	    }
-	}
-	//=================================================================================================================
-	// Ability: Challenge Fears
-	//=================================================================================================================
-	"peacekeeper_lady_justice_talent_1" 
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"5"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Adjudicator
 	//=================================================================================================================
@@ -4444,28 +4402,6 @@
 			"particle"  "particles/units/heroes/hero_monkey_king/monkey_king_jump_armor_debuff.vpcf"
 	
 			"sound"  	"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
-		}
-	}
-	//=================================================================================================================
-	// Ability: Challenge Fears
-	//=================================================================================================================
-	"peacekeeper_lady_justice_talent_1" 
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"5"
-			}
 		}
 	}
 	//=================================================================================================================
@@ -4716,6 +4652,48 @@
 	// Ability: Challenge Fears
 	//=================================================================================================================
 	"peacekeeper_indictment_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"5"
+			}
+		}
+	}
+	"peacekeeper_lady_justice"
+	{
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/peacekeeper/peacekeeper_lady_justice.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/peacekeeper_lady_justice"
+		"AbilityCastRange"				"450"
+		"MaxLevel"						"1"
+		"InnateAbility"					"1"
+		"HasScepterUpgrade"				"1"
+		
+		"precache"
+		{
+		}
+		
+	    "AbilitySpecial"
+	    {
+	    }
+	}
+	//=================================================================================================================
+	// Ability: Challenge Fears
+	//=================================================================================================================
+	"peacekeeper_lady_justice_talent_1" 
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
@@ -7817,4 +7795,3 @@
 	    }
 	}
 }
-////////
