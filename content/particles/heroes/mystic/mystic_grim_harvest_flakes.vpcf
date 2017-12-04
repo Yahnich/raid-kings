@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 256
-	m_ConstantColor = [ 255, 255, 255, 155 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -51,6 +51,9 @@
 		{
 			_class = "C_OP_SpinUpdate"
 		},
+		{
+			_class = "C_OP_ColorInterpolate"
+		},
 	]
 	m_Initializers = 
 	[
@@ -72,11 +75,6 @@
 			m_fSpeedMax = 200.0
 		},
 		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 139, 0, 0, 255 ]
-			m_ColorMax = [ 255, 0, 0, 255 ]
-		},
-		{
 			_class = "C_INIT_InitialVelocityNoise"
 			m_vecOutputMax = [ 32.0, 32.0, 32.0 ]
 			m_vecOutputMin = [ -32.0, -32.0, -32.0 ]
@@ -84,7 +82,7 @@
 		},
 		{
 			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 9
+			m_nSequenceMax = 31
 		},
 		{
 			_class = "C_INIT_RandomRotation"
@@ -94,8 +92,7 @@
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
-			m_nAlphaMax = 160
-			m_nAlphaMin = 80
+			m_nAlphaMin = 0
 		},
 		{
 			_class = "C_INIT_RandomRotationSpeed"

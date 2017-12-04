@@ -17,6 +17,8 @@
 			m_flTextureVWorldSize = 1000000.0
 			m_nMaxTesselation = 3
 			m_nMinTesselation = 3
+			m_bAdditive = true
+			m_flOverbrightFactor = 5.0
 		},
 	]
 	m_Operators = 

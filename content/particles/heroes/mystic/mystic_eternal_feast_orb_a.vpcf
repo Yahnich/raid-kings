@@ -11,7 +11,7 @@
 			m_ModelList = 
 			[
 				{
-					m_model = resource:"models/props_structures/bad_ancient_sphere.vmdl"
+					m_model = resource:"models/particle/sphere.vmdl"
 				},
 			]
 		},
@@ -39,6 +39,9 @@
 			_class = "C_OP_InterpolateRadius"
 			m_flEndScale = 0.0
 		},
+		{
+			_class = "C_OP_ColorInterpolate"
+		},
 	]
 	m_Initializers = 
 	[
@@ -49,11 +52,6 @@
 			_class = "C_INIT_RandomLifeTime"
 			m_fLifetimeMax = 1.0
 			m_fLifetimeMin = 0.25
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 255, 0, 0, 248 ]
-			m_ColorMax = [ 255, 0, 0, 255 ]
 		},
 		{
 			_class = "C_INIT_RemapCPtoVector"
@@ -68,6 +66,7 @@
 		{
 			_class = "C_INIT_RandomRadius"
 			m_flRadiusMin = 0.0
+			m_flRadiusMax = 5.0
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"

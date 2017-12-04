@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 48
 	m_flConstantRadius = 128.0
-	m_ConstantColor = [ 139, 0, 0, 255 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -62,6 +62,9 @@
 			m_RateMax = [ 128.0, 128.0, 128.0 ]
 			m_RateMin = [ -128.0, -128.0, -128.0 ]
 			m_bOffset = true
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
 		},
 	]
 	m_Initializers = 

@@ -3,7 +3,7 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 3
-	m_ConstantColor = [ 85, 153, 255, 92 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -63,11 +63,6 @@
 		},
 		{
 			_class = "C_INIT_RandomRotation"
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 255, 69, 0, 255 ]
-			m_ColorMin = [ 255, 0, 0, 255 ]
 		},
 	]
 	m_Emitters = 
