@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 256
 	m_flConstantRadius = 128.0
-	m_ConstantColor = [ 23, 23, 151, 255 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -46,17 +46,12 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 104, 164, 255, 255 ]
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
 			m_flStartScale = 2.0
 			m_flEndScale = 0.5
 			m_flBias = 0.25
-		},
-		{
-			_class = "C_OP_ColorInterpolate"
-			m_nOpScaleCP = 16
 		},
 	]
 	m_Initializers = 
@@ -85,14 +80,6 @@
 			m_bScaleInitialRange = true
 			m_flOutputMin = 1.0
 			m_flOutputMax = 0.0
-		},
-		{
-			_class = "C_INIT_RemapCPtoVector"
-			m_nOpScaleCP = 16
-			m_nCPInput = 15
-			m_vInputMax = [ 255.0, 255.0, 255.0 ]
-			m_nFieldOutput = 6
-			m_vOutputMax = [ 1.0, 1.0, 1.0 ]
 		},
 	]
 	m_Emitters = 
@@ -126,6 +113,42 @@
 				m_nStartControlPointNumber = 1
 				m_flBulge = 0.4
 			}
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 15
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 255.0, 255.0, 255.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 16
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

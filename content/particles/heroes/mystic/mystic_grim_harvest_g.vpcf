@@ -3,13 +3,12 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 32
-	m_ConstantColor = [ 85, 153, 255, 255 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bMod2X = true
 			m_bDisableZBuffering = true
 			m_hTexture = resource:"materials/particle/smoke_spiral01.vtex"
 			m_flAnimationRate2 = 0.1
@@ -48,6 +47,10 @@
 			m_nField = 16
 			m_Rate = -10.0
 		},
+		{
+			_class = "C_OP_Spin"
+			m_nSpinRateDegrees = 15
+		},
 	]
 	m_Initializers = 
 	[
@@ -58,8 +61,8 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 24.0
-			m_flRadiusMin = 28.0
+			m_flRadiusMax = 50.0
+			m_flRadiusMin = 0.0
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -76,9 +79,8 @@
 			_class = "C_INIT_RandomRotation"
 		},
 		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 246, 36, 36, 255 ]
-			m_ColorMin = [ 254, 57, 57, 255 ]
+			_class = "C_INIT_RandomYawFlip"
+			m_flPercent = 1.0
 		},
 	]
 	m_Emitters = 

@@ -35,7 +35,6 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 140, 93, 0, 255 ]
 		},
 	]
 	m_Initializers = 
@@ -49,11 +48,6 @@
 			_class = "C_INIT_RandomRadius"
 			m_flRadiusMin = 40.0
 			m_flRadiusMax = 75.0
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 145, 0, 0, 255 ]
-			m_ColorMax = [ 255, 80, 0, 255 ]
 		},
 		{
 			_class = "C_INIT_RandomYawFlip"
@@ -103,4 +97,5 @@
 			]
 		},
 	]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 }

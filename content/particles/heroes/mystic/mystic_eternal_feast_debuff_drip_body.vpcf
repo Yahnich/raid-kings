@@ -50,10 +50,6 @@
 			m_flFadeOutTime = 0.85
 		},
 		{
-			_class = "C_OP_ColorInterpolateRandom"
-			m_ColorFadeMin = [ 105, 174, 99, 255 ]
-		},
-		{
 			_class = "C_OP_InterpolateRadius"
 			m_flStartTime = 0.5
 			m_flStartScale = 2.0
@@ -69,7 +65,6 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 69, 36, 0, 255 ]
 		},
 	]
 	m_Initializers = 
@@ -89,11 +84,6 @@
 			m_nAlphaMin = 50
 		},
 		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 220, 20, 60, 255 ]
-			m_ColorMin = [ 255, 0, 0, 255 ]
-		},
-		{
 			_class = "C_INIT_RandomRotation"
 		},
 		{
@@ -105,10 +95,6 @@
 			_class = "C_INIT_RandomRotationSpeed"
 			m_flDegreesMin = 60.0
 			m_flDegreesMax = 90.0
-		},
-		{
-			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 7
 		},
 		{
 			_class = "C_INIT_CreateOnModel"
@@ -159,4 +145,5 @@
 		},
 	]
 	m_nMaxParticles = 40
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 }
