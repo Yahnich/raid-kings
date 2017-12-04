@@ -1,5 +1,13 @@
 mystic_death_clasp = class({})
 
+function mystic_death_clasp:GetChannelTime()
+	return self:GetSpecialValueFor("max_channel")
+end
+
+function mystic_death_clasp:GetChannelAnimation()
+	return "ACT_DOTA_GENERIC_CHANNEL_1"
+end
+
 function mystic_death_clasp:OnSpellStart()
 	local caster = self:GetCaster()
 	
