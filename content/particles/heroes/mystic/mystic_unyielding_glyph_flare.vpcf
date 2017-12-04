@@ -31,7 +31,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 255, 137, 137, 255 ]
+			m_ColorFade = [ 255, 0, 0, 255 ]
 		},
 		{
 			_class = "C_OP_InterpolateRadius"

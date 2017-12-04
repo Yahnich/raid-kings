@@ -1,4 +1,5 @@
 peacekeeper_indictment = class({})
+LinkLuaModifier( "modifier_dazed_generic", "libraries/modifiers/modifier_dazed_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
 function peacekeeper_indictment:OnSpellStart()
 	self.caster = self:GetCaster()

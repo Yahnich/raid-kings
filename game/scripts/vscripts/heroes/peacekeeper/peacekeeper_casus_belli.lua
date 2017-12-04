@@ -1,5 +1,6 @@
 peacekeeper_casus_belli = class({})
 LinkLuaModifier( "modifier_casus_belli", "heroes/peacekeeper/peacekeeper_casus_belli.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_generic_barrier", "libraries/modifiers/modifier_generic_barrier.lua" ,LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
 function peacekeeper_casus_belli:OnSpellStart()
 	self.caster = self:GetCaster()

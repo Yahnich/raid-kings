@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 16
 	m_flConstantRadius = 7.0
-	m_ConstantColor = [ 205, 26, 26, 155 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_nConstantSequenceNumber = 7
 	m_bShouldSort = false
 	m_Renderers = 
@@ -51,7 +51,6 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 0, 8, 22, 255 ]
 		},
 		{
 			_class = "C_OP_FadeInSimple"

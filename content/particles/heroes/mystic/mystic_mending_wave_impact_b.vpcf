@@ -11,7 +11,6 @@
 			m_bAdditive = true
 			m_flOverbrightFactor = 3.0
 			m_hTexture = resource:"materials/particle/electrical_arc_white/electrical_arc_white.vtex"
-			m_bDisableOperator = true
 		},
 	]
 	m_Operators = 
@@ -44,6 +43,9 @@
 			_class = "C_OP_Spin"
 			m_nSpinRateDegrees = 9
 		},
+		{
+			_class = "C_OP_ColorInterpolate"
+		},
 	]
 	m_Initializers = 
 	[
@@ -61,8 +63,8 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 42.0
-			m_flRadiusMin = 16.0
+			m_flRadiusMax = 20.0
+			m_flRadiusMin = 5.0
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
@@ -72,11 +74,6 @@
 			_class = "C_INIT_CreateOnModel"
 			m_nControlPointNumber = 1
 			m_vecDirectionBias = [ 0.0, 0.0, 0.5 ]
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 255, 0, 0, 0 ]
-			m_ColorMin = [ 212, 15, 15, 255 ]
 		},
 	]
 	m_Emitters = 
@@ -108,4 +105,5 @@
 			]
 		},
 	]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 }

@@ -3,7 +3,6 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 16
-	m_ConstantColor = [ 202, 156, 255, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -33,6 +32,7 @@
 			_class = "C_OP_ColorInterpolate"
 			m_ColorFade = [ 139, 0, 0, 255 ]
 			m_flFadeEndTime = 0.35
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_PositionLock"
@@ -90,7 +90,7 @@
 		{
 			_class = "C_INIT_RandomColor"
 			m_ColorMin = [ 255, 0, 0, 255 ]
-			m_ColorMax = [ 220, 20, 60, 255 ]
+			m_bDisableOperator = true
 		},
 	]
 	m_Emitters = 

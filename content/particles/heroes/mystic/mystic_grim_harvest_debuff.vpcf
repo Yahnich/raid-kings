@@ -39,7 +39,6 @@
 		{
 			_class = "C_OP_ColorInterpolate"
 			m_flFadeStartTime = 0.3
-			m_ColorFade = [ 214, 8, 8, 255 ]
 		},
 		{
 			_class = "C_OP_RemapSpeedtoCP"
@@ -71,11 +70,6 @@
 	m_Initializers = 
 	[
 		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 39, 0, 0, 255 ]
-			m_ColorMin = [ 66, 4, 4, 255 ]
-		},
-		{
 			_class = "C_INIT_RandomLifeTime"
 			m_fLifetimeMax = 0.8
 			m_fLifetimeMin = 0.8
@@ -105,13 +99,10 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/units/heroes/hero_bloodseeker/gore_wound_arterial_spray_3.vpcf"
+			m_ChildRef = resource:"particles/heroes/mystic/mystic_grim_harvest_debuff_b_2.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/heroes/mystic/mystic_grim_harvest_debuff_b.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/units/heroes/hero_bloodseeker/blood_gore_arterial_drip_2.vpcf"
 		},
 		{
 			m_ChildRef = resource:"particles/heroes/mystic/mystic_grim_harvest_debuff_glow.vpcf"
@@ -156,4 +147,5 @@
 			]
 		},
 	]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 }

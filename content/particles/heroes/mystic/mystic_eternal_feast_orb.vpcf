@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 128
 	m_flConstantRadius = 4.0
-	m_ConstantColor = [ 255, 227, 97, 155 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -15,7 +15,7 @@
 			}
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
-			m_flOverbrightFactor = 10.0
+			m_flOverbrightFactor = 2.0
 			m_hTexture = resource:"materials/particle/yellowflare2.vtex"
 			m_flAnimationRate = 1.0
 		},
@@ -54,6 +54,9 @@
 			_class = "C_OP_SetSingleControlPointPosition"
 			m_vecCP1Pos = [ 0.0, 0.0, 60.0 ]
 		},
+		{
+			_class = "C_OP_ColorInterpolate"
+		},
 	]
 	m_Initializers = 
 	[
@@ -72,11 +75,6 @@
 			_class = "C_INIT_RandomLifeTime"
 			m_fLifetimeMin = 0.25
 			m_fLifetimeMax = 1.0
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 146, 146, 146, 255 ]
-			m_ColorMin = [ 255, 255, 255, 248 ]
 		},
 		{
 			_class = "C_INIT_RemapCPtoVector"

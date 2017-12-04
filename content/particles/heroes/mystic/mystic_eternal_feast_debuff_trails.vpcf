@@ -3,14 +3,14 @@
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_flConstantRadius = 300.0
-	m_ConstantColor = [ 168, 23, 23, 255 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_nConstantSequenceNumber = 3
 	m_Renderers = 
 	[
 		{
 			_class = "C_OP_RenderTrails"
 			m_flOverbrightFactor = 6.0
-			m_hTexture = resource:"materials/particle/blood_pool.vtex"
+			m_hTexture = resource:"materials/particle/blood_pool_gray.vtex"
 			m_bIgnoreDT = true
 			m_flAnimationRate = 1.0
 			m_flRadiusTaper = 8.0
@@ -59,12 +59,10 @@
 		},
 		{
 			_class = "C_OP_LockToBone"
-			m_flPrevPosScale = 0.0
+			m_nControlPointNumber = 1
 		},
 		{
-			_class = "C_OP_ColorInterpolateRandom"
-			m_ColorFadeMin = [ 0, 107, 12, 255 ]
-			m_ColorFadeMax = [ 107, 69, 0, 255 ]
+			_class = "C_OP_ColorInterpolate"
 		},
 	]
 	m_Initializers = 
@@ -72,7 +70,6 @@
 		{
 			_class = "C_INIT_RingWave"
 			m_flInitialRadius = 100.0
-			m_nControlPointNumber = 1
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -85,10 +82,6 @@
 			m_flMaxLength = 1.0
 		},
 		{
-			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 2
-		},
-		{
 			_class = "C_INIT_PositionPlaceOnGround"
 			m_flMaxTraceLength = 150.0
 			m_bSetPXYZOnly = true
@@ -98,11 +91,9 @@
 			m_fRadiusMin = 20.0
 			m_fRadiusMax = 20.0
 			m_nControlPointNumber = 1
-			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_CreateOnModel"
-			m_nControlPointNumber = 1
 		},
 		{
 			_class = "C_INIT_RandomRadius"
@@ -123,11 +114,6 @@
 			_class = "C_INIT_RandomRotation"
 			m_nFieldOutput = 20
 			m_flDegreesMax = 0.0
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 255, 46, 0, 255 ]
-			m_ColorMax = [ 255, 46, 0, 255 ]
 		},
 	]
 	m_Emitters = 
