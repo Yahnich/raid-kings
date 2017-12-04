@@ -33,6 +33,8 @@ require("statsmanager")
 
 -- Precache resources
 function Precache( context )
+	PrecacheResource( "particle", "particles/generic_dazed_side.vpcf", context )
+	PrecacheResource( "particle", "particles/items_fx/courier_shield.vpcf", context )
 end
 
 -- Actually make the game mode when we activate
