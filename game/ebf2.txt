@@ -921,4 +921,4 @@ Shadow Fiend: Skadi, the Collector;
 -- Skill 5: Capture Soul - Roots an enemy for 5s and steals 800% AD as max health for 30s. Upon refresh updates max health if new stolen health is higher.
 -- Skill 6: Stolen Voice - Silences enemy for 10s, adds 25 stacks to Collector's Hoard and takes 30% AD per second
 -- Skill 7: Cull the Weak - Instantly kills a trash unit, grants 10 stacks of Collector's Hoard for 15s
--- Skill 8: Begotten Gifts - Drains 10 stacks, grants +5% AD per stack
+-- Skill 8: Begotten Gifts - Toggle; drains 1 stack/second but grants a 200%/25% crit chance while active
