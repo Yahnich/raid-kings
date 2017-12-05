@@ -21,7 +21,7 @@ function mystic_life_swap:OnSpellStart()
 	local FX = ParticleManager:CreateParticle("particles/heroes/mystic/mystic_life_swap.vpcf", PATTACH_POINT_FOLLOW, caster)
 	ParticleManager:SetParticleControlEnt(FX, 1, caster, PATTACH_POINT_FOLLOW, "attach_hitloc", caster:GetAbsOrigin(), true)
 	ParticleManager:SetParticleControlEnt(FX, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-	ParticleManager:SetParticleControl( FX, 15, Vector(255,0,0) )
+	--ParticleManager:SetParticleControl( FX, 15, Vector(255,0,0) )
 	
 	local hpSacrifice = caster:GetHealth() * self:GetSpecialValueFor("hp_swap") / 100
 	caster:SetHealth( math.max(1, caster:GetHealth() - hpSacrifice) )

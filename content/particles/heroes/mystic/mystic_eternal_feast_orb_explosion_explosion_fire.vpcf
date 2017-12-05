@@ -41,7 +41,6 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 139, 0, 0, 255 ]
 		},
 	]
 	m_Initializers = 
@@ -61,8 +60,7 @@
 		},
 		{
 			_class = "C_INIT_RandomSequence"
-			m_nSequenceMin = 7
-			m_nSequenceMax = 8
+			m_nSequenceMax = 3
 		},
 		{
 			_class = "C_INIT_RingWave"

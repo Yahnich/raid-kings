@@ -4,7 +4,7 @@
 	m_bShouldHitboxesFallbackToRenderBounds = false
 	m_nMaxParticles = 16
 	m_flConstantRadius = 28.0
-	m_ConstantColor = [ 255, 37, 81, 255 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_nConstantSequenceNumber = 5
 	m_Renderers = 
 	[
@@ -145,7 +145,6 @@
 		},
 		{
 			m_ChildRef = resource:"particles/heroes/mystic/mystic_unyielding_playerglow.vpcf"
-			m_bDisableChild = true
 		},
 		{
 			m_ChildRef = resource:"particles/heroes/mystic/mystic_unyielding_glyph_flare.vpcf"

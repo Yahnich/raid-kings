@@ -43,7 +43,6 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 162, 17, 17, 255 ]
 			m_flFadeStartTime = 0.5
 		},
 		{
@@ -52,11 +51,6 @@
 	]
 	m_Initializers = 
 	[
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 109, 12, 12, 255 ]
-			m_ColorMax = [ 189, 6, 6, 255 ]
-		},
 		{
 			_class = "C_INIT_RandomLifeTime"
 			m_fLifetimeMin = 0.8
@@ -69,6 +63,8 @@
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 0
+			m_nAlphaMax = 86
 		},
 		{
 			_class = "C_INIT_CreateOnModel"
@@ -88,6 +84,22 @@
 		{
 			_class = "C_OP_ContinuousEmitter"
 			m_flEmitRate = 350.0
+		},
+	]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

@@ -83,7 +83,7 @@
 			m_nParticlesToEmit = 3
 		},
 	]
-	m_ConstantColor = [ 139, 0, 0, 255 ]
+	m_ConstantColor = [ 255, 0, 0, 255 ]
 	m_controlPointConfigurations = 
 	[
 		{

@@ -52,6 +52,9 @@
 			_class = "C_OP_FadeInSimple"
 			m_flFadeInTime = 1.0
 		},
+		{
+			_class = "C_OP_ColorInterpolate"
+		},
 	]
 	m_Initializers = 
 	[
@@ -81,17 +84,8 @@
 			_class = "C_INIT_RandomRotation"
 		},
 		{
-			_class = "C_INIT_RemapCPtoVector"
-			m_nOpScaleCP = 16
-			m_nCPInput = 15
-			m_vInputMax = [ 255.0, 255.0, 255.0 ]
-			m_nFieldOutput = 6
-			m_vOutputMax = [ 1.0, 1.0, 1.0 ]
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 255, 0, 0, 255 ]
-			m_ColorMax = [ 139, 0, 0, 255 ]
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMin = 0
 		},
 	]
 	m_Emitters = 

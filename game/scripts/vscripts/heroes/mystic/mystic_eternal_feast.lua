@@ -11,6 +11,9 @@ function mystic_eternal_feast:OnSpellStart()
 	local radius = self:GetSpecialValueFor("initial_radius")
 	local damage = self:GetSpecialValueFor("initial_damage")
 	
+	self.FX = ParticleManager:CreateParticle("particles/heroes/mystic/mystic_eternal_feast_cast_explosion.vpcf", PATTACH_POINT, caster)
+	ParticleManager:SetParticleControl(self.FX, 0, point)
+
 	local enemies = caster:FindEnemyUnitsInRadius(point, radius)
 	for _, enemy in ipairs(enemies) do
 		enemy:AddNewModifier(caster, self, "modifier_mystic_eternal_feast_debuff", {duration = self:GetSpecialValueFor("debuff_duration")})
