@@ -43,7 +43,6 @@
 			_class = "C_INIT_RingWave"
 			m_flInitialRadius = 0.975
 			m_flThickness = 0.05
-			m_bEvenDistribution = true
 			m_nOverrideCP = 1
 		},
 		{
@@ -59,15 +58,17 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 35.0
-			m_flRadiusMin = 25.0
+			m_flRadiusMax = 80.0
+			m_flRadiusMin = 40.0
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 131, 138, 111, 255 ]
+			m_ColorMax = [ 128, 128, 0, 255 ]
+			m_ColorMin = [ 154, 205, 50, 255 ]
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
@@ -76,7 +77,7 @@
 		},
 		{
 			_class = "C_INIT_RandomSequence"
-			m_nSequenceMin = 5
+			m_nSequenceMax = 5
 		},
 		{
 			_class = "C_INIT_PositionPlaceOnGround"
@@ -95,6 +96,28 @@
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_nParticlesToEmit = 128
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 1.0, 1.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
 		},
 	]
 }

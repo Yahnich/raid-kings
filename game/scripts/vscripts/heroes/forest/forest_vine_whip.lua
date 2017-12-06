@@ -17,7 +17,11 @@ function forest_vine_whip:OnSpellStart()
 	EmitSoundOn("Hero_Enchantress.EnchantCast", caster)
 	
 	local nFX = ParticleManager:CreateParticle("particles/heroes/forest/forest_vine_whip_projectile.vpcf", PATTACH_POINT, caster)
-	ParticleManager:SetParticleControlEnt(nFX, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
+	if RollPercentage(50) then
+		ParticleManager:SetParticleControlEnt(nFX, 0, caster, PATTACH_POINT_FOLLOW, "attach_beard", caster:GetAbsOrigin(), true)
+	else
+		ParticleManager:SetParticleControlEnt(nFX, 0, caster, PATTACH_POINT_FOLLOW, "attach_beard_right", caster:GetAbsOrigin(), true)
+	end
 	
 	local traveled = 0
 	
@@ -68,7 +72,7 @@ function forest_vine_whip:OnSpellStart()
 		return true
 	end--projectilehit
 
-	ProjectileHandler:CreateProjectile(ProjectileThink, ProjectileHit, {  FX = "particles/heroes/justicar/justicar_avenging_wrath_projectile/justicar_avenging_wrath_projectile.vpcf",
+	ProjectileHandler:CreateProjectile(ProjectileThink, ProjectileHit, {  FX = "particles/heroes/forest/forest_vine_whip_projectile_projectile.vpcf",
 																  position = projectilePos+Vector(0,0,100),
 																  caster = caster,
 																  ability = self,

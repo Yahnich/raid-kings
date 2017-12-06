@@ -1,20 +1,19 @@
 sylph_jetstream = sylph_jetstream or class({})
 
-function sylph_jetstream:GetAOERadius()
-	return self:GetCaster():GetIdealSpeed() * self:GetSpecialValueFor("damage_radius") / 100
-end
-
 function sylph_jetstream:OnSpellStart()
 	EmitSoundOn("Hero_Windrunner.ShackleshotCast", self:GetCaster())
 	self:GetCaster():MoveToPosition(self:GetCursorPosition())
 	self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_sylph_jetstream_rush", {duration = CalculateDistance(self:GetCaster(), self:GetCursorPosition()) / self:GetSpecialValueFor("speed")})
 end
 
+-------------------------------------------------------------------------------------------------------------------------------------
+-------------------------------------------------------------------------------------------------------------------------------------
 LinkLuaModifier( "modifier_sylph_jetstream_rush", "heroes/sylph/sylph_jetstream.lua", LUA_MODIFIER_MOTION_NONE )
 modifier_sylph_jetstream_rush = modifier_sylph_jetstream_rush or class({})
 
 function modifier_sylph_jetstream_rush:OnCreated()
 	if IsServer() then self:StartIntervalThink(0.05) end
+	self.radius = self:GetCaster():GetIdealSpeed() * self:GetSpecialValueFor("damage_radius") / 100
 	self.speed = self:GetAbility():GetSpecialValueFor("speed")
 	self.timer = self:GetParent():GetSecondsPerAttack() / 1.5
 	if IsServer() then
@@ -24,8 +23,9 @@ end
 
 function modifier_sylph_jetstream_rush:OnDestroy()
 	if IsServer() then
+		local damage = self:GetAbility():GetSpecialValueFor("damage")
 		ParticleManager:FireParticle("particles/heroes/sylph/sylph_jetstream_poof.vpcf", PATTACH_POINT_FOLLOW, self:GetParent())
-		self:GetAbility():ApplyAOE({radius = self:GetAbility():GetAOERadius() , damage = self:GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_MAGICAL})
+		self:GetAbility():DealAOEDamage(self:GetCaster(), damage, self:GetCaster():GetAbsOrigin(), self.radius, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 	end
 end
 
@@ -34,6 +34,7 @@ function modifier_sylph_jetstream_rush:OnIntervalThink()
 	if self.timer >= self:GetParent():GetSecondsPerAttack() / 1.5 then
 		self.timer = 0
 		local units = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetCaster():GetAbsOrigin(), nil, self:GetCaster():GetAttackRange(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false)
+		if #units > 0 then StartAnimation(self:GetCaster(), {duration=0.5, activity=ACT_DOTA_RUN, rate=1.0, translate="focusfire", translate2="attacking_run"}) end
 		for _,unit in pairs(units) do
 			self:GetParent():PerformAttack(unit, true, true, true, true, true, false, false)
 			if self:GetParent():HasTalent("sylph_jetstream_talent_1") then

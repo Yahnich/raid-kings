@@ -108,10 +108,10 @@ function modifier_shinigami_deep_wounds_stacks:OnIntervalThink()
 			EmitSoundOn("Ability.SandKing_CausticFinale", self:GetParent())		
 			local boomFX = ParticleManager:CreateParticle("particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf", PATTACH_POINT_FOLLOW, self:GetParent())		
 			ParticleManager:ReleaseParticleIndex(boomFX)		
-			ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster() or self.owner, damage = potDamage, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})		
+			self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), potDamage, {}, OVERHEAD_ALERT_DAMAGE)
 			self:Destroy()		
 		else		
-			ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster() or self.owner, damage = damage, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})		
+			self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), damage, {}, OVERHEAD_ALERT_DAMAGE)
 		end		
 	end
 end

@@ -10,9 +10,7 @@
 		{
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bAdditive = true
-			m_flOverbrightFactor = 10.0
-			m_hTexture = resource:"materials/particle/leaf/leaf_green.vtex"
+			m_hTexture = resource:"materials/particle/leaf/leaf_grayscale.vtex"
 		},
 	]
 	m_Operators = 
@@ -32,6 +30,10 @@
 		},
 		{
 			_class = "C_OP_FadeInSimple"
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
 		},
 	]
 	m_Initializers = 
@@ -44,7 +46,6 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 50.0
 			m_flRadiusMax = 50.0
 		},
 		{
@@ -53,13 +54,14 @@
 			{
 				m_nEndControlPointNumber = 1
 			}
+			m_fMaxDistance = 10.0
+			m_bUseRandomCPs = true
 		},
 		{
 			_class = "C_INIT_RandomRotation"
 		},
 		{
 			_class = "C_INIT_RandomYaw"
-			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_InitialVelocityNoise"
@@ -67,6 +69,11 @@
 			m_flNoiseScaleLoc = 0.1
 			m_vecOutputMin = [ -128.0, -128.0, -128.0 ]
 			m_vecOutputMax = [ 128.0, 128.0, 128.0 ]
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 154, 205, 50, 255 ]
+			m_ColorMax = [ 128, 128, 0, 255 ]
 		},
 	]
 	m_Emitters = 

@@ -30,7 +30,7 @@ function modifier_sylph_cyclone_buff:OnIntervalThink()
 		local knockback = self:GetCaster():GetIdealSpeed() * 0.0333 * 0.6
 		local speedMult = self:GetCaster():GetIdealSpeed() / self:GetCaster():GetBaseMoveSpeed()
 		local damage = speedMult * self.base_damage * 0.0333
-		ApplyDamage( {victim = unit, attacker = self:GetCaster(), damage = damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()} )
+		self:GetAbility():DealDamage(self:GetCaster(), unit, damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 		if unit:HasMovementCapability() then
 			unit:SetAbsOrigin(unit:GetAbsOrigin() + direction * knockback)
 		end

@@ -31,6 +31,11 @@ require("statsmanager")
 -- require("relics/relic")
 -- require("relics/relicpool")
 
+--Globl Modifiers
+LinkLuaModifier("modifier_dazed_generic", "libraries/modifiers/modifier_dazed_generic.lua", 0)
+LinkLuaModifier("modifier_stunned_generic", "libraries/modifiers/modifier_stunned_generic.lua", 0)
+LinkLuaModifier("modifier_generic_barrier", "libraries/modifiers/modifier_generic_barrier.lua", 0)
+
 -- Precache resources
 function Precache( context )
 	PrecacheResource( "particle", "particles/generic_dazed_side.vpcf", context )
