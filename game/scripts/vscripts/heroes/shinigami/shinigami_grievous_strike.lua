@@ -95,7 +95,7 @@ function modifier_shinigami_grievous_strike:OnAttackLanded(params)
 		ParticleManager:SetParticleControlForward( nFXIndex, 1, RandomFloat( 0.5, 1.0 ) * flHPRatio * ( params.attacker:GetAbsOrigin() - params.target:GetAbsOrigin() ):Normalized() )
 		ParticleManager:SetParticleControlEnt( nFXIndex, 10, params.target, PATTACH_ABSORIGIN_FOLLOW, "attach_hitloc", params.target:GetAbsOrigin(), true )
 		ParticleManager:ReleaseParticleIndex( nFXIndex )
-		params.target:AddNewModifier(params.attacker, self:GetAbility(), "modifier_shinigami_grievous_strike_daze", {duration = self:GetAbility():GetSpecialValueFor("daze_duration") + 0.4})
+		params.target:AddNewModifier(params.attacker, self:GetAbility(), "modifier_dazed_generic", {duration = self:GetAbility():GetSpecialValueFor("daze_duration") + 0.4})
 		params.target:AddNewModifier(params.attacker, self:GetAbility(), "modifier_stunned_generic", {duration = 0.4})
 		self:Destroy()
 	end
@@ -103,40 +103,4 @@ end
 
 function modifier_shinigami_grievous_strike:GetModifierPreAttack_CriticalStrike()
 	return self.crit
-end
-
-
-modifier_shinigami_grievous_strike_daze = class({})
-LinkLuaModifier("modifier_shinigami_grievous_strike_daze", "heroes/shinigami/shinigami_grievous_strike.lua", 0)
-
-
-function modifier_shinigami_grievous_strike_daze:OnCreated()
-	if IsServer() then
-		self.daze = ParticleManager:CreateParticle("particles/generic_dazed.vpcf", PATTACH_OVERHEAD_FOLLOW, self:GetParent())
-		self:AddParticle(self.daze,false, false, 0, false, true)
-		self:StartIntervalThink(0.1)
-	end
-end
-
-function modifier_shinigami_grievous_strike_daze:OnDestroy()
-	if IsServer() then
-		ParticleManager:DestroyParticle(self.daze, true)
-		ParticleManager:ReleaseParticleIndex(self.daze)
-	end
-end
-
-function modifier_shinigami_grievous_strike_daze:OnIntervalThink()
-	if RollPercentage(12) then
-		self:GetParent():Stop()
-		self:GetParent():Interrupt()
-	end
-end
-
-
-function modifier_shinigami_grievous_strike_daze:IsDaze()
-	return true
-end
-
-function modifier_shinigami_grievous_strike_daze:IsPurgable()
-	return true
 end

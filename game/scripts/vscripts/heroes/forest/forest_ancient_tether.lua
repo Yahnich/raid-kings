@@ -35,7 +35,7 @@ function modifier_forest_ancient_tether_buff:OnCreated()
 	if IsServer() then 
 		self:StartIntervalThink(0.3)
 		local linkFX = ParticleManager:CreateParticle("particles/heroes/forest/forest_ancient_tether.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster())
-		ParticleManager:SetParticleControlEnt(linkFX, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetAbsOrigin(), true)
+		ParticleManager:SetParticleControlEnt(linkFX, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_mylittlebird", self:GetCaster():GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(linkFX, 1, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAbsOrigin(), true)
 		self:AddEffect(linkFX)
 	end

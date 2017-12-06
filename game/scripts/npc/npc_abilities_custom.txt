@@ -92,7 +92,7 @@
 		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"1200"
-		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
 		"AbilityCooldown"				"22 21 20 19 18 17 16"
 		"AbilityManaCost"				"75"
@@ -168,7 +168,7 @@
 		
 		"AbilityCastPoint"				"1 0.9 0.8 0.7 0.6 0.5 0.4"
 		"AbilityCastRange"				"600 700 800 900 1000 1100 1200"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST3_STATUE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		"AbilityCooldown"				"8"
 		"AbilityManaCost"				"100 90 80 70 60 50 40"
@@ -243,6 +243,9 @@
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"75"
 		"AbilityCastRange"				"800"
+	
+		"AbilityCastPoint"				"0.2"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
 		
 		"precache"
 		{
@@ -302,6 +305,9 @@
 		"AbilityCastRange"				"900"
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"75"
+	
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 		
 	    "AbilitySpecial"
 	    {
@@ -447,7 +453,8 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -534,6 +541,9 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"600"
+	
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -619,7 +629,8 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"900"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 	
 		// Cost
 		//-------------------------------------------------------------------------------------------------------------
@@ -696,9 +707,9 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 		
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.5"
 		"AbilityCastRange"				"900"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		
 		"AbilityCooldown"				"20"
 		"AbilityManaCost"				"125"
@@ -706,7 +717,9 @@
 		"precache"
 		{
 			"particle"					"particles/heroes/forest/forest_vine_whip_projectile.vpcf"
-			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_enchantress.vsndevts"
+			"particle"                  "particles/heroes/forest/forest_vine_whip_projectile_projectile.vpcf"
+	
+	        "soundfile"					"soundevents/game_sounds_heroes/game_sounds_enchantress.vsndevts"
 		}
 		
 	    "AbilitySpecial"
@@ -5589,9 +5602,10 @@
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/shinigami/shinigami_cutthroat_slice.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"AbilityTextureName"			"custom/shinigami_cutthroat_slice"
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
@@ -5600,6 +5614,8 @@
 		"AbilityCastRange"				"150"
 		"AbilityCooldown"				"8"
 		"PiercesDisableReduction"		"1"
+	    "AbilityCastPoint"              "0.1"
+	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
 		
 		"precache"
 		{
@@ -5665,6 +5681,9 @@
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/shinigami/shinigami_deep_wounds.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityTextureName"			"custom/shinigami_deep_wounds"
 		"HasScepterUpgrade"				"1"
@@ -5740,8 +5759,9 @@
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/shinigami/shinigami_fan_the_blades.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
-	    "AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName"			"custom/shinigami_fan_the_blades"
 	    "RequiredLevel"  				"7"
@@ -6005,6 +6025,10 @@
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/shinigami/shinigami_flurry_of_blows.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName"			"custom/shinigami_flurry_of_blows"
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
@@ -6017,6 +6041,12 @@
 		{
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
 			"particle"					"particles/heroes/shinigami/shinigami_flurry_of_blows_blur.vpcf"
+	
+	        "particle"                  "particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_attack_blink.vpcf"
+	        "particle"                  "particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_attack_blinkb.vpcf"
+	        "particle"                  "particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_attack_blinkc.vpcf"
+	        "particle"                  "particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_attack_crit.vpcf"
+	        "particle"                  "particles/heroes/shinigami/shinigami_flurry_of_blows_striek.vpcf"
 		}
 		
 		"AbilitySpecial"
@@ -6066,8 +6096,10 @@
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/shinigami/shinigami_grievous_strike.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"custom/shinigami_grievous_strike"
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
@@ -6075,7 +6107,8 @@
 		
 		"AbilityCooldown"				"14"
 		"AbilityManaCost"				"25"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"				"0.2"
+	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK"
 		
 		"precache"
 		{
@@ -6137,6 +6170,8 @@
 		
 		"AbilityCooldown"				"30"
 		"AbilityManaCost"				"200"
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
 		
 		"precache"
 		{
@@ -6207,6 +6242,10 @@
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/shinigami/shinigami_reversal.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName"			"custom/shinigami_reversal"
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
@@ -6263,6 +6302,10 @@
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/shinigami/shinigami_slice_n_dice.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
 		"AbilityTextureName"			"custom/shinigami_slice_n_dice"
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
@@ -6271,6 +6314,8 @@
 		"AbilityCastRange"				"1200 1250 1300 1350 1400 1450 1500"
 		"AbilityCooldown"				"12 11 10 9 8 7 6"
 		"AbilityManaCost"				"50"
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
 		
 		"precache"
 		{
@@ -6330,14 +6375,20 @@
 	{
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/shinigami/shinigami_whirling_slash.lua"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
 		"AbilityTextureName"			"custom/shinigami_whirling_slash"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 		
 		"AbilityCooldown"				"15 14 13 12 11 10 9"
 		"AbilityManaCost"				"10"
+	    "AbilityCastPoint"              "0.1"
+	    "AbilityCastAnimation"          "ACT_DOTA_ATTACK_EVENT"
 		
 		"precache"
 		{
@@ -6429,6 +6480,8 @@
 		"LevelsBetweenUpgrades"			"5"
 		
 		"AbilityCooldown"				"12"
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_FLAIL"
 		
 		"precache"
 		{
@@ -6493,6 +6546,8 @@
 		"AbilityCastRange"				"800"
 		"AbilityDuration"				"10"
 		"HasPureCooldown"				"1"
+	    "AbilityCastPoint"              "0.2"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
 		
 		"precache"
 		{
@@ -6559,6 +6614,8 @@
 		
 		"AbilityCooldown"				"11 10 9 8 7 6 5"
 		"AbilityManaCost"				"50"
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_DISABLED"
 		
 		"precache"
 		{
@@ -6615,7 +6672,7 @@
 	{
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/sylph/sylph_jetstream.lua"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"custom/sylph_jetstream"
 	    "RequiredLevel"  				"7"
@@ -6684,6 +6741,7 @@
 	    "ScriptFile"                    "heroes/sylph/sylph_mistral_breeze.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"			"custom/sylph_mistral_breeze"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_MAGICAL"
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
@@ -6799,6 +6857,7 @@
 	    "ScriptFile"                    "heroes/sylph/sylph_rapid_fire.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 		"AbilityTextureName"			"custom/sylph_rapid_fire"
+	    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
@@ -6864,7 +6923,7 @@
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/sylph/sylph_updraft.lua"
 	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityTextureName"			"custom/sylph_updraft"
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
@@ -6873,7 +6932,8 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3"
+		"AbilityCastPoint"              "0.2"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -6887,8 +6947,10 @@
 		{
 			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
 			"soundfile"		"soundevents/game_sounds_items.vsndevts"
+	
 			"particle"		"particles/econ/events/fall_major_2016/cyclone_fm06.vpcf"
 			"particle"		"particles/units/heroes/hero_tiny/tiny_toss_blur.vpcf"
+	        "particle"      "particles/heroes/sylph/sylph_updraft_cast.vpcf"
 		}
 		
 	    "AbilitySpecial"
@@ -6964,6 +7026,8 @@
 		
 		"AbilityCooldown"				"35"
 		"AbilityManaCost"				"80"
+	    "AbilityCastPoint"              "0.2"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
 		
 		"precache"
 		{

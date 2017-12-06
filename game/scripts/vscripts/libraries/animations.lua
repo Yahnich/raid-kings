@@ -59,6 +59,13 @@ LinkLuaModifier( "modifier_animation_translate_permanent", "libraries/modifiers/
 require('libraries/timers')
 
 local _ANIMATION_TRANSLATE_TO_CODE = {
+  basher= 400,
+  Espada_pistola= 401, --Kunkka shotty
+  ti6= 402,
+  light= 403,
+  --self= 404,
+  attacking_run= 405,
+
   abysm= 13,
   admirals_prow= 307,
   agedspirit= 3,

@@ -22,7 +22,7 @@
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_Gravity = [ 0.0, 0.0, 10.0 ]
+			m_Gravity = [ 0.0, 0.0, -500.0 ]
 			m_fDrag = 0.05
 		},
 		{
@@ -61,8 +61,7 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMax = 6.0
-			m_flRadiusMin = 5.0
+			m_flRadiusMax = 4.0
 		},
 		{
 			_class = "C_INIT_RandomColor"
@@ -74,21 +73,20 @@
 		},
 		{
 			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 19
+			m_nSequenceMax = 62
 		},
 		{
 			_class = "C_INIT_CreateOnModel"
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
-			m_nAlphaMax = 151
 		},
 	]
 	m_Emitters = 
 	[
 		{
 			_class = "C_OP_ContinuousEmitter"
-			m_flEmitRate = 2.0
+			m_flEmitRate = 50.0
 		},
 	]
 	m_Children = 

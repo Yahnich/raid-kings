@@ -2,9 +2,8 @@
 {
 	_class = "CParticleSystemDefinition"
 	m_bShouldHitboxesFallbackToRenderBounds = false
-	m_nMaxParticles = 32
+	m_nMaxParticles = 100
 	m_flConstantRadius = 128.0
-	m_ConstantColor = [ 124, 252, 0, 255 ]
 	m_Renderers = 
 	[
 		{
@@ -30,6 +29,7 @@
 		},
 		{
 			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, 2500.0 ]
 		},
 		{
 			_class = "C_OP_FadeOutSimple"
@@ -42,10 +42,10 @@
 		},
 		{
 			_class = "C_OP_MaintainSequentialPath"
-			m_flNumToAssign = 2.0
 			m_PathParams = 
 			{
 				m_nEndControlPointNumber = 1
+				m_vMidPointOffset = [ 50.0, 50.0, 50.0 ]
 			}
 		},
 	]
@@ -56,8 +56,8 @@
 		},
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 0.1
-			m_fLifetimeMin = 0.05
+			m_fLifetimeMax = 2.0
+			m_fLifetimeMin = 1.0
 		},
 		{
 			_class = "C_INIT_RandomAlpha"
@@ -65,12 +65,20 @@
 		},
 		{
 			_class = "C_INIT_CreateSequentialPath"
-			m_flNumToAssign = 2.0
-			m_bLoop = false
 			m_PathParams = 
 			{
 				m_nEndControlPointNumber = 1
+				m_vMidPointOffset = [ 50.0, 5.0, 50.0 ]
 			}
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 154, 205, 50, 255 ]
+			m_ColorMax = [ 128, 128, 0, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMax = 128.0
 		},
 	]
 	m_Emitters = 

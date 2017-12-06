@@ -7,6 +7,11 @@ end
 function sylph_updraft:OnSpellStart()
 	local caster = self:GetCaster()
 	self.targetPosition = self:GetCursorPosition()
+
+	local FX = ParticleManager:CreateParticle("particles/heroes/sylph/sylph_updraft_cast.vpcf", PATTACH_POINT, self:GetCaster())
+	ParticleManager:SetParticleControl(FX, 0, self.targetPosition)
+	ParticleManager:SetParticleControl(FX, 1, Vector(self:GetAOERadius(),0,0))
+
 	local enemies = FindUnitsInRadius(caster:GetTeam(), self.targetPosition, nil, self:GetAOERadius(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
 	for _, enemy in ipairs(enemies) do
 		enemy:AddNewModifier(caster, self, "modifier_sylph_updraft_lift", {duration = self:GetSpecialValueFor("lift_duration")})
@@ -73,7 +78,7 @@ function modifier_sylph_updraft_smash:OnRefresh(kv)
 	if IsServer() then
 		self.parent = self:GetParent()
 		self.targetPosition = self:GetAbility().targetPosition
-		self.direction = (self.targetPosition- self.parent:GetAbsOrigin()):Normalized()
+		self.direction = (self.targetPosition - self.parent:GetAbsOrigin()):Normalized()
 		self.fall_distance = (self.parent:GetAbsOrigin() - self.targetPosition):Length2D()
 		self.fall_duration = self:GetAbility():GetSpecialValueFor("fall_duration")
 	end
@@ -81,13 +86,7 @@ end
 
 function modifier_sylph_updraft_smash:OnDestroy()
 	if IsServer() then
-		local damage = {
-			victim = self.parent,
-			attacker = self:GetCaster(),
-			damage = self:GetAbility():GetSpecialValueFor("smash_damage"),
-			damage_type = DAMAGE_TYPE_MAGICAL,
-			ability = self:GetAbility()}
-		ApplyDamage( damage )
+		self:GetAbility():DealDamage(self:GetCaster(), self.parent, self:GetAbility():GetSpecialValueFor("smash_damage"), {damage_type = DAMAGE_TYPE_PURE}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 		EmitSoundOn("Hero_Rubick.Telekinesis.Target.Land", self:GetParent())
 		if self:GetCaster():HasTalent("sylph_updraft_talent_1") then
 			self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned_generic", {duration = self:GetAbility():GetSpecialValueFor("talent_stun_duration")})

@@ -25,9 +25,11 @@ function shinigami_whirling_slash:OnSpellStart()
 	local modifier = caster:AddNewModifier(caster, self, "modifier_shinigami_whirling_slash_stop_movement", {duration = duration})
 	modifier:SetStackCount(bonusDamage)
 	local attackblur = ParticleManager:CreateParticle("particles/heroes/shinigami/shinigami_whirling_slash.vpcf", PATTACH_ABSORIGIN, caster)
-	ParticleManager:SetParticleControlEnt(attackblur, 0, caster, PATTACH_POINT_FOLLOW, "attach_attack1", caster:GetAbsOrigin(), true)
+	--ParticleManager:SetParticleControlEnt(attackblur, 0, caster, PATTACH_POINT, "attach_hitloc", caster:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControl(attackblur, 1, caster:GetAbsOrigin())
 	ParticleManager:ReleaseParticleIndex(attackblur)
 	local alreadyAttacked = {}
+	local ticks = 0
 	Timers:CreateTimer(function()
 		ticks = ticks + 1
 

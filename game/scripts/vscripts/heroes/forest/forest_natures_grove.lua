@@ -17,20 +17,13 @@ function forest_natures_grove:OnSpellStart()
 	local sleepDuration = self:GetSpecialValueFor("sleep_duration")
 	local TICK_RATE = 0.34
 	
-	local treeCount = (math.pi * groveRadius * groveRadius) / (math.pi * treeRadius * treeRadius)
-	
-	local sleepFX = ParticleManager:CreateParticle( "particles/heroes/forest/forest_natures_grove_sleep.vpcf", PATTACH_WORLDORIGIN, nil)
-	ParticleManager:SetParticleControl( sleepFX, 0, target)
-	ParticleManager:SetParticleControl( sleepFX, 1, Vector(groveRadius + treeRadius, groveRadius + treeRadius, groveRadius + treeRadius) )
-	
+	local treeCount = (math.pi * groveRadius * groveRadius) / (math.pi * treeRadius * treeRadius)	
 	
 	local treeFX = ParticleManager:CreateParticle( "particles/heroes/forest/forest_natures_grove_ring.vpcf", PATTACH_WORLDORIGIN, nil)
 	ParticleManager:SetParticleControl( treeFX, 0, target)
-	ParticleManager:SetParticleControl( treeFX, 1, Vector(groveRadius + treeRadius, groveRadius + treeRadius, groveRadius + treeRadius) )
+	ParticleManager:SetParticleControl( treeFX, 1, Vector(groveRadius + treeRadius, groveRadius + treeRadius, 1) )
 
 	Timers:CreateTimer(treeDuration, function()
-		ParticleManager:DestroyParticle(sleepFX, false)
-		ParticleManager:ReleaseParticleIndex(sleepFX)
 		ParticleManager:DestroyParticle(treeFX, false)
 		ParticleManager:ReleaseParticleIndex(treeFX)
 	end)
