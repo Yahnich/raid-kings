@@ -5,7 +5,7 @@
     <scripts>
         <include src="file://{resources}/scripts/custom_game/hero_selection.js" />
     </scripts>
-    <Panel class="HeroSelectionRoot" hittest="false">
+    <Panel class="HeroSelectionRoot">
         <Panel class="HeroList" hittest="false">
 			<Panel class="HeroListTop" hittest="false">
 				<Panel id="SelectionTimerContainer" hittest="false">
@@ -14,43 +14,43 @@
 				<Panel class="HeroPortraitContainer" id="HeroPortraitHolder" hittest="false">
 				</Panel>
 			</Panel>
-			<Panel class="HorizontalSeperator"/>
+			<Panel class="HorizontalSeperator" hittest="false"/>
 			<Panel class="HeroListBottom" hittest="false">
-				<Panel class="HeroRoleContainer" id="HeroContainer">
+				<Panel class="HeroRoleContainer" id="HeroContainer" hittest="false">
 				</Panel>
-				<Panel class="ButtonContainer">
+				<Panel class="ButtonContainer" hittest="false">
 					<Button class="PickButton" id="AcceptButton" onactivate="ConfirmHeroSelection()">
-						<Label class="ButtonText" id="AcceptButtonLabel" text="Select" />
+						<Label class="ButtonText" id="AcceptButtonLabel" text="Select" hittest="false"/>
 					</Button>
-					<Button class="PickButton" id="RandomButton">
-						<Label class="ButtonText" id="RandomButtonLabel" text="Random" onactivate="RandomHeroSelection()"/>
+					<Button class="PickButton" id="RandomButton" onactivate="RandomHeroSelection()">
+						<Label class="ButtonText" id="RandomButtonLabel" text="Random" hittest="false"/>
 					</Button>
 				</Panel>
 			</Panel>
 		</Panel>
 		<Panel id="HeroDescriptor" hittest="false">
 			<DOTAHeroMovie id="HeroPortrait" heroname="npc_dota_hero_wisp" hittest="false"/>
-			<Panel id="HeroInfoContainer">
-				<Label id="HeroInfoName" text="The Unchosen"/>
-				<Panel class="HorizontalSeperator"/>
-				<Panel class="HeroUniqueInfoContainer">
-					<Panel class="RoleContainer">
-						<Panel class="GenericRoleContainer" id="TankRoleContainer">
+			<Panel id="HeroInfoContainer" hittest="false">
+				<Label id="HeroInfoName" text="The Unchosen" hittest="false"/>
+				<Panel class="HorizontalSeperator" hittest="false"/>
+				<Panel class="HeroUniqueInfoContainer" hittest="false">
+					<Panel class="RoleContainer" hittest="false">
+						<Panel class="GenericRoleContainer" id="TankRoleContainer" hittest="false">
 							<Image class="RoleImage" id="tank_image" hittest="false" src="file://{images}/custom_game/tank_icon.png"/>
-							<Label class="GenericText" id="TankRoleLabel" text=""/>
+							<Label class="GenericText" id="TankRoleLabel" text="" hittest="false"/>
 						</Panel>
-						<Panel class="GenericRoleContainer" id="DPSRoleContainer">
+						<Panel class="GenericRoleContainer" id="DPSRoleContainer" hittest="false">
 							<Image class="RoleImage" id="dps_image" hittest="false" src="file://{images}/custom_game/dps_icon.png"/>
-							<Label class="GenericText" id="DamageRoleLabel" text=""/>
+							<Label class="GenericText" id="DamageRoleLabel" text="" hittest="false"/>
 						</Panel>
-						<Panel class="GenericRoleContainer" id="UtilityRoleContainer">
+						<Panel class="GenericRoleContainer" id="UtilityRoleContainer" hittest="false">
 							<Image class="RoleImage" id="utility_image" hittest="false" src="file://{images}/custom_game/utility_icon.png"/>
-							<Label class="GenericText" id="UtilityRoleLabel" text=""/>
+							<Label class="GenericText" id="UtilityRoleLabel" text="" hittest="false"/>
 						</Panel>
 					</Panel>
 					<DOTAAbilityImage class="InnateIcon" id="AbilitySlotInnate" abilityname="no_ability"/>
 				</Panel>
-				<Panel class="HorizontalSeperator"/>
+				<Panel class="HorizontalSeperator" hittest="false"/>
 				<Panel id="HeroSkillContainer" hittest="false">
 					<Panel id="SkillContainer" hittest="false">
 						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot1" abilityname="no_ability"/>
@@ -64,8 +64,8 @@
 						<DOTAAbilityImage class="AbilityIcon" id="AbilitySlot8" abilityname="no_ability"/>
 					</Panel>
 				</Panel>
-				<Panel class="HorizontalSeperator"/>
-				<Panel class="TextContainer">
+				<Panel class="HorizontalSeperator" hittest="false"/>
+				<Panel class="TextContainer" hittest="false">
 					<Label id="HeroInfoMain" text="The Unchosen is waiting to transform."/>
 				</Panel>
 				<Panel class= "HorizontalSeperator"/>

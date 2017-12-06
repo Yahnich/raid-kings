@@ -43,6 +43,10 @@ function modifier_mystic_life_swap_buff:GetModifierExtraHealthBonus()
 	return self:GetStackCount()
 end
 
+function modifier_mystic_life_swap_buff:GetEffectName()
+	return "particles/heroes/mystic/mystic_life_swap_buff.vpcf"
+end
+
 modifier_mystic_life_swap_talent = class({})
 LinkLuaModifier("modifier_mystic_life_swap_talent", "heroes/mystic/mystic_life_swap.lua", 0)
 

@@ -11,12 +11,12 @@
 				<Panel id="SelectionTimerContainer" hittest="false">
 					<Label id="SelectionTimer" text="80" hittest="false"/>
 				</Panel>
-				<Panel class="ButtonContainer">
+				<Panel class="ButtonContainer" hittest="false">
 					<Button class="PickButton" id="AcceptButton" onactivate="ConfirmSkillSelection()">
-						<Label class="ButtonText" id="AcceptButtonLabel" text="Select" />
+						<Label class="ButtonText" id="AcceptButtonLabel" text="Select" hittest="false"/>
 					</Button>
-					<Button class="PickButton" id="RandomButton">
-						<Label class="ButtonText" id="RandomButtonLabel" text="Random" onactivate="RandomSkillSelection()"/>
+					<Button class="PickButton" id="RandomButton" onactivate="RandomSkillSelection()">
+						<Label class="ButtonText" id="RandomButtonLabel" text="Random" hittest="false"/>
 					</Button>
 				</Panel>
 			</Panel>

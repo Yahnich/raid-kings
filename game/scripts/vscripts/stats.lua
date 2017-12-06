@@ -38,6 +38,8 @@ function Stats:ManageStats(hero)
 	self.customLuck = hero:GetBaseLuck() + hero:GetLevel() * hero:GetLuckGain()
 	
 	for _, modifier in ipairs(hero:FindAllModifiers()) do
+	
+		-- Attribute management
 		if modifier.GetModifierBonusStats_Strength and modifier:GetModifierBonusStats_Strength() then
 			self.customStrength = self.customStrength + modifier:GetModifierBonusStats_Strength()
 		end
@@ -53,6 +55,9 @@ function Stats:ManageStats(hero)
 		if modifier.GetModifierBonusStats_Vitality and modifier:GetModifierBonusStats_Vitality() then
 			self.customVitality = self.customVitality + modifier:GetModifierBonusStats_Vitality()
 		end
+		
+		-- Modifier property management
+		
 	end
 	
 	self.customIntellect = math.floor(self.customIntellect + 0.5)
@@ -78,12 +83,11 @@ modifier_stat_handler = class({})
 LinkLuaModifier("modifier_stat_handler", "stats.lua", 0)
 
 function modifier_stat_handler:OnCreated()
-    self.HP_PER_STR = 5
+    self.ARMOR_PER_STR = 0.07
 	self.MR_PER_STR = 0.1
 	
-	self.ARMOR_PER_AGI = 0.07
 	self.ATKSPD_PER_AGI = 1
-	self.MS_PER_AGI = 0.1
+	self.MS_PER_AGI = 0.12
 	
 	self.MANA_PER_INT = 12
 	self.MANA_REGEN_PER_INT = 0.08
@@ -91,6 +95,8 @@ function modifier_stat_handler:OnCreated()
 	
 	self.HP_PER_VIT = 20
 	self.HP_REGEN_PER_VIT = 0.2
+	
+	self.EVASION_PER_LUCK = 0.08
 	
 	self.intelligence = self:GetParent():GetIntellect()
 	self.strength = self:GetParent():GetStrength()
@@ -119,9 +125,14 @@ function modifier_stat_handler:DeclareFunctions()
 		MODIFIER_PROPERTY_MANA_BONUS,
 		MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE,
 		MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE,
+		MODIFIER_PROPERTY_EVASION_CONSTANT
     }
 
     return funcs
+end
+
+function modifier_stat_handler:GetModifierEvasion_Constant()
+	return self.luck * self.EVASION_PER_LUCK
 end
 
 function modifier_stat_handler:GetModifierBaseAttack_BonusDamage()
@@ -136,7 +147,7 @@ function modifier_stat_handler:GetModifierBaseAttack_BonusDamage()
 end
 
 function modifier_stat_handler:GetModifierHealthBonus( )
-    return self.strength * self.HP_PER_STR + self.vitality * self.HP_PER_VIT
+    return self.vitality * self.HP_PER_VIT
 end
 
 function modifier_stat_handler:GetModifierConstantHealthRegen( )
@@ -148,7 +159,7 @@ function modifier_stat_handler:GetModifierMagicalResistanceBonus( params )
 end
 
 function modifier_stat_handler:GetModifierPhysicalArmorBonus( params )
-    return self.agility * self.ARMOR_PER_AGI
+    return self.strength * self.ARMOR_PER_STR
 end
 
 function modifier_stat_handler:GetModifierAttackSpeedBonus_Constant( params )

@@ -31,7 +31,7 @@
 {
 	width: 100%;
 	height: 100%;
-	background-color: #565656CC;
+	border: 25px solid #565656CC;
 }
 
 .AbilityBarToggle
@@ -80,9 +80,7 @@
 	border: 1px solid #121212FF;
 }
 
-.AbilityLevelImage{
-	width: 100%;
-	height: 100%;
+.AbilityCanBeLeveled{
 	wash-color: #FFCC00;
 	border: 2px solid #FFCC00;
 }
@@ -136,8 +134,39 @@
 
 #MainSelectionHeroPortrait {
 	width: 178px;
-	height: 100%;
+	height: 260px;
 	opacity-mask: url( "file://{images}/custom_game/portraitmask.tga" );
+}
+
+#HeroPortraitBorder {
+	width: 178px;
+	height: 178px;
+	z-index: 10;
+}
+
+#MainSelectionLevelContainer
+{
+	vertical-align: center;
+	horizontal-align: right;
+	background-color: #565656FF;
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	margin-top: 50px;
+	margin-right: 10px;
+}
+
+#MainSelectionLevelContainerLabel
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #FFFFFF;
+	font-size: 20px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 9px 3 #00000000;
+	margin-top: 3px;
+	margin-right: 4px;
 }
 
 #MainSelectionHeroPortraitContainer {
@@ -236,7 +265,8 @@
 .AttributeContainer{
 	flow-children: down;
 	margin-top: 5px;
-	margin-right: 2px;
+	margin-right: 5px;
+	margin-left: 5px;
 }
 
 .StatContainer
@@ -341,6 +371,11 @@
     transform: translate3d( -225px, 0px, 0px );
 }
 
+.Hidden
+{
+    visibility: collapse;
+}
+
 .PlayerInfoContainerHolder {
 	flow-children: down;
 
@@ -427,17 +462,19 @@
 
 .PlayerInfoHealth
 {
-	background-color: gradient( linear, 0% 100%, 0% 0%, from( #800000FF ), color-stop( .5, #e60000FF), color-stop( .5, #e60000FF), to( #800000FF ) );
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #991111FF ), color-stop( .4, #CD2626FF), color-stop( .6, #CD2626FF), to( #991111FF ) );
 	height: fill-parent-flow( 1 );
 	width: 100%;
+	border: 3px solid #881111FF;
 }
 
 
 .PlayerInfoMana{
-	background-color: gradient( linear, 0% 100%, 0% 0%, from( #2b60a1FF ), color-stop( .5, #75a2daFF), color-stop( .5, #75a2daFF), to( #2b60a1FF ) );
+	background-color: gradient( linear, 0% 100%, 0% 0%, from( #1c4875FF ), color-stop( .4, #26619cFF), color-stop( .6, #26619cFF), to( #1c4875FF ) );
 	vertical-align: middle;
 	height: fill-parent-flow( 1 );
 	width: 100%;
+	border: 3px solid #354456FF;
 }
 
 .PlayerInfoContainerClose
@@ -460,4 +497,101 @@
 	width: 35px;
 	height: 35px;
 	wash-color: #464646;
+}
+
+#HeroInformation
+{
+	vertical-align: top;
+	horizontal-align: middle;
+	margin-top: 50px;
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d2d2d99 ), to( #2d2d2d99 ) );
+	border: 2px solid #121212FF;
+	flow-children: down;
+	padding: 20px;
+}
+
+.HeroInfoContainer
+{
+	horizontal-align: center;
+	flow-children: right;
+}
+
+.HeroInfoContainerSub
+{
+	horizontal-align: center;
+	flow-children: down;
+}
+
+
+.InfoImage
+{
+	width: 32px;
+	height: 32px;
+	margin: 2px;
+}
+
+.InfoText
+{
+	vertical-align: center;
+	horizontal-align: center;
+	color: #FFFFFF;
+	font-size: 18px;
+	font-family: "Radiance";
+	text-align: center;
+	text-shadow: 2px 2px 9px 3 #00000000;
+	margin-top: 1px;
+}
+
+.StatInfoContainer
+{
+	horizontal-align: center;
+	flow-children: right;
+	margin-bottom: 1px;
+	margin-left: 5px;
+	margin-right: 5px;
+}
+
+.StatsContainerRight
+{
+	horizontal-align: center;
+	flow-children: right;
+}
+
+.AttributeStatContainer
+{
+	flow-children: right;
+	margin: 4px;
+}
+
+#InfoVisionContainer
+{
+	margin-top: 15px;
+}
+
+#InfoSpeedContainer
+{
+	margin-top: 15px;
+	margin-bottom: 20px;
+}
+
+
+.AttributeStatsContainer
+{
+	vertical-align: bottom;
+	horizontal-align: center;
+	margin-bottom: 30px;
+	flow-children: right;
+}
+
+.HeroInfoScenePanel
+{
+	width: 400px;
+	height: 400px;
+	opacity-mask: url( "file://{images}/custom_game/landscape.tga" );
+	horizontal-align: middle;
+}
+
+#HeroInventory
+{
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d2d2d ), to( #2d2d2d ) );
 }

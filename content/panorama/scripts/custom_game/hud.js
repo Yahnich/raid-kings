@@ -18,7 +18,6 @@ var dotaHud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildT
 	var topbar = dotaHud.FindChildTraverse("topbar");
 	var glyph = dotaHud.FindChildTraverse("GlyphScanContainer");
 	var fancyMinimap = dotaHud.FindChildTraverse("HUDSkinMinimap");
-	
 	fancyMinimap.style.visibility = "collapse";
 	abilityHud.style.visibility = "collapse";
 	stats.style.visibility = "collapse";
@@ -33,7 +32,47 @@ var dotaHud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildT
 
 	CreateTeamInfo()
 	UpdateSelectedUnit()
+	CreateOverheadButtons()
 })();
+
+function CreateOverheadButtons()
+{
+	var overheadButtons = dotaHud.FindChildTraverse("MenuButtons").FindChildTraverse("ButtonBar");
+	
+	var equipmentButton =  $.CreatePanel( "Button", $.GetContextPanel(), "EquipmentButton");
+	equipmentButton.SetParent(overheadButtons)
+	equipmentButton.AddClass("DOTAHudMenuButtons")
+	equipmentButton.style.backgroundImage = "url(\"file://{images}/custom_game/equipmentIcon.png\")";
+	
+	var infoButton =  $.CreatePanel( "Button", $.GetContextPanel(), "InfoButton");
+	infoButton.SetParent(overheadButtons)
+	infoButton.AddClass("DOTAHudMenuButtons")
+	infoButton.style.backgroundImage = "url(\"file://{images}/custom_game/infoIcon.png\")";
+	
+	$("#HeroInformation").SetHasClass( "Hidden", true )
+	infoButton.upgradeAbility = function(){
+		var heroInfo = $("#HeroInformation") 
+		var portrait = $("#PlayerHeroInfoModelContainer")
+		for(var scenePanel of portrait.Children()){
+			// scenePanel.style.visibility = "collapse";
+			// scenePanel.DeleteAsync(0)
+		}
+		if(!$("#PlayerHeroInfoModel")){
+			portrait.BCreateChildren("<DOTAScenePanel id='PlayerHeroInfoModel' unit='"+ Entities.GetUnitName( Players.GetPlayerHeroEntityIndex( localID ) ) +"' environment='camera1' particleonly='false' antialias='true'/>");
+		}
+		$("#PlayerHeroInfoModel").AddClass("HeroInfoScenePanel")
+		heroInfo.SetHasClass( "Hidden", !$("#HeroInformation").BHasClass("Hidden") )
+		UpdateInfoHud()
+	}
+	infoButton.SetPanelEvent("onactivate", infoButton.upgradeAbility );
+}
+
+function UpdateInfoHud()
+{
+	if(!$("#HeroInformation").BHasClass("Hidden")){
+		$.Schedule(0.1, UpdateInfoHud);
+	}
+}
 
 function SetHud()
 {
@@ -48,7 +87,7 @@ function SetHud()
 }
 
 function CreateTeamInfo(){
-	var playerCount = Game.GetAllPlayerIDs(); 
+	var playerCount = Game.GetAllPlayerIDs();
 	if(playerCount.length > 1){
 		for (var pID of playerCount){
 			if(pID != localID){CreateInfoContainer(pID);}
@@ -157,6 +196,9 @@ function UpdateSelectedUnit()
 	var localPlayerOwned = (currUnit == Players.GetPlayerHeroEntityIndex( localID ))
 	var portrait = $("#MainSelectionHeroPortrait")
 	
+	var level = $("#MainSelectionLevelContainerLabel")
+	level.text = Entities.GetLevel( currUnit )
+	
 	var abilityBar = $("#MainSelectionAbilityContainer")
 	var innate = $("#AbilityBarInnate")
 	var currInnate = Abilities.GetAbilityName( Entities.GetAbility( currUnit, 3 ) )
@@ -260,7 +302,7 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 			
 			if( Entities.GetAbilityPoints( unitID ) > 0 && 	Entities.GetLevel( unitID ) >= Abilities.GetHeroLevelRequiredToUpgrade( abilityID ) && Abilities.GetLevel( abilityID ) < Abilities.GetMaxLevel( abilityID ) )
 			{
-				abilitylevel.AddClass("AbilityLevelImage")
+				abilitylevel.AddClass("AbilityCanBeLeveled")
 				abilitylevel.upgradeAbility = function(){ 
 					Abilities.AttemptToUpgrade( abilityID );
 					$.Schedule(0.03, function() { UpdateSelectedUnit() })

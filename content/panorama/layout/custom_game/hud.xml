@@ -15,7 +15,13 @@
 		</Panel>
 		<Panel class="MainSelectionInfoContainer" id="GameHudMainSelectionInfo" hittest="false">
 			<Panel id="MainSelectionHeroPortraitContainer" hittest="false">
-				<DOTAScenePanel id="MainSelectionHeroPortrait" unit="npc_dota_hero_pudge" environment="default" particleonly="false" antialias="true" onactivate="SetLocalCameraTarget()"/>
+				<Panel id="MainSelectionHeroPortraitHolder">
+					<Image src="file://{images}/custom_game/UIBorder.png" id="HeroPortraitBorder" hittest="false"/>
+					<DOTAScenePanel id="MainSelectionHeroPortrait" unit="npc_dota_hero_pudge" environment="default" particleonly="false" antialias="true" onactivate="SetLocalCameraTarget()"/>
+					<Panel id="MainSelectionLevelContainer">
+						<Label id="MainSelectionLevelContainerLabel" text="80"/>
+					</Panel>
+				</Panel>
 				<Panel class="AttributeContainer" id="MainSelectionStatsContainer">
 					<Panel class="StatContainer">
 						<Image src="s2r://panorama/images/hud/reborn/icon_damage_psd.vtex" id="StatsDamage" class="StatsImage" hittest="false"/>
@@ -75,6 +81,106 @@
 		</Panel>
 		<Panel id="MainSelectionAbilityContainer">
 			<DOTAAbilityImage id="AbilityBarInnate" abilityname="ifrit_kindled_soul"/>
+		</Panel>
+		<Panel id="HeroInformation">
+			<Panel id="PlayerHeroInfoModelContainer" />
+			<Panel class="HeroInfoContainer">
+				<Panel class="AttributeContainer">
+					<Panel class="StatInfoContainer">
+						<Image src="s2r://panorama/images/hud/reborn/icon_damage_psd.vtex" id="InfoAttackDamage" class="InfoImage" hittest="false"/>
+						<Label class="InfoText" id="InfoAttackDamageLabel" text="189" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image src="s2r://panorama/images/hud/reborn/icon_attack_speed_psd.vtex" id="InfoAttackSpeed" class="InfoImage" hittest="false"/>
+						<Label class="InfoText" id="InfoAttackSpeedLabel" text="120" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image src="file://{images}/custom_game/attackRangeIcon.png" id="InfoAttackRange" class="InfoImage" hittest="false"/>
+						<Label class="InfoText"  id="InfoAttackRangeLabel" text="150" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image src="file://{images}/custom_game/batIcon.png" id="InfoBAT" class="InfoImage" hittest="false"/>
+						<Label class="InfoText"  id="InfoBATLabel" text="1.7" hittest="false"/>
+					</Panel>
+				</Panel>
+				<Panel class="AttributeContainer">
+					<Panel class="StatInfoContainer">
+						<Image src="s2r://panorama/images/hud/reborn/icon_armor_psd.vtex" id="InfoArmor" class="InfoImage" hittest="false"/>
+						<Label class="InfoText" id="InfoArmorLabel" text="52%" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image src="s2r://panorama/images/hud/reborn/icon_magic_resist_psd.vtex" id="InfoMagicResistance" class="InfoImage" hittest="false"/>
+						<Label class="InfoText" id="InfoMagicResistanceLabel" text="20%" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image  src="file://{images}/custom_game/evasionIcon.png" id="InfoEvasion" class="InfoImage" hittest="false"/>
+						<Label class="InfoText" id="InfoEvasionLabel" text="30%" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image src="file://{images}/custom_game/srIcon.png" id="InfoStatusResistance" class="InfoImage" hittest="false"/>
+						<Label class="InfoText"  id="InfoStatusResistanceLabel" text="30%" hittest="false"/>
+					</Panel>
+				</Panel>
+				<Panel class="AttributeContainer">
+					<Panel class="StatInfoContainer">
+						<Image src="file://{images}/custom_game/ampIcon.png" id="InfoSpellAmp" class="InfoImage" hittest="false"/>
+						<Label class="InfoText" id="InfoSpellAmpLabel" text="15%" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image src="file://{images}/custom_game/cdrIcon.png" id="InfoCooldownReduction" class="InfoImage" hittest="false"/>
+						<Label class="InfoText" id="InfoCooldownReductionLabel" text="20%" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image src="file://{images}/custom_game/castRangeIcon.png" id="InfoCastRange" class="InfoImage" hittest="false"/>
+						<Label class="InfoText"  id="InfoCastRangeLabel" text="300" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image src="file://{images}/custom_game/sampIcon.png" id="InfoStatusAmp" class="InfoImage" hittest="false"/>
+						<Label class="InfoText"  id="InfoStatusAmpLabel" text="25%" hittest="false"/>
+					</Panel>
+				</Panel>
+			</Panel>
+			<Panel class="HeroInfoContainerSub">
+				<Panel class="StatsContainerRight" id="InfoVisionContainer">
+					<Panel class="StatInfoContainer" >
+						<Image src="s2r://panorama/images/hud/reborn/icon_sun_psd.vtex" id="InfoDayVision" class="InfoImage" hittest="false"/>
+						<Label class="InfoText" id="InfoDayVisionLabel" text="1800" hittest="false"/>
+					</Panel>
+					<Panel class="StatInfoContainer">
+						<Image src="s2r://panorama/images/hud/reborn/icon_moon_psd.vtex" id="InfoNightVision" class="InfoImage" hittest="false"/>
+						<Label class="InfoText" id="InfoNightVisionLabel" text="800" hittest="false"/>
+					</Panel>
+				</Panel>
+				<Panel class="StatInfoContainer" id="InfoSpeedContainer">
+					<Image src="s2r://panorama/images/hud/reborn/icon_speed_psd.vtex" id="InfoSpeed" class="InfoImage" hittest="false"/>
+					<Label class="InfoText" id="InfoSpeedLabel" text="300" hittest="false"/>
+				</Panel>
+			</Panel>
+			<Panel class="AttributeStatsContainer">
+				<Panel class="AttributeStatContainer">
+					<Image src="file://{images}/custom_game/strength.png" id="InfoStrength" class="InfoImage" hittest="false"/>
+					<Label class="InfoText" id="InfoStrengthLabel" text="5000" hittest="false"/>
+				</Panel>
+				<Panel class="AttributeStatContainer">
+					<Image src="file://{images}/custom_game/agility.png" id="InfoAgility" class="InfoImage" hittest="false"/>
+					<Label class="InfoText" id="InfoAgilityLabel" text="5000" hittest="false"/>
+				</Panel>
+				<Panel class="AttributeStatContainer">
+					<Image src="file://{images}/custom_game/intelligence.png" id="InfoIntelligence" class="InfoImage" hittest="false"/>
+					<Label class="InfoText" id="InfoIntelligenceLabel" text="5000" hittest="false"/>
+				</Panel>
+				<Panel class="AttributeStatContainer">
+					<Image src="file://{images}/custom_game/luck.png" id="InfoLuck" class="InfoImage" hittest="false"/>
+					<Label class="InfoText" id="InfoLuckLabel" text="5000" hittest="false"/>
+				</Panel>
+				<Panel class="AttributeStatContainer">
+					<Image src="file://{images}/custom_game/vitality.png" id="InfoVitality" class="InfoImage" hittest="false"/>
+					<Label class="InfoText" id="InfoVitalityLabel" text="5000" hittest="false"/>
+				</Panel>
+			</Panel>
+		</Panel>
+		<Panel id="HeroInventory">
+			
 		</Panel>
     </Panel>
 </root>
