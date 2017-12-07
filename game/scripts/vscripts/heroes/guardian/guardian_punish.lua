@@ -3,6 +3,11 @@ guardian_punish = class({})
 function guardian_punish:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
+
+	local launch = ParticleManager:CreateParticle("particles/heroes/justicar/justicar_absolution_beam_2.vpcf", PATTACH_POINT, caster)
+	ParticleManager:SetParticleControlEnt(launch, 0, caster, PATTACH_POINT, "attach_attack1", caster:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(launch, 1, target, PATTACH_POINT, "attach_hitloc", target:GetAbsOrigin(), true)
+
 	target:AddNewModifier(caster, self, "modifier_guardian_punish_debuff", {duration = self:GetTalentSpecialValueFor("debuff_duration")})
 	self:DealDamage(caster, target, self:GetTalentSpecialValueFor("damage"))
 	

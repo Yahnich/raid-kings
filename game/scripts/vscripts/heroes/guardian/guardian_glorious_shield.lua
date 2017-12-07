@@ -10,7 +10,7 @@ function guardian_glorious_shield:OnSpellStart()
 	local radius = self:GetTalentSpecialValueFor("cone_radius")
 	local fwPos = caster:GetAbsOrigin() + self:GetCaster():GetForwardVector() * radius
 	
-	local targets = caster:FindEnemyUnitsInRadius(fwPos, radius, {})
+	local targets = caster:FindEnemyUnitsInLine(caster:GetAbsOrigin(), fwPos, radius/2, {})
 	local damage = self:GetTalentSpecialValueFor("damage")
 	local duration = self:GetTalentSpecialValueFor("duration")
 	for _, target in ipairs(targets) do

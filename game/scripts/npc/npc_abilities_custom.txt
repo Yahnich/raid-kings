@@ -1539,6 +1539,9 @@
 		"AbilityCastRange"				"900"
 		"AbilityCooldown"				"12 11 10 9 8 7 6"
 		"AbilityManaCost"				"80"
+	
+		"AbilityCastPoint"              "0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_STATUE"
 		
 		"precache"
 		{
@@ -1612,11 +1615,15 @@
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
+	
+		"AbilityCastPoint"              "0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
 		"precache"
 		{
 			"particle"					"particles/heroes/guardian/guardian_challenge.vpcf"
 			"particle"					"particles/heroes/guardian/guardian_challenge_debuff.vpcf"
+			"particle"                  "particles/heroes/justicar/justicar_absolution_beam_2.vpcf"
 		}
 	
 		// Time		
@@ -1740,7 +1747,8 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"400"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -1815,12 +1823,13 @@
 		"AbilityCooldown"				"45"
 		"AbilityCastRange"				"800"
 		
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	    "AbilityCastPoint"              "0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_STATUE"
 		
 		"precache"
 		{
 			"particle"					"particles/fire_ball_explosion.vpcf"
-			"particle"					"particles/units/heroes/hero_sven/sven_spell_gods_strength_ambient.vpcf"
+			"particle"					"particles/heroes/guardian/guardian_guardian_spirit.vpcf.vpcf"
 			"particle"					"particles/units/heroes/hero_sven/sven_gods_strength_hero_effect.vpcf"
 			"particle"					"particles/status_fx/status_effect_gods_strength.vpcf"
 		}
@@ -1890,8 +1899,8 @@
 		"LevelsBetweenUpgrades"			"5"
 		
 		"AbilityCastPoint"				"0.3"
-		"AbilityCastRange"				"300"
-		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		"AbilityCastRange"				"400"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
 		"AbilityCooldown"				"10"
 		"AbilityManaCost"				"95"
@@ -1900,6 +1909,9 @@
 		{
 			"particle"					"particles/heroes/guardian/guardian_punish.vpcf"
 			"particle"					"particles/heroes/guardian/guardian_punish_debuff.vpcf"
+	        "particle"                  "particles/heroes/justicar/justicar_absolution_beam_2.vpcf"
+	
+	        "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 		}
 		
 	    "AbilitySpecial"
@@ -1965,7 +1977,7 @@
 		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"900"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_STATUE"
 		
 		"AbilityCooldown"				"22 21 20 19 18 17 16"
 		"AbilityManaCost"				"75"
@@ -2032,7 +2044,7 @@
 	{
 	    "BaseClass"                     "ability_lua"
 	    "ScriptFile"                    "heroes/guardian/guardian_shield_bash.lua"
-	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 		"AbilityTextureName"			"custom/guardian_shield_bash"
 	    "RequiredLevel"  				"7"
@@ -2041,7 +2053,9 @@
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"150"
+		"AbilityCastRange"				"400"
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -2049,8 +2063,10 @@
 		
 		"precache"
 		{
-			"particle"					"particles/heroes/guardian/guardian_shield_smash.vpcf"
+			"particle"					"particles/heroes/guardian/guardian_shield_smash_projectile.vpcf"
+	
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
+	        "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 		}
 		
 	    "AbilitySpecial"
@@ -2065,15 +2081,15 @@
 	            "var_type"                      "FIELD_INTEGER"
 	            "knockback"     				"400"
 	        }
+	        "04"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "radius"                        "100"
+	        }
 			"03"
 	        {
 	            "var_type"                      "FIELD_FLOAT"
 	            "stun_duration"     			"2.1"
-	        }
-			"04"
-	        {
-	            "var_type"                      "FIELD_FLOAT"
-	            "talent_damage_reduction"     	"-25"
 	        }
 	    }
 	}
@@ -2109,9 +2125,8 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 		
-		"AbilityCastPoint"				"0.3"
-		"AbilityCastRange"				"450"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST3_STATUE"
+		"AbilityCastPoint"              "0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_STATUE"
 		
 		"AbilityCooldown"				"25 22.5 20 17.5 15 12.5 10"
 		"AbilityManaCost"				"120"

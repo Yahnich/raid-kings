@@ -11,14 +11,14 @@
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
 			m_flOverbrightFactor = 3.0
-			m_hTexture = resource:"materials/particle/dirt/explode/dirt_explode_sprite.vtex"
+			m_hTexture = resource:"materials/particle/sparks/sparks.vtex"
 		},
 	]
 	m_Operators = 
 	[
 		{
 			_class = "C_OP_BasicMovement"
-			m_fDrag = 0.1
+			m_Gravity = [ 0.0, 0.0, 200.0 ]
 		},
 		{
 			_class = "C_OP_Decay"
@@ -44,6 +44,7 @@
 			m_vecOutputMin = [ -8.0, -8.0, -8.0 ]
 			m_vecOutputMax = [ 8.0, 8.0, 8.0 ]
 			m_bAdditive = true
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_FadeOutSimple"
@@ -59,8 +60,7 @@
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.05
-			m_fLifetimeMax = 0.15
+			m_fLifetimeMax = 1.0
 		},
 		{
 			_class = "C_INIT_CreateFromParentParticles"
@@ -81,10 +81,12 @@
 			m_flNoiseScaleLoc = 0.1
 			m_vecOutputMin = [ -200.0, -200.0, -200.0 ]
 			m_vecOutputMax = [ 200.0, 200.0, 200.0 ]
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_RandomSequence"
-			m_nSequenceMax = 3
+			m_nSequenceMax = 8
+			m_nSequenceMin = 4
 		},
 		{
 			_class = "C_INIT_RandomRadius"

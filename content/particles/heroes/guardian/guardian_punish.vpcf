@@ -11,7 +11,7 @@
 			_class = "C_OP_RenderSprites"
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
 			m_bAdditive = true
-			m_hTexture = resource:"materials/particle/particle_flares/aircraft_white.vtex"
+			m_hTexture = resource:"materials/particle/particle_flares/aircraft_white_v3.vtex"
 			m_nOrientationType = 2
 			m_flAnimationRate = 1.0
 		},
@@ -47,7 +47,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 188, 152, 55, 255 ]
+			m_ColorFade = [ 214, 205, 111, 255 ]
 		},
 		{
 			_class = "C_OP_Orient2DRelToCP"
@@ -58,8 +58,7 @@
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMin = 0.75
-			m_fLifetimeMax = 0.75
+			m_fLifetimeMax = 1.0
 		},
 		{
 			_class = "C_INIT_CreateWithinSphere"
@@ -67,13 +66,12 @@
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 3.0
-			m_flRadiusMax = 9.0
+			m_flRadiusMax = 6.0
 		},
 		{
 			_class = "C_INIT_RandomColor"
-			m_ColorMin = [ 158, 143, 17, 64 ]
-			m_ColorMax = [ 185, 177, 110, 64 ]
+			m_ColorMin = [ 254, 255, 167, 255 ]
+			m_ColorMax = [ 214, 205, 111, 255 ]
 			m_nFieldOutput = 22
 		},
 		{
@@ -83,11 +81,6 @@
 			_class = "C_INIT_PositionOffset"
 			m_OffsetMin = [ 0.0, 0.0, 8.0 ]
 			m_OffsetMax = [ 0.0, 0.0, 8.0 ]
-		},
-		{
-			_class = "C_INIT_RandomColor"
-			m_ColorMax = [ 185, 177, 110, 64 ]
-			m_ColorMin = [ 185, 177, 110, 64 ]
 		},
 	]
 	m_Emitters = 
@@ -100,25 +93,19 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/econ/items/sven/sven_warcry_ti5/sven_spell_warcry_small_it_5.vpcf"
+			m_ChildRef = resource:"particles/heroes/guardian/guardian_punish_a.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/econ/items/sven/sven_warcry_ti5/sven_spell_warcry_light_it_5.vpcf"
+			m_ChildRef = resource:"particles/heroes/guardian/guardian_punish_b.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/econ/items/sven/sven_warcry_ti5/sven_spell_warcry_small_c_it_5.vpcf"
+			m_ChildRef = resource:"particles/heroes/guardian/guardian_punish_c.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/econ/items/sven/sven_warcry_ti5/sven_spell_warcry_small_c_it_5.vpcf"
+			m_ChildRef = resource:"particles/heroes/guardian/guardian_punish_d.vpcf"
 		},
 		{
-			m_ChildRef = resource:"particles/econ/items/sven/sven_warcry_ti5/sven_spell_warcry_small_d_it_5.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/econ/items/sven/sven_warcry_ti5/sven_spell_warcry_small_c_b_it_5.vpcf"
-		},
-		{
-			m_ChildRef = resource:"particles/econ/items/sven/sven_warcry_ti5/sven_warcry_cast_lightning_strike.vpcf"
+			m_ChildRef = resource:"particles/heroes/guardian/guardian_punish_e.vpcf"
 		},
 	]
 	m_controlPointConfigurations = 
@@ -157,4 +144,5 @@
 			]
 		},
 	]
+	m_ConstantColor = [ 254, 255, 167, 255 ]
 }

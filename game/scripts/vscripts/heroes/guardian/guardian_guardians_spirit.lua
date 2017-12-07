@@ -49,7 +49,7 @@ function modifier_guardian_guardians_spirit_buff:OnDestroy()
 end
 
 function modifier_guardian_guardians_spirit_buff:GetEffectName()
-	return "particles/units/heroes/hero_sven/sven_spell_gods_strength_ambient.vpcf"
+	return "particles/heroes/guardian/guardian_guardian_spirit.vpcf"
 end
 
 function modifier_guardian_guardians_spirit_buff:GetHeroEffectName()

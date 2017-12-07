@@ -15,8 +15,7 @@
 				m_nCPin = 0
 			}
 			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
-			m_bAdditive = true
-			m_hTexture = resource:"materials/particle/particle_cone_gradient_1.vtex"
+			m_hTexture = resource:"materials/particle/aegis_bw.vtex"
 			m_flAnimationRate = 1.0
 		},
 	]
@@ -47,12 +46,11 @@
 	[
 		{
 			_class = "C_INIT_RandomLifeTime"
-			m_fLifetimeMax = 0.35
-			m_fLifetimeMin = 0.25
+			m_fLifetimeMax = 1.0
 		},
 		{
 			_class = "C_INIT_RandomRadius"
-			m_flRadiusMin = 150.0
+			m_flRadiusMin = 100.0
 			m_flRadiusMax = 150.0
 		},
 		{
@@ -82,7 +80,7 @@
 		{
 			_class = "C_OP_InstantaneousEmitter"
 			m_flStartTime = 0.15
-			m_nParticlesToEmit = 32
+			m_nParticlesToEmit = 3
 		},
 	]
 	m_Children = 

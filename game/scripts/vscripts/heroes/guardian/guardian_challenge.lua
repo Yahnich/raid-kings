@@ -4,6 +4,11 @@ function guardian_challenge:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 	EmitSoundOn("Hero_Sven.StormBolt", target)
+
+	local launch = ParticleManager:CreateParticle("particles/heroes/justicar/justicar_absolution_beam_2.vpcf", PATTACH_POINT, caster)
+	ParticleManager:SetParticleControlEnt(launch, 0, caster, PATTACH_POINT, "attach_attack1", caster:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(launch, 1, target, PATTACH_POINT, "attach_hitloc", target:GetAbsOrigin(), true)
+
 	ParticleManager:FireParticle("particles/heroes/guardian/guardian_challenge.vpcf", PATTACH_POINT_FOLLOW, target, {[2] = Vector(target:GetHullRadius(),target:GetHullRadius(),target:GetHullRadius())})
 	target:AddNewModifier(caster, self, "modifier_guardian_challenge_debuff", {duration = self:GetTalentSpecialValueFor("debuff_duration")})
 end
