@@ -6,13 +6,14 @@ function justicar_avenging_wrath:GetCastRange(vLoc, hUnit)
 end
 
 function justicar_avenging_wrath:OnSpellStart()
-	local hCaster = self:GetCaster()
+	hCaster = self:GetCaster()
 	local vTarget = self:GetCursorPosition()
 	
-	local vDir = CalculateDirection(vTarget, hCaster) * Vector(1,1,0)
-	local fVelocity = self:GetSpecialValueFor("speed")
-	local fWidth = self:GetSpecialValueFor("width")
-	local fDistance = self:GetSpecialValueFor("distance")
+	vDir = CalculateDirection(vTarget, hCaster) * Vector(1,1,0)
+	fVelocity = self:GetSpecialValueFor("speed")
+	fWidth = self:GetSpecialValueFor("width")
+	fDistance = self:GetSpecialValueFor("distance")
+	damage = self:GetSpecialValueFor("damage")
 	
 	local beams = self:GetTalentSpecialValueFor("beams")
 	local angleOffSet = math.pi * 2 / beams
@@ -23,7 +24,6 @@ function justicar_avenging_wrath:OnSpellStart()
 end
 
 function justicar_avenging_wrath:CreateWave(vDir, fVelocity, fWidth, fDistance)
-	local hCaster = self:GetCaster()
 	local projPos = hCaster:GetAbsOrigin()
 	local avenging_wrath = ParticleManager:CreateParticle( "particles/heroes/justicar/justicar_avenging_wrath.vpcf", PATTACH_POINT, hCaster )
 	
@@ -44,18 +44,6 @@ function justicar_avenging_wrath:CreateWave(vDir, fVelocity, fWidth, fDistance)
 		if traveled < fDistance then
 			projPos = projPos + (vDir * speed)
 			ParticleManager:SetParticleControl( avenging_wrath, 1, projPos )
-			--[[
-			local enemies = hCaster:FindEnemyUnitsInLine(hCaster:GetAbsOrigin(), projPos, fWidth, {})
-			for _, enemy in pairs(enemies) do
-				self:GetAbility():DealDamage(hCaster, enemy, 10, {}, 0)
-				
-				enemy:AddNewModifier(hCaster, self:GetAbility(), "modifier_justicar_avenging_wrath_debuff", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")})
-				local hit = ParticleManager:CreateParticle("particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_purification_immortal_cast.vpcf", PATTACH_POINT_FOLLOW, enemy)
-				ParticleManager:SetParticleControl(hit, 0, enemy:GetAbsOrigin())
-				ParticleManager:SetParticleControl(hit, 1, enemy:GetAbsOrigin())
-				ParticleManager:ReleaseParticleIndex(hit)
-			end
-			]]
 		else
 			ParticleManager:DestroyParticle( avenging_wrath, false )
 			ParticleManager:ReleaseParticleIndex(avenging_wrath)
@@ -66,11 +54,12 @@ function justicar_avenging_wrath:CreateWave(vDir, fVelocity, fWidth, fDistance)
 		if not target then return end
 		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) then
 			if not self.hitUnits[target:entindex()] then
-				--local innerSun = hCaster:GetInnerSun()
-				--self:GetCaster():ResetInnerSun()
-				self:GetAbility():DealDamage(hCaster, target, self:GetAbility():GetSpecialValueFor("damage"), {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
+				local innerSun = hCaster:GetInnerSun()
+				self:GetCaster():ResetInnerSun()
+				self:GetAbility():DealDamage(hCaster, target, damage, {}, 0)
 				
-				target:AddNewModifier(hCaster, self:GetAbility(), "modifier_justicar_avenging_wrath_debuff", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")})
+				
+				target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_justicar_avenging_wrath_debuff", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")})
 				local hit = ParticleManager:CreateParticle("particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_purification_immortal_cast.vpcf", PATTACH_POINT_FOLLOW, target)
 				ParticleManager:SetParticleControl(hit, 0, target:GetAbsOrigin())
 				ParticleManager:SetParticleControl(hit, 1, target:GetAbsOrigin())
@@ -90,7 +79,8 @@ function justicar_avenging_wrath:CreateWave(vDir, fVelocity, fWidth, fDistance)
 																  velocity = vDir * fVelocity,
 																  duration = 10,
 																  distance = fDistance,
-																  hitUnits = {}})
+																  hitUnits = {},
+																  damage = damage})
 end
 
 modifier_justicar_avenging_wrath_debuff = class({})
