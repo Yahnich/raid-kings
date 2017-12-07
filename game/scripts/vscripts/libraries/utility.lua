@@ -147,10 +147,9 @@ end
 function CDOTABaseAbility:DealDamage(attacker, victim, damage, data, spellText)
 	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
 	local damageType = self:GetAbilityDamageType() or DAMAGE_TYPE_MAGICAL
-	local damageFlags = self:GetAbilityTargetFlags() or DOTA_DAMAGE_FLAG_NONE
+	local damageFlags = DOTA_DAMAGE_FLAG_NONE or data.damage_flags
 	if data and data.damage_type then damageType = data.damage_type end
-	if data then damageFlags = data.damage_flags end
-	local localdamage = damage or self:GetAbilityDamage()
+	local localdamage = damage
 	local spellText = spellText or 0
 	if spellText > 0 then
 		local damage = ApplyDamage({victim = victim, attacker = attacker, ability = self, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
@@ -164,9 +163,8 @@ end
 function CDOTABaseAbility:DealAOEDamage(attacker, damage, position, radius, data, spellText)
 	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
 	local damageType = self:GetAbilityDamageType() or DAMAGE_TYPE_MAGICAL
-	local damageFlags = self:GetAbilityTargetFlags() or DOTA_DAMAGE_FLAG_NONE
+	local damageFlags = DOTA_DAMAGE_FLAG_NONE or data.damage_flags
 	if data and data.damage_type then damageType = data.damage_type end
-	if data then damageFlags = data.damage_flags end
 	local localdamage = damage or self:GetAbilityDamage()
 	local team = attacker:GetTeamNumber()
 	local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY or data.iTeam
@@ -193,9 +191,8 @@ end
 function CDOTABaseAbility:DealMaxHPAOEDamage(attacker, damage_pct, position, radius, data, spellText)
 	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
 	local damageType = self:GetAbilityDamageType() or DAMAGE_TYPE_MAGICAL
-	local damageFlags = self:GetAbilityTargetFlags() or DOTA_DAMAGE_FLAG_NONE
+	local damageFlags = DOTA_DAMAGE_FLAG_NONE or data.damage_flags
 	if data and data.damage_type then damageType = data.damage_type end
-	if data then damageFlags = data.damage_flags end
 	local team = attacker:GetTeamNumber()
 	local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY or data.iTeam
 	local iType = DOTA_UNIT_TARGET_ALL or data.iType
@@ -665,7 +662,7 @@ function CDOTA_BaseNPC:Lifesteal(source, lifestealPct, damage, target, damage_ty
 	ParticleManager:ReleaseParticleIndex(lifesteal)
 end
 
-function CDOTA_BaseNPC:Lifesteal(lifestealPct, damage)
+function CDOTA_BaseNPC:Lifesteal_alt(lifestealPct, damage)
 	local damageDealt = damage or 0
 	local flHeal = damageDealt * lifestealPct / 100
 	self:Heal(flHeal,self)

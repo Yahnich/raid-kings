@@ -61,7 +61,7 @@ function modifier_adjudicator:OnAttackLanded( params )
  			local damageTaken = targetHealthStart - targetNewHealth
  			SendOverheadEventMessage(self.attacker:GetPlayerOwner(),OVERHEAD_ALERT_BONUS_SPELL_DAMAGE,self.target,damageTaken,self.attacker:GetPlayerOwner()) --Substract the starting health by the new health to get exact damage taken values.
 
- 			self.attacker:Lifesteal(self.lifesteal, self.damageDealt)
+ 			self.attacker:Lifesteal_alt(self.lifesteal, self.damageDealt)
  			
  			self.target:AddNewModifier(self.attacker,self:GetAbility(),"modifier_adjudicator_armor",{Duration = self.armor_duration})
 
