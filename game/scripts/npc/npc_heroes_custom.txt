@@ -3,7 +3,9 @@
 	"npc_dota_hero_dazzle" // Mystic -> need to do it like this for mergetables
 	{
 		"override_hero"			"npc_dota_hero_dazzle"
-		"DisableWearables"			"0"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.474"
+		
 		"Ability1"				"class_empty_1"					// Ability 1
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
@@ -98,7 +100,7 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"					"305"
+		"MovementSpeed"					"180"
 		"MovementTurnRate"				"1.5"
 	}
 	//=================================================================================================================
@@ -107,7 +109,10 @@
 	"npc_dota_hero_legion_commander"
 	{
 		"override_hero"			"npc_dota_hero_legion_commander"
-		"DisableWearables"			"0"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.615"
+
+		
 		"Ability1"				"class_empty_1"					// Ability 1
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
@@ -199,13 +204,15 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"		"320"
+		"MovementSpeed"		"190"
 		"MovementTurnRate"			"1.5"
 	}
 	"npc_dota_hero_lina" // Ifrit
 	{
 		"override_hero"				"npc_dota_hero_lina"
-		"DisableWearables"			"0"
+		"DisableWearables"			"1"
+		"ModelScale"				"0.468"
+		
 		"Ability1"					"class_empty_1"
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
@@ -300,14 +307,17 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"			"295"
+		"MovementSpeed"			"175"
 		"MovementTurnRate"		"1.5"
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
 	}
 	"npc_dota_hero_necrolyte"
 	{
-		"override_hero"			"npc_dota_hero_necrolyte"
-		"DisableWearables"			"0"
+		"override_hero"				"npc_dota_hero_necrolyte"
+		"DisableWearables"			"1"
+		"ModelScale"				"0.474"
+		
 		"Ability1"					"class_empty_1"
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
@@ -400,14 +410,18 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"				"285"
+		"MovementSpeed"				"170"
 		"MovementTurnRate"			"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
 		
 	}
 	"npc_dota_hero_omniknight" // Justicar
 	{
 		"override_hero"			"npc_dota_hero_omniknight"
-		"DisableWearables"			"0"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.444"
+		
 		"Ability1"				"class_empty_1"					// Ability 1
 		"Ability2"				"class_empty_2"
 		"Ability3"				"class_empty_3"
@@ -500,15 +514,17 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"				"305"
+		"MovementSpeed"				"185"
 		"MovementTurnRate"			"1.5"
-		"BoundsHullName"			"DOTA_HULL_SIZE_HERO"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
 		
 	}
 	"npc_dota_hero_phantom_assassin" // Shinigami
 	{
 		"override_hero"				"npc_dota_hero_phantom_assassin"
-		"DisableWearables"			"0"
+		"DisableWearables"			"1"
+		"ModelScale"				"0.516"
+		
 		"Ability1"					"class_empty_1"
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
@@ -601,15 +617,18 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"			"305"
+		"MovementSpeed"			"185"
 		"MovementTurnRate"		"1.5"
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
 		
 	}
 	"npc_dota_hero_skeleton_king" // Wraith
 	{
-		"override_hero"			"npc_dota_hero_skeleton_king"
-		"DisableWearables"			"0"
+		"override_hero"				"npc_dota_hero_skeleton_king"
+		"DisableWearables"			"1"
+		"ModelScale"				"0.564"
+		
 		"Ability1"					"class_empty_1"
 		"Ability2"					"class_empty_2"
 		"Ability3"					"class_empty_3"
@@ -702,13 +721,17 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"		"300"
+		"MovementSpeed"				"180"
 		"MovementTurnRate"			"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
 	}
 	"npc_dota_hero_sven" // Guardian
 	{
 		"override_hero"			"npc_dota_hero_sven"
-		"DisableWearables"			"0"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.504"
+		
 		"Ability1"				"class_empty_1"					// Ability 1
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
@@ -801,13 +824,17 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"				"290"
+		"MovementSpeed"				"175"
 		"MovementTurnRate"			"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
 	}
 	"npc_dota_hero_templar_assassin" // Peacekeeper
 	{
 		"override_hero"			"npc_dota_hero_templar_assassin"
-		"DisableWearables"		"0"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.528"
+		
 		"Ability1"				"class_empty_1"					// Ability 1
 		"Ability2"				"class_empty_2"					// Ability 2
 		"Ability3"				"class_empty_3"						// Ability 3
@@ -902,19 +929,23 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"					"310"
+		"MovementSpeed"					"185"
 		"MovementTurnRate"				"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
 	}
 	"npc_dota_hero_treant" // Forest
 	{
 		"override_hero"				"npc_dota_hero_treant"
-		"DisableWearables"			"0"
-		"Ability1"				"class_empty_1"
-		"Ability2"				"class_empty_2"
-		"Ability3"				"class_empty_3"
-		"Ability4"				"forest_iron_bark"
-		"Ability5"				"generic_hidden"
-		"Ability6"				"class_empty_4"
+		"DisableWearables"			"1"
+		"ModelScale"				"0.504"
+		
+		"Ability1"					"class_empty_1"
+		"Ability2"					"class_empty_2"
+		"Ability3"					"class_empty_3"
+		"Ability4"					"forest_iron_bark"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"class_empty_4"
 		// Talents 
 		"Ability10"		"generic_empty_talent_1"
 		"Ability11"		"special_bonus_mp_regen_2"
@@ -1001,13 +1032,17 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"MovementSpeed"				"270"
+		"MovementSpeed"				"160"
 		"MovementTurnRate"			"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
 	}
 	"npc_dota_hero_windrunner" // Sylph
 	{
 		"override_hero"			"npc_dota_hero_windrunner"
-		"DisableWearables"			"0"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.588"
+		
 		"Ability1"				"class_empty_1"
 		"Ability2"				"class_empty_2"
 		"Ability3"				"class_empty_3"
@@ -1102,8 +1137,9 @@
 		"AttributeBaseAgility"			"0"
 		"AttributeAgilityGain"			"0"
 		
-		"BoundsHullName"		"DOTA_HULL_SIZE_HERO"
-		"MovementSpeed"			"295"
+		"MovementSpeed"			"175"
 		"MovementTurnRate"		"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
 	}
 }

@@ -5,3 +5,5 @@ game/tools_asset_info.bin
 game/panorama/
 game/panorama_debugger.cfg
 game/maps/background.vpk
+game/tools_thumbnail_cache.bin
+content/materials/overviews/raid_kings_graveyard.tga

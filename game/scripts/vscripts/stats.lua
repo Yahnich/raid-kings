@@ -37,8 +37,13 @@ function Stats:ManageStats(hero)
 	self.customVitality = hero:GetBaseVitality() + hero:GetLevel() * hero:GetVitalityGain()
 	self.customLuck = hero:GetBaseLuck() + hero:GetLevel() * hero:GetLuckGain()
 	
+	data.evasion = 0
+	data.spellamp = 0
+	data.cdr = 0
+	data.castrange = 0
+	data.statusamp = 0
+	data.statusresistance = 0
 	for _, modifier in ipairs(hero:FindAllModifiers()) do
-	
 		-- Attribute management
 		if modifier.GetModifierBonusStats_Strength and modifier:GetModifierBonusStats_Strength() then
 			self.customStrength = self.customStrength + modifier:GetModifierBonusStats_Strength()
@@ -57,7 +62,31 @@ function Stats:ManageStats(hero)
 		end
 		
 		-- Modifier property management
-		
+		if modifier.GetModifierEvasion_Constant and modifier:GetModifierEvasion_Constant() then
+			local evasion = data.evasion or 0
+			local hitChance = 1 - evasion/100
+			data.evasion = evasion + hitChance * modifier:GetModifierEvasion_Constant()/100
+		end
+		if modifier.GetModifierSpellAmplify_Percentage and modifier:GetModifierSpellAmplify_Percentage() then
+			data.spellamp = data.spellamp + modifier:GetModifierSpellAmplify_Percentage()
+		end
+		if modifier.GetModifierCastRangeBonusStacking and modifier:GetModifierCastRangeBonusStacking() then
+			data.castrange = data.castrange + modifier:GetModifierCastRangeBonusStacking()
+		end
+		if modifier.GetModifierStatusAmplification and modifier:GetModifierStatusAmplification() then
+			data.statusamp = data.statusamp + modifier:GetModifierStatusAmplification()
+		end
+		if modifier.GetModifierStatusResistance and modifier:GetModifierStatusResistance() then
+			data.statusresistance = data.statusresistance + modifier:GetModifierStatusResistance()
+		end
+		if modifier.GetModifierStatusResistance and modifier:GetModifierPercentageCooldownStacking() then
+			data.cdr = data.cdr + modifier:GetModifierPercentageCooldownStacking() / 100
+		end
+		local cdr = 0
+		if modifier.GetModifierPercentageCooldown and modifier:GetModifierPercentageCooldown() then
+			cdr = math.max(cdr, modifier:GetModifierPercentageCooldown())
+		end
+		data.cdr = 1 - ((1 - data.cdr) * (1 - (cdr / 100)))
 	end
 	
 	self.customIntellect = math.floor(self.customIntellect + 0.5)
@@ -66,6 +95,7 @@ function Stats:ManageStats(hero)
 	self.customVitality = math.floor(self.customVitality + 0.5)
 	self.customLuck = math.floor(self.customLuck + 0.5)
 	
+	-- attributes
 	data.intellect = self.customIntellect
 	data.strength = self.customStrength
 	data.agility = self.customAgility
@@ -87,7 +117,7 @@ function modifier_stat_handler:OnCreated()
 	self.MR_PER_STR = 0.1
 	
 	self.ATKSPD_PER_AGI = 1
-	self.MS_PER_AGI = 0.12
+	self.MS_PER_AGI = 0.072
 	
 	self.MANA_PER_INT = 12
 	self.MANA_REGEN_PER_INT = 0.08

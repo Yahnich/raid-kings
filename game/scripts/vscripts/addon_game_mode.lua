@@ -210,15 +210,71 @@ function CRaidKings:InitGameMode()
 	
 	ListenToGameEvent("dota_player_pick_hero", Dynamic_Wrap( CRaidKings, "OnHeroPick"), CRaidKings )
 	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap(CRaidKings, "FilterOrders"), CRaidKings )
+	GameRules:GetGameModeEntity():SetModifierGainedFilter( Dynamic_Wrap(CRaidKings, "FilterModifiers"), CRaidKings )
 	
 	GameRules:GetGameModeEntity():SetThink( "OnGameThink", self, 0.25 ) 
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride(600)
 end
 
 function CRaidKings:OnGameThink()
 end
 
 function CRaidKings:FilterOrders(event)
+	PrintAll(event)
 	if event.order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then return nil end
+	for _, heroID in pairs(event.units) do
+		local hero = EntIndexToHScript( heroID )
+		if hero and hero:IsRealHero() and not hero.hasSkillsSelected then
+			return nil
+		end
+	end
+	return true
+end
+
+function CRaidKings:FilterModifiers( filterTable )
+	local parent_index = filterTable["entindex_parent_const"]
+    local caster_index = filterTable["entindex_caster_const"]
+	local ability_index = filterTable["entindex_ability_const"]
+    if not parent_index or not caster_index or not ability_index then
+        return true
+    end
+	local duration = filterTable["duration"]
+    local parent = EntIndexToHScript( parent_index )
+    local caster = EntIndexToHScript( caster_index )
+	local ability = EntIndexToHScript( ability_index )
+	local name = filterTable["name_const"]
+
+	if parent == caster or not caster or not ability or duration == -1 then return true end
+	
+	local parentBuffIncrease = 1
+	local parentDebuffIncrease = 0
+	local casterBuffIncrease = 1
+	local casterDebuffIncrease = 1
+	
+	for _, modifier in pairs( parent:FindAllModifiers() ) do
+		if modifier.BonusDebuffDuration_Constant then
+			parentDebuffIncrease = parentDebuffIncrease + (1 - parentDebuffIncrease) * (modifier:GetModifierStatusResistance() / 100)
+			parentBuffIncrease = parentBuffIncrease + (modifier:GetModifierStatusResistance() / 100)
+		end
+	end
+	for _, modifier in ipairs( caster:FindAllModifiers() ) do
+		if modifier.BonusAppliedBuffDuration_Constant then
+			casterBuffIncrease = casterBuffIncrease + (modifier:GetModifierStatusAmplification() / 100)
+			casterDebuffIncrease = casterDebuffIncrease + (modifier:GetModifierStatusAmplification() / 100)
+		end
+	end
+	Timers:CreateTimer(0,function()
+		local modifier = parent:FindModifierByNameAndCaster(name, caster)
+		if modifier and not modifier:IsNull() then
+			if modifier.IsDebuff or parent:GetTeam() ~= caster:GetTeam() and (parentDebuffIncrease > 1 or casterDebuffIncrease > 1) then
+				local duration = modifier:GetRemainingTime()
+				modifier:SetDuration(duration * math.max(0, parentDebuffIncrease * casterDebuffIncrease), true)
+			elseif modifier.IsBuff or parent:GetTeam() == caster:GetTeam() and (parentBuffIncrease > 1 or casterBuffIncrease > 1) then
+				local duration = modifier:GetRemainingTime()
+				modifier:SetDuration(duration * math.max(0, parentBuffIncrease * casterBuffIncrease), true)
+			end
+		end
+	end)
 	return true
 end
 

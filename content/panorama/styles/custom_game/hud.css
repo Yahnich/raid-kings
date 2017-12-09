@@ -533,13 +533,14 @@
 .InfoText
 {
 	vertical-align: center;
-	horizontal-align: center;
+	horizontal-align: left;
 	color: #FFFFFF;
 	font-size: 18px;
 	font-family: "Radiance";
 	text-align: center;
 	text-shadow: 2px 2px 9px 3 #00000000;
 	margin-top: 1px;
+	margin-left: 1px;
 }
 
 .StatInfoContainer
@@ -549,6 +550,7 @@
 	margin-bottom: 1px;
 	margin-left: 5px;
 	margin-right: 5px;
+	width: 80px;
 }
 
 .StatsContainerRight
