@@ -57,8 +57,7 @@ function justicar_avenging_wrath:CreateWave(vDir, fVelocity, fWidth, fDistance)
 				local innerSun = hCaster:GetInnerSun()
 				self:GetCaster():ResetInnerSun()
 				self:GetAbility():DealDamage(hCaster, target, damage, {}, 0)
-				
-				
+
 				target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_justicar_avenging_wrath_debuff", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")})
 				local hit = ParticleManager:CreateParticle("particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_purification_immortal_cast.vpcf", PATTACH_POINT_FOLLOW, target)
 				ParticleManager:SetParticleControl(hit, 0, target:GetAbsOrigin())
@@ -103,7 +102,7 @@ function modifier_justicar_avenging_wrath_debuff:DeclareFunctions()
 function modifier_justicar_avenging_wrath_debuff:GetModifierIncomingDamage_Percentage(params)
 	if IsServer() then
 		if params.attacker:GetTeam() == self:GetCaster():GetTeam() then
-			params.attacker:Lifesteal(self.Lifesteal, params.damage)
+			params.attacker:Lifesteal_alt(self.Lifesteal, params.damage)
 		end
 	end
 	return self.amp

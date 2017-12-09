@@ -85,7 +85,7 @@ function modifier_vindication:OnTakeDamage( params )
 			local attacker = params.attacker
 
 			if attacker:GetTeam() == self.caster:GetTeam() then
-				attacker:Lifesteal(self.lifesteal, damage)
+				attacker:Lifesteal_alt(self.lifesteal, damage)
 			end
 		end
 	end
