@@ -44,7 +44,7 @@ if IsServer() then
 		return funcs
 	end
 	
-	function modifier_justicar_absolution_buff:BonusDebuffDuration_Constant()
+	function modifier_justicar_absolution_buff:GetModifierStatusResistance()
 		return self.debuffreduction
 	end
 

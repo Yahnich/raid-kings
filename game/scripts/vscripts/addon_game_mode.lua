@@ -31,11 +31,6 @@ require("statsmanager")
 -- require("relics/relic")
 -- require("relics/relicpool")
 
---Globl Modifiers
-LinkLuaModifier("modifier_dazed_generic", "libraries/modifiers/modifier_dazed_generic.lua", 0)
-LinkLuaModifier("modifier_stunned_generic", "libraries/modifiers/modifier_stunned_generic.lua", 0)
-LinkLuaModifier("modifier_generic_barrier", "libraries/modifiers/modifier_generic_barrier.lua", 0)
-
 -- Precache resources
 function Precache( context )
 	PrecacheResource( "particle", "particles/generic_dazed_side.vpcf", context )
@@ -217,12 +212,89 @@ function CRaidKings:InitGameMode()
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(MAXIMUM_ATTACK_SPEED)
 	GameRules:GetGameModeEntity():SetMinimumAttackSpeed(MINIMUM_ATTACK_SPEED)
 	
+	self:InitGenericModifiers()
+	
 	HeroSelection:StartHeroSelection()
 	
 	ListenToGameEvent("dota_player_pick_hero", Dynamic_Wrap( CRaidKings, "OnHeroPick"), CRaidKings )
+	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap(CRaidKings, "FilterOrders"), CRaidKings )
+	GameRules:GetGameModeEntity():SetModifierGainedFilter( Dynamic_Wrap(CRaidKings, "FilterModifiers"), CRaidKings )
+	
+	GameRules:GetGameModeEntity():SetThink( "OnGameThink", self, 0.25 ) 
+	GameRules:GetGameModeEntity():SetCameraDistanceOverride(600)
+end
+
+function CRaidKings:OnGameThink()
+end
+
+function CRaidKings:FilterOrders(event)
+	PrintAll(event)
+	if event.order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then return nil end
+	for _, heroID in pairs(event.units) do
+		local hero = EntIndexToHScript( heroID )
+		if hero and hero:IsRealHero() and not hero.hasSkillsSelected then
+			return nil
+		end
+	end
+	return true
+end
+
+function CRaidKings:FilterModifiers( filterTable )
+	local parent_index = filterTable["entindex_parent_const"]
+    local caster_index = filterTable["entindex_caster_const"]
+	local ability_index = filterTable["entindex_ability_const"]
+    if not parent_index or not caster_index or not ability_index then
+        return true
+    end
+	local duration = filterTable["duration"]
+    local parent = EntIndexToHScript( parent_index )
+    local caster = EntIndexToHScript( caster_index )
+	local ability = EntIndexToHScript( ability_index )
+	local name = filterTable["name_const"]
+
+	if parent == caster or not caster or not ability or duration == -1 then return true end
+	
+	local parentBuffIncrease = 1
+	local parentDebuffIncrease = 0
+	local casterBuffIncrease = 1
+	local casterDebuffIncrease = 1
+	
+	for _, modifier in pairs( parent:FindAllModifiers() ) do
+		if modifier.BonusDebuffDuration_Constant then
+			parentDebuffIncrease = parentDebuffIncrease + (1 - parentDebuffIncrease) * (modifier:GetModifierStatusResistance() / 100)
+			parentBuffIncrease = parentBuffIncrease + (modifier:GetModifierStatusResistance() / 100)
+		end
+	end
+	for _, modifier in ipairs( caster:FindAllModifiers() ) do
+		if modifier.BonusAppliedBuffDuration_Constant then
+			casterBuffIncrease = casterBuffIncrease + (modifier:GetModifierStatusAmplification() / 100)
+			casterDebuffIncrease = casterDebuffIncrease + (modifier:GetModifierStatusAmplification() / 100)
+		end
+	end
+	Timers:CreateTimer(0,function()
+		local modifier = parent:FindModifierByNameAndCaster(name, caster)
+		if modifier and not modifier:IsNull() then
+			if modifier.IsDebuff or parent:GetTeam() ~= caster:GetTeam() and (parentDebuffIncrease > 1 or casterDebuffIncrease > 1) then
+				local duration = modifier:GetRemainingTime()
+				modifier:SetDuration(duration * math.max(0, parentDebuffIncrease * casterDebuffIncrease), true)
+			elseif modifier.IsBuff or parent:GetTeam() == caster:GetTeam() and (parentBuffIncrease > 1 or casterBuffIncrease > 1) then
+				local duration = modifier:GetRemainingTime()
+				modifier:SetDuration(duration * math.max(0, parentBuffIncrease * casterBuffIncrease), true)
+			end
+		end
+	end)
+	return true
+end
+
+function CRaidKings:InitGenericModifiers()
+	LinkLuaModifier( "modifier_dazed_generic", "libraries/modifiers/modifier_dazed_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
+	LinkLuaModifier( "modifier_generic_barrier", "libraries/modifiers/modifier_generic_barrier.lua" ,LUA_MODIFIER_MOTION_NONE )
+	LinkLuaModifier( "modifier_stunned_generic", "libraries/modifiers/modifier_stunned_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
+	LinkLuaModifier( "modifier_invisibility_custom", "libraries/modifiers/modifier_invisibility_custom.lua" ,LUA_MODIFIER_MOTION_NONE )
 end
 
 function CRaidKings:OnHeroPick(event)
+	if not event.heroindex then return end
 	local hero = EntIndexToHScript(event.heroindex)
 	if not hero or hero:GetName() == "npc_dota_hero_wisp" then return end
 	print("Hero loaded in: "..hero:GetName())

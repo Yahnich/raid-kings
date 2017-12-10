@@ -69,6 +69,29 @@ function CreateOverheadButtons()
 
 function UpdateInfoHud()
 {
+	var localHero = Players.GetPlayerHeroEntityIndex( localID )
+	var heroInfo = CustomNetTables.GetTableValue("hero_properties", Entities.GetUnitName( localHero ) + localHero)
+	$("#InfoAttackDamageLabel").text = Math.floor((Entities.GetDamageMin( localHero ) + Entities.GetDamageMax( localHero ))/2 + 0.5)
+	if (Entities.GetDamageBonus( localHero ) > 0){ $("#InfoAttackDamageLabel").text =+ " + " + Entities.GetDamageBonus( localHero )}
+	$("#InfoAttackSpeedLabel").text = 	Math.floor(Entities.GetAttackSpeed( localHero ).toFixed(2) * 100)
+	$("#InfoAttackRangeLabel").text = 	Entities.GetAttackRange( localHero )
+	$("#InfoBATLabel").text = Entities.GetSecondsPerAttack( localHero ).toFixed(2)
+	$("#InfoArmorLabel").text = Entities.GetPhysicalArmorValue( localHero ).toFixed(1)
+	$("#InfoMagicResistanceLabel").text = (Entities.GetMagicalArmorValue( localHero ).toFixed(4) * 100).toFixed(1) + "%"
+	$("#InfoEvasionLabel").text = heroInfo.evasion.toFixed(1) + "%"
+	$("#InfoStatusResistanceLabel").text = heroInfo.statusresistance.toFixed(1) + "%"
+	$("#InfoSpellAmpLabel").text = heroInfo.spellamp.toFixed(1) + "%"
+	$("#InfoCooldownReductionLabel").text = heroInfo.cdr.toFixed(1) + "%"
+	$("#InfoCastRangeLabel").text = heroInfo.castrange.toFixed(1) + "%"
+	$("#InfoStatusAmpLabel").text = heroInfo.statusamp.toFixed(1) + "%"
+	$("#InfoDayVisionLabel").text = Entities.GetDayTimeVisionRange( localHero )
+	$("#InfoNightVisionLabel").text = Entities.GetNightTimeVisionRange( localHero )
+	$("#InfoSpeedLabel").text = Entities.GetIdealSpeed( localHero ).toFixed(0)
+	$("#InfoStrengthLabel").text = heroInfo.strength
+	$("#InfoAgilityLabel").text = heroInfo.strength
+	$("#InfoIntelligenceLabel").text = heroInfo.strength
+	$("#InfoLuckLabel").text = heroInfo.strength
+	$("#InfoVitalityLabel").text = heroInfo.strength
 	if(!$("#HeroInformation").BHasClass("Hidden")){
 		$.Schedule(0.1, UpdateInfoHud);
 	}

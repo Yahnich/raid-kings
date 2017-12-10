@@ -165,11 +165,7 @@ function modifier_justicar_sacred_ground_buff:GetModifierIncomingDamage_Percenta
 	return self.damage_reduction
 end
 
-function modifier_justicar_sacred_ground_buff:BonusAppliedDebuffDuration_Constant(params)
-	return self.amplify
-end
-
-function modifier_justicar_sacred_ground_buff:BonusAppliedBuffDuration_Constant(params)
+function modifier_justicar_sacred_ground_buff:GetModifierStatusAmplification(params)
 	return self.amplify
 end
 
