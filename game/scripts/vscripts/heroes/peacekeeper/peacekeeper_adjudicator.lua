@@ -18,12 +18,14 @@ function modifier_adjudicator:OnCreated(table)
 	self.armor_duration = self:GetSpecialValueFor("armor_duration")
 	self.base_damage = self:GetSpecialValueFor("base_damage")
 	self.bonus_damage = self:GetSpecialValueFor("bonus_damage")
-	self.lifesteal = self:GetSpecialValueFor("lifesteal")/100	
 	self.caster = self:GetCaster()
+
+	self.bonusRange = self.caster:GetAttackRange()*2
 
 	self.damageCumulative = 0
 
 	if IsServer() then
+		self.caster:SetProjectileModel("particles/econ/items/templar_assassin/templar_assassin_focal/templar_assassin_meld_focal_attack.vpcf")
 		self:StartIntervalThink(1.0)
 	end
 end
@@ -35,8 +37,18 @@ end
 function modifier_adjudicator:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_ATTACK_LANDED,
+		MODIFIER_EVENT_ON_ATTACK,
+		MODIFIER_PROPERTY_ATTACK_RANGE_BONUS
 	}
 	return funcs
+end
+
+function modifier_adjudicator:GetModifierAttackRangeBonus()
+	return self.bonusRange
+end
+
+function modifier_adjudicator:GetEffectName()
+	return "particles/units/heroes/hero_templar_assassin/templar_assassin_meld.vpcf"
 end
 
 function modifier_adjudicator:OnAttackLanded( params )
@@ -46,25 +58,11 @@ function modifier_adjudicator:OnAttackLanded( params )
 		self.damageDealt = params.damage
 
 		if self.target:GetTeam() ~= self.attacker:GetTeam() and self.attacker == self:GetCaster() then
-			local damageTable = {
-				victim = self.target,
-				attacker = self.attacker,
-				damage = self.base_damage + self.damageCumulative,
-				damage_type = DAMAGE_TYPE_MAGICAL,
-			}
-
-			local targetHealthStart = self.target:GetHealth()
-
-			ApplyDamage( damageTable )
-
-			local targetNewHealth = self.target:GetHealth()
- 			local damageTaken = targetHealthStart - targetNewHealth
- 			SendOverheadEventMessage(self.attacker:GetPlayerOwner(),OVERHEAD_ALERT_BONUS_SPELL_DAMAGE,self.target,damageTaken,self.attacker:GetPlayerOwner()) --Substract the starting health by the new health to get exact damage taken values.
-
- 			self.attacker:Lifesteal(self.lifesteal, self.damageDealt)
+			self.attacker:Lifesteal(self:GetAbility(), self:GetSpecialValueFor("lifesteal"), self.base_damage + self.damageCumulative, self.target, DAMAGE_TYPE_MAGICAL, DOTA_LIFESTEAL_SOURCE_ABILITY)
  			
  			self.target:AddNewModifier(self.attacker,self:GetAbility(),"modifier_adjudicator_armor",{Duration = self.armor_duration})
 
+ 			self.attacker:RevertProjectile()
  			self:Destroy()
 		end
 	end
@@ -82,7 +80,7 @@ function modifier_adjudicator_armor:IsDebuff()
 end
 
 function modifier_adjudicator_armor:GetEffectName()
-	return "particles/units/heroes/hero_monkey_king/monkey_king_jump_armor_debuff.vpcf"
+	return "particles/econ/items/templar_assassin/templar_assassin_focal/templar_meld_focal_overhead.vpcf"
 end
 
 function modifier_adjudicator_armor:GetEffectAttachType()

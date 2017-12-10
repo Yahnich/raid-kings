@@ -39,7 +39,7 @@
 		},
 		{
 			_class = "C_OP_ColorInterpolate"
-			m_ColorFade = [ 92, 8, 8, 5 ]
+			m_ColorFade = [ 255, 0, 255, 255 ]
 		},
 		{
 			_class = "C_OP_VectorNoise"

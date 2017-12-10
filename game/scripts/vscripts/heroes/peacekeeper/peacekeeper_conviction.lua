@@ -2,12 +2,12 @@ peacekeeper_conviction = class({})
 LinkLuaModifier( "modifier_conviction", "heroes/peacekeeper/peacekeeper_conviction.lua" ,LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
 function peacekeeper_conviction:OnSpellStart()
-	self.caster = self:GetCaster()
+	local caster = self:GetCaster()
 
-	self.duration = self:GetSpecialValueFor("duration")
-	local units = FindUnitsInRadius(self.caster:GetTeam(),self.caster:GetAbsOrigin(),nil,FIND_UNITS_EVERYWHERE,DOTA_UNIT_TARGET_TEAM_FRIENDLY,DOTA_UNIT_TARGET_ALL,DOTA_UNIT_TARGET_FLAG_NONE,FIND_ANY_ORDER,false)
+	local duration = self:GetSpecialValueFor("duration")
+	local units = caster:FindFriendlyUnitsInRadius(caster:GetAbsOrigin(), FIND_UNITS_EVERYWHERE, {})
 	for _,unit in pairs(units) do
-		unit:AddNewModifier(self.caster,self,"modifier_conviction",{Duration = self.duration})
+		unit:AddNewModifier(caster,self,"modifier_conviction",{Duration = duration})
 	end
 end
 
@@ -19,6 +19,9 @@ function modifier_conviction:OnCreated(table)
 	self.caster = self:GetCaster()
 
 	self.attack_speed = self:GetAbility():GetSpecialValueFor("attack_speed")
+end
+function modifier_conviction:GetEffectName()
+	return "particles/heroes/peacekeeper/peacekeeper_conviction.vpcf"
 end
 
 function modifier_conviction:DeclareFunctions()

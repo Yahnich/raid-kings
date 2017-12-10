@@ -3,18 +3,22 @@ LinkLuaModifier( "modifier_vindication", "heroes/peacekeeper/peacekeeper_vindica
 LinkLuaModifier( "modifier_vindication_ally", "heroes/peacekeeper/peacekeeper_vindication.lua" ,LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
 function peacekeeper_vindication:OnSpellStart()
-	self.caster = self:GetCaster()
-	self.cursorTar = self:GetCursorTarget()
+	local caster = self:GetCaster()
+	local cursorTar = self:GetCursorTarget()
 
-	self.duration = self:GetSpecialValueFor("duration")
+	local duration = self:GetSpecialValueFor("duration")
 
-	if self.cursorTar:GetTeam() ~= self.caster:GetTeam() and not self.cursorTar:IsMagicImmune() then
-		local units = FindUnitsInRadius(self.caster:GetTeam(),self.cursorTar:GetAbsOrigin(),nil,FIND_UNITS_EVERYWHERE,DOTA_UNIT_TARGET_TEAM_ENEMY,DOTA_UNIT_TARGET_ALL,DOTA_UNIT_TARGET_FLAG_NONE,FIND_ANY_ORDER,false)
+	local launch = ParticleManager:CreateParticle("particles/units/heroes/hero_templar_assassin/templar_assassin_psi_blade.vpcf", PATTACH_POINT, caster)
+	ParticleManager:SetParticleControlEnt(launch, 0, caster, PATTACH_POINT, "attach_attack1", caster:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(launch, 1, cursorTar, PATTACH_POINT, "attach_hitloc", cursorTar:GetAbsOrigin(), true)
+
+	if cursorTar:GetTeam() ~= caster:GetTeam() and not cursorTar:IsMagicImmune() then
+		local units = caster:FindEnemyUnitsInRadius(caster:GetAbsOrigin(), FIND_UNITS_EVERYWHERE, {})
 		for _,unit in pairs(units) do
 			unit:RemoveModifierByName("modifier_vindication")
 		end
-		self.cursorTar:AddNewModifier(self.caster,self,"modifier_vindication",{Duration = self.duration})
-		EmitSoundOn("Hero_TemplarAssassin.Meld",self.cursorTar)
+		cursorTar:AddNewModifier(caster,self,"modifier_vindication",{Duration = duration})
+		EmitSoundOn("Hero_TemplarAssassin.Meld",cursorTar)
 	end
 end
 
@@ -48,8 +52,6 @@ function modifier_vindication:OnCreated(table)
 		self.caster = self:GetCaster()
 		self.mainBaddie = self:GetParent()
 
-		self.lifesteal = self:GetSpecialValueFor("lifesteal")/100
-
 		local units = FindUnitsInRadius(self.caster:GetTeam(),self.mainBaddie:GetAbsOrigin(),nil,FIND_UNITS_EVERYWHERE,DOTA_UNIT_TARGET_TEAM_FRIENDLY,DOTA_UNIT_TARGET_ALL,DOTA_UNIT_TARGET_FLAG_NONE,FIND_ANY_ORDER,false)
 		for _,unit in pairs(units) do
 			if unit == self.caster then
@@ -60,7 +62,7 @@ function modifier_vindication:OnCreated(table)
 end
 
 function modifier_vindication:GetEffectName()
-	return "particles/econ/items/templar_assassin/templar_assassin_focal/templar_meld_focal_overhead.vpcf"
+	return "particles/heroes/peacekeeper/peacekeeper_vindication_debuff.vpcf"
 end
 
 function modifier_vindication:GetEffectAttachType()
@@ -85,7 +87,7 @@ function modifier_vindication:OnTakeDamage( params )
 			local attacker = params.attacker
 
 			if attacker:GetTeam() == self.caster:GetTeam() then
-				attacker:Lifesteal(self.lifesteal, damage)
+				attacker:Lifesteal(self:GetAbility(), self:GetSpecialValueFor("lifesteal"), damage)
 			end
 		end
 	end

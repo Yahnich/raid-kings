@@ -31,15 +31,23 @@ require("statsmanager")
 -- require("relics/relic")
 -- require("relics/relicpool")
 
---Globl Modifiers
-LinkLuaModifier("modifier_dazed_generic", "libraries/modifiers/modifier_dazed_generic.lua", 0)
-LinkLuaModifier("modifier_stunned_generic", "libraries/modifiers/modifier_stunned_generic.lua", 0)
-LinkLuaModifier("modifier_generic_barrier", "libraries/modifiers/modifier_generic_barrier.lua", 0)
-
 -- Precache resources
 function Precache( context )
 	PrecacheResource( "particle", "particles/generic_dazed_side.vpcf", context )
 	PrecacheResource( "particle", "particles/items_fx/courier_shield.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf", context )
+
+	PrecacheUnitByNameSync("npc_dota_hero_dazzle", context)
+	PrecacheUnitByNameSync("npc_dota_hero_legion_commander", context)
+	PrecacheUnitByNameSync("npc_dota_hero_lina", context)
+	PrecacheUnitByNameSync("npc_dota_hero_necrolyte", context)
+	PrecacheUnitByNameSync("npc_dota_hero_omniknight", context)
+	PrecacheUnitByNameSync("npc_dota_hero_phantom_assassin", context)
+	PrecacheUnitByNameSync("npc_dota_hero_skeleton_king", context)
+	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
+	PrecacheUnitByNameSync("npc_dota_hero_templar_assassin", context)
+	PrecacheUnitByNameSync("npc_dota_hero_treant", context)
+	PrecacheUnitByNameSync("npc_dota_hero_windrunner", context)
 end
 
 -- Actually make the game mode when we activate

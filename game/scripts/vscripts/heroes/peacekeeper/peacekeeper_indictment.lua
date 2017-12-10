@@ -1,13 +1,18 @@
 peacekeeper_indictment = class({})
+LinkLuaModifier( "modifier_dazed_generic", "libraries/modifiers/modifier_dazed_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
 function peacekeeper_indictment:OnSpellStart()
-	self.caster = self:GetCaster()
-	self.cursorTar = self:GetCursorTarget()
+	local caster = self:GetCaster()
+	local cursorTar = self:GetCursorTarget()
 
-	self.duration = self:GetSpecialValueFor("duration")
+	local duration = self:GetSpecialValueFor("duration")
 
-	if self.cursorTar:GetTeam() ~= self.caster:GetTeam() and not self.cursorTar:IsMagicImmune() then
-		self.cursorTar:AddNewModifier(self.caster,self,"modifier_dazed_generic",{Duration = self.duration})
-		EmitSoundOn("Hero_TemplarAssassin.Meld",self.cursorTar)
+	local launch = ParticleManager:CreateParticle("particles/units/heroes/hero_templar_assassin/templar_assassin_psi_blade.vpcf", PATTACH_POINT, caster)
+	ParticleManager:SetParticleControlEnt(launch, 0, caster, PATTACH_POINT, "attach_attack1", caster:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(launch, 1, cursorTar, PATTACH_POINT, "attach_hitloc", cursorTar:GetAbsOrigin(), true)
+
+	if cursorTar:GetTeam() ~= caster:GetTeam() and not cursorTar:IsMagicImmune() then
+		cursorTar:AddNewModifier(caster,self,"modifier_dazed_generic",{Duration = duration})
+		EmitSoundOn("Hero_TemplarAssassin.Meld",cursorTar)
 	end
 end
