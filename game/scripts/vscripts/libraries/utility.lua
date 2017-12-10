@@ -146,9 +146,8 @@ end
 
 function CDOTABaseAbility:DealDamage(attacker, victim, damage, data, spellText)
 	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
-	local damageType = self:GetAbilityDamageType() or DAMAGE_TYPE_MAGICAL
+	local damageType = data.damage_type or DAMAGE_TYPE_MAGICAL
 	local damageFlags = DOTA_DAMAGE_FLAG_NONE or data.damage_flags
-	if data and data.damage_type then damageType = data.damage_type end
 	local localdamage = damage
 	local spellText = spellText or 0
 	if spellText > 0 then
@@ -162,9 +161,8 @@ end
 
 function CDOTABaseAbility:DealAOEDamage(attacker, damage, position, radius, data, spellText)
 	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
-	local damageType = self:GetAbilityDamageType() or DAMAGE_TYPE_MAGICAL
+	local damageType = data.damage_type or DAMAGE_TYPE_MAGICAL
 	local damageFlags = DOTA_DAMAGE_FLAG_NONE or data.damage_flags
-	if data and data.damage_type then damageType = data.damage_type end
 	local localdamage = damage or self:GetAbilityDamage()
 	local team = attacker:GetTeamNumber()
 	local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY or data.iTeam
@@ -190,9 +188,8 @@ end
 
 function CDOTABaseAbility:DealMaxHPAOEDamage(attacker, damage_pct, position, radius, data, spellText)
 	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
-	local damageType = self:GetAbilityDamageType() or DAMAGE_TYPE_MAGICAL
+	local damageType = data.damage_type or DAMAGE_TYPE_MAGICAL
 	local damageFlags = DOTA_DAMAGE_FLAG_NONE or data.damage_flags
-	if data and data.damage_type then damageType = data.damage_type end
 	local team = attacker:GetTeamNumber()
 	local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY or data.iTeam
 	local iType = DOTA_UNIT_TARGET_ALL or data.iType
@@ -659,17 +656,6 @@ function CDOTA_BaseNPC:Lifesteal(source, lifestealPct, damage, target, damage_ty
 	local lifesteal = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self)
 		ParticleManager:SetParticleControlEnt(lifesteal, 0, self, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetAbsOrigin(), true)
 		ParticleManager:SetParticleControlEnt(lifesteal, 1, self, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetAbsOrigin(), true)
-	ParticleManager:ReleaseParticleIndex(lifesteal)
-end
-
-function CDOTA_BaseNPC:Lifesteal_alt(lifestealPct, damage)
-	local damageDealt = damage or 0
-	local flHeal = damageDealt * lifestealPct / 100
-	self:Heal(flHeal,self)
-	SendOverheadEventMessage(self:GetPlayerOwner(),OVERHEAD_ALERT_HEAL,self,flHeal,self:GetPlayerOwner()) --Substract the starting health by the new health to get exact damage taken values.
-	local lifesteal = ParticleManager:CreateParticle("particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf", PATTACH_ABSORIGIN_FOLLOW, self)
-	ParticleManager:SetParticleControlEnt(lifesteal, 0, self, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetAbsOrigin(), true)
-	ParticleManager:SetParticleControlEnt(lifesteal, 1, self, PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetAbsOrigin(), true)
 	ParticleManager:ReleaseParticleIndex(lifesteal)
 end
 
