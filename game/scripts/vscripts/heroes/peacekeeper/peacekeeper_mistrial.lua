@@ -9,11 +9,10 @@ function peacekeeper_mistrial:OnSpellStart()
 	self.caster = self:GetCaster()
 	self.modifier = self.caster:FindModifierByName("modifier_mistrial")
 	if self.caster:GetHealth() < self.modifier.health then
-		SendOverheadEventMessage(self.caster:GetPlayerOwner(),OVERHEAD_ALERT_HEAL,self.caster,self.modifier.health-self.caster:GetHealth(),self.caster:GetPlayerOwner())
 		self.nFXIndex = ParticleManager:CreateParticle( "particles/units/heroes/hero_templar_assassin/templar_assassin_refraction_form.vpcf", PATTACH_POINT, self.caster )
 		ParticleManager:SetParticleControl(self.nFXIndex,1,self.caster:GetAbsOrigin())
 		ParticleManager:ReleaseParticleIndex(self.nFXIndex)
-		self.caster:Heal(self.modifier.health,self.caster)
+		self.caster:HealEvent(self.modifier.health, self, self.caster)
 	else
 		self:EndCooldown()
 		self:RefundManaCost()
@@ -34,7 +33,6 @@ end
 function modifier_mistrial:OnIntervalThink()
 	if IsServer() then
 		self.health = self.caster:GetHealth()
-		--print(self.health)
 	end
 end
 

@@ -1,28 +1,13 @@
 modifier_generic_barrier = class({})
 
 function modifier_generic_barrier:IsHidden()
-	return false
+	return true
 end
 
 if IsServer() then
 	function modifier_generic_barrier:OnCreated(kv)
 		self.barrier = kv.barrier or 0
-		if IsServer() then 
-			self:StartIntervalThink(0.3)
-			self.nFX = ParticleManager:CreateParticle("particles/items_fx/courier_shield.vpcf", PATTACH_POINT_FOLLOW, self:GetCaster())
-			ParticleManager:SetParticleControlEnt(self.nFX, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetCaster():GetAbsOrigin(), true)
-			ParticleManager:SetParticleControl(self.nFX,1,Vector(self:GetRemainingTime(),0,0))
-		end
-	end
-
-	function modifier_generic_barrier:OnDestroy()
-		if IsServer() then 
-			ParticleManager:DestroyParticle(self.nFX,true)
-		end
-	end
-
-	function modifier_generic_barrier:GetEffectName()
-		return "particles/items_fx/courier_shield.vpcf"
+		if IsServer() then self:StartIntervalThink(0.3) end
 	end
 
 	function modifier_generic_barrier:OnIntervalThink()

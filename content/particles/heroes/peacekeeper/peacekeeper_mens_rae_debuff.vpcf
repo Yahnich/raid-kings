@@ -6,9 +6,6 @@
 	m_Children = 
 	[
 		{
-			m_ChildRef = resource:"particles/heroes/peacekeeper/peacekeeper_mens_rae_debuff_dust.vpcf"
-		},
-		{
 			m_ChildRef = resource:"particles/heroes/peacekeeper/peacekeeper_mens_rae_debuff_flames.vpcf"
 		},
 		{
