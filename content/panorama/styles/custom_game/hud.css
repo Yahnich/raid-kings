@@ -499,13 +499,19 @@
 	wash-color: #464646;
 }
 
-#HeroInformation
+#HeroInformationContainer
 {
 	vertical-align: top;
 	horizontal-align: middle;
 	margin-top: 50px;
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d2d2d99 ), to( #2d2d2d99 ) );
 	border: 2px solid #121212FF;
+	flow-children: down;
+	padding: 20px;
+}
+
+#HeroInformation
+{
 	flow-children: down;
 	padding: 20px;
 }
@@ -548,8 +554,8 @@
 	horizontal-align: center;
 	flow-children: right;
 	margin-bottom: 1px;
-	margin-left: 5px;
-	margin-right: 5px;
+	margin-left: 2px;
+	margin-right: 2px;
 	width: 80px;
 }
 
@@ -570,13 +576,6 @@
 	margin-top: 15px;
 }
 
-#InfoSpeedContainer
-{
-	margin-top: 15px;
-	margin-bottom: 20px;
-}
-
-
 .AttributeStatsContainer
 {
 	vertical-align: bottom;
@@ -591,6 +590,19 @@
 	height: 400px;
 	opacity-mask: url( "file://{images}/custom_game/landscape.tga" );
 	horizontal-align: middle;
+	vertical-align: top;
+}
+
+#CloseInfoPanelBtn
+{
+	margin: 2px;
+	vertical-align: top;
+	horizontal-align: right;
+	width: 32px;
+	height: 32px;
+	background-color: #AA080888;
+	border: 2px solid #56030388;
+	z-index: 50;
 }
 
 #HeroInventory

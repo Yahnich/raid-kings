@@ -33,38 +33,133 @@ var dotaHud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildT
 	CreateTeamInfo()
 	UpdateSelectedUnit()
 	CreateOverheadButtons()
+	InitializeTooltips()
 })();
+
+function InitializeTooltips()
+{
+	var localHero = Players.GetPlayerHeroEntityIndex( localID )
+	var infoAD = $("#InfoAttackDamageContainer");
+	infoAD.SetDialogVariable( "basedamage", Math.floor((Entities.GetDamageMin( localHero ) + Entities.GetDamageMax( localHero ))/2 + 0.5) );
+	infoAD.SetDialogVariable( "bonusdamage", Entities.GetDamageBonus( localHero ));
+	infoAD.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoAD, $.Localize( "#AttackDamageInfoTitle", infoAD), $.Localize( "#AttackDamageInfoText", infoAD))} );
+	
+	var infoAS = $("#InfoAttackSpeedContainer");
+	infoAS.SetDialogVariable( "bat", Entities.GetBaseAttackTime( localHero ).toFixed(2) );
+	infoAS.SetDialogVariable( "aps", Entities.GetAttacksPerSecond( localHero ).toFixed(2) );
+	infoAS.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoAS, $.Localize( "#AttackSpeedInfoTitle", infoAS), $.Localize( "#AttackSpeedInfoText", infoAS))} );
+	
+	var infoAR = $("#InfoAttackRangeContainer");
+	infoAR.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoAR, $.Localize( "#AttackRangeInfoTitle", infoAR), $.Localize( "#AttackRangeInfoText", infoAR))} );
+	
+	var infoMS = $("#InfoSpeedContainer");
+	infoMS.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoMS, $.Localize( "#SpeedInfoTitle", infoMS), $.Localize( "#SpeedInfoText", infoMS))} );
+	
+	var infoDA = $("#InfoDamageAmpContainer");
+	infoDA.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoDA, $.Localize( "#DamageAmpInfoTitle", infoDA), $.Localize( "#DamageAmpInfoText", infoDA))} );
+	
+	var infoPR = $("#InfoArmorContainer");
+	var armor = Entities.GetPhysicalArmorValue( localHero )
+	infoPR.SetDialogVariable( "resist",   ((0.05 * armor / (1 + 0.05 * Math.abs(armor))) * 100).toFixed(1) + "%" );
+	infoPR.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoPR, $.Localize( "#ArmorInfoTitle", infoPR), $.Localize( "#ArmorInfoText", infoPR))} );
+	
+	var infoMR = $("#InfoMagicResistanceContainer");
+	infoMR.SetDialogVariable( "resist",  (Entities.GetMagicalArmorValue( localHero ).toFixed(4) * 100).toFixed(1) + "%");
+	infoMR.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoMR, $.Localize( "#MagicResistInfoTitle", infoMR), $.Localize( "#MagicResistInfoText", infoMR))} );
+	
+	var infoE = $("#InfoEvasionContainer");
+	infoE.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoE, $.Localize( "#EvasionInfoTitle", infoE), $.Localize( "#EvasionInfoText", infoE))} );
+	
+	var infoSR = $("#InfoStatusResistanceContainer");
+	infoSR.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoSR, $.Localize( "#StatusResistanceInfoTitle", infoSR), $.Localize( "#StatusResistanceInfoText", infoSR))} );
+	
+	var infoDR = $("#InfoDamageResistanceContainer");
+	infoDR.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoDR, $.Localize( "#DamageResistanceInfoTitle", infoDR), $.Localize( "#DamageResistanceInfoText", infoDR))} );
+	
+	var infoSA = $("#InfoSpellAmpContainer");
+	infoSA.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoSA, $.Localize( "#SpellAmpInfoTitle", infoSA), $.Localize( "#SpellAmpInfoText", infoSA))} );
+	
+	var infoCD = $("#InfoCooldownReductionContainer");
+	infoCD.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoCD, $.Localize( "#CooldownReductionInfoTitle", infoCD), $.Localize( "#CooldownReductionInfoText", infoCD))} );
+	
+	var infoCR = $("#InfoCastRangeContainer");
+	infoCR.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoCR, $.Localize( "#CastrangeBonusInfoTitle", infoCR), $.Localize( "#CastrangeBonusInfoText", infoCR))} );
+	
+	var infoStA = $("#InfoStatusAmpContainer");
+	infoStA.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoStA, $.Localize( "#StatusAmpInfoTitle", infoStA), $.Localize( "#StatusAmpInfoText", infoStA))} );
+	
+	var infoHA = $("#InfoHealAmpContainer");
+	infoHA.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoHA, $.Localize( "#HealAmpInfoTitle", infoHA), $.Localize( "#HealAmpInfoText", infoHA))} );
+	
+	var infoDV = $("#InfoDayVisionContainer");
+	infoDV.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoDV, $.Localize( "#DayVisionInfoTitle", infoDV), $.Localize( "#DayVisionInfoText", infoDV))} );
+	
+	var infoNV = $("#InfoNightVisionContainer");
+	infoNV.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoNV, $.Localize( "#NightVisionInfoTitle", infoNV), $.Localize( "#NightVisionInfoText", infoNV))} );
+	
+	var heroInfo = CustomNetTables.GetTableValue("hero_properties", Entities.GetUnitName( localHero ) + localHero)
+	var infoSTR = $("#InfoStrengthContainer");
+	infoSTR.SetDialogVariable( "armor", (heroInfo.strength * 0.07).toFixed(1) );
+	infoSTR.SetDialogVariable( "mr", (heroInfo.strength * 0.1).toFixed(1) + "%");
+	infoSTR.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoSTR, $.Localize( "#StrengthInfoTitle", infoSTR), $.Localize( "#StrengthInfoText", infoSTR))} );
+	var infoAGI = $("#InfoAgilityContainer");
+	infoAGI.SetDialogVariable( "ms", (heroInfo.agility * 0.072).toFixed(0) );
+	infoAGI.SetDialogVariable( "as", (heroInfo.agility * 1).toFixed(0) );
+	infoAGI.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoAGI, $.Localize( "#AgilityInfoTitle", infoAGI), $.Localize( "#AgilityInfoText", infoAGI))} );
+	var infoINT = $("#InfoIntelligenceContainer");
+	infoINT.SetDialogVariable( "amp", (heroInfo.intellect * 0.05).toFixed(1) + "%");
+	infoINT.SetDialogVariable( "mana", (heroInfo.intellect * 12).toFixed(0) );
+	infoINT.SetDialogVariable( "regen", (heroInfo.intellect * 0.08).toFixed(1) );
+	infoINT.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoINT, $.Localize( "#IntellectInfoTitle", infoINT), $.Localize( "#IntellectInfoText", infoINT))} );
+	var infoLUK = $("#InfoLuckContainer");
+	infoLUK.SetDialogVariable( "evasion", (heroInfo.luck * 0.08).toFixed(1) + "%");
+	infoLUK.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoLUK, $.Localize( "#LuckInfoTitle", infoLUK), $.Localize( "#LuckInfoText", infoLUK))} );
+	var infoVIT = $("#InfoVitalityContainer");
+	infoVIT.SetDialogVariable( "hp", (heroInfo.vitality * 20).toFixed(0));
+	infoVIT.SetDialogVariable( "regen", (heroInfo.vitality * 0.2).toFixed(1));
+	infoVIT.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoVIT, $.Localize( "#VitalityInfoTitle", infoVIT), $.Localize( "#VitalityInfoText", infoVIT))} );
+}
 
 function CreateOverheadButtons()
 {
 	var overheadButtons = dotaHud.FindChildTraverse("MenuButtons").FindChildTraverse("ButtonBar");
-	
-	var equipmentButton =  $.CreatePanel( "Button", $.GetContextPanel(), "EquipmentButton");
-	equipmentButton.SetParent(overheadButtons)
-	equipmentButton.AddClass("DOTAHudMenuButtons")
-	equipmentButton.style.backgroundImage = "url(\"file://{images}/custom_game/equipmentIcon.png\")";
-	
-	var infoButton =  $.CreatePanel( "Button", $.GetContextPanel(), "InfoButton");
-	infoButton.SetParent(overheadButtons)
-	infoButton.AddClass("DOTAHudMenuButtons")
-	infoButton.style.backgroundImage = "url(\"file://{images}/custom_game/infoIcon.png\")";
-	
-	$("#HeroInformation").SetHasClass( "Hidden", true )
-	infoButton.upgradeAbility = function(){
-		var heroInfo = $("#HeroInformation") 
-		var portrait = $("#PlayerHeroInfoModelContainer")
-		for(var scenePanel of portrait.Children()){
-			// scenePanel.style.visibility = "collapse";
-			// scenePanel.DeleteAsync(0)
+	for(var btn of overheadButtons.Children()){
+		if(btn.id == "EquipmentButton" || btn.id == "InfoButton")
+		{
+			btn.style.visibility = "collapse"
+			btn.DeleteAsync(0)
 		}
-		if(!$("#PlayerHeroInfoModel")){
-			portrait.BCreateChildren("<DOTAScenePanel id='PlayerHeroInfoModel' unit='"+ Entities.GetUnitName( Players.GetPlayerHeroEntityIndex( localID ) ) +"' environment='camera1' particleonly='false' antialias='true'/>");
-		}
-		$("#PlayerHeroInfoModel").AddClass("HeroInfoScenePanel")
-		heroInfo.SetHasClass( "Hidden", !$("#HeroInformation").BHasClass("Hidden") )
-		UpdateInfoHud()
 	}
-	infoButton.SetPanelEvent("onactivate", infoButton.upgradeAbility );
+	if($("#EquipmentButton") == null){
+		var equipmentButton =  $.CreatePanel( "Button", $.GetContextPanel(), "EquipmentButton");
+		equipmentButton.SetParent(overheadButtons)
+		equipmentButton.AddClass("DOTAHudMenuButtons")
+		equipmentButton.style.visibility = "visible";
+		equipmentButton.style.backgroundImage = "url(\"file://{images}/custom_game/equipmentIcon.png\")";
+	}
+	if($("#InfoButton") == null){
+		var infoButton =  $.CreatePanel( "Button", $.GetContextPanel(), "InfoButton");
+		infoButton.SetParent(overheadButtons)
+		infoButton.AddClass("DOTAHudMenuButtons")
+		infoButton.style.visibility = "visible";
+		infoButton.style.backgroundImage = "url(\"file://{images}/custom_game/infoIcon.png\")";
+		infoButton.SetPanelEvent("onactivate", OpenInfoHud );
+	}
+	
+	$("#HeroInformationContainer").SetHasClass( "Hidden", true )
+}
+
+function OpenInfoHud()
+{
+	var heroInfo = $("#HeroInformationContainer") 
+	var portrait = $("#PlayerHeroInfoModelContainer")
+	if(!$("#PlayerHeroInfoModel")){
+		portrait.BCreateChildren("<DOTAScenePanel id='PlayerHeroInfoModel' unit='"+ Entities.GetUnitName( Players.GetPlayerHeroEntityIndex( localID ) ) +"' environment='camera1' particleonly='false' antialias='true'/>");
+	}
+	$("#PlayerHeroInfoModel").AddClass("HeroInfoScenePanel")
+	heroInfo.SetHasClass( "Hidden", !$("#HeroInformationContainer").BHasClass("Hidden") )
+	UpdateInfoHud()
+	InitializeTooltips()
 }
 
 function UpdateInfoHud()
@@ -72,13 +167,13 @@ function UpdateInfoHud()
 	var localHero = Players.GetPlayerHeroEntityIndex( localID )
 	var heroInfo = CustomNetTables.GetTableValue("hero_properties", Entities.GetUnitName( localHero ) + localHero)
 	$("#InfoAttackDamageLabel").text = Math.floor((Entities.GetDamageMin( localHero ) + Entities.GetDamageMax( localHero ))/2 + 0.5)
-	if (Entities.GetDamageBonus( localHero ) > 0){ $("#InfoAttackDamageLabel").text =+ " + " + Entities.GetDamageBonus( localHero )}
-	$("#InfoAttackSpeedLabel").text = 	Math.floor(Entities.GetAttackSpeed( localHero ).toFixed(2) * 100)
-	$("#InfoAttackRangeLabel").text = 	Entities.GetAttackRange( localHero )
-	$("#InfoBATLabel").text = Entities.GetSecondsPerAttack( localHero ).toFixed(2)
+	if (Entities.GetDamageBonus( localHero ) > 0){ $("#InfoAttackDamageLabel").text = Math.floor((Entities.GetDamageMin( localHero ) + Entities.GetDamageMax( localHero ))/2 + 0.5) + Entities.GetDamageBonus( localHero )}
+	$("#InfoAttackSpeedLabel").text = Math.floor(Entities.GetAttackSpeed( localHero ).toFixed(2) * 100)
+	$("#InfoAttackRangeLabel").text = Entities.GetAttackRange( localHero )
+	$("#InfoDamageAmpLabel").text = ( (Math.floor((Entities.GetDamageMin( localHero ) + Entities.GetDamageMax( localHero ))/2 + 0.5) + Entities.GetDamageBonus( localHero )) / Entities.GetSecondsPerAttack( localHero ))	.toFixed(1)
 	$("#InfoArmorLabel").text = Entities.GetPhysicalArmorValue( localHero ).toFixed(1)
 	$("#InfoMagicResistanceLabel").text = (Entities.GetMagicalArmorValue( localHero ).toFixed(4) * 100).toFixed(1) + "%"
-	$("#InfoEvasionLabel").text = heroInfo.evasion.toFixed(1) + "%"
+	$("#InfoEvasionLabel").text = (heroInfo.evasion * 100).toFixed(1) + "%"
 	$("#InfoStatusResistanceLabel").text = heroInfo.statusresistance.toFixed(1) + "%"
 	$("#InfoSpellAmpLabel").text = heroInfo.spellamp.toFixed(1) + "%"
 	$("#InfoCooldownReductionLabel").text = heroInfo.cdr.toFixed(1) + "%"
@@ -88,11 +183,11 @@ function UpdateInfoHud()
 	$("#InfoNightVisionLabel").text = Entities.GetNightTimeVisionRange( localHero )
 	$("#InfoSpeedLabel").text = Entities.GetIdealSpeed( localHero ).toFixed(0)
 	$("#InfoStrengthLabel").text = heroInfo.strength
-	$("#InfoAgilityLabel").text = heroInfo.strength
-	$("#InfoIntelligenceLabel").text = heroInfo.strength
-	$("#InfoLuckLabel").text = heroInfo.strength
-	$("#InfoVitalityLabel").text = heroInfo.strength
-	if(!$("#HeroInformation").BHasClass("Hidden")){
+	$("#InfoAgilityLabel").text = heroInfo.agility
+	$("#InfoIntelligenceLabel").text = heroInfo.intellect
+	$("#InfoLuckLabel").text = heroInfo.luck
+	$("#InfoVitalityLabel").text = heroInfo.vitality
+	if(!$("#HeroInformationContainer").BHasClass("Hidden")){
 		$.Schedule(0.1, UpdateInfoHud);
 	}
 }
@@ -211,6 +306,11 @@ function UpdateAbilityBar()
 			
 		}
 	}
+}
+
+function ShowTextTooltip(panel, title, text)
+{
+	$.DispatchEvent("DOTAShowTitleTextTooltip", panel, title, text);
 }
 
 function UpdateSelectedUnit()
@@ -392,7 +492,7 @@ function UpdateMainContainer()
 	
 	var damage = $("#StatsDamageLabel")
 	damage.text = Math.floor((Entities.GetDamageMin( currUnit ) + Entities.GetDamageMax( currUnit ))/2 + 0.5)
-	if (Entities.GetDamageBonus( currUnit ) > 0){ damage.text =+ " + " + Entities.GetDamageBonus( currUnit )}
+	if (Entities.GetDamageBonus( currUnit ) > 0){ damage.text = damage.text + " + " + Entities.GetDamageBonus( currUnit )}
 	var armor = $("#StatsArmorLabel")
 	armor.text = Entities.GetPhysicalArmorValue( currUnit ).toFixed(0)
 	var speed = $("#StatsSpeedLabel")

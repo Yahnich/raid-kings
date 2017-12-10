@@ -220,7 +220,6 @@ function CRaidKings:OnGameThink()
 end
 
 function CRaidKings:FilterOrders(event)
-	PrintAll(event)
 	if event.order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then return nil end
 	for _, heroID in pairs(event.units) do
 		local hero = EntIndexToHScript( heroID )
@@ -266,9 +265,9 @@ function CRaidKings:FilterModifiers( filterTable )
 	Timers:CreateTimer(0,function()
 		local modifier = parent:FindModifierByNameAndCaster(name, caster)
 		if modifier and not modifier:IsNull() then
-			if modifier.IsDebuff or parent:GetTeam() ~= caster:GetTeam() and (parentDebuffIncrease > 1 or casterDebuffIncrease > 1) then
+			if modifier.IsDebuff or parent:GetTeam() ~= caster:GetTeam() and (parentDebuffIncrease < 1 or casterDebuffIncrease > 1) then
 				local duration = modifier:GetRemainingTime()
-				modifier:SetDuration(duration * math.max(0, parentDebuffIncrease * casterDebuffIncrease), true)
+				modifier:SetDuration(duration * math.max(0, (1 - parentDebuffIncrease) * casterDebuffIncrease), true)
 			elseif modifier.IsBuff or parent:GetTeam() == caster:GetTeam() and (parentBuffIncrease > 1 or casterBuffIncrease > 1) then
 				local duration = modifier:GetRemainingTime()
 				modifier:SetDuration(duration * math.max(0, parentBuffIncrease * casterBuffIncrease), true)
