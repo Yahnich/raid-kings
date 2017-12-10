@@ -3,18 +3,22 @@ LinkLuaModifier( "modifier_mens_rae", "heroes/peacekeeper/peacekeeper_mens_rea.l
 LinkLuaModifier( "modifier_mens_rae_effect", "heroes/peacekeeper/peacekeeper_mens_rea.lua" ,LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
 function peacekeeper_mens_rea:OnSpellStart()
-	self.caster = self:GetCaster()
-	self.cursorTar = self:GetCursorTarget()
+	local caster = self:GetCaster()
+	local cursorTar = self:GetCursorTarget()
 
-	self.duration = self:GetSpecialValueFor("duration")
+	local duration = self:GetSpecialValueFor("duration")
 
-	if self.cursorTar:GetTeam() ~= self.caster:GetTeam() and not self.cursorTar:IsMagicImmune() then
-		local units = FindUnitsInRadius(self.caster:GetTeam(),self.cursorTar:GetAbsOrigin(),nil,FIND_UNITS_EVERYWHERE,DOTA_UNIT_TARGET_TEAM_ENEMY,DOTA_UNIT_TARGET_ALL,DOTA_UNIT_TARGET_FLAG_NONE,FIND_ANY_ORDER,false)
+	local launch = ParticleManager:CreateParticle("particles/units/heroes/hero_templar_assassin/templar_assassin_psi_blade.vpcf", PATTACH_POINT, caster)
+	ParticleManager:SetParticleControlEnt(launch, 0, caster, PATTACH_POINT, "attach_attack1", caster:GetAbsOrigin(), true)
+	ParticleManager:SetParticleControlEnt(launch, 1, cursorTar, PATTACH_POINT, "attach_hitloc", cursorTar:GetAbsOrigin(), true)
+
+	if cursorTar:GetTeam() ~= caster:GetTeam() and not cursorTar:IsMagicImmune() then
+		local units = caster:FindEnemyUnitsInRadius(caster:GetAbsOrigin(), FIND_UNITS_EVERYWHERE, {})
 		for _,unit in pairs(units) do
 			unit:RemoveModifierByName("modifier_mens_rae")
 		end
-		self.cursorTar:AddNewModifier(self.caster,self,"modifier_mens_rae",{Duration = self.duration})
-		EmitSoundOn("Hero_TemplarAssassin.Meld",self.cursorTar)
+		cursorTar:AddNewModifier(caster,self,"modifier_mens_rae",{Duration = duration})
+		EmitSoundOn("Hero_TemplarAssassin.Meld",cursorTar)
 	end
 end
 
@@ -27,7 +31,7 @@ function modifier_mens_rae:OnCreated(table)
 	self.mainBaddie = self:GetParent()
 
 	if IsServer() then
-		self:StartIntervalThink(0.1)
+		self:StartIntervalThink(FrameTime())
 	end
 end
 
@@ -37,7 +41,7 @@ end
 
 function modifier_mens_rae:OnIntervalThink()
 	if IsServer() then
-		local units = FindUnitsInRadius(self.caster:GetTeam(),self.mainBaddie:GetAbsOrigin(),nil,FIND_UNITS_EVERYWHERE,DOTA_UNIT_TARGET_TEAM_FRIENDLY,DOTA_UNIT_TARGET_ALL,DOTA_UNIT_TARGET_FLAG_NONE,FIND_ANY_ORDER,false)
+		local units = self.caster:FindFriendlyUnitsInRadius(self.mainBaddie:GetAbsOrigin(), FIND_UNITS_EVERYWHERE, {})
 		for _,unit in pairs(units) do
 			unit:AddNewModifier(self.mainBaddie,self:GetAbility(),"modifier_mens_rae_effect",{})
 		end

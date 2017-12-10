@@ -40,6 +40,19 @@ LinkLuaModifier("modifier_generic_barrier", "libraries/modifiers/modifier_generi
 function Precache( context )
 	PrecacheResource( "particle", "particles/generic_dazed_side.vpcf", context )
 	PrecacheResource( "particle", "particles/items_fx/courier_shield.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf", context )
+
+	PrecacheUnitByNameSync("npc_dota_hero_dazzle", context)
+	PrecacheUnitByNameSync("npc_dota_hero_legion_commander", context)
+	PrecacheUnitByNameSync("npc_dota_hero_lina", context)
+	PrecacheUnitByNameSync("npc_dota_hero_necrolyte", context)
+	PrecacheUnitByNameSync("npc_dota_hero_omniknight", context)
+	PrecacheUnitByNameSync("npc_dota_hero_phantom_assassin", context)
+	PrecacheUnitByNameSync("npc_dota_hero_skeleton_king", context)
+	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
+	PrecacheUnitByNameSync("npc_dota_hero_templar_assassin", context)
+	PrecacheUnitByNameSync("npc_dota_hero_treant", context)
+	PrecacheUnitByNameSync("npc_dota_hero_windrunner", context)
 end
 
 -- Actually make the game mode when we activate
@@ -204,33 +217,12 @@ function CRaidKings:InitGameMode()
 	GameRules:GetGameModeEntity():SetMaximumAttackSpeed(MAXIMUM_ATTACK_SPEED)
 	GameRules:GetGameModeEntity():SetMinimumAttackSpeed(MINIMUM_ATTACK_SPEED)
 	
-	self:InitGenericModifiers()
-	
 	HeroSelection:StartHeroSelection()
 	
 	ListenToGameEvent("dota_player_pick_hero", Dynamic_Wrap( CRaidKings, "OnHeroPick"), CRaidKings )
-	GameRules:GetGameModeEntity():SetExecuteOrderFilter( Dynamic_Wrap(CRaidKings, "FilterOrders"), CRaidKings )
-	
-	GameRules:GetGameModeEntity():SetThink( "OnGameThink", self, 0.25 ) 
-end
-
-function CRaidKings:OnGameThink()
-end
-
-function CRaidKings:FilterOrders(event)
-	if event.order_type == DOTA_UNIT_ORDER_PURCHASE_ITEM then return nil end
-	return true
-end
-
-function CRaidKings:InitGenericModifiers()
-	LinkLuaModifier( "modifier_dazed_generic", "libraries/modifiers/modifier_dazed_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
-	LinkLuaModifier( "modifier_generic_barrier", "libraries/modifiers/modifier_generic_barrier.lua" ,LUA_MODIFIER_MOTION_NONE )
-	LinkLuaModifier( "modifier_stunned_generic", "libraries/modifiers/modifier_stunned_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
-	LinkLuaModifier( "modifier_invisibility_custom", "libraries/modifiers/modifier_invisibility_custom.lua" ,LUA_MODIFIER_MOTION_NONE )
 end
 
 function CRaidKings:OnHeroPick(event)
-	if not event.heroindex then return end
 	local hero = EntIndexToHScript(event.heroindex)
 	if not hero or hero:GetName() == "npc_dota_hero_wisp" then return end
 	print("Hero loaded in: "..hero:GetName())
