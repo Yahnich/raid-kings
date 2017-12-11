@@ -20,7 +20,7 @@ end
 
 
 function modifier_gladiatrix_adrenaline:GetEffectName()
-	return "particles/heroes/gladiatrix/gladiatrix_adrenaline_rush.vpcf"
+	return "particles/heroes/gladiatrix/gladiatrix_adrenaline.vpcf"
 end
 
 function modifier_gladiatrix_adrenaline:DeclareFunctions()

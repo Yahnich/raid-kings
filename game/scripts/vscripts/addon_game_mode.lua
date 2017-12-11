@@ -48,6 +48,7 @@ function Precache( context )
 	PrecacheUnitByNameSync("npc_dota_hero_templar_assassin", context)
 	PrecacheUnitByNameSync("npc_dota_hero_treant", context)
 	PrecacheUnitByNameSync("npc_dota_hero_windrunner", context)
+	PrecacheUnitByNameSync("npc_dota_hero_shadow_demon", context)
 end
 
 -- Actually make the game mode when we activate
@@ -290,6 +291,7 @@ function CRaidKings:InitGenericModifiers()
 	LinkLuaModifier( "modifier_generic_barrier", "libraries/modifiers/modifier_generic_barrier.lua" ,LUA_MODIFIER_MOTION_NONE )
 	LinkLuaModifier( "modifier_stunned_generic", "libraries/modifiers/modifier_stunned_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
 	LinkLuaModifier( "modifier_invisibility_custom", "libraries/modifiers/modifier_invisibility_custom.lua" ,LUA_MODIFIER_MOTION_NONE )
+	LinkLuaModifier( "modifier_shadow_clone", "libraries/modifiers/modifier_shadow_clone.lua" ,LUA_MODIFIER_MOTION_NONE )
 end
 
 function CRaidKings:OnHeroPick(event)
