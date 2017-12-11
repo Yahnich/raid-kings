@@ -857,12 +857,15 @@
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 		
+	    "AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
 		"AbilityCooldown"				"20 18 16 14 12 10 8"
 		
 		"precache"
 		{
-			"particle"					"particles/heroes/gladiatrix/gladiatrix_adrenaline_rush.vpcf"
+			"particle"					"particles/heroes/gladiatrix/gladiatrix_adrenaline.vpcf"
 			"particle"					"particles/heroes/gladiatrix/status_effect_gladiatrix_imperious_shout.vpcf"
+	        
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 		}
 		
@@ -1001,8 +1004,10 @@
 		"precache"
 		{
 			"soundfile"	"game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+	
 			"particle" "particles/units/heroes/hero_legion_commander/legion_commander_courage_hit.vpcf"
 			"particle" "particles/units/heroes/hero_legion_commander/legion_commander_courage_tgt.vpcf"
+			"particle" "particles/heroes/gladiatrix/gladiatrix_fearless_assault_b.vpcf"
 		}
 		
 		
@@ -1147,7 +1152,7 @@
 		
 		"AbilityCastPoint"				"0.3"
 		"AbilityCastRange"				"450"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST3_STATUE"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 		
 		"AbilityCooldown"				"14"
 		
@@ -1155,6 +1160,7 @@
 		{
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
 			"particle"					"particles/econ/items/axe/axe_weapon_practos/axe_attack_blur_counterhelix_practos.vpcf"
+			"particle"  				"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_attack_blink_blurb.vpcf"
 		}
 		
 	    "AbilitySpecial"
@@ -1216,7 +1222,8 @@
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCastRange"				"800"
-		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+		"AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
 		
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
@@ -1304,8 +1311,11 @@
 		
 		"precache"
 		{
-			"particle"					"particles/heroes/gladiatrix/gladiatrix_valiant_rush_taunta.vpcf"
+			"particle"					"particles/heroes/gladiatrix/gladiatrix_valiant_rush_taunt.vpcf"
 			"particle"					"particles/heroes/gladiatrix/gladiatrix_valiant_rush_movement.vpcf"
+			"particle"  				"particles/heroes/gladiatrix/gladiatrix_valiant_rush.vpcf"
+	
+	
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
@@ -1369,6 +1379,9 @@
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
+	
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 		
 		"precache"
 		{
@@ -1459,6 +1472,9 @@
 	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
+		
+		"AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
 		
 		"AbilityCastRange"				"450"
 		"AbilityCooldown"				"60"
@@ -5609,6 +5625,803 @@
 			{
 				"var_type"					"FIELD_INTEGER"
 				"value"				"350"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Dark Flay
+	//=================================================================================================================
+	"revenant_dark_flay"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/revenant/revenant_dark_flay.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"ms_semidarkness_flay"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
+		"AbilityCastRange"				"800"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_second"			"50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_channel"			"3"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 		"particles/heroes/revenant/revenant_dark_flay.vpcf"
+			"particle"  	"particles/heroes/revenant/revenant_dark_flay_reflect.vpcf"
+	
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+		}
+	}
+	"revenant_dark_flay_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Devouring Shadow
+	//=================================================================================================================
+	"revenant_devouring_shadow"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/revenant/revenant_devouring_shadow.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"ms_devouring_shadow"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastRange"				"800"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"5"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"100 150 200 250 300 350 400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"6.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"100"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun"					"2.5"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 		"particles/heroes/revenant/revenant_devouring_shadow.vpcf"
+			"particle"  	"particles/items2_fx/veil_of_discord_debuff.vpcf"
+			"particle" 		"particles/econ/generic/generic_projectile_tracking_1/generic_projectile_tracking_1.vpcf"
+	
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+		}
+	}
+	"revenant_devouring_shadow_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Penumbra
+	//=================================================================================================================
+	"revenant_penumbra"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/revenant/revenant_penumbra.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"shadow_demon_shadow_poison"
+		"MaxLevel"						"1"
+		"LevelsBetweenUpgrades"  		"0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.25"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		"AbilityCastRange"				"1500"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"26 34 42 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"5"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"range"					"1500"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 		"particles/heroes/revenant/revenant_penumbra.vpcf"
+			"particle"  	"particles/econ/items/shadow_demon/sd_ti7_shadow_poison/sd_ti7_shadow_poison_kill.vpcf"
+			"particle"  	"particles/econ/items/shadow_demon/sd_ti7_shadow_poison/sd_ti7_shadow_poison_release.vpcf"
+			"particle"  	"particles/heroes/revenant/revenant_penumbra_stack_counter.vpcf"
+	
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Penumbra Release
+	//=================================================================================================================
+	"revenant_penumbra_release"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/revenant/revenant_penumbra_release.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"shadow_demon_shadow_poison_release_immortal"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+	}
+	"revenant_penumbra_release_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	"revenant_penumbra_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Shade Walk
+	//=================================================================================================================
+	"revenant_shade_walk"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/revenant/revenant_shade_walk.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"ms_shadow_walk"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+		"AbilityCastRange"				"250"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"move_speed"			"75"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_damage_dealt"	"10 15 20 25 30 35 40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_damage_taken"	"500"
+			}		
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"250"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-25"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"2.0"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 		"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher.vpcf"
+			"particle"  	"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher_debuff.vpcf"
+			"particle"  	"particles/econ/items/abaddon/abaddon_alliance/abaddon_aphotic_shield_alliance_explosion.vpcf"
+	
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+		}
+	}
+	"revenant_shade_walk_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Shadowscape
+	//=================================================================================================================
+	"revenant_shadowscape"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/revenant/revenant_shadowscape.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"ms_shadowscape"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		//"AbilityCastPoint"				"0.6"
+		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
+		"AbilityCastRange"				"2000"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_chance"		"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_damage_dealt"	"10 15 20 25 30 35 40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_damage_taken"	"500"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"illusion_duration"		"8 10 12 14"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"max_channel"			"16"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"100"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_atack"			"-2"
+			}
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_move"				"-2"
+			}
+			"09"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow_max"				"-100"
+			}
+			"10"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"1.0"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 		"particles/heroes/revenant/revenant_shadowscape.vpcf"
+			"particle"  	"particles/units/heroes/hero_warlock/warlock_upheaval_debuff.vpcf"
+	
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+		}
+	}
+	"revenant_shadowscape_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Shadow Catcher
+	//=================================================================================================================
+	"revenant_shadow_catcher"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/revenant/revenant_shadow_catcher.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"shadow_demon_soul_catcher"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		"AOERadius"						"450"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastRange"				"600"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_amp"			"20 30 40 50 60 70 80"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_damage_dealt"	"10 15 20 25 30 35 40"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_damage_taken"	"500"
+			}		
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"illusion_duration"		"8 10 12 14"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"450"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 		"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher.vpcf"
+			"particle"  	"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher_debuff.vpcf"
+			"particle"  	"particles/econ/items/abaddon/abaddon_alliance/abaddon_aphotic_shield_alliance_explosion.vpcf"
+	
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+		}
+	}
+	"revenant_shadow_catcher_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Soul Purge
+	//=================================================================================================================
+	"revenant_soul_purge"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/revenant/revenant_soul_purge.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"shadow_demon_demonic_purge"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		"AOERadius"						"500"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.6"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastRange"				"800"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"200 300 400 500 600 700 800"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_targets"			"3"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"500"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-100"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 		"particles/units/heroes/hero_shadow_demon/shadow_demon_demonic_purge.vpcf"
+	
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+		}
+	}
+	"revenant_soul_purge_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Umbral Gate
+	//=================================================================================================================
+	"revenant_umbral_gate"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/revenant/revenant_umbral_gate.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+		"AbilityTextureName"			"shadow_demon_disruption"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityCastRange"				"600"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+	
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"gate_duration"			"3.0"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_damage_dealt"	"10 15 20 25 30 35 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"illusion_damage_taken"	"500"
+			}		
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"illusion_duration"		"8 10 12 14"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"slow_duration"			"1.0"
+			}
+		}
+	
+		"precache"
+		{
+			"particle" 		"particles/units/heroes/hero_shadow_demon/shadow_demon_disruption.vpcf"
+	
+			"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+		}
+	}
+	"revenant_umbral_gate_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
 			}
 		}
 	}

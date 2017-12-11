@@ -7,7 +7,7 @@ end
 function gladiatrix_war_fury:OnSpellStart()
 	self.vTarget = self:GetCursorPosition()
 	self.duration = self:GetSpecialValueFor("duration")
-	local dummy = CreateUnitByName( "npc_dummy_blank", self.vTarget, false, nil, nil, self:GetCaster():GetTeamNumber() )
+	local dummy = CreateUnitByName( "npc_dummy_unit", self.vTarget, false, nil, nil, self:GetCaster():GetTeamNumber() )
 	dummy:AddNewModifier(self:GetCaster(), self, "modifier_gladiatrix_war_fury_thinker", {duration = self.duration})
 end
 
@@ -17,7 +17,7 @@ modifier_gladiatrix_war_fury_thinker = class({})
 function modifier_gladiatrix_war_fury_thinker:OnCreated( kv )
 	self.aura_radius = self:GetAbility():GetSpecialValueFor( "radius" )
 	if IsServer() then
-		EmitSoundOn("Hero_LegionCommander.WarFuryShout",self:GetCaster())
+		--EmitSoundOn("Hero_LegionCommander.WarFuryShout",self:GetCaster())
 		EmitSoundOn("Hero_LegionCommander.Duel.Cast",self:GetCaster())
 		EmitSoundOn("Hero_LegionCommander.Duel",self:GetCaster())
 		

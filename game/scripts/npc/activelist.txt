@@ -5,15 +5,16 @@
 
 "whitelist"
 {
-  "npc_dota_hero_dazzle"  "1"
-  "npc_dota_hero_lina" "1"
-  "npc_dota_hero_necrolyte" "1"
-  "npc_dota_hero_omniknight" "1"
-  "npc_dota_hero_sven" "1"
-  "npc_dota_hero_windrunner" "1"
-  "npc_dota_hero_skeleton_king" "1"
-  "npc_dota_hero_treant" "1"
-  "npc_dota_hero_phantom_assassin" "1"
-  "npc_dota_hero_legion_commander" "1"
-  "npc_dota_hero_templar_assassin" "1"
+  "npc_dota_hero_dazzle"  "1" //mystic
+  "npc_dota_hero_lina" "1"  //Ifrit
+  "npc_dota_hero_necrolyte" "1" //Puppeteer
+  "npc_dota_hero_omniknight" "1" //Justicar
+  "npc_dota_hero_sven" "1" //Guardian
+  "npc_dota_hero_windrunner" "1" //Sylph
+  "npc_dota_hero_skeleton_king" "1" //Wraith
+  "npc_dota_hero_treant" "1" //Forest
+  "npc_dota_hero_phantom_assassin" "1" //Shinigami
+  "npc_dota_hero_legion_commander" "1" //Gladiatrix
+  "npc_dota_hero_templar_assassin" "1" //Peacekeeper
+  "npc_dota_hero_shadow_demon"      "1" //Revenant
 }

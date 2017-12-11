@@ -38,9 +38,12 @@ end
 function modifier_valiant_rush_movement:OnDestroy()
 	if IsServer() then
 		local affectedEnemies = self:GetParent():FindEnemyUnitsInRadius(self:GetParent():GetAbsOrigin(), self.radius, {})
-		local taunt = ParticleManager:CreateParticle("particles/heroes/gladiatrix/gladiatrix_valiant_rush_taunta.vpcf", PATTACH_POINT_FOLLOW, self:GetParent())
+		local taunt = ParticleManager:CreateParticle("particles/heroes/gladiatrix/gladiatrix_valiant_rush_taunt.vpcf", PATTACH_POINT_FOLLOW, self:GetParent())
+		ParticleManager:SetParticleControlEnt(taunt, 0, self:GetParent(), PATTACH_ABSORIGIN, "attach_Hitloc", self:GetParent():GetAbsOrigin(), true)
 		ParticleManager:ReleaseParticleIndex(taunt)
 		
+		self:GetCaster():StartGesture(ACT_DOTA_CAST_ABILITY_4)
+
 		StopSoundOn("Hero_LegionCommander.Duel.FP", self:GetCaster())
 		EmitSoundOn("Hero_MonkeyKing.FurArmy.End", self:GetCaster())
 		EmitSoundOn("Hero_Sven.SignetLayer", self:GetCaster())
@@ -87,7 +90,7 @@ function modifier_valiant_rush_movement:GetModifierMoveSpeed_Limit()
 end
 
 function modifier_valiant_rush_movement:GetEffectName()
-	return "particles/heroes/gladiatrix/gladiatrix_valiant_rush_movement.vpcf"
+	return "particles/heroes/gladiatrix/gladiatrix_valiant_rush.vpcf"
 end
 
 LinkLuaModifier( "modifier_valiant_rush_taunt", "heroes/gladiatrix/gladiatrix_valiant_rush.lua" ,LUA_MODIFIER_MOTION_NONE )

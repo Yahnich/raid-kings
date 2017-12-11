@@ -36,7 +36,6 @@
 		},
 		{
 			_class = "C_OP_LockToBone"
-			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_Decay"
@@ -73,6 +72,7 @@
 			m_FrequencyMin = [ 0.25, 0.25, 0.25 ]
 			m_FrequencyMax = [ 4.0, 4.0, 4.0 ]
 			m_flOscAdd = 0.75
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_OscillateScalar"
@@ -81,6 +81,7 @@
 			m_RateMax = 300.0
 			m_RateMin = -300.0
 			m_nField = 3
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_OP_InterpolateRadius"
@@ -116,6 +117,7 @@
 			m_flNoiseScaleLoc = 1.0
 			m_vecOutputMin = [ -128.0, -128.0, -128.0 ]
 			m_vecOutputMax = [ 128.0, 128.0, 128.0 ]
+			m_bDisableOperator = true
 		},
 		{
 			_class = "C_INIT_RandomColor"

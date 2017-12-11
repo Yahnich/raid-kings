@@ -23,10 +23,6 @@
 	m_Operators = 
 	[
 		{
-			_class = "C_OP_MovementRigidAttachToCP"
-			m_nScaleControlPoint = 3
-		},
-		{
 			_class = "C_OP_Decay"
 		},
 		{
@@ -40,16 +36,12 @@
 			m_flEndScale = 2.0
 			m_flStartScale = 0.0
 		},
+		{
+			_class = "C_OP_BasicMovement"
+		},
 	]
 	m_Initializers = 
 	[
-		{
-			_class = "C_INIT_InitFromCPSnapshot"
-			m_nControlPointNumber = 6
-			m_nAttributeToRead = 0
-			m_nLocalSpaceCP = 4
-			m_bRandom = true
-		},
 		{
 			_class = "C_INIT_RandomRotation"
 		},
@@ -72,6 +64,9 @@
 			_class = "C_INIT_RandomLifeTime"
 			m_fLifetimeMax = 1.0
 			m_fLifetimeMin = 0.7
+		},
+		{
+			_class = "C_INIT_CreateOnModel"
 		},
 	]
 	m_Emitters = 

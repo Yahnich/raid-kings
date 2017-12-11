@@ -1,13 +1,10 @@
 gladiatrix_fearless_assault = class({})
 
-gladiatrix_fearless_assault = class({})
-
 function gladiatrix_fearless_assault:GetIntrinsicModifierName()
 	return "modifier_gladiatrix_fearless_assault_passive"
 end
 
 LinkLuaModifier( "modifier_gladiatrix_fearless_assault_passive", "heroes/gladiatrix/gladiatrix_fearless_assault.lua" ,LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_lifesteal_generic", "lua_abilities/heroes/modifiers/modifier_lifesteal_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
 modifier_gladiatrix_fearless_assault_passive = class({})
 
 function modifier_gladiatrix_fearless_assault_passive:OnCreated()
@@ -23,13 +20,10 @@ function modifier_gladiatrix_fearless_assault_passive:OnIntervalThink()
 	if self:GetParent():IsAttacking() and self:GetParent():HasModifier("modifier_gladiatrix_fearless_assault_buff") then
 		Timers:CreateTimer(0.08,function()
 			self:GetParent():PerformAttack(self:GetParent():GetAttackTarget(), false, true, true, false, false, false, true)
+			self:GetParent():StartGestureWithPlaybackRate(ACT_DOTA_ATTACK, 3.0)
 			EmitSoundOn("Hero_LegionCommander.Courage", self:GetParent())
-			local hit1 = ParticleManager:CreateParticle("particles/units/heroes/hero_legion_commander/legion_commander_courage_tgt.vpcf", PATTACH_POINT_FOLLOW, self:GetParent())
-				ParticleManager:SetParticleControlEnt(hit1, 0, self:GetCaster(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetCaster():GetAbsOrigin(), true)
-			local hit2 = ParticleManager:CreateParticle("particles/units/heroes/hero_legion_commander/legion_commander_courage_hit.vpcf", PATTACH_POINT_FOLLOW, self:GetParent():GetAttackTarget())
-				ParticleManager:SetParticleControlEnt(hit2, 0, self:GetParent():GetAttackTarget(), PATTACH_POINT_FOLLOW, "attach_hitloc", self:GetParent():GetAttackTarget():GetAbsOrigin(), true)
-			ParticleManager:ReleaseParticleIndex(hit1)
-			ParticleManager:ReleaseParticleIndex(hit2)
+			local attack = ParticleManager:CreateParticle("particles/heroes/gladiatrix/gladiatrix_fearless_assault_b.vpcf", PATTACH_POINT_FOLLOW, self:GetParent())
+			ParticleManager:ReleaseParticleIndex(attack)
 		end)
 	end
 end

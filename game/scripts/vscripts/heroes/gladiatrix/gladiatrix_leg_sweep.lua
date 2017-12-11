@@ -25,7 +25,10 @@ end
 
 function gladiatrix_leg_sweep:OnSpellStart()
 	local caster = self:GetCaster()
-	local spin = ParticleManager:CreateParticle("particles/econ/items/axe/axe_weapon_practos/axe_attack_blur_counterhelix_practos.vpcf", PATTACH_POINT_FOLLOW, caster)
+	--local spin = ParticleManager:CreateParticle("particles/econ/items/axe/axe_weapon_practos/axe_attack_blur_counterhelix_practos.vpcf", PATTACH_POINT_FOLLOW, caster)
+	local spin = ParticleManager:CreateParticle("particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_attack_blink_blurb.vpcf", PATTACH_POINT_FOLLOW, caster)
+	ParticleManager:SetParticleControl(spin, 0, caster:GetAbsOrigin())
+	ParticleManager:SetParticleControl(spin, 1, caster:GetForwardVector())
 	ParticleManager:ReleaseParticleIndex(spin)
 	EmitSoundOn("Hero_Axe.CounterHelix", caster)
 	if caster:HasTalent("gladiatrix_leg_sweep_talent_1") then

@@ -26,10 +26,6 @@
 	m_Operators = 
 	[
 		{
-			_class = "C_OP_MovementRigidAttachToCP"
-			m_nScaleControlPoint = 3
-		},
-		{
 			_class = "C_OP_Decay"
 		},
 		{
@@ -81,7 +77,7 @@
 			m_nAlphaMax = 200
 		},
 		{
-			_class = "C_INIT_CreateFromParentParticles"
+			_class = "C_INIT_CreateOnModel"
 		},
 	]
 	m_Emitters = 
