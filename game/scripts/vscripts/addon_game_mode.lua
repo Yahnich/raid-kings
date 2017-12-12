@@ -299,5 +299,11 @@ function CRaidKings:OnHeroPick(event)
 	local hero = EntIndexToHScript(event.heroindex)
 	if not hero or hero:GetName() == "npc_dota_hero_wisp" then return end
 	print("Hero loaded in: "..hero:GetName())
+	for i = 0, 17 do
+		local skill = hero:GetAbilityByIndex(i)
+		if skill and skill:IsInnateAbility() then
+			skill:SetLevel(1)
+		end
+	end
 	StatsManager:CreateCustomStatsForHero(hero)
 end

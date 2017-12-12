@@ -911,7 +911,7 @@ Aghs:
 Allies standing within 450 radius of a marked unit take -15% damage
 
 
-Shadow Fiend: Skadi, the Collector; 
+Shadow Fiend: Thanos, the Collector; 
 -- Innate: Collector's Hoard: Gets 5 damage per trash unit killed, gets 25 per boss, trash unit damage bonus is capped at 25 per level, boss has no limit and does not need to be killed, he merely has to be near the boss
 
 -- Skill 1: Soul Pool - Creates a damaging pool on the floor infront of Collector, upon creating all units in the pool radius take 200% AD damage.

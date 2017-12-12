@@ -623,7 +623,7 @@
 		"RingRadius"			"42"
 		
 	}
-	"npc_dota_hero_shadow_demon"
+	"npc_dota_hero_shadow_demon" // Revenant
 	  {
 	    "override_hero"     "npc_dota_hero_shadow_demon"
 	    "DisableWearables"		"1"
@@ -657,27 +657,27 @@
 		{
 			"Armor"
 			{
-				"1"				"item_mystic_armor_1"
-				"2"				"item_mystic_armor_2"
-				"3"				"item_mystic_armor_3"
-				"4"				"item_mystic_armor_4"
-				"5"				"item_mystic_armor_5"
+				"1"				"item_revenant_armor_1"
+				"2"				"item_revenant_armor_2"
+				"3"				"item_revenant_armor_3"
+				"4"				"item_revenant_armor_4"
+				"5"				"item_revenant_armor_5"
 			}
 			"Weapon"
 			{
-				"1"				"item_mystic_weapon_1"
-				"2"				"item_mystic_weapon_2"
-				"3"				"item_mystic_weapon_3"
-				"4"				"item_mystic_weapon_4"
-				"5"				"item_mystic_weapon_5"
+				"1"				"item_revenant_weapon_1"
+				"2"				"item_revenant_weapon_2"
+				"3"				"item_revenant_weapon_3"
+				"4"				"item_revenant_weapon_4"
+				"5"				"item_revenant_weapon_5"
 			}
 			"Other"
 			{
-				"1"				"item_mystic_other_1"
-				"2"				"item_mystic_other_2"
-				"3"				"item_mystic_other_3"
-				"4"				"item_mystic_other_4"
-				"5"				"item_mystic_other_5"
+				"1"				"item_revenant_other_1"
+				"2"				"item_revenant_other_2"
+				"3"				"item_revenant_other_3"
+				"4"				"item_revenant_other_4"
+				"5"				"item_revenant_other_5"
 			}
 		}
 		

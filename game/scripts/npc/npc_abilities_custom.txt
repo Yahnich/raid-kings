@@ -5683,7 +5683,7 @@
 		}
 	
 		"precache"
-		{
+		{	
 			"particle" 		"particles/heroes/revenant/revenant_dark_flay.vpcf"
 			"particle"  	"particles/heroes/revenant/revenant_dark_flay_reflect.vpcf"
 	
@@ -5814,6 +5814,7 @@
 		"AbilityTextureName"			"custom/revenant_penumbra"
 		"MaxLevel"						"1"
 		"LevelsBetweenUpgrades"  		"0"
+		"InnateAbility"						"1"
 		
 		// Casting
 		//-------------------------------------------------------------------------------------------------------------

@@ -114,7 +114,6 @@
 		"npc_dota_hero_tusk"															"Brawler"
 		"npc_dota_hero_nevermore"														"Collector"
 		"npc_dota_hero_shadow_demon"													"Revenant"
-		"npc_dota_hero_kunkka"															"Poseiden"
 		
 		
 		
@@ -133,7 +132,7 @@
 		"Description_npc_dota_hero_lone_druid" 											"Shifter"
 		"Description_npc_dota_hero_templar_assassin"									"The Peacekeeper is a hidden protector, dealing with minor foes rapidly while empowering herself by protecting her team with heals and damage prevention."
 		"Description_npc_dota_hero_shadow_demon"										"Mr. Shade likes to play with the shadows, look out!"
-		"Description_npc_dota_hero_kunkka"												"He's a pirate, what else is there to know?"
+		"Description_npc_dota_hero_kunkka"												"DO WHAT YOU WANT BECAUSE A PIRATE IS FREE, YOU ARE A PIRATE!"
 		
 		
 		
@@ -2268,6 +2267,66 @@
 		"DOTA_Tooltip_modifier_corpus_jurius"										"Corpus Juris"
 		"DOTA_Tooltip_modifier_corpus_jurius_description"							"+%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% bonus move speed and +%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% bonus damage."
 		
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_1"								"Blunt Dirk"
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_1_Description"					"Grants bonus attack damage and a chance to critically hit on all damage."
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_1_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_2"								"Sharpened Dirk"
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_2_Description"					"Grants bonus attack damage and a chance to critically hit on all damage."
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_2_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_3"								"Exquisite Dirk"
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_3_Description"					"Grants bonus attack damage and a chance to critically hit on all damage."
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_3_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_4"								"Peaceful Dirk"
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_4_Description"					"Grants bonus attack damage and a chance to critically hit on all damage."
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_4_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_5"								"Law"
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_5_Description"					"Grants bonus attack damage and a chance to critically hit on all damage."
+		"DOTA_Tooltip_ability_item_peacekeeper_weapon_5_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_other_1"									"Dull Dagger"
+		"DOTA_Tooltip_ability_item_peacekeeper_other_1_Description"						"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_peacekeeper_other_1_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_other_2"									"Honed Dagger"
+		"DOTA_Tooltip_ability_item_peacekeeper_other_2_Description"						"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_peacekeeper_other_2_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_other_3"									"Gentle Dagger"
+		"DOTA_Tooltip_ability_item_peacekeeper_other_3_Description"						"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_peacekeeper_other_3_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_other_4"									"Serene Dagger"
+		"DOTA_Tooltip_ability_item_peacekeeper_other_4_Description"						"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_peacekeeper_other_4_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_other_5"									"Order"
+		"DOTA_Tooltip_ability_item_peacekeeper_other_5_Description"						"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_peacekeeper_other_5_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_1"									"Worn Raiment"
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_1_Description"						"Grants bonus maximum health and evasion."
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_1_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_2"									"Rookie's Raiment"
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_2_Description"						"Grants bonus maximum health and evasion."
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_2_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_3"									"Officer's Raiment"
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_3_Description"						"Grants bonus maximum health and evasion."
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_3_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_4"									"Lawful Raiment"
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_4_Description"						"Grants bonus maximum health and evasion."
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_4_Lore"							"Anahita's psi blades, wavering in power."
+		
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_5"									"Justitia"
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_5_Description"						"Grants bonus maximum health and evasion."
+		"DOTA_Tooltip_ability_item_peacekeeper_armor_5_Lore"							"Anahita's psi blades, wavering in power."
+		
 		//Revenant
 		"DOTA_Tooltip_ability_revenant_penumbra"									"Penumbra"
 		"DOTA_Tooltip_ability_revenant_penumbra_Description"						"Send forth a powerful Shadow that deals %shade_damage% damage and afflicts enemies with <font color='#c242f4'>Shadowy Residue</font>. The Shadow will attempt to seek out nearby enemies. <font color='#c242f4'>Shadowy Residue</font> deals %shade_damage% damage again after expiring or being removed.\nBoth instances of damage are multiplied by the current number of <font color='#c242f4'>Shadowy Residue</font> stacks."
@@ -2364,34 +2423,95 @@
 		"DOTA_Tooltip_ability_revenant_dark_flay_damage_second"						"DAMAGE PER SECOND:"
 		"DOTA_Tooltip_ability_revenant_dark_flay_max_channel"						"MAX CHANNEL:"	
 		"DOTA_Tooltip_ability_revenant_dark_flay_radius"							"<font color='#c242f4'>SHADOWY RESIDUE</font> RADIUS:"
+		
+		"DOTA_Tooltip_ability_item_revenant_other_1"								"Feeble Aura"
+		"DOTA_Tooltip_ability_item_revenant_other_1_Description"					"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_revenant_other_1_Lore"							"Crocell's aura, slow in flow."
+		
+		"DOTA_Tooltip_ability_item_revenant_other_2"								"Dusky Aura"
+		"DOTA_Tooltip_ability_item_revenant_other_2_Description"					"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_revenant_other_2_Lore"							"Crocell's aura, slow in flow."
+		
+		"DOTA_Tooltip_ability_item_revenant_other_3"								"Negative Aura"
+		"DOTA_Tooltip_ability_item_revenant_other_3_Description"					"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_revenant_other_3_Lore"							"Crocell's aura, slow in flow."
+		
+		"DOTA_Tooltip_ability_item_revenant_other_4"								"Tenebrous Aura"
+		"DOTA_Tooltip_ability_item_revenant_other_4_Description"					"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_revenant_other_4_Lore"							"Crocell's aura, slow in flow."
+		
+		"DOTA_Tooltip_ability_item_revenant_other_5"								"The Void"
+		"DOTA_Tooltip_ability_item_revenant_other_5_Description"					"Grants attack speed and cooldown reduction."
+		"DOTA_Tooltip_ability_item_revenant_other_5_Lore"							"Crocell's aura, slow in flow."
+		
+		"DOTA_Tooltip_ability_item_revenant_weapon_1"								"Dim Essence"
+		"DOTA_Tooltip_ability_item_revenant_weapon_1_Description"					"Grants bonus attack damage and a chance to critically damage on any source of damage."
+		"DOTA_Tooltip_ability_item_revenant_weapon_1_Lore"							"Crocell's essence, waning in strength."
+		
+		"DOTA_Tooltip_ability_item_revenant_weapon_2"								"Dark Essence"
+		"DOTA_Tooltip_ability_item_revenant_weapon_2_Description"					"Grants bonus attack damage and a chance to critically damage on any source of damage."
+		"DOTA_Tooltip_ability_item_revenant_weapon_2_Lore"							"Crocell's essence, waning in strength."
+		
+		"DOTA_Tooltip_ability_item_revenant_weapon_3"								"Sombre Essence"
+		"DOTA_Tooltip_ability_item_revenant_weapon_3_Description"					"Grants bonus attack damage and a chance to critically damage on any source of damage."
+		"DOTA_Tooltip_ability_item_revenant_weapon_3_Lore"							"Crocell's essence, waning in strength."
+		
+		"DOTA_Tooltip_ability_item_revenant_weapon_4"								"Stygian Essence"
+		"DOTA_Tooltip_ability_item_revenant_weapon_4_Description"					"Grants bonus attack damage and a chance to critically damage on any source of damage."
+		"DOTA_Tooltip_ability_item_revenant_weapon_4_Lore"							"Crocell's essence, waning in strength."
+		
+		"DOTA_Tooltip_ability_item_revenant_weapon_5"								"Cimmerian Shade"
+		"DOTA_Tooltip_ability_item_revenant_weapon_5_Description"					"Grants bonus attack damage and a chance to critically damage on any source of damage."
+		"DOTA_Tooltip_ability_item_revenant_weapon_5_Lore"							"Crocell's essence, waning in strength."
+		
+		"DOTA_Tooltip_ability_item_revenant_armor_1"								"Rusted Chains"
+		"DOTA_Tooltip_ability_item_revenant_armor_1_Description"					"Grants bonus health."
+		"DOTA_Tooltip_ability_item_revenant_armor_1_Lore"							"Crocell's chains, binding his power."
+		
+		"DOTA_Tooltip_ability_item_revenant_armor_2"								"Solid Chains"
+		"DOTA_Tooltip_ability_item_revenant_armor_2_Description"					"Grants bonus health."
+		"DOTA_Tooltip_ability_item_revenant_armor_2_Lore"							"Crocell's chains, binding his power."
+		
+		"DOTA_Tooltip_ability_item_revenant_armor_3"								"Enchanted Chains"
+		"DOTA_Tooltip_ability_item_revenant_armor_3_Description"					"Grants bonus health."
+		"DOTA_Tooltip_ability_item_revenant_armor_3_Lore"							"Crocell's chains, binding his power."
+		
+		"DOTA_Tooltip_ability_item_revenant_armor_4"								"Runic Chains"
+		"DOTA_Tooltip_ability_item_revenant_armor_4_Description"					"Grants bonus health."
+		"DOTA_Tooltip_ability_item_revenant_armor_4_Lore"							"Crocell's chains, binding his power."
+		
+		"DOTA_Tooltip_ability_item_revenant_armor_5"								"Tartarus"
+		"DOTA_Tooltip_ability_item_revenant_armor_5_Description"					"Grants bonus health."
+		"DOTA_Tooltip_ability_item_revenant_armor_5_Lore"							"Crocell's chains, binding his power."
+		
 
-		//Poseiden
-		"DOTA_Tooltip_ability_poseiden_x_marks"										"X Marks"
-		"DOTA_Tooltip_ability_poseiden_x_marks_Description"							"A number of enemies are <font color='#ff0000'>Marked</font> within the given area, tracking their position. After several seconds, the enemies are returned to their original spot, knocking up all nearby enemies.\nAdditionallly, <font color='#ff0000'>Marked</font> enemies are dealt increased damage.\nOnly two enemies may be <font color='#ff0000'>Marked</font> at a time."
-		"DOTA_Tooltip_ability_poseiden_x_marks_Lore"								"1."
-		"DOTA_Tooltip_ability_poseiden_x_marks_bonus_damage"						"%BONUS DAMAGE:"
-		"DOTA_Tooltip_ability_poseiden_x_marks_duration"							"DURATION:"
-		"DOTA_Tooltip_ability_poseiden_x_marks_max_units"							"MAX UNITS:"
-		"DOTA_Tooltip_ability_poseiden_x_marks_radius"								"RADIUS:"
+		//Buccaneer
+		"DOTA_Tooltip_ability_buccaneer_x_marks"										"X Marks"
+		"DOTA_Tooltip_ability_buccaneer_x_marks_Description"							"A number of enemies are <font color='#ff0000'>Marked</font> within the given area, tracking their position. After several seconds, the enemies are returned to their original spot, knocking up all nearby enemies.\nAdditionallly, <font color='#ff0000'>Marked</font> enemies are dealt increased damage.\nOnly two enemies may be <font color='#ff0000'>Marked</font> at a time."
+		"DOTA_Tooltip_ability_buccaneer_x_marks_Lore"								"1."
+		"DOTA_Tooltip_ability_buccaneer_x_marks_bonus_damage"						"%BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_buccaneer_x_marks_duration"							"DURATION:"
+		"DOTA_Tooltip_ability_buccaneer_x_marks_max_units"							"MAX UNITS:"
+		"DOTA_Tooltip_ability_buccaneer_x_marks_radius"								"RADIUS:"
 		"DOTA_Tooltip_modifier_x_marks"												"X Marks"
 		"DOTA_Tooltip_modifier_x_marks_description"									"+%fMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming damage."
 
-		"DOTA_Tooltip_ability_poseiden_hand_cannon"									"Hand Cannon"
-		"DOTA_Tooltip_ability_poseiden_hand_cannon_Description"						"Fire off your shotgun sending both Captian Pirate and the enemies hit away from the initial cast location. Deals a multiplier of total attack damage. Enemies are knocked back twice as far.\nMay proc Plunder.\n<font color='#ff0000'>Marked</font> enemies are not knocked back, but are dealt equal damage plus additional damage equal to the knock back distance, as <font color='#d61107'>Pure</font>."
-		"DOTA_Tooltip_ability_poseiden_hand_cannon_Lore"							"2."
-		"DOTA_Tooltip_ability_poseiden_hand_cannon_damage_multiplier"				"DAMAGE MULTIPLIER:"
-		"DOTA_Tooltip_ability_poseiden_hand_cannon_knock_back"						"KNOCKBACK DISTANCE:"
+		"DOTA_Tooltip_ability_buccaneer_hand_cannon"									"Hand Cannon"
+		"DOTA_Tooltip_ability_buccaneer_hand_cannon_Description"						"Fire off your shotgun sending both Captian Pirate and the enemies hit away from the initial cast location. Deals a multiplier of total attack damage. Enemies are knocked back twice as far.\nMay proc Plunder.\n<font color='#ff0000'>Marked</font> enemies are not knocked back, but are dealt equal damage plus additional damage equal to the knock back distance, as <font color='#d61107'>Pure</font>."
+		"DOTA_Tooltip_ability_buccaneer_hand_cannon_Lore"							"2."
+		"DOTA_Tooltip_ability_buccaneer_hand_cannon_damage_multiplier"				"DAMAGE MULTIPLIER:"
+		"DOTA_Tooltip_ability_buccaneer_hand_cannon_knock_back"						"KNOCKBACK DISTANCE:"
 
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet"								"Call the Fleet"
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet_Description"					"Summon a Spooky Ship that sails through the battle before smashing apart, damaging and stunning all enenimes caught near the wreckage. Allies touched by the Spooky Ship recieve damage reduction and bonus movement speed. Enemies touched have reduced attack speed.\nThe ship is spawned behind Captain Pirate. The ship travels half the distance to the caster then half the distance away from the caster.\n<font color='#ff0000'>Marked</font> enemies are dragged to the end point."
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet_Lore"							"3."
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet_buff_duration"				"BUFF DURATION:"
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet_ghostship_absorb"				"%DAMAGE REDUCTION:"
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet_ghostship_damage"				"SHIP DAMAGE:"
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet_ghostship_distance"			"SHIP DISTANCE:"
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet_attackspeed_bonus"			"ATTACK SPEED REDUCTION:"
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet_movespeed_bonus"				"%BONUS MOVEMENT SPEED:"
-		"DOTA_Tooltip_ability_poseiden_call_the_fleet_stun_duration"				"STUN DURATION:"
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet"								"Call the Fleet"
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_Description"					"Summon a Spooky Ship that sails through the battle before smashing apart, damaging and stunning all enenimes caught near the wreckage. Allies touched by the Spooky Ship recieve damage reduction and bonus movement speed. Enemies touched have reduced attack speed.\nThe ship is spawned behind Captain Pirate. The ship travels half the distance to the caster then half the distance away from the caster.\n<font color='#ff0000'>Marked</font> enemies are dragged to the end point."
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_Lore"							"3."
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_buff_duration"				"BUFF DURATION:"
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_ghostship_absorb"				"%DAMAGE REDUCTION:"
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_ghostship_damage"				"SHIP DAMAGE:"
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_ghostship_distance"			"SHIP DISTANCE:"
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_attackspeed_bonus"			"ATTACK SPEED REDUCTION:"
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_movespeed_bonus"				"%BONUS MOVEMENT SPEED:"
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_stun_duration"				"STUN DURATION:"
 		"DOTA_Tooltip_modifier_call_the_fleet_enemy"								"Spooky Ship"
 		"DOTA_Tooltip_modifier_call_the_fleet_enemy_description"					"-%dMODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT% attack speed while wet."
 		"DOTA_Tooltip_modifier_call_the_fleet_ally"									"Spooky Ship"
@@ -2399,44 +2519,44 @@
 		"DOTA_Tooltip_modifier_call_the_fleet_ally_damage"							"Spooky Ship Return"
 		"DOTA_Tooltip_modifier_call_the_fleet_ally_damage_description"				"Damage blocked is slowly being dealt."
 
-		"DOTA_Tooltip_ability_poseiden_wavebreaker"									"Wavebreaker"
-		"DOTA_Tooltip_ability_poseiden_wavebreaker_Description"						"The next basic attack flings forth a <font color='#1A88FC'>Wave</font>, dealing base damage plus a percent of Captain Pirate's attack damage.\nThe <font color='#1A88FC'>Wave</font> will then carry hit enemies, eventually stunning them.\n<font color='#ff0000'>Marked</font> enemies are stunned rather than carried with the wave."
-		"DOTA_Tooltip_ability_poseiden_wavebreaker_Lore"							"4."
-		"DOTA_Tooltip_ability_poseiden_wavebreaker_base_damage"						"BASE DAMAGE:"
-		"DOTA_Tooltip_ability_poseiden_wavebreaker_bonus_damage"					"%BONUS DAMAGE:"
-		"DOTA_Tooltip_ability_poseiden_wavebreaker_duration"						"STUN DURATION:"
-		"DOTA_Tooltip_ability_poseiden_wavebreaker_wave_distance"					"<font color='#1A88FC'>WAVE</font> DISTANCE:"
-		"DOTA_Tooltip_ability_poseiden_wavebreaker_wave_radius"						"<font color='#1A88FC'>WAVE</font> RADIUS:"
+		"DOTA_Tooltip_ability_buccaneer_wavebreaker"									"Wavebreaker"
+		"DOTA_Tooltip_ability_buccaneer_wavebreaker_Description"						"The next basic attack flings forth a <font color='#1A88FC'>Wave</font>, dealing base damage plus a percent of Captain Pirate's attack damage.\nThe <font color='#1A88FC'>Wave</font> will then carry hit enemies, eventually stunning them.\n<font color='#ff0000'>Marked</font> enemies are stunned rather than carried with the wave."
+		"DOTA_Tooltip_ability_buccaneer_wavebreaker_Lore"							"4."
+		"DOTA_Tooltip_ability_buccaneer_wavebreaker_base_damage"						"BASE DAMAGE:"
+		"DOTA_Tooltip_ability_buccaneer_wavebreaker_bonus_damage"					"%BONUS DAMAGE:"
+		"DOTA_Tooltip_ability_buccaneer_wavebreaker_duration"						"STUN DURATION:"
+		"DOTA_Tooltip_ability_buccaneer_wavebreaker_wave_distance"					"<font color='#1A88FC'>WAVE</font> DISTANCE:"
+		"DOTA_Tooltip_ability_buccaneer_wavebreaker_wave_radius"						"<font color='#1A88FC'>WAVE</font> RADIUS:"
 
-		"DOTA_Tooltip_ability_poseiden_crestrider"									"Crestrider"
-		"DOTA_Tooltip_ability_poseiden_crestrider_Description"						"Ride on top of a wave, continuously moving forward. Enemies caught will be trapped in the wave and dragged along the way.\nC.P. is able to perform all actions while riding except stopping. Enemies are attack immune while trapped."
-		"DOTA_Tooltip_ability_poseiden_crestrider_Lore"								"5."
-		"DOTA_Tooltip_ability_poseiden_crestrider_radius"							"FLIGHT RADIUS:"
-		"DOTA_Tooltip_ability_poseiden_crestrider_min_damage"						"MINIMUM DAMAGE:"
-		"DOTA_Tooltip_ability_poseiden_crestrider_max_damage"						"MAXIMUM DAMAGE:"
+		"DOTA_Tooltip_ability_buccaneer_crestrider"									"Crestrider"
+		"DOTA_Tooltip_ability_buccaneer_crestrider_Description"						"Ride on top of a wave, continuously moving forward. Enemies caught will be trapped in the wave and dragged along the way.\nC.P. is able to perform all actions while riding except stopping. Enemies are attack immune while trapped."
+		"DOTA_Tooltip_ability_buccaneer_crestrider_Lore"								"5."
+		"DOTA_Tooltip_ability_buccaneer_crestrider_radius"							"FLIGHT RADIUS:"
+		"DOTA_Tooltip_ability_buccaneer_crestrider_min_damage"						"MINIMUM DAMAGE:"
+		"DOTA_Tooltip_ability_buccaneer_crestrider_max_damage"						"MAXIMUM DAMAGE:"
 
-		"DOTA_Tooltip_ability_poseiden_cannon_barrage"								"Cannon Barrage"
-		"DOTA_Tooltip_ability_poseiden_cannon_barrage_Description"					"Call a massive cannon barrage on the target location. After a brief delay, the barrage begins.\nA number of cannon balls are launched in a radius around the target point. Each cannon ball is unique and as such enemies may be struck multiple times. Cannon balls deal damage and slow in an AOE equal to the radius.\n<font color='#ff0000'>Marked</font> enemies may provide gold when hit."
-		"DOTA_Tooltip_ability_poseiden_cannon_barrage_Lore"							"6."
-		"DOTA_Tooltip_ability_poseiden_cannon_barrage_cannon_balls"					"CANNON BALLS:"
-		"DOTA_Tooltip_ability_poseiden_cannon_barrage_damage"						"DAMAGE PER BALL:"
-		"DOTA_Tooltip_ability_poseiden_cannon_barrage_radius"						"RADIUS:"
-		"DOTA_Tooltip_ability_poseiden_cannon_barrage_slow_amount"					"%SLOW:"
-		"DOTA_Tooltip_ability_poseiden_cannon_barrage_slow_duration"				"SLOW DURATION:"
+		"DOTA_Tooltip_ability_buccaneer_cannon_barrage"								"Cannon Barrage"
+		"DOTA_Tooltip_ability_buccaneer_cannon_barrage_Description"					"Call a massive cannon barrage on the target location. After a brief delay, the barrage begins.\nA number of cannon balls are launched in a radius around the target point. Each cannon ball is unique and as such enemies may be struck multiple times. Cannon balls deal damage and slow in an AOE equal to the radius.\n<font color='#ff0000'>Marked</font> enemies may provide gold when hit."
+		"DOTA_Tooltip_ability_buccaneer_cannon_barrage_Lore"						"6."
+		"DOTA_Tooltip_ability_buccaneer_cannon_barrage_cannon_balls"				"CANNON BALLS:"
+		"DOTA_Tooltip_ability_buccaneer_cannon_barrage_damage"						"DAMAGE PER BALL:"
+		"DOTA_Tooltip_ability_buccaneer_cannon_barrage_radius"						"RADIUS:"
+		"DOTA_Tooltip_ability_buccaneer_cannon_barrage_slow_amount"					"%SLOW:"
+		"DOTA_Tooltip_ability_buccaneer_cannon_barrage_slow_duration"				"SLOW DURATION:"
 		"DOTA_Tooltip_modifier_cannon_ball_slow"									"Cannon Barrage"
 		"DOTA_Tooltip_modifier_cannon_ball_slow_description"						"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% reduced move speed."
 
-		"DOTA_Tooltip_ability_poseiden_captains_rum"								"Captain's Rum"
-		"DOTA_Tooltip_ability_poseiden_captains_rum_Description"					""
-		"DOTA_Tooltip_ability_poseiden_captains_rum_Lore"							"7."
+		"DOTA_Tooltip_ability_buccaneer_captains_rum"								"Captain's Rum"
+		"DOTA_Tooltip_ability_buccaneer_captains_rum_Description"					"Grants an ally a strong damage and movement speed buff. Charge-based, 20s charge time; buffed allies gain X Marked's gold on hit against marked units"
+		"DOTA_Tooltip_ability_buccaneer_captains_rum_Lore"							"7."
 
-		"DOTA_Tooltip_ability_poseiden_gangplank"									"Gangplank"
-		"DOTA_Tooltip_ability_poseiden_gangplank_Description"						""
-		"DOTA_Tooltip_ability_poseiden_gangplank_Lore"								"8."
+		"DOTA_Tooltip_ability_buccaneer_gangplank"									"Gangplank"
+		"DOTA_Tooltip_ability_buccaneer_gangplank_Description"						"Forces an enemy to walk forward for 2 seconds, stunning and damaging them for 1s afterwards. Marked enemies grant bonus gold on cast"
+		"DOTA_Tooltip_ability_buccaneer_gangplank_Lore"								"8."
 
-		"DOTA_Tooltip_ability_poseiden_maelstrom"									"Maelstrom"
-		"DOTA_Tooltip_ability_poseiden_maelstrom_Description"						""
-		"DOTA_Tooltip_ability_poseiden_maelstrom_Lore"								"9."
+		"DOTA_Tooltip_ability_buccaneer_maelstrom"									"Maelstrom"
+		"DOTA_Tooltip_ability_buccaneer_maelstrom_Description"						"it's kunkka's torrent but it also suck in people. If a marked enemy is hit, it will repeat the torrent, dealing half damage to all units in radius"
+		"DOTA_Tooltip_ability_buccaneer_maelstrom_Lore"								"9."
 
 	}
 }
