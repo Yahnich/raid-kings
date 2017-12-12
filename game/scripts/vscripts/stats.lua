@@ -43,6 +43,11 @@ function Stats:ManageStats(hero)
 	data.castrange = 0
 	data.statusamp = 0
 	data.statusresistance = 0
+	data.damageamp = 0
+	data.damageresistance = 0
+	data.healamp = 0
+	data.dot = 0
+	data.hot = 0
 	for _, modifier in ipairs(hero:FindAllModifiers()) do
 		-- Attribute management
 		if modifier.GetModifierBonusStats_Strength and modifier:GetModifierBonusStats_Strength() then
@@ -62,31 +67,47 @@ function Stats:ManageStats(hero)
 		end
 		
 		-- Modifier property management
-		if modifier.GetModifierEvasion_Constant and modifier:GetModifierEvasion_Constant() then
+		local event = {}
+		if modifier.GetModifierEvasion_Constant and modifier:GetModifierEvasion_Constant(event) then
 			local evasion = data.evasion or 0
 			local hitChance = 1 - evasion/100
-			data.evasion = evasion + hitChance * modifier:GetModifierEvasion_Constant()/100
+			data.evasion = evasion + hitChance * modifier:GetModifierEvasion_Constant(event)/100
 		end
-		if modifier.GetModifierSpellAmplify_Percentage and modifier:GetModifierSpellAmplify_Percentage() then
-			data.spellamp = data.spellamp + modifier:GetModifierSpellAmplify_Percentage()
+		if modifier.GetModifierSpellAmplify_Percentage and modifier:GetModifierSpellAmplify_Percentage(event) then
+			data.spellamp = data.spellamp + modifier:GetModifierSpellAmplify_Percentage(event)
 		end
-		if modifier.GetModifierCastRangeBonusStacking and modifier:GetModifierCastRangeBonusStacking() then
-			data.castrange = data.castrange + modifier:GetModifierCastRangeBonusStacking()
+		if modifier.GetModifierCastRangeBonusStacking and modifier:GetModifierCastRangeBonusStacking(event) then
+			data.castrange = data.castrange + modifier:GetModifierCastRangeBonusStacking(event)
 		end
-		if modifier.GetModifierStatusAmplification and modifier:GetModifierStatusAmplification() then
-			data.statusamp = data.statusamp + modifier:GetModifierStatusAmplification()
+		if modifier.GetModifierStatusAmplification and modifier:GetModifierStatusAmplification(event) then
+			data.statusamp = data.statusamp + modifier:GetModifierStatusAmplification(event)
 		end
-		if modifier.GetModifierStatusResistance and modifier:GetModifierStatusResistance() then
-			data.statusresistance = data.statusresistance + modifier:GetModifierStatusResistance()
+		if modifier.GetModifierStatusResistance and modifier:GetModifierStatusResistance(event) then
+			data.statusresistance = data.statusresistance + modifier:GetModifierStatusResistance(event)
 		end
-		if modifier.GetModifierStatusResistance and modifier:GetModifierPercentageCooldownStacking() then
-			data.cdr = data.cdr + modifier:GetModifierPercentageCooldownStacking() / 100
+		if modifier.GetModifierStatusResistance and modifier:GetModifierPercentageCooldownStacking(event) then
+			data.cdr = data.cdr + modifier:GetModifierPercentageCooldownStacking(event) / 100
 		end
 		local cdr = 0
-		if modifier.GetModifierPercentageCooldown and modifier:GetModifierPercentageCooldown() then
-			cdr = math.max(cdr, modifier:GetModifierPercentageCooldown())
+		if modifier.GetModifierPercentageCooldown and modifier:GetModifierPercentageCooldown(event) then
+			cdr = math.max(cdr, modifier:GetModifierPercentageCooldown(event))
 		end
 		data.cdr = 1 - ((1 - data.cdr) * (1 - (cdr / 100)))
+		if modifier.GetModifierTotalDamageOutgoing_Percentage and modifier:GetModifierTotalDamageOutgoing_Percentage(event) then
+			data.damageamp = data.damageamp + modifier:GetModifierTotalDamageOutgoing_Percentage(event)
+		end
+		if modifier.GetModifierIncomingDamage_Percentage and modifier:GetModifierIncomingDamage_Percentage(event) then
+			data.damageresistance = data.damageresistance + modifier:GetModifierIncomingDamage_Percentage(event)
+		end
+		if modifier.GetModifierHealAmplify_Percentage and modifier:GetModifierHealAmplify_Percentage(event) then
+			data.healamp = data.healamp + modifier:GetModifierHealAmplify_Percentage(event)
+		end
+		if modifier.GetTotalHeal and modifier:GetTotalHeal(event) then
+			data.hot = data.hot + modifier:GetTotalHeal(event)
+		end
+		if modifier.GetTotalDamage and modifier:GetTotalDamage(event) then
+			data.dot = data.dot + modifier:GetTotalDamage(event)
+		end
 	end
 	
 	self.customIntellect = math.floor(self.customIntellect + 0.5)

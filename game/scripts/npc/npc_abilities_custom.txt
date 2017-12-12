@@ -5643,7 +5643,7 @@
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"ms_semidarkness_flay"
+		"AbilityTextureName"			"custom/revenant_dark_flay"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 		
@@ -5724,7 +5724,7 @@
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"ms_devouring_shadow"
+		"AbilityTextureName"			"custom/revenant_devouring_shadow"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 		
@@ -5811,7 +5811,7 @@
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"shadow_demon_shadow_poison"
+		"AbilityTextureName"			"custom/revenant_penumbra"
 		"MaxLevel"						"1"
 		"LevelsBetweenUpgrades"  		"0"
 		
@@ -5875,7 +5875,7 @@
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"shadow_demon_shadow_poison_release_immortal"
+		"AbilityTextureName"			"custom/revenant_penumbra_release"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 		
@@ -5940,7 +5940,7 @@
 	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"ms_shadow_walk"
+		"AbilityTextureName"			"custom/revenant_shade_walk"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 		
@@ -6042,7 +6042,7 @@
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"ms_shadowscape"
+		"AbilityTextureName"			"custom/revenant_shadowscape"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 		
@@ -6157,7 +6157,7 @@
 	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"shadow_demon_soul_catcher"
+		"AbilityTextureName"			"custom/revenant_shadow_catcher"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 		"AOERadius"						"450"
@@ -6255,7 +6255,7 @@
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"shadow_demon_demonic_purge"
+		"AbilityTextureName"			"custom/revenant_soul_purge"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 		"AOERadius"						"500"
@@ -6345,7 +6345,7 @@
 	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
-		"AbilityTextureName"			"shadow_demon_disruption"
+		"AbilityTextureName"			"custom/revenant_umbral_gate"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 		

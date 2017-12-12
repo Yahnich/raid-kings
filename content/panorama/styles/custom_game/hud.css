@@ -216,16 +216,23 @@
 	padding: 2px;
 }
 
-#MainSelectionHealthBar {
+#MainSelectionHealthBarPanelContainer
+{
+	flow-children: right;
 	border-radius: 5px;
 	width: 100%;
 	height: 50%;
 	border: 3px solid #881111FF;
 }
 
+.ProgressPanelHealth
+{
+	width: 100%;
+	height: 100%;
+}
+
 #MainSelectionHealthBar_Left
 {
-  /*background-color: gradient( linear, 0% 0%, 0% 100%, from( #326114 ), color-stop( 0.3, #54BA07 ), color-stop( .5, #54BA07 ), to( #326114 ) );*/
   background-color: gradient( linear, 0% 100%, 0% 0%, from( #991111FF ), color-stop( .4, #CD2626FF), color-stop( .6, #CD2626FF), to( #991111FF ) );
   box-shadow: inset #000 1px 1px 3px 3px;
   border-radius: 2px;
@@ -233,7 +240,19 @@
 
 #MainSelectionHealthBar_Right
 {
-  background-color: gradient( linear, 0% 0%, 100% 0%, from( #222222FF ), to( black ) );
+  background-color: gradient( linear, 0% 100%, 0% 0%, from( #c17070FF ), color-stop( .4, #e69292FF), color-stop( .6, #e69292FF), to( #c17070FF ) );
+}
+
+#MainSelectionHealthBarHeal_Left
+{
+  background-color: gradient( linear, 0% 100%, 0% 0%, from( #119011FF ), color-stop( .4, #0B640BFF), color-stop( .6, #0B640BFF), to( #119011FF ) );
+  box-shadow: inset #000 1px 1px 3px 3px;
+  border-radius: 2px;
+}
+
+#MainSelectionHealthBarHeal_Right
+{
+  background-color: gradient( linear, 0% 100%, 0% 0%, from( #191919FF ), color-stop( .4, #020202FF), color-stop( .6, #020202FF ), to( #191919FF ) );
 }
 
 #MainSelectionManaBar {

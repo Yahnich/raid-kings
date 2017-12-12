@@ -98,26 +98,28 @@ function InitializeTooltips()
 	infoNV.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoNV, $.Localize( "#NightVisionInfoTitle", infoNV), $.Localize( "#NightVisionInfoText", infoNV))} );
 	
 	var heroInfo = CustomNetTables.GetTableValue("hero_properties", Entities.GetUnitName( localHero ) + localHero)
-	var infoSTR = $("#InfoStrengthContainer");
-	infoSTR.SetDialogVariable( "armor", (heroInfo.strength * 0.07).toFixed(1) );
-	infoSTR.SetDialogVariable( "mr", (heroInfo.strength * 0.1).toFixed(1) + "%");
-	infoSTR.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoSTR, $.Localize( "#StrengthInfoTitle", infoSTR), $.Localize( "#StrengthInfoText", infoSTR))} );
-	var infoAGI = $("#InfoAgilityContainer");
-	infoAGI.SetDialogVariable( "ms", (heroInfo.agility * 0.072).toFixed(0) );
-	infoAGI.SetDialogVariable( "as", (heroInfo.agility * 1).toFixed(0) );
-	infoAGI.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoAGI, $.Localize( "#AgilityInfoTitle", infoAGI), $.Localize( "#AgilityInfoText", infoAGI))} );
-	var infoINT = $("#InfoIntelligenceContainer");
-	infoINT.SetDialogVariable( "amp", (heroInfo.intellect * 0.05).toFixed(1) + "%");
-	infoINT.SetDialogVariable( "mana", (heroInfo.intellect * 12).toFixed(0) );
-	infoINT.SetDialogVariable( "regen", (heroInfo.intellect * 0.08).toFixed(1) );
-	infoINT.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoINT, $.Localize( "#IntellectInfoTitle", infoINT), $.Localize( "#IntellectInfoText", infoINT))} );
-	var infoLUK = $("#InfoLuckContainer");
-	infoLUK.SetDialogVariable( "evasion", (heroInfo.luck * 0.08).toFixed(1) + "%");
-	infoLUK.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoLUK, $.Localize( "#LuckInfoTitle", infoLUK), $.Localize( "#LuckInfoText", infoLUK))} );
-	var infoVIT = $("#InfoVitalityContainer");
-	infoVIT.SetDialogVariable( "hp", (heroInfo.vitality * 20).toFixed(0));
-	infoVIT.SetDialogVariable( "regen", (heroInfo.vitality * 0.2).toFixed(1));
-	infoVIT.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoVIT, $.Localize( "#VitalityInfoTitle", infoVIT), $.Localize( "#VitalityInfoText", infoVIT))} );
+	if(heroInfo != null){
+		var infoSTR = $("#InfoStrengthContainer");
+		infoSTR.SetDialogVariable( "armor", (heroInfo.strength * 0.07).toFixed(1) );
+		infoSTR.SetDialogVariable( "mr", (heroInfo.strength * 0.1).toFixed(1) + "%");
+		infoSTR.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoSTR, $.Localize( "#StrengthInfoTitle", infoSTR), $.Localize( "#StrengthInfoText", infoSTR))} );
+		var infoAGI = $("#InfoAgilityContainer");
+		infoAGI.SetDialogVariable( "ms", (heroInfo.agility * 0.072).toFixed(0) );
+		infoAGI.SetDialogVariable( "as", (heroInfo.agility * 1).toFixed(0) );
+		infoAGI.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoAGI, $.Localize( "#AgilityInfoTitle", infoAGI), $.Localize( "#AgilityInfoText", infoAGI))} );
+		var infoINT = $("#InfoIntelligenceContainer");
+		infoINT.SetDialogVariable( "amp", (heroInfo.intellect * 0.05).toFixed(1) + "%");
+		infoINT.SetDialogVariable( "mana", (heroInfo.intellect * 12).toFixed(0) );
+		infoINT.SetDialogVariable( "regen", (heroInfo.intellect * 0.08).toFixed(1) );
+		infoINT.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoINT, $.Localize( "#IntellectInfoTitle", infoINT), $.Localize( "#IntellectInfoText", infoINT))} );
+		var infoLUK = $("#InfoLuckContainer");
+		infoLUK.SetDialogVariable( "evasion", (heroInfo.luck * 0.08).toFixed(1) + "%");
+		infoLUK.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoLUK, $.Localize( "#LuckInfoTitle", infoLUK), $.Localize( "#LuckInfoText", infoLUK))} );
+		var infoVIT = $("#InfoVitalityContainer");
+		infoVIT.SetDialogVariable( "hp", (heroInfo.vitality * 20).toFixed(0));
+		infoVIT.SetDialogVariable( "regen", (heroInfo.vitality * 0.2).toFixed(1));
+		infoVIT.SetPanelEvent("onmouseover", function(){ShowTextTooltip(infoVIT, $.Localize( "#VitalityInfoTitle", infoVIT), $.Localize( "#VitalityInfoText", infoVIT))} );
+	}
 }
 
 function CreateOverheadButtons()
@@ -479,14 +481,12 @@ function UpdateMainContainer()
 {
 	var currUnit = 	Players.GetLocalPlayerPortraitUnit()
 	var healthBar = $("#MainSelectionHealthBar")
+	var healthBarHeal = $("#MainSelectionHealthBarHeal")
 	var manaBar = $("#MainSelectionManaBar")
 	var healthLabel = $("#HealthLabel")
 	var healthRegenLabel = $("#HealthRegenLabel")
 	var manaLabel = $("#ManaLabel")
 	var manaRegenLabel = $("#ManaRegenLabel")
-	
-	healthBar.max = Entities.GetMaxHealth( currUnit )
-	healthBar.value = Entities.GetHealth( currUnit )
 	
 	var stats = $("#HeroStatsContainer")
 	
@@ -511,6 +511,18 @@ function UpdateMainContainer()
 			vitality.text = heroInfo.vitality.toFixed(0)
 			var luck = $("#StatsLuckLabel")
 			luck.text = heroInfo.luck.toFixed(0)
+			
+			var hpBalance = heroInfo.dot - heroInfo.hot + Entities.GetHealthThinkRegen( currUnit ).toFixed(1)
+			var hpbar1Perc = Entities.GetHealth( currUnit ) / Entities.GetMaxHealth( currUnit ) * 100
+			healthBar.max = Entities.GetHealth( currUnit )
+			healthBar.value = healthBar.max - Math.min(0, hpBalance)
+			healthBar.style.width = hpbar1Perc + "%"
+			
+			
+			var hpbar2Perc = 100 - hpbar1Perc
+			healthBarHeal.max = Entities.GetMaxHealth( currUnit ) - Entities.GetHealth( currUnit )
+			healthBarHeal.value = Math.abs( Math.min( 0, hpBalance) )
+			healthBarHeal.style.width = hpbar2Perc + "%"
 		}
 	} else {
 		stats.style.visibility = "collapse";

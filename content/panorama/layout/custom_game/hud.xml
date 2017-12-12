@@ -60,10 +60,14 @@
 				</Panel>
 				<Panel id="MainSelectionCurrentStateContainer">
 					<Panel id="MainSelectionResourceHolder">
-						<ProgressBar id="MainSelectionHealthBar">
+						<Panel id="MainSelectionHealthBarContainer">
+							<Panel id="MainSelectionHealthBarPanelContainer">
+								<ProgressBar class="ProgressPanelHealth" id="MainSelectionHealthBar"/>
+								<ProgressBar class="ProgressPanelHealth" id="MainSelectionHealthBarHeal"/>
+							</Panel>
 							<Label class="MainLabel" id="HealthLabel" text="5000000000/5000000000"/>
 							<Label class="RegenLabel" id="HealthRegenLabel" text="+50"/>
-						</ProgressBar>
+						</Panel>
 						<ProgressBar id="MainSelectionManaBar">
 							<Label class="MainLabel" id="ManaLabel" text="5000000000/5000000000"/>
 							<Label class="RegenLabel" id="ManaRegenLabel" text="+50"/>
