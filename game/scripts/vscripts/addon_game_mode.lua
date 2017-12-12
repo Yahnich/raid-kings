@@ -27,6 +27,7 @@ require("libraries/animations")
 require("hero_selection")
 require("skill_selection")
 require("statsmanager")
+require("itemmanager")
 
 -- require("relics/relic")
 -- require("relics/relicpool")
@@ -305,5 +306,14 @@ function CRaidKings:OnHeroPick(event)
 			skill:SetLevel(1)
 		end
 	end
+	
+	for i=0, 9 do
+		local current_item = hero:GetItemInSlot(i)
+		if current_item	then
+			hero:RemoveItem(current_item)
+		end
+	end
+	
 	StatsManager:CreateCustomStatsForHero(hero)
+	ItemManager(hero, GameRules.UnitKV[hero:GetUnitName()]["Items"])
 end

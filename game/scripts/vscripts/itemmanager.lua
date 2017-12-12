@@ -9,7 +9,7 @@ ItemTypes = {
 }
 
 function ItemManager:constructor(owner, itemTable)
-	self.owner = data.owner
+	self.owner = owner
 	self.owner.ItemManagerEntity = self
 	self.currentArmor = 0
 	self.currentWeapon = 0
@@ -19,23 +19,31 @@ function ItemManager:constructor(owner, itemTable)
 	self.weaponTable = {}
 	self.otherTable = {}
 	
-	for itemType, itemTable in pairs(itemTable) do -- stupid tonumber shit
+	self.owner.GetItemManager = function() return self.owner.ItemManagerEntity  end
+	
+	for itemType, items in pairs(itemTable) do -- stupid tonumber shit
 		if itemType == "Armor" then
-			for level, item in pairs(itemTable) do
-				self.armorTable[tonumber(level)] == item
+			for level, item in pairs(items) do
+				self.armorTable[tonumber(level)] = item
 			end
 		elseif itemType == "Weapon" then
-			for level, item in pairs(itemTable) do
-				self.weaponTable[tonumber(level)] == item
+			for level, item in pairs(items) do
+				self.weaponTable[tonumber(level)] = item
 			end
 		elseif itemType == "Other" then
-			for level, item in pairs(itemTable) do
-				self.otherTable[tonumber(level)] == item
+			for level, item in pairs(items) do
+				self.otherTable[tonumber(level)] = item
 			end
 		end
 	end
 	
+	-- initialize items
+	self:UpgradeArmor()
+	self:UpgradeOther()
+	self:UpgradeWeapon()
+	
 	self.trinketTable = {}
+	self.relicTable = {}
 end
 
 function ItemManager:GetOwner()
@@ -53,7 +61,7 @@ end
 function ItemManager:UpgradeArmor()
 	if self.currentArmor < #self.armorTable then
 		if self:GetEquippedArmor() then
-			self:GetOwner():RemoveItem(self.armorTable[self:GetEquippedArmor() )
+			self:GetOwner():RemoveItem(self.armorTable[self:GetEquippedArmor()] )
 		end
 		self.currentArmor = self.currentArmor + 1
 		self.equippedArmor = self:GetOwner():AddItemByName(self.armorTable[self.currentArmor])
@@ -73,7 +81,7 @@ end
 function ItemManager:UpgradeWeapon()
 	if self.currentWeapon < #self.weaponTable then
 		if self:GetEquippedWeapon() then
-			self:GetOwner():RemoveItem(self.weaponTable[self:GetEquippedWeapon() )
+			self:GetOwner():RemoveItem(self.weaponTable[self:GetEquippedWeapon()] )
 		end
 		self.currentWeapon = self.currentWeapon + 1
 		self.equippedWeapon = self:GetOwner():AddItemByName(self.weaponTable[self.currentWeapon])
@@ -93,7 +101,7 @@ end
 function ItemManager:UpgradeOther()
 	if self.currentOther < #self.otherTable then
 		if self:GetEquippedOther() then
-			self:GetOwner():RemoveItem(self.otherTable[self:GetEquippedOther() )
+			self:GetOwner():RemoveItem(self.otherTable[self:GetEquippedOther()] )
 		end
 		self.currentOther = self.currentOther + 1
 		self.equippedArmor = self:GetOwner():AddItemByName(self.otherTable[self.currentOther])

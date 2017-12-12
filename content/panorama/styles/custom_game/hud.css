@@ -216,12 +216,18 @@
 	padding: 2px;
 }
 
+#MainSelectionHealthBarContainer
+{
+	width: 100%;
+	height: 50%;
+}
+
 #MainSelectionHealthBarPanelContainer
 {
 	flow-children: right;
 	border-radius: 5px;
 	width: 100%;
-	height: 50%;
+	height: 100%;
 	border: 3px solid #881111FF;
 }
 
