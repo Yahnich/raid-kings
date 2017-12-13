@@ -37,15 +37,7 @@ function modifier_shinigami_flurry_of_blows_buff:OnIntervalThink()
 	local attackblur = ParticleManager:CreateParticle("particles/econ/items/juggernaut/jugg_arcana/jugg_arcana_crit_blur.vpcf", PATTACH_ABSORIGIN, self:GetParent())
 		ParticleManager:SetParticleControlEnt(attackblur, 0, self:GetParent(), PATTACH_POINT_FOLLOW, "attach_attack1", self:GetParent():GetAbsOrigin(), true)
 		ParticleManager:ReleaseParticleIndex(attackblur)
-	local nearbyUnits = FindUnitsInRadius(self:GetCaster():GetTeam(),
-									  coneOrigin,
-									  nil,
-									  self.radius,
-									  DOTA_UNIT_TARGET_TEAM_ENEMY,
-									  DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC,
-									  DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES,
-									  FIND_ANY_ORDER,
-									  false)
+	local nearbyUnits = self:GetCaster():FindEnemyUnitsInRadius(coneOrigin, self.radius, {flag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES})
 	for _, unit in ipairs(nearbyUnits) do
 		EmitSoundOn("Hero_PhantomAssassin.Attack", unit)
 		EmitSoundOn("Hero_PhantomAssassin.Attack.Rip", unit)

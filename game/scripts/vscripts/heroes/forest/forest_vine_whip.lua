@@ -1,18 +1,18 @@
 forest_vine_whip = class({})
 
 function forest_vine_whip:OnSpellStart()
-	local caster = self:GetCaster()
-	local ability = self
-	local vDir = CalculateDirection( self:GetCursorPosition(), caster ) * Vector(1,1,1)
+	caster = self:GetCaster()
+	ability = self
+	vDir = CalculateDirection( self:GetCursorPosition(), caster ) * Vector(1,1,1)
 	
-	local distance = self:GetTrueCastRange()
+	distance = self:GetTrueCastRange()
 	local fVel = self:GetSpecialValueFor("speed")
-	local speed = fVel * FrameTime()
+	speed = fVel * FrameTime()
 	local width = self:GetSpecialValueFor("width")
-	local damage = self:GetSpecialValueFor("damage")
+	damage = self:GetSpecialValueFor("damage")
 	local stunDuration = self:GetSpecialValueFor("stun_duration")
 
-	local projectilePos = caster:GetAbsOrigin()
+	projectilePos = caster:GetAbsOrigin()
 	
 	EmitSoundOn("Hero_Enchantress.EnchantCast", caster)
 	
@@ -35,18 +35,6 @@ function forest_vine_whip:OnSpellStart()
 		if traveled < distance then
 			projectilePos = projectilePos + (vDir * speed)
 			ParticleManager:SetParticleControl( nFX, 3, projectilePos )
-			--[[
-			local enemies = hCaster:FindEnemyUnitsInLine(hCaster:GetAbsOrigin(), projPos, fWidth, {})
-			for _, enemy in pairs(enemies) do
-				self:GetAbility():DealDamage(hCaster, enemy, 10, {}, 0)
-				
-				enemy:AddNewModifier(hCaster, self:GetAbility(), "modifier_justicar_avenging_wrath_debuff", {duration = self:GetAbility():GetSpecialValueFor("debuff_duration")})
-				local hit = ParticleManager:CreateParticle("particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_purification_immortal_cast.vpcf", PATTACH_POINT_FOLLOW, enemy)
-				ParticleManager:SetParticleControl(hit, 0, enemy:GetAbsOrigin())
-				ParticleManager:SetParticleControl(hit, 1, enemy:GetAbsOrigin())
-				ParticleManager:ReleaseParticleIndex(hit)
-			end
-			]]
 		else
 			ParticleManager:DestroyParticle( nFX, false )
 			ParticleManager:ReleaseParticleIndex(nFX)

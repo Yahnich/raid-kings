@@ -69,7 +69,7 @@ function modifier_gladiatrix_unbreakable_morale_buff:OnCreated()
 	self.hpRegen = self:GetAbility():GetSpecialValueFor("hp_regen")
 	self.attackSpeed = self:GetAbility():GetSpecialValueFor("attack_speed")
 	if IsServer() then
-		self:StartIntervalThink(0)
+		self:StartIntervalThink(FrameTime())
 		self:GetParent().press = ParticleManager:CreateParticle("particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf", PATTACH_ABSORIGIN_FOLLOW, self:GetParent())
 		ParticleManager:SetParticleControl(self:GetParent().press, 0, self:GetParent():GetAbsOrigin())
 		ParticleManager:SetParticleControl(self:GetParent().press, 1, self:GetParent():GetAbsOrigin())
@@ -124,8 +124,12 @@ end
 
 function modifier_gladiatrix_unbreakable_morale_hp_talent:OnIntervalThink()
 	if self:GetParent():GetHealthPercent() < 100 then
-		self:GetParent():SetHealth(self:GetParent():GetHealth() + self.healPerTick)
+		self:GetParent():HealEvent(self.healPerTick, self:GetAbility(), self:GetCaster())
 	end
+end
+
+function modifier_gladiatrix_unbreakable_morale_hp_talent:GetTotalHeal()
+	return self.healPerTick*self:GetRemainingTime()
 end
 
 function modifier_gladiatrix_unbreakable_morale_hp_talent:OnDestroy()

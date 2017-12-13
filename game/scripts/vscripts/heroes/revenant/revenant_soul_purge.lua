@@ -34,6 +34,7 @@ end
 modifier_soul_purge = class({})
 
 function modifier_soul_purge:OnCreated(table)
+	self.slow = self:GetSpecialValueFor("slow")
 	self:StartIntervalThink(self:GetDuration()/5)
 end
 
@@ -53,7 +54,7 @@ function modifier_soul_purge:GetEffectName()
 end
 
 function modifier_soul_purge:GetModifierMoveSpeedBonus_Percentage(params)
-	return self.slow = self:GetSpecialValueFor("slow")
+	return self.slow
 end
 
 function modifier_soul_purge:OnRemoved()

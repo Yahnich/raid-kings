@@ -21,7 +21,7 @@ if IsServer() then
 		self.debuffreduction = self:GetAbility():GetSpecialValueFor("debuff_reduction") * (-1)
 		self.innersun = self:GetCaster():GetInnerSun()
 		self:GetCaster():ResetInnerSun()
-		self.healovertime = (self:GetAbility():GetSpecialValueFor("heal_over_time") + self.innersun) / 100
+		self.healovertime = ((self:GetAbility():GetSpecialValueFor("heal_over_time") + self.innersun) / 100) * self:GetParent():GetMaxHealth() + (self.innersun / self:GetDuration()) * 0.3
 		if IsServer() then self:StartIntervalThink(0.3) end
 	end
 
@@ -30,11 +30,16 @@ if IsServer() then
 		self.debuffreduction = self:GetAbility():GetSpecialValueFor("debuff_reduction") * (-1)
 		self.innersun = self.innersun + self:GetCaster():GetInnerSun()
 		self:GetCaster():ResetInnerSun()
-		self.healovertime = (self:GetAbility():GetSpecialValueFor("heal_over_time") + self.innersun) / 100
+		self.healovertime = ((self:GetAbility():GetSpecialValueFor("heal_over_time") + self.innersun) / 100) * self:GetParent():GetMaxHealth() + (self.innersun / self:GetDuration()) * 0.3
 	end
 	
 	function modifier_justicar_absolution_buff:OnIntervalThink()
-		self:GetParent():HealEvent(self.healovertime * self:GetParent():GetMaxHealth() + (self.innersun / self:GetDuration()) * 0.3, self:GetAbility(), self:GetCaster())
+		self:GetParent():HealEvent(self.healovertime, self:GetAbility(), self:GetCaster())
+		--print(self.healovertime)
+	end
+
+	function modifier_justicar_absolution_buff:GetTotalHeal()
+		return self.healovertime*self:GetRemainingTime()
 	end
 
 	function modifier_justicar_absolution_buff:DeclareFunctions()

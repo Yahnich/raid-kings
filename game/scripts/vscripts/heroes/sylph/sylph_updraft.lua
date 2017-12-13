@@ -11,8 +11,8 @@ function sylph_updraft:OnSpellStart()
 	local FX = ParticleManager:CreateParticle("particles/heroes/sylph/sylph_updraft_cast.vpcf", PATTACH_POINT, self:GetCaster())
 	ParticleManager:SetParticleControl(FX, 0, self.targetPosition)
 	ParticleManager:SetParticleControl(FX, 1, Vector(self:GetAOERadius(),0,0))
-
-	local enemies = FindUnitsInRadius(caster:GetTeam(), self.targetPosition, nil, self:GetAOERadius(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, FIND_ANY_ORDER, false)
+	
+	local enemies = caster:FindEnemyUnitsInRadius(self.targetPosition, self:GetAOERadius(), {})
 	for _, enemy in ipairs(enemies) do
 		enemy:AddNewModifier(caster, self, "modifier_sylph_updraft_lift", {duration = self:GetSpecialValueFor("lift_duration")})
 	end
@@ -35,6 +35,10 @@ if IsServer() then
 	
 	function modifier_sylph_updraft_lift:OnIntervalThink()
 		self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self:GetCaster():GetAttackSpeed()*100*self:GetSpecialValueFor("as_to_lift_damage")*0.1, {damage_type = DAMAGE_TYPE_PURE})
+	end
+
+	function modifier_sylph_updraft_lift:GetTotalDamage()
+		return (self:GetCaster():GetAttackSpeed()*100*self:GetSpecialValueFor("as_to_lift_damage")*0.1)*self:GetRemainingTime()
 	end
 end
 
