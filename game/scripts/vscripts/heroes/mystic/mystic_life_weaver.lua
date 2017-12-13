@@ -94,6 +94,10 @@ if IsServer() then
 		self:GetParent():HealEvent(self.healtick, self:GetAbility(), self:GetCaster())
 		if self.totalheal < 0 then self:Destroy() end
 	end
+
+	function modifier_mystic_life_weaver_hot:GetTotalHeal()
+		return self.healtick*self:GetRemainingTime()
+	end
 end
 
 function modifier_mystic_life_weaver_hot:GetEffectName()

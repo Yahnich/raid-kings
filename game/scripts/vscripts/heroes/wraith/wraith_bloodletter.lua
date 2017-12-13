@@ -54,6 +54,14 @@ function modifier_wraith_bloodletter_debuff:OnIntervalThink()
 	end
 end
 
+function modifier_wraith_bloodletter_debuff:GetTotalHeal()
+	return self:GetSpecialValueFor("talent_heal")*self:GetRemainingTime()
+end
+
+function modifier_wraith_bloodletter_debuff:GetTotalDamage()
+	return self.dot*self:GetRemainingTime()
+end
+
 function modifier_wraith_bloodletter_debuff:DeclareFunctions()
 	return {MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT, MODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE}
 end

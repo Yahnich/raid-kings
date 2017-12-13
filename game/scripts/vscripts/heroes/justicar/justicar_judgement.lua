@@ -96,4 +96,8 @@ if IsServer() then
 	function modifier_justicar_judgement_heal:OnIntervalThink()
 		self:GetParent():HealEvent(self.healtick, self:GetAbility(), self:GetCaster())
 	end
+
+	function modifier_justicar_judgement_heal:GetTotalHeal()
+		return self.healtick*self:GetRemainingTime()
+	end
 end

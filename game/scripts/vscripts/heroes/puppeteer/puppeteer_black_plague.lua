@@ -104,8 +104,8 @@ function modifier_puppeteer_black_plague_stack:OnIntervalThink()
 	end
 	self.internalTimer = (self.internalTimer or 0) + 0.1
 	if self.internalTimer >= 0.2 then
-		ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), damage = self:GetStackCount() * self:GetCaster():GetIntellect() * self.damage_pct, damage_type = self:GetAbility():GetAbilityDamageType(), ability = self:GetAbility()})
-		local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetParent():GetAbsOrigin(), nil, self.spread_radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
+		self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self:GetStackCount() * self:GetCaster():GetIntellect() * self.damage_pct, {damage_type = self:GetAbility():GetAbilityDamageType()}, 0)
+		local enemies = self:GetCaster():FindEnemyUnitsInRadius(self:GetParent():GetAbsOrigin(), self.spread_radius, {})
 		for _, enemy in pairs(enemies) do
 			local modifier = enemy:FindModifierByName("modifier_puppeteer_black_plague_stack")
 			if not modifier or modifier:GetStackCount() < self:GetStackCount() then

@@ -58,7 +58,7 @@ function gladiatrix_victorious_advance:OnSpellStart()
 		end
 		for _,unit in pairs(units) do -- deal damage
 			if unit:GetTeam() ~= caster:GetTeam() then
-				ApplyDamage({victim = unit, attacker = caster, damage = damageToApply, damage_type = self:GetAbilityDamageType(), ability = self})
+				self:DealDamage(caster, unit, damageToApply, {damage_type = self:GetAbilityDamageType()}, 0)
 				EmitSoundOn("Hero_LegionCommander.Overwhelming.Creep",unit)
 			else
 				-- unit:AddNewModifier(caster, self, "modifier_gladiatrix_victorious_advance_buff_visual", {duration = duration})

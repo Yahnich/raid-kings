@@ -15,7 +15,7 @@ function puppeteer_fleshcraft:OnSpellStart()
 				modifier.plagueTable[id] = GameRules:GetGameTime()
 			end
 		end
-		ApplyDamage({victim = target, attacker = caster, damage = self:GetSpecialValueFor("damage"), damage_type = DAMAGE_TYPE_MAGICAL, ability = self})
+		self:DealDamage(caster, target, self:GetSpecialValueFor("damage"), {}, 0)
 	end
 	EmitSoundOn("DOTA_Item.UrnOfShadows.Activate", target)
 	local fleshcraft = ParticleManager:CreateParticle("particles/heroes/puppeteer/puppeteer_fleshcraft.vpcf", PATTACH_ABSORIGIN, caster)
@@ -69,7 +69,7 @@ end
 function modifier_puppeteer_fleshcraft_damage:OnIntervalThink()
 	local caster = self:GetCaster()
 	local target = self:GetParent()
-	ApplyDamage({victim = target, attacker = caster, damage = self:GetAbility():GetSpecialValueFor("damage_over_time"), damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()})
+	self:GetAbility():DealDamage(caster, target, self:GetAbility():GetSpecialValueFor("damage_over_time"), {}, 0)
 end
 
 function modifier_puppeteer_fleshcraft_damage:GetEffectName()

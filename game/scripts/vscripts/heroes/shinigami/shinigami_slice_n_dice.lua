@@ -4,7 +4,7 @@ function shinigami_slice_n_dice:OnSpellStart()
 	local caster = self:GetCaster()
 	local endPos = self:GetCursorPosition()
 	local startPos = caster:GetAbsOrigin()
-	local units = FindUnitsInLine(caster:GetTeamNumber(), startPos, endPos, nil, self:GetSpecialValueFor("search_width"), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0)
+	local units = caster:FindEnemyUnitsInLine(startPos, endPos, self:GetSpecialValueFor("search_width"), {})
 	local orderedUnits = self:FindPathToObjective(startPos, units, endPos)
 	local speed = self:GetSpecialValueFor("speed")
 	

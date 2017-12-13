@@ -126,20 +126,12 @@ if IsServer() then
 		ParticleManager:SetParticleControl(rot, 1, Vector( self.aura_radius + 128, 1, 1 ) )
 		self:AddParticle(rot, false, false, 0, false, false)
 		
-		local enemies = FindUnitsInRadius(self:GetCaster():GetTeamNumber(),
-									  self:GetParent():GetAbsOrigin(),
-									  nil,
-									  stun_radius,
-									  DOTA_UNIT_TARGET_TEAM_ENEMY,
-									  DOTA_UNIT_TARGET_ALL,
-									  DOTA_UNIT_TARGET_FLAG_NONE,
-									  FIND_ANY_ORDER,
-									  false)
+		local enemies = self:GetCaster():FindEnemyUnitsInRadius(self:GetParent():GetAbsOrigin(), stun_radius, {})
 		for _, enemy in ipairs(enemies) do
 			if not enemy.hitByWallOfFlesh then
 				print(stun_duration)
 				enemy:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned_generic", {duration = stun_duration})
-				ApplyDamage({victim = enemy, attacker = self:GetCaster(), damage = damage_on_hit, damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()})
+				self:GetAbility():DealDamage(self:GetCaster(), enemy, damage_on_hit, {}, 0)
 				enemy.hitByWallOfFlesh = true
 			end
 		end
@@ -215,10 +207,12 @@ function modifier_wall_of_flesh_segment_aura:OnCreated()
 end
 
 function modifier_wall_of_flesh_segment_aura:OnIntervalThink()
-	ApplyDamage({victim = self:GetParent(), attacker = self:GetCaster(), damage = self:GetAbility():GetSpecialValueFor("aura_damage"), damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()})
+	self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self:GetAbility():GetSpecialValueFor("aura_damage"), {}, 0)
 end
 
-
+function modifier_wall_of_flesh_segment_aura:GetTotalHeal()
+	return self:GetAbility():GetSpecialValueFor("aura_damage")*self:GetRemainingTime()
+end
 
 function modifier_wall_of_flesh_segment_aura:DeclareFunctions()
 	funcs = {
