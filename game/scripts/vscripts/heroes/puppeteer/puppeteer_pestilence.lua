@@ -19,10 +19,9 @@ function puppeteer_pestilence:ExplodeSummon(entity)
 	local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), entity:GetAbsOrigin(), nil, radius, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
 	for _, enemy in pairs(enemies) do
 		if self:GetCaster():HasTalent("puppeteer_pestilence_talent_1") then
-			
 			enemy:AddNewModifier(self:GetCaster(), self, "modifier_puppeteer_pestilence_talent_resurrect", {duration = self:GetCaster():FindTalentValue("puppeteer_pestilence_talent_1")})
 		end
-		ApplyDamage({victim = enemy, attacker = self:GetCaster(), damage = self:GetSpecialValueFor("explode_damage"), damage_type = self:GetAbilityDamageType(), ability = self})
+		self:DealDamage(self:GetCaster(), enemy, self:GetSpecialValueFor("explode_damage"), {damage_type = self:GetAbilityDamageType()}, 0)
 		local plague = self:GetCaster():FindAbilityByName("puppeteer_black_plague")
 		for i = 1, self:GetSpecialValueFor("plague_increase") do
 			enemy:AddNewModifier(self:GetCaster(), plague, "modifier_puppeteer_black_plague_stack", {duration = plague:GetSpecialValueFor("duration")})

@@ -67,7 +67,7 @@ modifier_wraith_wraiths_will_talent = class({})
 if IsServer() then
 	function modifier_wraith_wraiths_will_talent:OnCreated()
 		self.heal = self:GetSpecialValueFor("heal")
-		self.damage = self:GetSpecialValueFor("damage")
+		self.damage = self:GetSpecialValueFor("damage") / math.max(self:GetAbility():GetTetheredCount(), 1)
 		if self:GetAbility():GetTetheredCount() == 1 then self:GetAbility():StartDelayedCooldown() end
 		
 		local fx = ParticleManager:CreateParticle("particles/heroes/wraith/wraiths_will_ally_2/wraiths_will_ally_2.vpcf", PATTACH_POINT_FOLLOW, self:GetParent())
@@ -80,8 +80,16 @@ if IsServer() then
 	
 	function modifier_wraith_wraiths_will_talent:OnIntervalThink()
 		self:GetParent():HealEvent(self.heal, self:GetAbility(), self:GetCaster())
-		self:GetAbility():DealDamage(self:GetCaster(), self:GetCaster(), self.damage / math.max(self:GetAbility():GetTetheredCount(), 1), {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL}, OVERHEAD_ALERT_BONUS_POISON_DAMAGE)
+		self:GetAbility():DealDamage(self:GetCaster(), self:GetCaster(), self.damage, {damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL}, OVERHEAD_ALERT_BONUS_POISON_DAMAGE)
 		EmitSoundOn("Hero_Necrolyte.PreAttack", self:GetParent())
+	end
+
+	function modifier_wraith_wraiths_will_talent:GetTotalHeal()
+		return self.heal*self:GetRemainingTime()
+	end
+
+	function modifier_wraith_wraiths_will_talent:GetTotalDamage()
+		return self.damage*self:GetRemainingTime()
 	end
 end
 
@@ -106,6 +114,10 @@ if IsServer() then
 		self:GetCaster():HealEvent(self.heal, self:GetAbility(), self:GetCaster())
 		self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self.damage, {}, OVERHEAD_ALERT_BONUS_POISON_DAMAGE)
 		EmitSoundOn("Hero_Necrolyte.PreAttack", self:GetParent())
+	end
+
+	function modifier_wraith_wraiths_will_taunt:GetTotalDamage()
+		return self.damage*self:GetRemainingTime()
 	end
 end
 

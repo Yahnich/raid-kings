@@ -70,3 +70,7 @@ function modifier_dark_flay:OnIntervalThink()
 		end
 	end
 end
+
+function modifier_dark_flay:GetTotalDamage()
+	return self.damage_second*self:GetRemainingTime()
+end

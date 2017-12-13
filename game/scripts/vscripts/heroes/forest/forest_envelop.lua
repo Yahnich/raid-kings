@@ -45,7 +45,7 @@ function modifier_forest_envelop_self:OnCreated()
 		self.parentUnit = self:GetAbility():GetCursorTarget()
 		self.parentUnit:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_forest_envelop_target", {})
 		self:GetParent():SetAbsOrigin(self.parentUnit:GetAbsOrigin())
-		self:StartIntervalThink(0.03)
+		self:StartIntervalThink(FrameTime())
 		if self:GetParent():HasTalent("forest_envelop_talent_1") then self:SetStackCount(self.parentUnit:GetMaxHealth()) end
 	end
 end
@@ -104,8 +104,6 @@ function modifier_forest_envelop_target:OnDestroy()
 	if IsServer() then self:GetAbility():UseResources(false, false, true) end
 end
 
-
-
 function modifier_forest_envelop_target:OnIntervalThink()
 	self.armor = self:GetCaster():GetPhysicalArmorValue()
 end
@@ -122,12 +120,13 @@ function modifier_forest_envelop_target:GetModifierIncomingDamage_Percentage(par
 		elseif params.damage_type == DAMAGE_TYPE_MAGICAL then
 			damage = params.damage / (1 - self:GetCaster():GetMagicalArmorValue())
 		end
-		ApplyDamage({victim = self:GetCaster(), attacker = params.attacker, damage = damage, damage_type = params.damage_type, ability = params.inflictor, damage_flags = DOTA_DAMAGE_FLAG_REFLECTION})
+		self:GetAbility():DealDamage(params.attacker, self:GetCaster(), damage, {damage_type = params.damage_type, ability = params.inflictor, damage_flags = DOTA_DAMAGE_FLAG_REFLECTION}, 0)
 		return -1000
 	else
 		return -1000
 	end
 end
+
 function modifier_forest_envelop_target:GetModifierPhysicalArmorBonus()
 	return self.armor * self.armorToAlly
 end

@@ -20,7 +20,7 @@ function wraith_wraithfire:OnSpellStart()
 	local direction = CalculateDirection(abiltarget, caster)
 
 	local radius = self:GetTalentSpecialValueFor("blast_dot_radius")
-	local blast_damage = self:GetTalentSpecialValueFor("blast_damage")
+	blast_damage = self:GetTalentSpecialValueFor("blast_damage")
 
 	local speed = 1000
 
@@ -45,7 +45,7 @@ function wraith_wraithfire:OnSpellStart()
 			EmitSoundOn("Hero_SkeletonKing.Hellfire_BlastImpact", target)
 			local caster = self:GetCaster()
 			
-			self:GetAbility():DealDamage(caster, target, damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
+			self:GetAbility():DealDamage(caster, target, blast_damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 			
 			local enemies = caster:FindEnemyUnitsInRadius(target:GetAbsOrigin(), radius, {})
 			local duration = self:GetAbility():GetSpecialValueFor("blast_dot_duration")
@@ -89,6 +89,10 @@ end
 
 function modifier_wraith_wraithfire_dot:OnIntervalThink()
 	self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self.damage, {}, OVERHEAD_ALERT_BONUS_POISON_DAMAGE)
+end
+
+function modifier_wraith_wraithfire_dot:GetTotalDamage()
+	return self.damage*self:GetRemainingTime()
 end
 
 function modifier_wraith_wraithfire_dot:GetEffectName()

@@ -33,7 +33,7 @@ function modifier_sylph_jetstream_rush:OnIntervalThink()
 	self.timer = self.timer + 0.05
 	if self.timer >= self:GetParent():GetSecondsPerAttack() / 1.5 then
 		self.timer = 0
-		local units = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetCaster():GetAbsOrigin(), nil, self:GetCaster():GetAttackRange(), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES, 0, false)
+		local units = self:GetCaster():FindEnemyUnitsInRadius(self:GetCaster():GetAbsOrigin(), self:GetCaster():GetAttackRange(), {flag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES})
 		if #units > 0 then StartAnimation(self:GetCaster(), {duration=0.5, activity=ACT_DOTA_RUN, rate=1.0, translate="focusfire", translate2="attacking_run"}) end
 		for _,unit in pairs(units) do
 			self:GetParent():PerformAttack(unit, true, true, true, true, true, false, false)

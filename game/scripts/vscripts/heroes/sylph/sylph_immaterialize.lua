@@ -12,7 +12,7 @@ function modifier_sylph_immaterialize_buff:OnCreated()
 	self.movespeed = self:GetAbility():GetSpecialValueFor("movespeed_bonus")
 	self.evasion = self:GetAbility():GetSpecialValueFor("evasion")
 	if IsServer() then
-		self:StartIntervalThink(0)
+		self:StartIntervalThink(FrameTime())
 		self:GetAbility():StartDelayedCooldown() 
 	end
 end
@@ -30,7 +30,7 @@ end
 
 function modifier_sylph_immaterialize_buff:OnIntervalThink()
 	ProjectileManager:ProjectileDodge(self:GetCaster())
-	local enemies = FindUnitsInRadius(self:GetCaster():GetTeam(), self:GetCaster():GetAbsOrigin(), nil, 900, DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, 0, 0, false)
+	local enemies = self:GetCaster():FindEnemyUnitsInRadius(self:GetCaster():GetAbsOrigin(), 900, {})
 	for _, enemy in pairs(enemies) do
 		if not enemy:HasModifier("modifier_sylph_immaterialize_talent_slow") then
 			enemy:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_sylph_immaterialize_talent_slow", {duration = 0.5})

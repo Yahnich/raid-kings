@@ -32,8 +32,8 @@ function shinigami_whirling_slash:OnSpellStart()
 	local ticks = 0
 	Timers:CreateTimer(function()
 		ticks = ticks + 1
-
-		local enemiesInLine = FindUnitsInLine(caster:GetTeamNumber(), caster:GetAbsOrigin(), caster:GetAbsOrigin()+caster:GetForwardVector()*(caster:GetAttackRange()+150), nil, caster:GetAttackRange()/(math.abs(maxRotation/angVel)+1), DOTA_UNIT_TARGET_TEAM_ENEMY, DOTA_UNIT_TARGET_HERO + DOTA_UNIT_TARGET_BASIC, DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES)
+		
+		local enemiesInLine = caster:FindEnemyUnitsInLine(caster:GetAbsOrigin(), caster:GetAbsOrigin()+caster:GetForwardVector()*(caster:GetAttackRange()+150), caster:GetAttackRange()/(math.abs(maxRotation/angVel)+1), {flag = DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES})
 		for _, enemy in ipairs(enemiesInLine) do
 			if not alreadyAttacked[enemy:entindex()] then
 				caster:PerformAbilityAttack(enemy, true, self)

@@ -146,41 +146,43 @@ end
 
 function CDOTABaseAbility:DealDamage(attacker, victim, damage, data, spellText)
 	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
-	local damageType = data.damage_type or DAMAGE_TYPE_MAGICAL
+	local damageType = DAMAGE_TYPE_MAGICAL or data.damage_type 
 	local damageFlags = DOTA_DAMAGE_FLAG_NONE or data.damage_flags
 	local localdamage = damage
 	local spellText = spellText or 0
+	local ability = self or data.ability 
 	if spellText > 0 then
-		local damage = ApplyDamage({victim = victim, attacker = attacker, ability = self, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
+		local damage = ApplyDamage({victim = victim, attacker = attacker, ability = ability, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
 		SendOverheadEventMessage(attacker:GetPlayerOwner(),spellText,victim,damage,attacker:GetPlayerOwner()) --Substract the starting health by the new health to get exact damage taken values.
 		return damage
 	else
-		return ApplyDamage({victim = victim, attacker = attacker, ability = self, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
+		return ApplyDamage({victim = victim, attacker = attacker, ability = ability, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
 	end
 end
 
 function CDOTABaseAbility:DealAOEDamage(attacker, damage, position, radius, data, spellText)
 	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
-	local damageType = data.damage_type or DAMAGE_TYPE_MAGICAL
+	local damageType = DAMAGE_TYPE_MAGICAL or data.damage_type 
 	local damageFlags = DOTA_DAMAGE_FLAG_NONE or data.damage_flags
-	local localdamage = damage or self:GetAbilityDamage()
+	local localdamage = damage
 	local team = attacker:GetTeamNumber()
 	local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY or data.iTeam
 	local iType = DOTA_UNIT_TARGET_ALL or data.iType
 	local iFlag = DOTA_UNIT_TARGET_FLAG_NONE or data.iFlag
 	local iOrder = FIND_ANY_ORDER or data.iOrder
 	local spellText = spellText or 0
+	local ability = self or data.ability
 	if spellText > 0 then
 		local AOETargets = FindUnitsInRadius(team, position, nil, radius, iTeam, iType, iFlag, iOrder, false)
 		for _, target in pairs(AOETargets) do
-			local damage = ApplyDamage({victim = target, attacker = attacker, ability = self, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
+			local damage = ApplyDamage({victim = target, attacker = attacker, ability = ability, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
 			SendOverheadEventMessage(attacker:GetPlayerOwner(),spellText,target,damage,attacker:GetPlayerOwner()) --Substract the starting health by the new health to get exact damage taken values.
 			return damage
 		end
 	else
 		local AOETargets = FindUnitsInRadius(team, position, nil, radius, iTeam, iType, iFlag, iOrder, false)
 		for _, target in pairs(AOETargets) do
-			local damage = ApplyDamage({victim = target, attacker = attacker, ability = self, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
+			local damage = ApplyDamage({victim = target, attacker = attacker, ability = ability, damage_type = damageType, damage = localdamage, damage_flags = damageFlags})
 			return damage
 		end
 	end
@@ -188,7 +190,7 @@ end
 
 function CDOTABaseAbility:DealMaxHPAOEDamage(attacker, damage_pct, position, radius, data, spellText)
 	--OVERHEAD_ALERT_BONUS_SPELL_DAMAGE, OVERHEAD_ALERT_DAMAGE, OVERHEAD_ALERT_BONUS_POISON_DAMAGE, OVERHEAD_ALERT_MANA_LOSS
-	local damageType = data.damage_type or DAMAGE_TYPE_MAGICAL
+	local damageType = DAMAGE_TYPE_MAGICAL or data.damage_type 
 	local damageFlags = DOTA_DAMAGE_FLAG_NONE or data.damage_flags
 	local team = attacker:GetTeamNumber()
 	local iTeam = DOTA_UNIT_TARGET_TEAM_ENEMY or data.iTeam
@@ -196,17 +198,18 @@ function CDOTABaseAbility:DealMaxHPAOEDamage(attacker, damage_pct, position, rad
 	local iFlag = DOTA_UNIT_TARGET_FLAG_NONE or data.iFlag
 	local iOrder = FIND_ANY_ORDER or data.iOrder
 	local spellText = spellText or 0
+	local ability = self or data.ability
 	if spellText > 0 then
 		local AOETargets = FindUnitsInRadius(team, position, nil, radius, iTeam, iType, iFlag, iOrder, false)
 		for _, target in pairs(AOETargets) do
-			local damage = ApplyDamage({victim = target, attacker = attacker, ability = self, damage_type = damageType, damage = target:GetMaxHealth() * damage_pct / 100, damage_flags = damageFlags})
+			local damage = ApplyDamage({victim = target, attacker = attacker, ability = ability, damage_type = damageType, damage = target:GetMaxHealth() * damage_pct / 100, damage_flags = damageFlags})
 			SendOverheadEventMessage(attacker:GetPlayerOwner(),spellText,target,damage,attacker:GetPlayerOwner()) --Substract the starting health by the new health to get exact damage taken values.
 			return damage
 		end
 	else
 		local AOETargets = FindUnitsInRadius(team, position, nil, radius, iTeam, iType, iFlag, iOrder, false)
 		for _, target in pairs(AOETargets) do
-			local damage = ApplyDamage({victim = target, attacker = attacker, ability = self, damage_type = damageType, damage = target:GetMaxHealth() * damage_pct / 100, damage_flags = damageFlags})
+			local damage = ApplyDamage({victim = target, attacker = attacker, ability = ability, damage_type = damageType, damage = target:GetMaxHealth() * damage_pct / 100, damage_flags = damageFlags})
 			return damage
 		end
 	end
@@ -692,6 +695,7 @@ function CDOTA_BaseNPC:HealEvent(amount, sourceAb, healer) -- for future shit
 	end
 	SendOverheadEventMessage(self, OVERHEAD_ALERT_HEAL, self, flAmount, healer)
 	self:Heal(flAmount, sourceAb)
+	return flAmount
 end
 
 function CDOTA_BaseNPC:SwapAbilityIndexes(index, swapname)

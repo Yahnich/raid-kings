@@ -28,15 +28,7 @@ end
 
 function modifier_puppeteer_bone_wave:OnIntervalThink()
 	local caster = self:GetCaster()
-	local enemies = FindUnitsInRadius(caster:GetTeam(),
-                                  caster:GetAbsOrigin(),
-                                  nil,
-                                  self.radius,
-                                  DOTA_UNIT_TARGET_TEAM_ENEMY,
-                                  DOTA_UNIT_TARGET_ALL,
-                                  DOTA_UNIT_TARGET_FLAG_NONE,
-                                  FIND_ANY_ORDER,
-                                  false)
+	local enemies = caster:FindEnemyUnitsInRadius(caster:GetAbsOrigin(), self.radius, {})
 	if RollPercentage(40) then
 		local int = RandomInt(1,3)
 		if int == 1 then
@@ -55,6 +47,7 @@ function modifier_puppeteer_bone_wave:OnIntervalThink()
 				enemy.hitByBoneWave = false
 			end)
 			ApplyDamage({victim = enemy, attacker = caster, damage = self.damage, damage_type = DAMAGE_TYPE_MAGICAL, ability = self:GetAbility()})
+			self:GetAbility():DealDamage(caster, enemy, self.damage, {}, 0)
 			if caster:HasTalent("puppeteer_bone_wave_talent_1") then
 				local skellington = caster:CreateSummon("npc_dota_puppeteer_skeleton_skirmisher", enemy:GetAbsOrigin(), 5 )
 				skellington:FindAbilityByName("skeleton_skirmisher_magic_conversion"):SetLevel(self:GetAbility():GetLevel())

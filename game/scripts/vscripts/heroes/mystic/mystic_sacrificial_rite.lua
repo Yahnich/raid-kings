@@ -69,6 +69,10 @@ if IsServer() then
 		self:GetParent():HealEvent(self.healtick, self:GetAbility(), self:GetCaster())
 		self.heal = math.max(0, self.heal - self.healtick)
 	end
+
+	function modifier_mystic_sacrificial_rite_heal:GetTotalHeal()
+		return self.healtick*self:GetRemainingTime()
+	end
 end
 
 modifier_mystic_sacrificial_rite_debuff = class({})

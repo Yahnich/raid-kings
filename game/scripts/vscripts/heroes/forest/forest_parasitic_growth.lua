@@ -60,15 +60,7 @@ function modifier_forest_parasitic_growth_debuff:OnIntervalThink(firstTick)
 		
 		local enemy_found = false
 		if hTarget:IsAlive() then
-			local damage = {
-				victim = hTarget,
-				attacker = hCaster,
-				damage = self.damage,
-				damage_type = DAMAGE_TYPE_MAGICAL,
-				ability = self:GetAbility()
-			}
-
-			ApplyDamage( damage )
+			self.damageDone = self:GetAbility():DealDamage(hCaster, hTarget, self.damage, {}, 0)
 		end
 
 		local units = FindUnitsInRadius(hCaster:GetTeamNumber(),hTarget:GetAbsOrigin(),nil,self.radius,DOTA_UNIT_TARGET_TEAM_BOTH,DOTA_UNIT_TARGET_ALL,DOTA_UNIT_TARGET_FLAG_NONE,FIND_ANY_ORDER,false)
@@ -123,6 +115,10 @@ end
 
 function modifier_forest_parasitic_growth_debuff:IsPermanent()
 	return true
+end
+
+function modifier_forest_parasitic_growth_debuff:GetTotalDamage()
+	return self.damage*self:GetRemainingTime()
 end
 
 
