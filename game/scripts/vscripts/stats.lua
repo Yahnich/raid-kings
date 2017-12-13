@@ -85,7 +85,7 @@ function Stats:ManageStats(hero)
 		if modifier.GetModifierStatusResistance and modifier:GetModifierStatusResistance(event) then
 			data.statusresistance = data.statusresistance + modifier:GetModifierStatusResistance(event)
 		end
-		if modifier.GetModifierStatusResistance and modifier:GetModifierPercentageCooldownStacking(event) then
+		if modifier.GetModifierPercentageCooldownStacking and modifier:GetModifierPercentageCooldownStacking(event) then
 			data.cdr = data.cdr + modifier:GetModifierPercentageCooldownStacking(event) / 100
 		end
 		local cdr = 0
