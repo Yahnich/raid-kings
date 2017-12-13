@@ -17,8 +17,8 @@ function modifier_shadow_clone:OnCreated(table)
 				if ability ~= nil then 
 					local abilityLevel = ability:GetLevel()
 					local abilityName = ability:GetAbilityName()
-					local illusionAbility = self:GetParent():FindAbilityByName(abilityName)
-					illusionAbility:SetLevel(abilityLevel)
+					local illusionAbility = self:GetParent():AddAbility(abilityName)
+					if illusionAbility then illusionAbility:SetLevel(abilityLevel) end
 				end
 			end
 

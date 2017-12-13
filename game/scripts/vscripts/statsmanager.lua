@@ -23,9 +23,14 @@ end
 function StatsManager:StatsThink()
 	if not GameRules:IsGamePaused() then
 		for id, hero in pairs( self.heroes ) do
-			local status, err, ret = xpcall(hero.customStatEntity.ManageStats, debug.traceback, hero.customStatEntity, hero)
-			if not status then
-				print(err)
+			if not hero:IsNull() then
+				local status, err, ret = xpcall(hero.customStatEntity.ManageStats, debug.traceback, hero.customStatEntity, hero)
+				if not status then
+					print(err)
+				end
+			else
+				CustomNetTables:SetTableValue("hero_properties", hero:GetUnitName()..hero:entindex(), nil )
+				self.heroes[id] = nil
 			end
 		end
 	end

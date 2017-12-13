@@ -273,14 +273,16 @@ function CRaidKings:FilterModifiers( filterTable )
 		end
 	end
 	Timers:CreateTimer(0,function()
-		local modifier = parent:FindModifierByNameAndCaster(name, caster)
-		if modifier and not modifier:IsNull() then
-			if modifier.IsDebuff or parent:GetTeam() ~= caster:GetTeam() and (parentDebuffIncrease < 1 or casterDebuffIncrease > 1) then
-				local duration = modifier:GetRemainingTime()
-				modifier:SetDuration(duration * math.max(0, (1 - parentDebuffIncrease) * casterDebuffIncrease), true)
-			elseif modifier.IsBuff or parent:GetTeam() == caster:GetTeam() and (parentBuffIncrease > 1 or casterBuffIncrease > 1) then
-				local duration = modifier:GetRemainingTime()
-				modifier:SetDuration(duration * math.max(0, parentBuffIncrease * casterBuffIncrease), true)
+		if parent and not parent:IsNull() then
+			local modifier = parent:FindModifierByNameAndCaster(name, caster)
+			if modifier and not modifier:IsNull() then
+				if modifier.IsDebuff or parent:GetTeam() ~= caster:GetTeam() and (parentDebuffIncrease < 1 or casterDebuffIncrease > 1) then
+					local duration = modifier:GetRemainingTime()
+					modifier:SetDuration(duration * math.max(0, (1 - parentDebuffIncrease) * casterDebuffIncrease), true)
+				elseif modifier.IsBuff or parent:GetTeam() == caster:GetTeam() and (parentBuffIncrease > 1 or casterBuffIncrease > 1) then
+					local duration = modifier:GetRemainingTime()
+					modifier:SetDuration(duration * math.max(0, parentBuffIncrease * casterBuffIncrease), true)
+				end
 			end
 		end
 	end)

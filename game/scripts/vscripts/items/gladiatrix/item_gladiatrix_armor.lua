@@ -39,7 +39,7 @@ function modifier_item_gladiatrix_armor:GetModifierPhysicalArmorBonus()
 	return self.armor
 end
 
-function modifier_item_gladiatrix_other:GetModifierEvasion_Constant()
+function modifier_item_gladiatrix_armor:GetModifierEvasion_Constant()
 	return self.evasion
 end
 
