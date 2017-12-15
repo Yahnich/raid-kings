@@ -43,7 +43,7 @@ function Projectile:ProjectileThink()
 	local position = self:GetPosition()
 	local radius = self:GetRadius()
 	local caster = self:GetCaster()
-	local enemies = caster:FindEnemyUnitsInRadius(position, radius)
+	local enemies = caster:FindAllUnitsInRadius(position, radius, {})
 	if not self.isUniqueProjectile then -- generic behavior
 		for _, enemy in ipairs(enemies) do
 			local status, err, ret = xpcall(self.hitBehavior, debug.traceback, self, enemy, position)
