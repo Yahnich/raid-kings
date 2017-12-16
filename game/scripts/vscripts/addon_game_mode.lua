@@ -37,19 +37,18 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/generic_dazed_side.vpcf", context )
 	PrecacheResource( "particle", "particles/items_fx/courier_shield.vpcf", context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf", context )
-
-	PrecacheUnitByNameSync("npc_dota_hero_dazzle", context)
-	PrecacheUnitByNameSync("npc_dota_hero_legion_commander", context)
-	PrecacheUnitByNameSync("npc_dota_hero_lina", context)
-	PrecacheUnitByNameSync("npc_dota_hero_necrolyte", context)
-	PrecacheUnitByNameSync("npc_dota_hero_omniknight", context)
-	PrecacheUnitByNameSync("npc_dota_hero_phantom_assassin", context)
-	PrecacheUnitByNameSync("npc_dota_hero_skeleton_king", context)
-	PrecacheUnitByNameSync("npc_dota_hero_sven", context)
-	PrecacheUnitByNameSync("npc_dota_hero_templar_assassin", context)
-	PrecacheUnitByNameSync("npc_dota_hero_treant", context)
-	PrecacheUnitByNameSync("npc_dota_hero_windrunner", context)
-	PrecacheUnitByNameSync("npc_dota_hero_shadow_demon", context)
+	
+	for hero, activated in pairs( LoadKeyValues("scripts/npc/activelist.txt") ) do
+		PrecacheUnitByNameSync(hero, context)
+	end
+	
+	for abName, content in pairs( LoadKeyValues("scripts/npc/npc_abilities_custom.txt") ) do
+		if content["precache"] then
+			for resourceType, resourcePath in pairs( content["precache"] ) do
+				PrecacheResource( resourceType, resourcePath, context )
+			end
+		end
+	end
 end
 
 -- Actually make the game mode when we activate

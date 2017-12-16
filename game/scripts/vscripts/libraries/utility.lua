@@ -248,8 +248,16 @@ function CDOTA_BaseNPC:GetTauntTarget()
 	return target
 end
 
+-- function PrecacheAbility(abName)
+	-- if GameRules.AbilityKV[abName] and GameRules.AbilityKV[abName]["precache"] then
+		-- for resourceType, resourcePath in pairs( GameRules.AbilityKV[abName]["precache"] ) do
+			-- PrecacheResource(resourceType, resourcePath, GameRules.PrecacheContext)
+		-- end
+	-- end
+-- end
+
 function CDOTA_BaseNPC:AddAbilityPrecache(abName)
-	PrecacheItemByNameAsync( abName, function() end)
+	-- PrecacheAbility(abName)
 	return self:AddAbility(abName)
 end
 

@@ -3,7 +3,7 @@ ItemManager = class({})
 ItemTypes = {
 ["ITEM_TYPE_WEAPON"] = 1,
 ["ITEM_TYPE_ARMOR"] = 2,
-["ITEM_TYPE_OFFHAND"] = 3,
+["ITEM_TYPE_OTHER"] = 3,
 ["ITEM_TYPE_TRINKET"] = 4,
 ["ITEM_TYPE_RELIC"] = 5,
 }
