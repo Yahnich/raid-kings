@@ -861,29 +861,22 @@ Canine has a passive 20% damage aura and can crit naturally for 150% now
 Aghs:
 Grants an aura that grants allies a stacking spell amp buff for 10 sec
 
+Mechanics:
+If knockback source is a different team than knockback victim
+Knockup - Deals 50% AD to affected unit when unit lands
+Knockback - Deals 75% AD to unit knocked back upon hitting any unit or wall, ending the knockback movement. If unit hits another unit, and the hit unit is allied to the knockbacked unit; hit unit takes 60% AD as well.
+
 Tusk: Tyr, the Brawler 
--- Innate: War God - Passively gains damageblock based on damage, upon critting damage block is buffed for 5 seconds based on crit amount
+-- Innate: Immoveable Wall - Upon using an ability on a unit being knocked back or knocked up, ability deals a critical hit and 2s stun; granting Brawler a 10% max HP degrading barrier.
 
--- Skill 1: Colossus Smash - Launches Brawler forward, stunning and stopping at the first unit it hits, critting them
--- Skill 2: Shatter - Deals crit damage and reduces armor of damaged unit
--- Skill 3: Rising Fist - Knocks enemy upwards, critting them, they are slowed and upon landing they damage nearby units
--- Skill 4: Jet Kick - Kicks enemy backwards and grants Brawler a movement speed buff, 
--- Skill 5: Ground Pound - Smashes the ground around the Brawler, damaging and slowing all units around.
+-- Skill 1: Colossus Smash - Launches Brawler forward, stunning and stopping at the first unit it hits, dealing 325% AD, grants 50% spell amp for the next ability, buff is set to 3s upon casting any ability.
+-- Skill 2: Shatter - Deals 250%AD and reduces armor of damaged unit
+-- Skill 3: Rising Fist - Knocks enemy upwards, dealing 350% AD, they are slowed and upon landing they damage nearby units
+-- Skill 4: Jet Kick - Kicks enemy up and backwards (so deals 50% AD upon landing and an additional 75% if it hits anything) and grants Brawler a 100% movement speed buff.
+-- Skill 5: Ground Pound - Smashes the ground around the Brawler, damaging for 240% AD and slowing all units around.
 -- Skill 6: Launcher - Throws the nearest ally towards the targeted position, target is invulnerable during travel and for 0.5s after landing
--- Skill 7: Headbutt - Stuns enemy for 1s, then dazes them for 4s and reduces their stun resistance for 10 seconds afterwards.
--- Skill 8: Dropkick - Kicks enemy, launching Brawler away from them, the enemy is ministunned
--- Passive 1: War God now applies a barrier based on damage dealt upon crit, caps at 10% max hp 
--- Passive 2: Colossus Smash now pierces through enemies
--- Passive 3: Shatter now also reduces magic resistance
--- Passive 4: Rising Fist cast range increased and now teleports Brawler behind the targeted enemy
--- Passive 5: Enemy hit by Jet Kick deals damage to all units it passes through
--- Passive 6: Ground Pound now stays on the ground for 5 seconds, affecting units on it
--- Passive 7: Launcher now deals AOE damage upon impact and stuns all enemies it passes through for 0.8s
--- Passive 8: Headbutt daze duration doubled, but Brawler is dazed for 50% of the duration
--- Passive 9: Brawler can now dropkick the air
-
-Aghs:
-Grants War God passive crit chance
+-- Skill 7: Headbutt - Stuns enemy for 1s, then dazes them for 4s and reduces their stun resistance for 10 seconds afterwards. Deals 225% AD
+-- Skill 8: Dropkick - Kicks enemy, launching Brawler away from them, the enemy is ministunned and takes 300% AD
 
 
 Kunkka: Poseidon, the Buccaneer

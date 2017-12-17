@@ -89,7 +89,7 @@
 		<Panel id="HeroInformationContainer">
 			<Button id="CloseInfoPanelBtn" onactivate="OpenInfoHud()">
 				<Image src="s2r://panorama/images/control_icons/x_close_png.vtex" hittest="false"/>
-			</Button>
+			</Button> 
 			<Panel id="HeroInformation">
 				<Panel id="PlayerHeroInfoModelContainer" />
 				<Panel class="HeroInfoContainer">

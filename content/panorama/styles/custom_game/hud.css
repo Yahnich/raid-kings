@@ -398,7 +398,10 @@
 
 .Hidden
 {
-    visibility: collapse;
+	opacity: 0.0;
+	transform: translateY( 200px );
+	pre-transform-scale2d: 0.95;
+	wash-color: #33CCCC;
 }
 
 .PlayerInfoContainerHolder {
@@ -533,6 +536,11 @@
 	border: 2px solid #121212FF;
 	flow-children: down;
 	padding: 20px;
+	
+	transition-property: opacity, transform, pre-transform-scale2d, wash-color;
+	transition-duration: 0.4s;
+	transition-delay: 0.0s;
+	transition-timing-function: ease-in-out;
 }
 
 #HeroInformation
@@ -581,7 +589,7 @@
 	margin-bottom: 1px;
 	margin-left: 2px;
 	margin-right: 2px;
-	width: 80px;
+	width: 100px;
 }
 
 .StatsContainerRight
@@ -612,7 +620,7 @@
 .HeroInfoScenePanel
 {
 	width: 400px;
-	height: 400px;
+	height: 300px;
 	opacity-mask: url( "file://{images}/custom_game/landscape.tga" );
 	horizontal-align: middle;
 	vertical-align: top;

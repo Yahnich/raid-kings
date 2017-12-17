@@ -260,13 +260,13 @@ function CRaidKings:FilterModifiers( filterTable )
 	local casterDebuffIncrease = 1
 	
 	for _, modifier in pairs( parent:FindAllModifiers() ) do
-		if modifier.BonusDebuffDuration_Constant then
+		if modifier.GetModifierStatusResistance then
 			parentDebuffIncrease = parentDebuffIncrease + (1 - parentDebuffIncrease) * (modifier:GetModifierStatusResistance() / 100)
 			parentBuffIncrease = parentBuffIncrease + (modifier:GetModifierStatusResistance() / 100)
 		end
 	end
 	for _, modifier in ipairs( caster:FindAllModifiers() ) do
-		if modifier.BonusAppliedBuffDuration_Constant then
+		if modifier.GetModifierStatusAmplification then
 			casterBuffIncrease = casterBuffIncrease + (modifier:GetModifierStatusAmplification() / 100)
 			casterDebuffIncrease = casterDebuffIncrease + (modifier:GetModifierStatusAmplification() / 100)
 		end

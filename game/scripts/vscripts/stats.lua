@@ -68,6 +68,13 @@ function Stats:ManageStats(hero)
 		
 		-- Modifier property management
 		local event = {}
+		event.damage = 0
+		event.damage_flags = 0
+		event.attacker = hero
+		event.target = hero
+		event.unit = hero
+		event.original_damage = 0
+		event.ability = 0
 		if modifier.GetModifierEvasion_Constant and modifier:GetModifierEvasion_Constant(event) then
 			local evasion = data.evasion or 0
 			local hitChance = 1 - evasion/100

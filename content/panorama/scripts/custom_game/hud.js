@@ -177,7 +177,7 @@ function UpdateInfoHud()
 	$("#InfoMagicResistanceLabel").text = (Entities.GetMagicalArmorValue( localHero ).toFixed(4) * 100).toFixed(1) + "%"
 	$("#InfoEvasionLabel").text = (heroInfo.evasion * 100).toFixed(1) + "%"
 	$("#InfoStatusResistanceLabel").text = heroInfo.statusresistance.toFixed(1) + "%"
-	$("#InfoDamageResistanceLabel").text = heroInfo.damageresistance.toFixed(1) + "%"
+	$("#InfoDamageResistanceLabel").text = ( -heroInfo.damageresistance.toFixed(1) ) + "%"
 	$("#InfoSpellAmpLabel").text = heroInfo.spellamp.toFixed(1) + "%"
 	$("#InfoCooldownReductionLabel").text = heroInfo.cdr.toFixed(1) + "%"
 	$("#InfoCastRangeLabel").text = heroInfo.castrange.toFixed(1) + "%"
@@ -215,7 +215,7 @@ function CreateTeamInfo(){
 			if(pID != localID){CreateInfoContainer(pID);}
 		}
 	} else {
-		$("#GameHudTeamInfo").style.visibility = "collapse"
+		$("#GameHudTeamInfo").AddClass("Hidden")
 	}
 	UpdateHUD()
 }
