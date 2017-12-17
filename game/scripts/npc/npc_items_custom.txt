@@ -1,6 +1,43 @@
 "DOTAAbilities"
 {
 	//=================================================================================================================
+	// Holdout Tombstone
+	//=================================================================================================================
+	"item_tombstone"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityName"					"item_tombstone"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
+		"Model"							"models/props_gameplay/tombstoneb01.vmdl"
+		"PingOverrideText"				"DOTA_Chat_Tombstone_Pinged"
+		"precache"
+		{
+			"particle_folder" "particles/units/heroes/hero_morphling"
+		}
+	
+		
+		// Stats
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"100"
+		
+		"AbilityChannelTime"			"5.0"
+		
+		// Item Info
+		//-------------------------------------------------------------------------------------------------------------
+		"ItemCost"						"99999"
+		"ItemPurchasable"				"0"
+		"ItemShopTags"					"consumable"
+		"ItemQuality"					"consumable"
+		"ItemStackable"					"1"
+		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
+		"ItemPermanent"					"0"
+		"ItemInitialCharges"			"1"
+		"ItemCastOnPickup"				"1"
+		"ItemKillable"					"0"
+	
+	}
+	//=================================================================================================================
 	// Bag of Gold
 	//=================================================================================================================
 	"item_bag_of_gold"
@@ -3991,12 +4028,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"35 50 65 80 100"
+				"bonus_dmg"				"35 50 65 80 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"atk_speed"				"20 35 50 65 80"
+				"bonus_atkspeed"		"20 35 50 65 80"
 			}
 		}
 	}
@@ -4027,12 +4064,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"35 50 65 80 100"
+				"bonus_dmg"				"35 50 65 80 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"atk_speed"				"20 35 50 65 80"
+				"bonus_atkspeed"		"20 35 50 65 80"
 			}
 		}
 	}
@@ -4063,12 +4100,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"35 50 65 80 100"
+				"bonus_dmg"				"35 50 65 80 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"atk_speed"				"20 35 50 65 80"
+				"bonus_atkspeed"		"20 35 50 65 80"
 			}
 		}
 	}
@@ -4099,12 +4136,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"damage"				"35 50 65 80 100"
+				"bonus_dmg"				"35 50 65 80 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"atk_speed"				"20 35 50 65 80"
+				"bonus_atkspeed"		"20 35 50 65 80"
 			}
 		}
 	}
@@ -4313,43 +4350,7 @@
 			}
 		}
 	}
-	//=================================================================================================================
-	// Holdout Tombstone
-	//=================================================================================================================
-	"item_tombstone"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityName"					"item_tombstone"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_DONT_RESUME_ATTACK"
-		"Model"							"models/props_gameplay/tombstoneb01.vmdl"
-		"PingOverrideText"				"DOTA_Chat_Tombstone_Pinged"
-		"precache"
-		{
-			"particle_folder" "particles/units/heroes/hero_morphling"
-		}
 	
-		
-		// Stats
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCastRange"				"100"
-		
-		"AbilityChannelTime"			"5.0"
-		
-		// Item Info
-		//-------------------------------------------------------------------------------------------------------------
-		"ItemCost"						"99999"
-		"ItemPurchasable"				"0"
-		"ItemShopTags"					"consumable"
-		"ItemQuality"					"consumable"
-		"ItemStackable"					"1"
-		"ItemShareability"				"ITEM_PARTIALLY_SHAREABLE"
-		"ItemPermanent"					"0"
-		"ItemInitialCharges"			"1"
-		"ItemCastOnPickup"				"1"
-		"ItemKillable"					"0"
-	
-	}
 	"item_wraith_armor_1"
 	{
 		// General
@@ -4898,12 +4899,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"200 350 500 750 900"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"magic_resist"			"10 15 20 25 30"
 			}
 		}
 	}
@@ -4929,12 +4930,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"200 350 500 750 900"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"magic_resist"			"10 15 20 25 30"
 			}
 		}
 	}
@@ -4960,12 +4961,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"200 350 500 750 900"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"magic_resist"			"10 15 20 25 30"
 			}
 		}
 	}
@@ -4991,12 +4992,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"200 350 500 750 900"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"magic_resist"			"10 15 20 25 30"
 			}
 		}
 	}
@@ -5022,12 +5023,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"200 350 500 750 900"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"magic_resist"			"10 15 20 25 30"
 			}
 		}
 	}
@@ -5058,17 +5059,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 120 180 240 300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"cdr"					"5 15 25 35 50"
 			}
 		}
 	}
@@ -5099,17 +5095,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 120 180 240 300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"cdr"					"5 15 25 35 50"
 			}
 		}
 	}
@@ -5140,17 +5131,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 120 180 240 300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"cdr"					"5 15 25 35 50"
 			}
 		}
 	}
@@ -5181,17 +5167,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 120 180 240 300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"cdr"					"5 15 25 35 50"
 			}
 		}
 	}
@@ -5222,17 +5203,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 120 180 240 300"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"cdr"					"5 15 25 35 50"
 			}
 		}
 	}
@@ -5263,17 +5239,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"spell_amp"				"10 15 20 25 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
+				"crit_chance"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"crit_damage"			"180"
 			}
 		}
 	}
@@ -5304,17 +5280,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"spell_amp"				"10 15 20 25 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
+				"crit_chance"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"crit_damage"			"180"
 			}
 		}
 	}
@@ -5345,17 +5321,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"spell_amp"				"10 15 20 25 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
+				"crit_chance"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"crit_damage"			"180"
 			}
 		}
 	}
@@ -5386,17 +5362,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"spell_amp"				"10 15 20 25 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
+				"crit_chance"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"crit_damage"			"180"
 			}
 		}
 	}
@@ -5427,17 +5403,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"spell_amp"				"10 15 20 25 30"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
+				"crit_chance"			"10"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"crit_damage"			"180"
 			}
 		}
 	}
@@ -5469,12 +5445,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"300 500 700 900 1200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"evasion"				"15 20 25 30 35"
 			}
 		}
 	}
@@ -5500,12 +5476,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"300 500 700 900 1200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"evasion"				"15 20 25 30 35"
 			}
 		}
 	}
@@ -5531,12 +5507,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"300 500 700 900 1200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"evasion"				"15 20 25 30 35"
 			}
 		}
 	}
@@ -5562,12 +5538,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"300 500 700 900 1200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"evasion"				"15 20 25 30 35"
 			}
 		}
 	}
@@ -5593,12 +5569,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"300 600 900 1200 1500"
+				"bonus_hp"				"300 500 700 900 1200"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
+				"evasion"				"15 20 25 30 35"
 			}
 		}
 	}
@@ -5629,17 +5605,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 80 100 120 140"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
+				"crit_chance"			"10 11 12 13 15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"250 250 250 250 250"
 			}
 		}
 	}
@@ -5670,17 +5646,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 80 100 120 140"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
+				"crit_chance"			"10 11 12 13 15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"250 250 250 250 250"
 			}
 		}
 	}
@@ -5711,17 +5687,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 80 100 120 140"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
+				"crit_chance"			"10 11 12 13 15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"250 250 250 250 250"
 			}
 		}
 	}
@@ -5752,17 +5728,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 80 100 120 140"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
+				"crit_chance"			"10 11 12 13 15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"250 250 250 250 250"
 			}
 		}
 	}
@@ -5793,17 +5769,17 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"60 80 100 120 140"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_chance"			"20 20 20 20 20"
+				"crit_chance"			"10 11 12 13 15"
 			}
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"250 250 250 250 250"
 			}
 		}
 	}
@@ -5834,17 +5810,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 55 70 85 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"0 5 10 15 20"
 			}
 		}
 	}
@@ -5875,17 +5846,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 55 70 85 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"0 5 10 15 20"
 			}
 		}
 	}
@@ -5916,17 +5882,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 55 70 85 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"0 5 10 15 20"
 			}
 		}
 	}
@@ -5957,17 +5918,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 55 70 85 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"0 5 10 15 20"
 			}
 		}
 	}
@@ -5998,17 +5954,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 55 70 85 100"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"0 5 10 15 20"
 			}
 		}
 	}
@@ -6041,11 +5992,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_hp"				"300 600 900 1200 1500"
 			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
-			}
 		}
 	}
 	"item_revenant_armor_2"
@@ -6071,11 +6017,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_hp"				"300 600 900 1200 1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
 			}
 		}
 	}
@@ -6103,11 +6044,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_hp"				"300 600 900 1200 1500"
 			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
-			}
 		}
 	}
 	"item_revenant_armor_4"
@@ -6134,11 +6070,6 @@
 				"var_type"				"FIELD_INTEGER"
 				"bonus_hp"				"300 600 900 1200 1500"
 			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
-			}
 		}
 	}
 	"item_revenant_armor_5"
@@ -6164,11 +6095,6 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"bonus_hp"				"300 600 900 1200 1500"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"armor"					"4 6 8 10 12"
 			}
 		}
 	}
@@ -6199,7 +6125,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"30 50 70 90 120"
 			}
 			"02"
 			{
@@ -6209,7 +6135,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"260 260 260 260 260"
 			}
 		}
 	}
@@ -6240,7 +6166,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"30 50 70 90 120"
 			}
 			"02"
 			{
@@ -6250,7 +6176,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"260 260 260 260 260"
 			}
 		}
 	}
@@ -6281,7 +6207,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"30 50 70 90 120"
 			}
 			"02"
 			{
@@ -6291,7 +6217,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"260 260 260 260 260"
 			}
 		}
 	}
@@ -6322,7 +6248,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"30 50 70 90 120"
 			}
 			"02"
 			{
@@ -6332,7 +6258,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"260 260 260 260 260"
 			}
 		}
 	}
@@ -6363,7 +6289,7 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"bonus_dmg"				"50 100 150 200 250"
+				"bonus_dmg"				"30 50 70 90 120"
 			}
 			"02"
 			{
@@ -6373,7 +6299,7 @@
 			"03"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"crit_damage"			"220 220 220 220 220"
+				"crit_damage"			"260 260 260 260 260"
 			}
 		}
 	}
@@ -6404,17 +6330,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 60 90 120 150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"10 20 30 40 50"
 			}
 		}
 	}
@@ -6445,17 +6366,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 60 90 120 150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"10 20 30 40 50"
 			}
 		}
 	}
@@ -6486,17 +6402,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 60 90 120 150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"10 20 30 40 50"
 			}
 		}
 	}
@@ -6527,17 +6438,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 60 90 120 150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"10 20 30 40 50"
 			}
 		}
 	}
@@ -6568,17 +6474,12 @@
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"armor"					"2 2 4 4 5"
+				"bonus_atkspeed"		"30 60 90 120 150"
 			}
 			"02"
 			{
 				"var_type"				"FIELD_INTEGER"
-				"block_amt"				"20 30 40 50 50"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"block_chance"			"50 50 50 50 70"
+				"cdr"					"10 20 30 40 50"
 			}
 		}
 	}

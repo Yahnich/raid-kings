@@ -14,7 +14,6 @@ LinkLuaModifier("modifier_item_revenant_armor", "items/revenant/item_revenant_ar
 
 function modifier_item_revenant_armor:OnCreated()
 	self.bonus_hp = self:GetSpecialValueFor("bonus_hp")
-	self.evasion = self:GetSpecialValueFor("evasion")
 	-- if IsServer() then
 		-- self:GetCaster():SetEquippedArmor( self:GetAbility():GetAttachmentName() )
 	-- end
@@ -22,19 +21,14 @@ end
 
 function modifier_item_revenant_armor:OnRefresh()
 	self.bonus_hp = self:GetSpecialValueFor("bonus_hp")
-	self.evasion = self:GetSpecialValueFor("evasion")
 end
 
 function modifier_item_revenant_armor:DeclareFunctions()
-	return {MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_EVASION_CONSTANT}
+	return {MODIFIER_PROPERTY_HEALTH_BONUS}
 end
 
 function modifier_item_revenant_armor:GetModifierHealthBonus()
 	return self.bonus_hp
-end
-
-function modifier_item_revenant_armor:GetModifierEvasion_Constant()
-	return self.evasion
 end
 
 function modifier_item_revenant_armor:IsHidden()

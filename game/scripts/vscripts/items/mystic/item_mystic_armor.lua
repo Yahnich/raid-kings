@@ -14,7 +14,7 @@ LinkLuaModifier("modifier_item_mystic_armor", "items/mystic/item_mystic_armor.lu
 
 function modifier_item_mystic_armor:OnCreated()
 	self.bonus_hp = self:GetSpecialValueFor("bonus_hp")
-	self.bonus_hp = self:GetSpecialValueFor("armor")
+	self.armor = self:GetSpecialValueFor("magic_resist")
 	-- if IsServer() then
 		-- self:GetCaster():SetEquippedArmor( self:GetAbility():GetAttachmentName() )
 	-- end
@@ -22,18 +22,18 @@ end
 
 function modifier_item_mystic_armor:OnRefresh()
 	self.bonus_hp = self:GetSpecialValueFor("bonus_hp")
-	self.bonus_hp = self:GetSpecialValueFor("armor")
+	self.armor = self:GetSpecialValueFor("magic_resist")
 end
 
 function modifier_item_mystic_armor:DeclareFunctions()
-	return {MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}
+	return {MODIFIER_PROPERTY_HEALTH_BONUS, MODIFIER_PROPERTY_MAGICAL_RESISTANCE_BONUS}
 end
 
 function modifier_item_mystic_armor:GetModifierHealthBonus()
 	return self.bonus_hp
 end
 
-function modifier_item_mystic_armor:GetModifierPhysicalArmorBonus()
+function modifier_item_mystic_armor:GetModifierMagicalResistanceBonus()
 	return self.armor
 end
 

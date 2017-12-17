@@ -13,22 +13,28 @@ modifier_item_peacekeeper_other = class({})
 LinkLuaModifier("modifier_item_peacekeeper_other", "items/peacekeeper/item_peacekeeper_other.lua", 0)
 
 function modifier_item_peacekeeper_other:OnCreated()
-	self.bonus_armor = self:GetSpecialValueFor("bonus_armor")
+	self.bonus_as = self:GetSpecialValueFor("bonus_atkspeed")
+	self.cdr = self:GetSpecialValueFor("cdr")
 	-- if IsServer() then
 		-- self:GetCaster():SetEquippedArmor( self:GetAbility():GetAttachmentName() )
 	-- end
 end
 
 function modifier_item_peacekeeper_other:OnRefresh()
-	self.bonus_armor = self:GetSpecialValueFor("bonus_armor")
+	self.bonus_as = self:GetSpecialValueFor("bonus_atkspeed")
+	self.cdr = self:GetSpecialValueFor("cdr")
 end
 
 function modifier_item_peacekeeper_other:DeclareFunctions()
-	return {MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS}
+	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}
 end
 
-function modifier_item_peacekeeper_other:GetModifierPhysicalArmorBonus()
-	return self.bonus_armor
+function modifier_item_peacekeeper_other:GetModifierAttackSpeedBonus_Constant()
+	return self.bonus_as
+end
+
+function modifier_item_peacekeeper_other:GetModifierPercentageCooldown()
+	return self.cdr
 end
 
 function modifier_item_peacekeeper_other:IsHidden()

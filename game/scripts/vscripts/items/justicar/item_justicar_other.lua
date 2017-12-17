@@ -26,10 +26,10 @@ function modifier_item_justicar_other:OnRefresh()
 end
 
 function modifier_item_justicar_other:DeclareFunctions()
-	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE_STACKING, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE}
+	return {MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE, MODIFIER_PROPERTY_SPELL_AMPLIFY_PERCENTAGE}
 end
 
-function modifier_item_justicar_other:GetModifierPercentageCooldownStacking()
+function modifier_item_justicar_other:GetModifierPercentageCooldown()
 	return self.cdr
 end
 

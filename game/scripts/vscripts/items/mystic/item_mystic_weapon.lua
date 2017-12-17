@@ -14,16 +14,16 @@ LinkLuaModifier("modifier_item_mystic_weapon", "items/mystic/item_mystic_weapon.
 
 function modifier_item_mystic_weapon:OnCreated()
 	self.bonus_dmg = self:GetSpecialValueFor("bonus_dmg")
-	self.atk_spd = self:GetSpecialValueFor("bonus_atkspeed")
+	self.cdr = self:GetSpecialValueFor("cdr")
 end
 
 function modifier_item_mystic_weapon:OnRefresh()
 	self.bonus_dmg = self:GetSpecialValueFor("bonus_dmg")
-	self.atk_spd = self:GetSpecialValueFor("bonus_atkspeed")
+	self.cdr = self:GetSpecialValueFor("cdr")
 end
 
 function modifier_item_mystic_weapon:DeclareFunctions()
-	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_ATTACKSPEED_BONUS_CONSTANT}
+	return {MODIFIER_PROPERTY_BASEATTACK_BONUSDAMAGE, MODIFIER_PROPERTY_COOLDOWN_PERCENTAGE}
 end
 
 function modifier_item_mystic_weapon:GetModifierBaseAttack_BonusDamage()
@@ -31,8 +31,8 @@ function modifier_item_mystic_weapon:GetModifierBaseAttack_BonusDamage()
 end
 
 
-function modifier_item_mystic_weapon:GetModifierAttackSpeedBonus_Constant()
-	return self.atk_spd
+function modifier_item_mystic_weapon:GetModifierPercentageCooldown()
+	return self.cdr
 end
 
 function modifier_item_mystic_weapon:IsHidden()
