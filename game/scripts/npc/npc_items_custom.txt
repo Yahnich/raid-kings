@@ -4343,7 +4343,7 @@
 		"Wearables"
 		{
 			"bow"					"models/heroes/windrunner/windrunner_bow.vmdl"
-		}☺
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5113,7 +5113,7 @@
 		"Wearables"
 		{
 			"sleeve"					"models/items/dazzle/darkclaw_acolyte_arms/darkclaw_acolyte_arms.vmdl"
-			"shoulder"					"models/items/dazzle/darkclaw_acolyte_misc/darkclaw_acolyte_misc.vmdll"
+			"shoulder"					"models/items/dazzle/darkclaw_acolyte_misc/darkclaw_acolyte_misc.vmdl"
 			"dress"						"models/items/dazzle/darkclaw_acolyte_legs/darkclaw_acolyte_legs.vmdl"
 		}
 
@@ -5146,6 +5146,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
+		
+		"Wearables"
+		{
+			"sleeve"					"models/items/dazzle/shadowflame_arms/shadowflame_arms.vmdl"
+			"shoulder"					"models/items/dazzle/shadowflame_misc/shadowflame_misc.vmdl"
+			"dress"						"models/items/dazzle/shadowflame_legs/shadowflame_legs.vmdl"
+		}
 
 
 		"AbilitySpecial"
@@ -5183,6 +5190,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"staff"						"models/heroes/dazzle/dazzle_staff.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5219,6 +5231,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"staff"					"models/items/dazzle/dazzleset_weapon/dazzleset_weapon.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5255,6 +5272,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"staff"					"models/items/dazzle/staff_of_the_yuwipi/staff_of_the_yuwipi.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5291,6 +5313,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"staff"					"models/items/dazzle/dazzle_final_graveheart/dazzle_final_graveheart.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5327,6 +5354,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"staff"					"models/items/dazzle/venom_herb_caduceus/venom_herb_caduceus.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5363,6 +5395,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"neck"						"models/items/dazzle/dazzle_ti6_immortal/mesh/dazzle_ti6_immortal.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5404,6 +5441,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"neck"						"models/items/dazzle/dazzle_ti6_immortal/mesh/dazzle_ti6_immortal.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5445,6 +5487,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"neck"						"models/items/dazzle/dazzle_ti6_immortal/mesh/dazzle_ti6_immortal.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5486,6 +5533,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"neck"						"models/items/dazzle/dazzle_ti6_immortal/mesh/dazzle_ti6_immortal.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -5527,6 +5579,12 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"neck"						"models/items/dazzle/dazzle_ti6_immortal/mesh/dazzle_ti6_immortal.vmdl"
+		}
+
 
 		"AbilitySpecial"
 		{
