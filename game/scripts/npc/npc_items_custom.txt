@@ -3826,6 +3826,12 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"cape"					"models/heroes/windrunner/windrunner_cape.vmdl"
+			"shoulder"				"models/heroes/windrunner/windrunner_shoulderpads.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3856,7 +3862,19 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
-	
+		
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable	"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"cape"					"models/items/windrunner/anuxi_featherfall_cape/anuxi_featherfall_cape.vmdl"
+			"shoulder"				"models/items/windrunner/anuxi_featherfall_pauldrons/anuxi_featherfall_pauldrons.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3887,6 +3905,19 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
+		
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable	"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"cape"					"models/items/windrunner/sparrowhawk_cape/sparrowhawk_cape.vmdl"
+			"shoulder"				"mmodels/items/windrunner/sparrowhawk_shoulder/sparrowhawk_shoulder.vmdl"
+		}
 	
 	
 		"AbilitySpecial"
@@ -3918,6 +3949,19 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
+		
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable	"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"cape"					"models/items/windrunner/falconcloak/falconcloak.vmdl"
+			"shoulder"				"models/items/windrunner/wild_wind_jacket/wild_wind_jacket.vmdl"
+		}
 	
 	
 		"AbilitySpecial"
@@ -3949,7 +3993,19 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
-	
+		
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable	"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"cape"					"models/items/windrunner/sylvan_cascade/sylvan_cascade.vmdl"
+			"shoulder"				"models/items/windrunner/shoulderpadfalcon/shoulderpadfalcon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3986,6 +4042,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"quiver"					"models/heroes/windrunner/windrunner_quiver.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4022,6 +4083,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"quiver"					"models/items/windrunner/featherquiver21/featherquiver21.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4058,6 +4124,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"quiver"					"models/items/windrunner/sparrowhawk_quiver/sparrowhawk_quiver.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4094,6 +4165,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"quiver"					"models/items/windrunner/anuxi_featherfall_quiver/anuxi_featherfall_quiver.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4130,6 +4206,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"quiver"					"models/items/windrunner/wild_wind_quiver/wild_wind_quiver.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4166,6 +4247,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"bow"					"models/items/windrunner/naturebow.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4207,6 +4293,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"bow"					"models/items/windrunner/makeshifthornwoodbow_v10/makeshifthornwoodbow_v10.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4248,6 +4339,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"bow"					"models/heroes/windrunner/windrunner_bow.vmdl"
+		}☺
 	
 		"AbilitySpecial"
 		{
@@ -4289,6 +4385,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"bow"					"models/items/windrunner/iguanas_bow_quiver_v/iguanas_bow_quiver_v.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4330,6 +4431,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"bow"					"models/items/windrunner/ti6_falcon_bow/ti6_falcon_bow_model.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4893,6 +4999,13 @@
 		"ItemKillable"					"0"
 		"ItemDroppable	"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"sleeve"					"models/heroes/dazzle/dazzle_sleeve.vmdl"
+			"shoulder"					"models/heroes/dazzle/dazzle_shoulder.vmdl"
+			"dress"						"models/heroes/dazzle/dazzle_dress.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -4923,7 +5036,12 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
-
+		"Wearables"
+		{
+			"sleeve"					"models/items/dazzle/dazzleset_arm/dazzleset_arm.vmdl"
+			"shoulder"					"models/items/dazzle/dazzleset_misc/dazzleset_misc.vmdl"
+			"dress"						"models/items/dazzle/dazzleset_legs/dazzleset_legs.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -4954,7 +5072,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
-
+		
+		"Wearables"
+		{
+			"sleeve"					"models/items/dazzle/dotapit_s3_sunshield_arms/dotapit_s3_sunshield_arms.vmdl"
+			"shoulder"					"models/items/dazzle/dotapit_s3_sunshield_shoulders/dotapit_s3_sunshield_shoulders.vmdl"
+			"dress"						"models/items/dazzle/dotapit_s3_sunshield_legs/dotapit_s3_sunshield_legs.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
@@ -4985,7 +5109,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
-
+		
+		"Wearables"
+		{
+			"sleeve"					"models/items/dazzle/darkclaw_acolyte_arms/darkclaw_acolyte_arms.vmdl"
+			"shoulder"					"models/items/dazzle/darkclaw_acolyte_misc/darkclaw_acolyte_misc.vmdll"
+			"dress"						"models/items/dazzle/darkclaw_acolyte_legs/darkclaw_acolyte_legs.vmdl"
+		}
 
 		"AbilitySpecial"
 		{
