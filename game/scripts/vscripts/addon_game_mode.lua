@@ -49,6 +49,14 @@ function Precache( context )
 			end
 		end
 	end
+	
+	for model, particleTable in pairs( LoadKeyValues("scripts/keyvalues/cosmetics.kv") ) do
+		for particleType, typeTable in pairs(particleTable) do
+			for _, particle in pairs(typeTable) do
+				PrecacheResource( "particle", particle, context )
+			end
+		end
+	end
 end
 
 -- Actually make the game mode when we activate
@@ -72,6 +80,8 @@ function CRaidKings:InitGameMode()
 	MergeTables(GameRules.AbilityKV, LoadKeyValues("scripts/npc/npc_items_custom.txt"))
 	
 	GameRules.HeroList = LoadKeyValues("scripts/npc/activelist.txt")
+	
+	GameRules.CosmeticsList = LoadKeyValues("scripts/keyvalues/cosmetics.kv")
 	print(GetMapName())
 	local heroList = {}
 	for k,v in pairs(GameRules.HeroList) do

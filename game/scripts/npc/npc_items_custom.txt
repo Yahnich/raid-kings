@@ -4048,7 +4048,7 @@
 		"Wearables"
 		{
 			"cape"					"models/items/windrunner/sparrowhawk_cape/sparrowhawk_cape.vmdl"
-			"shoulder"				"mmodels/items/windrunner/sparrowhawk_shoulder/sparrowhawk_shoulder.vmdl"
+			"shoulder"				"models/items/windrunner/sparrowhawk_shoulder/sparrowhawk_shoulder.vmdl"
 		}
 	
 	

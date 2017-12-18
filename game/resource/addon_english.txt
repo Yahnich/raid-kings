@@ -2646,7 +2646,7 @@
 		"DOTA_Tooltip_ability_item_revenant_armor_5_Lore"							"Crocell's chains, binding his power."
 		"DOTA_Tooltip_ability_item_revenant_armor_5_bonus_hp"						"BONUS HEALTH: "
 		
-//Buccaneer
+		//Buccaneer
 		"DOTA_Tooltip_ability_buccaneer_x_marks"									"X Marks"
 		"DOTA_Tooltip_ability_buccaneer_x_marks_Description"						"<h1>Passive: Plunder</h1> Basic attacks have a %gold_chance%%  chance to steal %gold% gold. <font color='#ff0000'>Marked</font> enemies always grant gold.\n<h1>Active: X Mark the Enemy</h1> <font color='#ff0000'>Mark</font> a target enemy, tracking their position. After %duration% seconds, the enemy is returned to their original spot.\nAdditionally, <font color='#ff0000'>Marked</font> enemies are dealt %bonus_damage%%  bonus physical damage.\nOnly one enemy may be <font color='#ff0000'>Marked</font> at a time."
 		"DOTA_Tooltip_ability_buccaneer_x_marks_Lore"								"1."
@@ -2658,12 +2658,12 @@
 		"DOTA_Tooltip_modifier_x_marks_description"									"+%fMODIFIER_PROPERTY_INCOMING_DAMAGE_PERCENTAGE%%% incoming damage."
 
 		"DOTA_Tooltip_ability_buccaneer_hand_cannon"								"Hand Cannon"
-		"DOTA_Tooltip_ability_buccaneer_hand_cannon_Description"					"Fire off a shotgun sending both Poseiden and enemies hit away from the initial cast location. Enemies are knocked back twice as far and dealt basic attack damage plus the knockback distance.\n<font color='#ff0000'>Marked</font> enemies are slowed after being knocked back.\nThe shotgun is fired directly infront of Poseiden and may proc on-hit modifers. "
+		"DOTA_Tooltip_ability_buccaneer_hand_cannon_Description"					"Fire off a shotgun sending both Poseiden and enemies hit away from the initial cast location. Enemies are knocked back twice as far and dealt basic attack damage plus the knockback distance.\n<font color='#ff0000'>Marked</font> enemies are slowed after being knocked back.\nThe shotgun is fired directly infront of Buccaneer and may proc on-hit modifers. "
 		"DOTA_Tooltip_ability_buccaneer_hand_cannon_Lore"							"2."
 		"DOTA_Tooltip_ability_buccaneer_hand_cannon_knock_back"						"KNOCKBACK DISTANCE:"
 
 		"DOTA_Tooltip_ability_buccaneer_call_the_fleet"								"Call the Fleet"
-		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_Description"					"Summon a Spooky Ship that sails through the battle before smashing apart, damaging and stunning all enenimes caught near the wreckage. Allies touched by the Spooky Ship recieve a delayed reaction to incoming damage.\nThe ship is spawned behind Poseiden, and always travels the full distance.\n<font color='#ff0000'>Marked</font> enemies are dazed after the stun."
+		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_Description"					"Summon a Spooky Ship that sails through the battle before smashing apart, damaging and stunning all enenimes caught near the wreckage. Allies touched by the Spooky Ship recieve a delayed reaction to incoming damage.\nThe ship is spawned behind Buccaneer, and always travels the full distance.\n<font color='#ff0000'>Marked</font> enemies are dazed after the stun."
 		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_Lore"						"3."
 		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_buff_duration"				"BUFF DURATION:"
 		"DOTA_Tooltip_ability_buccaneer_call_the_fleet_ghostship_absorb"			"%DAMAGE REDUCTION:"
@@ -2723,14 +2723,14 @@
 		"DOTA_Tooltip_modifier_rum_description"										"+%dMODIFIER_PROPERTY_DAMAGEOUTGOING_PERCENTAGE%%% bonus damage and +%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% move speed."
 
 		"DOTA_Tooltip_ability_buccaneer_gangplank"									"Gangplank"
-		"DOTA_Tooltip_ability_buccaneer_gangplank_Description"						"Force an enemy to walk towards Poseiden, stunning and damaging them for afterwards.\n<font color='#ff0000'>Marked</font> enemies grant bonus gold, equal to Plunder times 2, on cast."
+		"DOTA_Tooltip_ability_buccaneer_gangplank_Description"						"Force an enemy to walk towards Buccaneer, stunning and damaging them for afterwards.\n<font color='#ff0000'>Marked</font> enemies grant bonus gold, equal to Plunder times 2, on cast."
 		"DOTA_Tooltip_ability_buccaneer_gangplank_Lore"								"8."
 		"DOTA_Tooltip_ability_buccaneer_gangplank_damage"							"DAMAGE:"
 		"DOTA_Tooltip_ability_buccaneer_gangplank_duration"							"DURATION:"
 		"DOTA_Tooltip_ability_buccaneer_gangplank_gold_multiplier"					"GOLD MULTIPLIER:"
 		"DOTA_Tooltip_ability_buccaneer_gangplank_stun_duration"					"STUN DURATION:"
 		"DOTA_Tooltip_modifier_gangplank"											"Gangplank"
-		"DOTA_Tooltip_modifier_gangplank_description"								"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% move speed and walking towards Poesiden."
+		"DOTA_Tooltip_modifier_gangplank_description"								"-%dMODIFIER_PROPERTY_MOVESPEED_BONUS_PERCENTAGE%%% move speed and walking towards Buccaneer."
 
 		"DOTA_Tooltip_ability_buccaneer_maelstrom"									"Maelstrom"
 		"DOTA_Tooltip_ability_buccaneer_maelstrom_Description"						"Summons a rising torrent which pulls enemies inward. After %torrent_delay% seconds, hurl enemies into the sky, stunning, dealing damage and slowing movement speed.\n<font color='#ff0000'>Marked</font> enemies create an additional Maelstrom but remove the <font color='#ff0000'>Mark</font>."

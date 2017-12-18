@@ -237,6 +237,7 @@
 		"AttachWearables"
 		{
 			"hair"			"models/items/lina/esl_divine_flame_head/esl_divine_flame_head.vmdl"
+			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
 		}
 		
 		"HeroValues"
@@ -343,6 +344,11 @@
 		"Ability15"		"generic_empty_talent_3"
 		"Ability16"		"special_bonus_hp_400"
 		"Ability17"		"generic_empty_talent_4"
+		
+		"AttachWearables"
+		{
+			"ambient"			"particles/units/heroes/hero_necrolyte/necrolyte_ambient_glow.vpcf"
+		}
 		
 		"HeroValues"
 		{
@@ -655,6 +661,11 @@
 		"Ability15"		"special_bonus_mp_200"
 		"Ability16"		"generic_empty_talent_3"
 		"Ability17"		"generic_empty_talent_4"
+		
+		"AttachWearables"
+		{
+			"ambient"		"particles/units/heroes/hero_shadow_demon/shadow_demon_ambient.vpcf"
+		}
 	
 		"HeroValues"
 		{
@@ -761,6 +772,11 @@
 		"Ability15"		"generic_empty_talent_2"
 		"Ability16"		"wraith_one_for_all_talent_1"
 		"Ability17"		"generic_empty_talent_4"
+		
+		"AttachWearables"
+		{
+			"ambient"			"particles/units/heroes/hero_skeletonking/wraith_king_ambient.vpcf"
+		}
 		
 		"HeroValues"
 		{
@@ -967,6 +983,11 @@
 		"Ability15"		"special_bonus_mp_200"
 		"Ability16"		"generic_empty_talent_3"
 		"Ability17"		"generic_empty_talent_4"
+		
+		"AttachWearables"
+		{
+			"ambient"			"particles/units/heroes/hero_templar_assassin/templar_assassin_ambient.vpcf"
+		}
 		
 		"HeroValues"
 		{
