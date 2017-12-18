@@ -234,6 +234,11 @@
 		"Ability17"		"generic_empty_talent_3"
 		"Ability18"		"generic_empty_talent_4"
 		
+		"AttachWearables"
+		{
+			"hair"			"models/items/lina/esl_divine_flame_head/esl_divine_flame_head.vmdl"
+		}
+		
 		"HeroValues"
 		{
 			"Support"			"2"

@@ -89,7 +89,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -224,7 +224,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -260,7 +260,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -296,7 +296,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -332,7 +332,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -368,7 +368,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -404,7 +404,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -445,7 +445,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -486,7 +486,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -527,7 +527,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -568,7 +568,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -609,8 +609,15 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"helm"						"models/items/legion_commander/errant_cowl/errant_cowl.vmdl"
+			"shoulder"					"models/items/legion_commander/errant_pauldrons/errant_pauldrons.vmdl"
+			"arms"						"models/items/legion_commander/errant_bracers/errant_bracers.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -646,7 +653,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
-	
+		
+		"Wearables"
+		{
+			"helm"						"models/heroes/legion_commander/legion_commander_head.vmdl"
+			"shoulder"					"models/heroes/legion_commander/legion_commander_shoulders.vmdl"
+			"arms"						"models/heroes/legion_commander/legion_commander_arms.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -682,7 +695,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
-	
+		
+		"Wearables"
+		{
+			"helm"						"models/items/legion_commander/immortalspride_head/immortalspride_head.vmdl"
+			"shoulder"					"models/items/legion_commander/immortalspride_shoulder/immortalspride_shoulder.vmdl"
+			"arms"						"models/items/legion_commander/immortalspride_arms/immortalspride_arms.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -718,7 +737,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
-	
+		
+		"Wearables"
+		{
+			"helm"						"models/items/legion_commander/valkyrie_head/valkyrie_head.vmdl"
+			"shoulder"					"models/items/legion_commander/battlefield_shoulder/battlefield_shoulder.vmdl"
+			"arms"						"models/items/legion_commander/valkyrie_arms/valkyrie_arms.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -754,7 +779,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
-	
+		
+		"Wearables"
+		{
+			"helm"						"models/items/legion_commander/stonehall_head/stonehall_head.vmdl"
+			"shoulder"					"models/items/legion_commander/stonehall_shoulder/stonehall_shoulder.vmdl"
+			"arms"						"models/items/legion_commander/stonehall_arms/stonehall_arms.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -794,8 +825,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"banner"					"models/items/legion_commander/errant_standards/errant_standards.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -835,8 +871,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"banner"					"models/heroes/legion_commander/legion_commander_back.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -876,8 +917,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"banner"					"models/items/legion_commander/arms_of_the_onyx_crucible_back_red/arms_of_the_onyx_crucible_back_red.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -917,8 +963,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"banner"					"models/items/legion_commander/stonehall_back/stonehall_back.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -958,8 +1009,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"banner"					"models/items/legion_commander/battlefield_back/battlefield_back.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -999,8 +1055,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"halberd"					"models/items/legion_commander/errant_spear/errant_spear.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -1030,9 +1091,14 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	
+		
+		"Wearables"
+		{
+			"halberd"					"models/heroes/legion_commander/legion_commander_weapon.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -1061,8 +1127,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"halberd"					"models/items/legion_commander/immortalspride_weapon/immortalspride_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -1092,8 +1163,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"halberd"					"models/items/legion_commander/stonehall_weapon/stonehall_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -1123,8 +1199,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"halberd"					"models/items/legion_commander/promo_arms_of_the_onyx_crucible_weapon/promo_arms_of_the_onyx_crucible_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -1154,7 +1235,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1314,7 +1395,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1355,7 +1436,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1396,7 +1477,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1437,7 +1518,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1478,7 +1559,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1519,7 +1600,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1560,7 +1641,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1601,7 +1682,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1642,7 +1723,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1683,7 +1764,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -1724,9 +1805,15 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	
+		
+		"Wearables"
+		{
+			"sleeves"					"models/heroes/lina/lina_arms.vmdl"
+			"skirt"						"models/heroes/lina/lina_belt.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -1751,7 +1838,12 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
-	
+		
+		"Wearables"
+		{
+			"sleeves"					"models/items/lina/everlastingheat_arms/everlastingheat_arms.vmdl"
+			"skirt"						"models/items/lina/everlastingheat_belt/everlastingheat_belt.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -1778,7 +1870,12 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
 	
-	
+		"Wearables"
+		{
+			"sleeves"					"models/items/lina/bewitching_flame_arms/bewitching_flame_arms.vmdl"
+			"skirt"						"models/items/lina/bewitching_flame_belt/bewitching_flame_belt.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -1804,7 +1901,12 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
 	
-	
+		"Wearables"
+		{
+			"sleeves"					"models/items/lina/warhawk_vestiments_arms/warhawk_vestiments_arms.vmdl"
+			"skirt"						"models/items/lina/warhawk_vestiments_skirt/warhawk_vestiments_skirt.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -1830,7 +1932,12 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
 	
-	
+		"Wearables"
+		{
+			"sleeves"					"models/items/lina/esl_divine_flame_arms/esl_divine_flame_arms.vmdl"
+			"skirt"						"models/items/lina/esl_divine_flame_belt/esl_divine_flame_belt.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -1859,9 +1966,14 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	
+		
+		"Wearables"
+		{
+			"necklace"					"models/heroes/lina/lina_neck.vmdl"
+		}
+
 		"AbilitySpecial"
 		{
 			"01"
@@ -1895,8 +2007,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"necklace"					"models/items/lina/warhawk_vestiments_necklace/warhawk_vestiments_necklace.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -1931,9 +2048,14 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	
+		
+		"Wearables"
+		{
+			"necklace"					"models/items/lina/scales_of_the_burning_dragon_neck/scales_of_the_burning_dragon_neck.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -1967,8 +2089,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"necklace"					"models/items/lina/migrant_blaze_neck/migrant_blaze_neck.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -2003,8 +2130,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"necklace"					"models/items/lina/esl_divine_flame_neck/esl_divine_flame_neck.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -2039,7 +2171,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2080,7 +2212,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2121,7 +2253,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2162,7 +2294,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2203,7 +2335,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2244,7 +2376,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2429,7 +2561,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2465,7 +2597,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2501,7 +2633,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2537,7 +2669,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2573,7 +2705,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2609,7 +2741,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2645,7 +2777,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2681,7 +2813,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2717,7 +2849,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2753,7 +2885,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2789,7 +2921,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2949,7 +3081,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -2985,7 +3117,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3021,7 +3153,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3057,7 +3189,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3093,7 +3225,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3129,7 +3261,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3170,7 +3302,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3211,7 +3343,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3252,7 +3384,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3293,7 +3425,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3334,7 +3466,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3489,7 +3621,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3520,7 +3652,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3551,7 +3683,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3582,7 +3714,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3613,7 +3745,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3644,7 +3776,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3680,7 +3812,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3716,7 +3848,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3752,7 +3884,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3788,7 +3920,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -3824,7 +3956,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -3867,7 +3999,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -3910,7 +4042,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -3954,7 +4086,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -3998,7 +4130,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4040,7 +4172,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4081,7 +4213,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4122,7 +4254,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4163,7 +4295,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4204,7 +4336,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4245,7 +4377,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4291,7 +4423,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4337,7 +4469,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4383,7 +4515,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4429,7 +4561,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -4476,7 +4608,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4636,7 +4768,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4667,7 +4799,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4698,7 +4830,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4729,7 +4861,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4760,7 +4892,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4791,7 +4923,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4832,7 +4964,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4873,7 +5005,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4914,7 +5046,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4955,7 +5087,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
 		"AbilitySpecial"
@@ -4997,7 +5129,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5188,7 +5320,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5229,7 +5361,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5270,7 +5402,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5311,7 +5443,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5352,7 +5484,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5393,7 +5525,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5439,7 +5571,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5485,7 +5617,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5531,7 +5663,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5577,7 +5709,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"
@@ -5625,7 +5757,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -5785,7 +5917,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -5826,7 +5958,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -5867,7 +5999,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -5908,7 +6040,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -5949,7 +6081,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -5990,7 +6122,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6026,7 +6158,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6062,7 +6194,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6098,7 +6230,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6134,7 +6266,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6170,7 +6302,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6305,7 +6437,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6346,7 +6478,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6387,7 +6519,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6428,7 +6560,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6469,7 +6601,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6510,7 +6642,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6546,7 +6678,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6582,7 +6714,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6618,7 +6750,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
@@ -6654,7 +6786,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable	"				"0"
+		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 
 		"AbilitySpecial"
