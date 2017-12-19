@@ -1,0 +1,179 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 512
+	m_nConstantSequenceNumber = 7
+	m_nGroupID = 3
+	m_flMaxDrawDistance = 2000.0
+	m_bShouldSort = false
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderSprites"
+			m_nSequenceCombineMode = "SEQUENCE_COMBINE_MODE_USE_SEQUENCE_0"
+			m_hTexture = resource:"materials/particle/splash_sprites1/splash_sprites1.vtex"
+			m_nOrientationType = 3
+			m_flAnimationRate = 1.5
+			m_bSaturateColorPreAlphaBlend = false
+			m_flAddSelfAmount = 3.0
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_Gravity = [ 0.0, 0.0, -600.0 ]
+			m_fDrag = 0.05
+			m_flOpTimeOffsetMax = 1.0
+			m_flOpStrengthMinScale = 0.0
+		},
+		{
+			_class = "C_OP_FadeOut"
+			m_flFadeOutTimeMin = 0.4
+			m_flFadeOutTimeMax = 0.5
+			m_bEaseInAndOut = false
+			m_flFadeBias = 0.65
+			m_flOpTimeOffsetMax = 1.0
+			m_flOpStrengthMinScale = 0.0
+		},
+		{
+			_class = "C_OP_Decay"
+			m_flOpTimeOffsetMax = 1.0
+			m_flOpStrengthMinScale = 0.0
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flEndScale = 1.6
+			m_flBias = 0.6
+			m_flOpTimeOffsetMax = 1.0
+			m_flOpStrengthMinScale = 0.0
+		},
+		{
+			_class = "C_OP_RemapDirectionToCPToVector"
+			m_flOffsetRot = 180.0
+			m_bNormalize = true
+			m_nFieldOutput = 21
+			m_nCP = 2
+		},
+		{
+			_class = "C_OP_ColorInterpolate"
+			m_flFadeStartTime = 0.3
+		},
+		{
+			_class = "C_OP_SetControlPointPositions"
+			m_vecCP3Pos = [ -32.0, -48.0, 0.0 ]
+			m_nHeadLocation = 3
+			m_vecCP2Pos = [ -260.0, -64.0, -260.0 ]
+			m_vecCP1Pos = [ -260.0, 64.0, -260.0 ]
+			m_nCP3 = 4
+			m_nCP4 = 5
+		},
+		{
+			_class = "C_OP_FadeOutSimple"
+			m_nFieldOutput = 16
+			m_flFadeOutTime = 0.5
+		},
+		{
+			_class = "C_OP_RemapCPOrientationToYaw"
+			m_nCP = 3
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_RandomRadius"
+			m_flRadiusMin = 36.0
+			m_flRadiusMax = 58.0
+			m_flOpTimeOffsetMax = 1.0
+			m_flOpStrengthMinScale = 0.0
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMin = 0.7
+			m_fLifetimeMax = 0.8
+			m_flOpTimeOffsetMax = 1.0
+			m_flOpStrengthMinScale = 0.0
+		},
+		{
+			_class = "C_INIT_RandomAlpha"
+			m_nAlphaMax = 40
+			m_nAlphaMin = 20
+			m_flOpTimeOffsetMax = 1.0
+			m_flOpStrengthMinScale = 0.0
+		},
+		{
+			_class = "C_INIT_InitialVelocityNoise"
+			m_bLocalSpace = true
+			m_vecOutputMax = [ 0.0, 0.0, 500.0 ]
+			m_vecOutputMin = [ 0.0, 0.0, 400.0 ]
+			m_flNoiseScaleLoc = 25.0
+			m_flNoiseScale = 5.0
+			m_nControlPointNumber = 3
+		},
+		{
+			_class = "C_INIT_CreateWithinSphere"
+			m_nControlPointNumber = 3
+		},
+		{
+			_class = "C_INIT_PositionOffset"
+			m_bLocalCoords = true
+			m_OffsetMax = [ 32.0, -30.0, 0.0 ]
+			m_OffsetMin = [ -32.0, -30.0, 0.0 ]
+			m_nControlPointNumber = 3
+			m_bDisableOperator = true
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMin = [ 55, 130, 173, 255 ]
+			m_ColorMax = [ 193, 240, 253, 255 ]
+		},
+		{
+			_class = "C_INIT_RandomSequence"
+			m_nSequenceMax = 3
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_ContinuousEmitter"
+			m_flEmitRate = 208.0
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}
