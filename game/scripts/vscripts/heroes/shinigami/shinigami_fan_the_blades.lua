@@ -42,19 +42,22 @@ function shinigami_fan_the_blades:OnSpellStart()
 
 			local ProjectileHit = function(self, target, position)
 				if not target then return end
-				if target == enemy then
-					local caster = self:GetCaster()
-					caster:AddNewModifier(caster, self:GetAbility(), "modifier_shinigami_fan_the_blades_bonusdamage", {}):SetStackCount(baseDamage)
-					caster:PerformAbilityAttack(target, true, self:GetAbility())
-					caster:RemoveModifierByName("modifier_shinigami_fan_the_blades_bonusdamage")
-					if caster:HasTalent("shinigami_fan_the_blades_talent_1") then
-						target:AddNewModifier(caster, self:GetAbility(), "modifier_stunned_generic", {duration = 0.4})
-					end
+				if target == enemy and target:GetTeam() ~= caster:GetTeam() then
+					if not self.hitUnits[target:entindex()] then
+						local caster = self:GetCaster()
+						caster:AddNewModifier(caster, self:GetAbility(), "modifier_shinigami_fan_the_blades_bonusdamage", {}):SetStackCount(baseDamage)
+						caster:PerformAbilityAttack(target, true, self:GetAbility())
+						caster:RemoveModifierByName("modifier_shinigami_fan_the_blades_bonusdamage")
+						if caster:HasTalent("shinigami_fan_the_blades_talent_1") then
+							target:AddNewModifier(caster, self:GetAbility(), "modifier_stunned_generic", {duration = 0.4})
+						end
 
-					-- apply slow
-					target:AddNewModifier(caster, self:GetAbility(), "modifier_shinigami_fan_the_blades_slow", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
-					
-					EmitSoundOn("Hero_PhantomAssassin.Dagger.Target", target)
+						-- apply slow
+						target:AddNewModifier(caster, self:GetAbility(), "modifier_shinigami_fan_the_blades_slow", {duration = self:GetAbility():GetSpecialValueFor("slow_duration")})
+						
+						EmitSoundOn("Hero_PhantomAssassin.Dagger.Target", target)
+						self.hitUnits[target:entindex()] = true
+					end
 				end
 			end --projectilehit
 

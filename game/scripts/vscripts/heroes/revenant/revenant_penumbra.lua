@@ -36,7 +36,7 @@ function revenant_penumbra:OnSpellStart()
 		local duration = self:GetAbility():GetSpecialValueFor("duration")
 		if not target then return end
 		if not self.hitUnits[target:entindex()] then
-			if target:IsAlive() then
+			if target:IsAlive() and target:GetTeam() ~= caster:GetTeam() then
 				EmitSoundOn("Hero_ShadowDemon.ShadowPoison.Impact", target)
 				local nFX = ParticleManager:CreateParticle("particles/econ/items/shadow_demon/sd_ti7_shadow_poison/sd_ti7_shadow_poison_release.vpcf", PATTACH_POINT_FOLLOW, target)
 				ParticleManager:SetParticleControlEnt( nFX, 0, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true )

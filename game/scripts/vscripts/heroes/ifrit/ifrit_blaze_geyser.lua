@@ -50,11 +50,14 @@ function ifrit_blaze_geyser:OnSpellStart()
 
 				local ProjectileHit = function(self, target, position)
 					if not target then return false end
-					if target == enemy then
-						self:GetAbility():DealDamage(self:GetCaster(), target, damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
-						if self:GetCaster():HasTalent("ifrit_blaze_geyser_talent_1") then
-							local duration = self:GetCaster():FindSpecificTalentValue("ifrit_blaze_geyser_talent_1", "duration")
-							target:AddNewModifier(self:GetCaster(), self, "modifier_ifrit_blaze_geyser_burn", {duration = duration})
+					if target == enemy and target:GetTeam() ~= self:GetCaster():GetTeam() then
+						if not self.hitUnits[target:entindex()] then
+							self:GetAbility():DealDamage(self:GetCaster(), target, damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
+							if self:GetCaster():HasTalent("ifrit_blaze_geyser_talent_1") then
+								local duration = self:GetCaster():FindSpecificTalentValue("ifrit_blaze_geyser_talent_1", "duration")
+								target:AddNewModifier(self:GetCaster(), self, "modifier_ifrit_blaze_geyser_burn", {duration = duration})
+							end
+							self.hitUnits[target:entindex()] = true
 						end
 						EmitSoundOn("Hero_Jakiro.LiquidFire", target)
 						return false

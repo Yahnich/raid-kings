@@ -52,7 +52,7 @@ function justicar_avenging_wrath:CreateWave(vDir, fVelocity, fWidth, fDistance)
 
 	local ProjectileHit = function(self, target, position)
 		if not target then return end
-		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) then
+		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) and target:GetTeam() ~= self:GetCaster():GetTeam() then
 			if not self.hitUnits[target:entindex()] then
 				local innerSun = hCaster:GetInnerSun()
 				self:GetCaster():ResetInnerSun()

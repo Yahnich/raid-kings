@@ -7,7 +7,7 @@ function sylph_mistral_breeze:OnSpellStart()
 
     local ProjectileHit = function(self, target, position)
 		if not target then return end
-		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) then
+		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) and target:GetTeam() ~= caster:GetTeam() then
 			if not self.hitUnits[target:entindex()] then
 				local damage = self:GetAbility():GetSpecialValueFor("projectile_damage") +  caster:GetIdealSpeed() * self:GetAbility():GetSpecialValueFor("ms_damage") / 100
 
