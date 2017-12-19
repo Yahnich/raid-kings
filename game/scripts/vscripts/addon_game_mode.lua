@@ -304,6 +304,7 @@ function CRaidKings:InitGenericModifiers()
 	LinkLuaModifier( "modifier_stunned_generic", "libraries/modifiers/modifier_stunned_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
 	LinkLuaModifier( "modifier_invisibility_custom", "libraries/modifiers/modifier_invisibility_custom.lua" ,LUA_MODIFIER_MOTION_NONE )
 	LinkLuaModifier( "modifier_shadow_clone", "libraries/modifiers/modifier_shadow_clone.lua" ,LUA_MODIFIER_MOTION_NONE )
+	LinkLuaModifier( "modifier_wearable", "libraries/modifiers/modifier_wearable.lua" ,LUA_MODIFIER_MOTION_NONE )
 end
 
 function CRaidKings:OnHeroPick(event)

@@ -237,7 +237,6 @@
 		"AttachWearables"
 		{
 			"hair"			"models/items/lina/esl_divine_flame_head/esl_divine_flame_head.vmdl"
-			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
 		}
 		
 		"HeroValues"

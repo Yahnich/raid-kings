@@ -59,6 +59,11 @@ function ItemManager:InitWearables(hero)
 					table.insert(self.baseWearables, newWearable)
 				elseif string.match(wearable, "vpcf") then
 					local wearableFX = ParticleManager:CreateParticle(wearable, PATTACH_POINT_FOLLOW , hero)
+					if GameRules.CosmeticsList[wearable] and GameRules.CosmeticsList[wearable].control_points then
+						for cp, attachtype in pairs(GameRules.CosmeticsList[wearable].control_points) do
+							ParticleManager:SetParticleControlEnt(wearableFX, tonumber(cp), hero, PATTACH_POINT_FOLLOW, attachtype, hero:GetAbsOrigin(), true)
+						end
+					end
 					ParticleManager:ReleaseParticleIndex(wearableFX)
 				end
 			end
@@ -101,19 +106,41 @@ function CDOTA_BaseNPC_Hero:SetArmorWearables( wearableTable )
 	for _,v in pairs(wearableTable) do
 		if type(v) == "string" then
 			if string.match(v, "vmdl") then
-				local newWearable = SpawnEntityFromTableSynchronous("prop_dynamic", {model=v}):FollowEntity(self, true)
+				local newWearable = CreateUnitByName("wearable_dummy", Vector(0, 0, 0), false, nil, nil, DOTA_TEAM_NOTEAM)
+				newWearable:SetOriginalModel(v)
+				newWearable:SetModel(v)
+				newWearable:FollowEntity(self, true)
+				newWearable:AddNewModifier(self, nil, "modifier_wearable", {})
 				if GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particles then
 					for _, wearableFX in pairs( GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particles ) do
-						local wFX = ParticleManager:CreateParticle(wearableFX, PATTACH_POINT_FOLLOW , hero)
+						local wFX = ParticleManager:CreateParticle(wearableFX, PATTACH_ABSORIGIN_FOLLOW, newWearable)
+						if GameRules.CosmeticsList[wearableFX] and GameRules.CosmeticsList[wearableFX].control_points then
+							for cp, attachtype in pairs(GameRules.CosmeticsList[wearableFX].control_points) do
+								ParticleManager:SetParticleControlEnt(wFX, tonumber(cp), newWearable, PATTACH_POINT_FOLLOW, attachtype, newWearable:GetAbsOrigin(), true)
+							end
+						end
 						ParticleManager:ReleaseParticleIndex(wFX)
 					end
 				end
 				if GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particle_levelup then
 					local fxName = GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particle_levelup[tostring( self:GetItemManager():GetArmorLevel() )]
-					local wFX = ParticleManager:CreateParticle(fxName, PATTACH_POINT_FOLLOW , hero)
+					local wFX = ParticleManager:CreateParticle(fxName, PATTACH_POINT_FOLLOW , newWearable)
+					if GameRules.CosmeticsList[wearableFX] and GameRules.CosmeticsList[wearableFX].control_points then
+						for cp, attachtype in pairs(GameRules.CosmeticsList[wearableFX].control_points) do
+							ParticleManager:SetParticleControlEnt(wFX, tonumber(cp), newWearable, PATTACH_POINT_FOLLOW, attachtype, newWearable:GetAbsOrigin(), true)
+						end
+					end
 					ParticleManager:ReleaseParticleIndex(wFX)
 				end
 				table.insert(self.armorWearableList, newWearable)
+			elseif string.match(wearable, "vpcf") then
+				local wearableFX = ParticleManager:CreateParticle(wearable, PATTACH_POINT_FOLLOW , hero)
+				if GameRules.CosmeticsList[wearable] and GameRules.CosmeticsList[wearable].control_points then
+					for cp, attachtype in pairs(GameRules.CosmeticsList[wearable].control_points) do
+						ParticleManager:SetParticleControlEnt(wearableFX, tonumber(cp), hero, PATTACH_POINT_FOLLOW, attachtype, hero:GetAbsOrigin(), true)
+					end
+				end
+				ParticleManager:ReleaseParticleIndex(wearableFX)
 			end
 		end
     end
@@ -150,20 +177,41 @@ function CDOTA_BaseNPC_Hero:SetWeaponWearables( wearableTable )
 	for _,v in pairs(wearableTable) do
 		if type(v) == "string" then
 			if string.match(v, "vmdl") then
-				local newWearable = SpawnEntityFromTableSynchronous("prop_dynamic", {model=v}):FollowEntity(self, true)
+				local newWearable = CreateUnitByName("wearable_dummy", Vector(0, 0, 0), false, nil, nil, DOTA_TEAM_NOTEAM)
+				newWearable:SetOriginalModel(v)
+				newWearable:SetModel(v)
+				newWearable:FollowEntity(self, true)
+				newWearable:AddNewModifier(self, nil, "modifier_wearable", {})
 				if GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particles then
 					for _, wearableFX in pairs( GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particles ) do
-						print(wearableFX)
-						local wFX = ParticleManager:CreateParticle(wearableFX, PATTACH_POINT_FOLLOW , hero)
+						local wFX = ParticleManager:CreateParticle(wearableFX, PATTACH_ABSORIGIN_FOLLOW, newWearable)
+						if GameRules.CosmeticsList[wearableFX] and GameRules.CosmeticsList[wearableFX].control_points then
+							for cp, attachtype in pairs(GameRules.CosmeticsList[wearableFX].control_points) do
+								ParticleManager:SetParticleControlEnt(wFX, tonumber(cp), newWearable, PATTACH_POINT_FOLLOW, attachtype, newWearable:GetAbsOrigin(), true)
+							end
+						end
 						ParticleManager:ReleaseParticleIndex(wFX)
 					end
 				end
 				if GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particle_levelup then
 					local fxName = GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particle_levelup[tostring( self:GetItemManager():GetWeaponLevel() )]
-					local wFX = ParticleManager:CreateParticle(fxName, PATTACH_POINT_FOLLOW , hero)
+					local wFX = ParticleManager:CreateParticle(fxName, PATTACH_POINT_FOLLOW , newWearable)
+					if GameRules.CosmeticsList[wearableFX] and GameRules.CosmeticsList[wearableFX].control_points then
+						for cp, attachtype in pairs(GameRules.CosmeticsList[wearableFX].control_points) do
+							ParticleManager:SetParticleControlEnt(wFX, tonumber(cp), newWearable, PATTACH_POINT_FOLLOW, attachtype, newWearable:GetAbsOrigin(), true)
+						end
+					end
 					ParticleManager:ReleaseParticleIndex(wFX)
 				end
 				table.insert(self.weaponWearableList, newWearable)
+			elseif string.match(wearable, "vpcf") then
+				local wearableFX = ParticleManager:CreateParticle(wearable, PATTACH_POINT_FOLLOW , hero)
+				if GameRules.CosmeticsList[wearable] and GameRules.CosmeticsList[wearable].control_points then
+					for cp, attachtype in pairs(GameRules.CosmeticsList[wearable].control_points) do
+						ParticleManager:SetParticleControlEnt(wearableFX, tonumber(cp), hero, PATTACH_POINT_FOLLOW, attachtype, hero:GetAbsOrigin(), true)
+					end
+				end
+				ParticleManager:ReleaseParticleIndex(wearableFX)
 			end
 		end
     end
@@ -178,7 +226,6 @@ function ItemManager:GetOtherLevel()
 end
 
 function ItemManager:UpgradeOther()
-	print(self.currentOther, #self.otherTable)
 	if self.currentOther < #self.otherTable then
 		if self:GetEquippedOther() then
 			self:GetOwner():RemoveItem(self.otherTable[self:GetEquippedOther()] )
@@ -201,19 +248,41 @@ function CDOTA_BaseNPC_Hero:SetOtherWearables( wearableTable )
 	for _,v in pairs(wearableTable) do
 		if type(v) == "string" then
 			if string.match(v, "vmdl") then
-				local newWearable = SpawnEntityFromTableSynchronous("prop_dynamic", {model=v}):FollowEntity(self, true)
+				local newWearable = CreateUnitByName("wearable_dummy", Vector(0, 0, 0), false, nil, nil, DOTA_TEAM_NOTEAM)
+				newWearable:SetOriginalModel(v)
+				newWearable:SetModel(v)
+				newWearable:FollowEntity(self, true)
+				newWearable:AddNewModifier(self, nil, "modifier_wearable", {})
 				if GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particles then
 					for _, wearableFX in pairs( GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particles ) do
-						local wFX = ParticleManager:CreateParticle(wearableFX, PATTACH_POINT_FOLLOW , hero)
+						local wFX = ParticleManager:CreateParticle(wearableFX, PATTACH_ABSORIGIN_FOLLOW, newWearable)
+						if GameRules.CosmeticsList[wearableFX] and GameRules.CosmeticsList[wearableFX].control_points then
+							for cp, attachtype in pairs(GameRules.CosmeticsList[wearableFX].control_points) do
+								ParticleManager:SetParticleControlEnt(wFX, tonumber(cp), newWearable, PATTACH_POINT_FOLLOW, attachtype, newWearable:GetAbsOrigin(), true)
+							end
+						end
 						ParticleManager:ReleaseParticleIndex(wFX)
 					end
 				end
 				if GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particle_levelup then
 					local fxName = GameRules.CosmeticsList[v] and GameRules.CosmeticsList[v].particle_levelup[tostring( self:GetItemManager():GetOtherLevel() )]
-					local wFX = ParticleManager:CreateParticle(fxName, PATTACH_POINT_FOLLOW , hero)
+					local wFX = ParticleManager:CreateParticle(fxName, PATTACH_POINT_FOLLOW , newWearable)
+					if GameRules.CosmeticsList[wearableFX] and GameRules.CosmeticsList[wearableFX].control_points then
+						for cp, attachtype in pairs(GameRules.CosmeticsList[wearableFX].control_points) do
+							ParticleManager:SetParticleControlEnt(wFX, tonumber(cp), newWearable, PATTACH_POINT_FOLLOW, attachtype, newWearable:GetAbsOrigin(), true)
+						end
+					end
 					ParticleManager:ReleaseParticleIndex(wFX)
 				end
 				table.insert(self.otherWearableList, newWearable)
+			elseif string.match(wearable, "vpcf") then
+				local wearableFX = ParticleManager:CreateParticle(wearable, PATTACH_POINT_FOLLOW , hero)
+				if GameRules.CosmeticsList[wearable] and GameRules.CosmeticsList[wearable].control_points then
+					for cp, attachtype in pairs(GameRules.CosmeticsList[wearable].control_points) do
+						ParticleManager:SetParticleControlEnt(wearableFX, tonumber(cp), hero, PATTACH_POINT_FOLLOW, attachtype, hero:GetAbsOrigin(), true)
+					end
+				end
+				ParticleManager:ReleaseParticleIndex(wearableFX)
 			end
 		end
     end

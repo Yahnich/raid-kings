@@ -2171,8 +2171,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -2214,6 +2219,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -2253,8 +2263,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -2294,8 +2309,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -2335,8 +2355,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hands"			"particles/econ/items/lina/lina_head_headflame/lina_flame_hand_dual_headflame.vpcf"
+		}
 	
 		"AbilitySpecial"
 		{
