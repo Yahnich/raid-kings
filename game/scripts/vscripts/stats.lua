@@ -30,7 +30,9 @@ function Stats:constructor(hero)
 end
 
 function Stats:ManageStats(hero)
-	local data = CustomNetTables:GetTableValue("hero_properties", hero:GetUnitName()..hero:entindex() ) or {}
+	local ogHero = hero
+	if hero:IsIllusion() then ogHero = hero:GetOwnerEntity() end
+	local data = CustomNetTables:GetTableValue("hero_properties", hero:GetUnitName()..ogHero:entindex() ) or {}
 	self.customIntellect = hero:GetBaseIntellect() + hero:GetLevel() * hero:GetIntellectGain()
 	self.customStrength = hero:GetBaseStrength() + hero:GetLevel() * hero:GetStrengthGain()
 	self.customAgility = hero:GetBaseAgility() + hero:GetLevel() * hero:GetAgilityGain()
@@ -132,7 +134,7 @@ function Stats:ManageStats(hero)
 	
 	
 	hero:AddNewModifier(hero, nil, "modifier_stat_handler", {})
-	CustomNetTables:SetTableValue("hero_properties", hero:GetUnitName()..hero:entindex(), data )
+	CustomNetTables:SetTableValue("hero_properties", hero:GetUnitName()..ogHero:entindex(), data )
 	
 	hero:CalculateStatBonus()
 end

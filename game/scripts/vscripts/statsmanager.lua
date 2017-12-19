@@ -29,7 +29,6 @@ function StatsManager:StatsThink()
 					print(err)
 				end
 			else
-				CustomNetTables:SetTableValue("hero_properties", hero:GetUnitName()..hero:entindex(), nil )
 				self.heroes[id] = nil
 			end
 		end
