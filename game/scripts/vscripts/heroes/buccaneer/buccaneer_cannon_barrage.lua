@@ -77,6 +77,10 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 modifier_cannon_ball_armor_remove = class({})
+function modifier_cannon_ball_armor_remove:OnCreated(table)
+	self.armor = self:GetParent():GetPhysicalArmorValue()*-1
+end
+
 function modifier_cannon_ball_armor_remove:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_PHYSICAL_ARMOR_BONUS
@@ -85,7 +89,7 @@ function modifier_cannon_ball_armor_remove:DeclareFunctions()
 end
 
 function modifier_cannon_ball_armor_remove:GetModifierPhysicalArmorBonus()
-	return -100
+	return self.armor
 end
 
 function modifier_cannon_ball_armor_remove:IsDebuff()
