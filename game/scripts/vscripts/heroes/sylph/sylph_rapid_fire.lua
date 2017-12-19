@@ -39,7 +39,7 @@ function sylph_rapid_fire:ShootArrow( vDir )
 	if self.arrows >= 1 then
 		local ProjectileHit = function(self, target, position)
 			if not target then return end
-			if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) then
+			if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) and target:GetTeam() ~= self:GetCaster():GetTeam() then
 				if not self.hitUnits[target:entindex()] then
 					self:GetCaster():PerformAttack( target, true, true, true, true, false, false, false )
 					EmitSoundOn("Hero_Windrunner.PowershotDamage", target)

@@ -41,23 +41,26 @@ function wraith_wraithfire:OnSpellStart()
 
 	local ProjectileHit = function(self, target, position)
 		if not target then return end
-		if target == abiltarget then
-			EmitSoundOn("Hero_SkeletonKing.Hellfire_BlastImpact", target)
-			local caster = self:GetCaster()
-			
-			self:GetAbility():DealDamage(caster, target, blast_damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
-			
-			local enemies = caster:FindEnemyUnitsInRadius(target:GetAbsOrigin(), radius, {})
-			local duration = self:GetAbility():GetSpecialValueFor("blast_dot_duration")
-			target:AddNewModifier(caster, self:GetAbility(), "modifier_stunned_generic", {duration = self:GetAbility():GetSpecialValueFor("blast_stun_duration")})
-			for _, enemy in pairs(enemies) do
-				enemy:AddNewModifier(caster, self:GetAbility(), "modifier_wraith_wraithfire_dot", {duration = duration})
+		if target == abiltarget and target:GetTeam() ~= self:GetCaster():GetTeam() then
+			if not self.hitUnits[target:entindex()] then
+				EmitSoundOn("Hero_SkeletonKing.Hellfire_BlastImpact", target)
+				local caster = self:GetCaster()
+				
+				self:GetAbility():DealDamage(caster, target, blast_damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
+				
+				local enemies = caster:FindEnemyUnitsInRadius(target:GetAbsOrigin(), radius, {})
+				local duration = self:GetAbility():GetSpecialValueFor("blast_dot_duration")
+				target:AddNewModifier(caster, self:GetAbility(), "modifier_stunned_generic", {duration = self:GetAbility():GetSpecialValueFor("blast_stun_duration")})
+				for _, enemy in pairs(enemies) do
+					enemy:AddNewModifier(caster, self:GetAbility(), "modifier_wraith_wraithfire_dot", {duration = duration})
+				end
+				local explosion = ParticleManager:CreateParticle("particles/heroes/wraith/wraith_wraithfire_explosion_2.vpcf", PATTACH_POINT_FOLLOW, target)
+					ParticleManager:SetParticleControl(explosion, 1, Vector(radius,0,0))
+					--ParticleManager:SetParticleControl(explosion, 3, target:GetAbsOrigin())
+					ParticleManager:SetParticleControlEnt(explosion, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
+					ParticleManager:ReleaseParticleIndex(explosion)
+				self.hitUnits[target:entindex()] = true
 			end
-			local explosion = ParticleManager:CreateParticle("particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast_explosion_ebf.vpcf", PATTACH_POINT_FOLLOW, target)
-				ParticleManager:SetParticleControl(explosion, 1, Vector(radius,0,0))
-				--ParticleManager:SetParticleControl(explosion, 3, target:GetAbsOrigin())
-				ParticleManager:SetParticleControlEnt(explosion, 3, target, PATTACH_POINT_FOLLOW, "attach_hitloc", target:GetAbsOrigin(), true)
-				ParticleManager:ReleaseParticleIndex(explosion)
 			return false
 		else
 			return true

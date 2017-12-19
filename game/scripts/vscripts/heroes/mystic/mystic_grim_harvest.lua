@@ -46,7 +46,7 @@ function mystic_grim_harvest:OnSpellStart()
 		homeEnemies = nil
 	end
 	local ProjectileHit = function(self, target, position)
-		if target then
+		if target and target:GetTeam() ~= self:GetCaster():GetTeam() then
 			local caster = self:GetCaster()
 			local ability = self:GetAbility()
 			target:AddNewModifier(caster, ability, "modifier_mystic_grim_harvest_debuff", {duration = 0.5})

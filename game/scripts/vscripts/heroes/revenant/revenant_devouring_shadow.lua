@@ -5,12 +5,14 @@ LinkLuaModifier( "modifier_devouring_shadow", "heroes/revenant/revenant_devourin
 LinkLuaModifier( "modifier_penumbra", "heroes/revenant/revenant_penumbra.lua" ,LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
 function revenant_devouring_shadow:GetIntrinsicModifierName()
-	return "modifier_devouring_shadow_stacks_counter"
+	if self:IsTrained() then
+		return "modifier_devouring_shadow_stacks_counter"
+	end
 end
 
 function revenant_devouring_shadow:OnUpgrade()
 	if self:GetLevel() < 2 then
-		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_devouring_shadow_stacks", {}):SetStackCount(3)
+		self:GetCaster():AddNewModifier(self:GetCaster(), self, "modifier_devouring_shadow_stacks", {}):SetStackCount(self:GetSpecialValueFor("max_charge"))
 	end
 end
 
@@ -55,12 +57,15 @@ function revenant_devouring_shadow:OnSpellStart()
 				if not target then return false end
 				local caster = self:GetCaster()
 				local ability = self:GetAbility()
-				if target:IsAlive() and not target:IsMagicImmune() and target == abiltarget then
-					local damage = self:GetAbility():DealDamage(caster, target, damage*stackCount, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
-					target:AddNewModifier(caster, ability, "modifier_devouring_shadow", {Duration=duration, damage=damage})
-					if target:HasModifier("modifier_penumbra") then
-						target:RemoveModifierByName("modifier_penumbra")
-						target:AddNewModifier(caster, ability, "modifier_stunned_generic", {Duration=stun})
+				if target:IsAlive() and not target:IsMagicImmune() and target == abiltarget and target:GetTeam() ~= caster:GetTeam() then
+					if not self.hitUnits[target:entindex()] then
+						local damage = self:GetAbility():DealDamage(caster, target, damage*stackCount, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
+						target:AddNewModifier(caster, ability, "modifier_devouring_shadow", {Duration=duration, damage=damage})
+						if target:HasModifier("modifier_penumbra") then
+							target:RemoveModifierByName("modifier_penumbra")
+							target:AddNewModifier(caster, ability, "modifier_stunned_generic", {Duration=stun})
+						end
+						self.hitUnits[target:entindex()] = true
 					end
 					return false
 				else
@@ -75,7 +80,8 @@ function revenant_devouring_shadow:OnSpellStart()
 																			  speed = speed,
 																			  radius = radius,
 																			  velocity = vVelocity,
-																			  duration = projectileLife})
+																			  duration = projectileLife,
+																			  hitUnits = {}})
 		end
 	end
 end
@@ -105,10 +111,6 @@ end
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
 modifier_devouring_shadow_stacks = class({})
-
-function modifier_devouring_shadow_stacks:OnCreated(table)
-end
-
 function modifier_devouring_shadow_stacks:IsDebuff()
 	return false
 end
@@ -119,9 +121,8 @@ end
 modifier_devouring_shadow = class({})
 
 function modifier_devouring_shadow:OnCreated(table)
-	self.damage = table.damage or 0
-
 	if IsServer() then
+		self.damage = table.damage or 0
 		self:StartIntervalThink(1.0)
 	end
 end

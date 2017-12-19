@@ -55,7 +55,6 @@ end
 modifier_x_marks = class({})
 
 function modifier_x_marks:OnCreated( kv )
-	self.bonus_damage = self:GetAbility():GetSpecialValueFor( "bonus_damage" )
 	self.unitOgPos = self:GetParent():GetAbsOrigin()
 	self.caster = self:GetCaster()
 	EmitSoundOn("Ability.XMark.Target_Movement",self:GetParent())
@@ -63,9 +62,11 @@ end
 
 function modifier_x_marks:OnRemoved()
 	if IsServer() then
-		FindClearSpaceForUnit(self:GetParent(),self.unitOgPos,true)
-		StopSoundOn("Ability.XMark.Target_Movement",self:GetParent())
-		EmitSoundOn("Ability.XMarksTheSpot.Return",self:GetParent())
+		if self:GetRemainingTime() < 1 then
+			FindClearSpaceForUnit(self:GetParent(),self.unitOgPos,true)
+			StopSoundOn("Ability.XMark.Target_Movement",self:GetParent())
+			EmitSoundOn("Ability.XMarksTheSpot.Return",self:GetParent())
+		end
 	end
 end
 
@@ -84,8 +85,8 @@ function modifier_x_marks:DeclareFunctions()
 	return funcs
 end
 
-function modifier_x_marks:GetModifierIncomingDamage_Percentage()
-	return self.bonus_damage
+function modifier_x_marks:GetModifierIncomingPhysicalDamage_Percentage()
+	return self:GetSpecialValueFor( "bonus_damage" )
 end
 
 function modifier_x_marks:IsDebuff()

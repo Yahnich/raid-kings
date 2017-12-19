@@ -43,7 +43,7 @@ function forest_vine_whip:OnSpellStart()
 
 	local ProjectileHit = function(self, target, position)
 		if not target then return end
-		if target ~= nil then
+		if target ~= nil and target:GetTeam() ~= caster:GetTeam() then
 			if not self.hitUnits[target:entindex()] then
 				if target:GetTeam() ~= caster:GetTeam() then
 					ability:DealDamage(caster, target, damage)

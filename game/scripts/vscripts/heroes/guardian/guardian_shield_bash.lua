@@ -13,7 +13,7 @@ function guardian_shield_bash:OnSpellStart()
 
 	local ProjectileHit = function(self, target, position)
 		if not target then return end
-		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) then
+		if target ~= nil and ( not target:IsMagicImmune() ) and ( not target:IsInvulnerable() ) and target:GetTeam() ~= caster:GetTeam() then
 			if not self.hitUnits[target:entindex()] then
 				self:GetAbility():DealDamage(caster, target, damage, {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 				
