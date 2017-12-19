@@ -1,0 +1,154 @@
+<!-- kv3 encoding:text:version{e21c7f3c-8a33-41c5-9977-a76d3a32aa0d} format:generic:version{7412167c-06e9-4698-aff2-e63eb59037e7} -->
+{
+	_class = "CParticleSystemDefinition"
+	m_bShouldHitboxesFallbackToRenderBounds = false
+	m_nMaxParticles = 16
+	m_flConstantRadius = 1.25
+	m_bShouldSort = false
+	m_flMaxRecreationTime = -1.0
+	m_Renderers = 
+	[
+		{
+			_class = "C_OP_RenderDeferredLight"
+			m_ColorScale = [ 63, 166, 231 ]
+			m_flStartFalloff = 0.0001
+			m_flAlphaScale = 12.0
+			m_flRadiusScale = 700.0
+			m_hTexture = resource:"materials/particle/arrow_mirana.vtex"
+			m_bDisableOperator = true
+		},
+	]
+	m_Operators = 
+	[
+		{
+			_class = "C_OP_BasicMovement"
+			m_nOpEndCapState = 0
+		},
+		{
+			_class = "C_OP_InterpolateRadius"
+			m_flStartScale = 0.0
+			m_flEndTime = 0.5
+			m_flBias = 0.75
+		},
+		{
+			_class = "C_OP_FadeInSimple"
+			m_flFadeInTime = 1.0
+		},
+		{
+			_class = "C_OP_EndCapTimedDecay"
+			m_flDecayTime = 0.3
+		},
+		{
+			_class = "C_OP_PositionLock"
+			m_nControlPointNumber = 3
+		},
+	]
+	m_Initializers = 
+	[
+		{
+			_class = "C_INIT_CreateWithinSphere"
+		},
+		{
+			_class = "C_INIT_RandomLifeTime"
+			m_fLifetimeMax = 0.2
+			m_fLifetimeMin = 0.2
+		},
+		{
+			_class = "C_INIT_RandomColor"
+			m_ColorMax = [ 193, 240, 253, 255 ]
+			m_ColorMin = [ 55, 130, 173, 255 ]
+		},
+	]
+	m_Emitters = 
+	[
+		{
+			_class = "C_OP_InstantaneousEmitter"
+			m_nParticlesToEmit = 1
+		},
+	]
+	m_Children = 
+	[
+		{
+			m_bEndCap = true
+			m_ChildRef = resource:"particles/heroes/buccaneer/buccaneer_crestrider_splash_a_endcap.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/heroes/buccaneer/buccaneer_crestrider_splash_a.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/heroes/buccaneer/buccaneer_crestrider_wave_1.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/heroes/buccaneer/buccaneer_crestrider_wave_2.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/heroes/buccaneer/buccaneer_crestrider_splash_f.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/heroes/buccaneer/buccaneer_wavebreaker_puddle.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/heroes/buccaneer/buccaneer_wavebreaker_rings.vpcf"
+		},
+		{
+			m_ChildRef = resource:"particles/heroes/buccaneer/buccaneer_wavebreaker_spray.vpcf"
+		},
+	]
+	m_controlPointConfigurations = 
+	[
+		{
+			m_name = "preview"
+			m_drivers = 
+			[
+				{
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 1
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 1.0, 1.0, 1.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 2
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 3
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 4
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 5
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+				{
+					m_iControlPoint = 10
+					m_iAttachType = "PATTACH_WORLDORIGIN"
+					m_vecOffset = [ 0.0, 0.0, 0.0 ]
+					m_angOffset = [ null, null, null ]
+					m_entityName = "self"
+				},
+			]
+		},
+	]
+}
