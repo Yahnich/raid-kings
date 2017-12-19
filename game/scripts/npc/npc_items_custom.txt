@@ -100,7 +100,7 @@
 		"Wearables"
 		{
 			"helm"						"models/items/kunkka/kunkka_bandana.vmdl"
-			//"shoulder"					"models/items/legion_commander/errant_pauldrons/errant_pauldrons.vmdl"
+			//"shoulder"				"models/items/legion_commander/errant_pauldrons/errant_pauldrons.vmdl"
 			"arms"						"models/heroes/kunkka/kunkka_hands.vmdl"
 		}
 	
@@ -4754,8 +4754,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"shoulder"					"models/items/necrolyte/apostle_of_decay_shoulder/apostle_of_decay_shoulder.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4786,7 +4791,11 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
-	
+		
+		"Wearables"
+		{
+			"shoulder"					"models/heroes/necrolyte/shoulders.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4817,7 +4826,11 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
-	
+		
+		"Wearables"
+		{
+			"shoulder"					"models/items/necrolyte/heretic_shoulder/heretic_shoulder.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4848,7 +4861,11 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
-	
+		
+		"Wearables"
+		{
+			"shoulder"					"models/items/necrolyte/death_protest_shoulder/death_protest_shoulder.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4879,7 +4896,11 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
-	
+		
+		"Wearables"
+		{
+			"shoulder"					"models/items/necrolyte/immortal_shoulders/immortal_shoulders.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4914,8 +4935,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"head"						"models/items/necrolyte/apostle_of_decay_head/apostle_of_decay_head.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4952,7 +4978,12 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	
+		
+		"Wearables"
+		{
+			"head"						"models/items/necrolyte/the_plaguemonger_plaguemongers_headdress/the_plaguemonger_plaguemongers_headdress.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -4986,8 +5017,14 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"mask"						"models/items/necrolyte/necronub_head/necronub_head.vmdl"
+			"hood"						"models/items/necrolyte/necronub_top/necronub_top.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5022,9 +5059,14 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	
+		
+		"Wearables"
+		{
+			"head"						"models/items/necrolyte/tenplagues_necrolyte_head/tenplagues_necrolyte_head.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -5058,9 +5100,14 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	
+		
+		"Wearables"
+		{
+			"head"						"models/items/necrolyte/heretic_hood/heretic_hood.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -5094,8 +5141,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"scythe"					"models/heroes/necrolyte/necrolyte_sickle.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5135,8 +5187,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"scythe"					"models/items/necrolyte/plague_lord_plague_lord_weapon/plague_lord_plague_lord_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5176,8 +5233,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"scythe"					"models/items/necrolyte/laments_for_the_dead/laments_for_the_dead.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5217,8 +5279,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"scythe"					"models/items/necrolyte/death_protest_weapon/death_protest_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5258,8 +5325,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"scythe"					"models/items/necrolyte/scythe_of_pestilence/scythe_of_pestilence.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
