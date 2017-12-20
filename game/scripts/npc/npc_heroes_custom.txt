@@ -774,6 +774,8 @@
 		"AttachWearables"
 		{
 			"ambient"		"particles/units/heroes/hero_shadow_demon/shadow_demon_ambient.vpcf"
+			"ambient1"		"particles/units/heroes/hero_shadow_demon/shadow_demon_ambient_body.vpcf"
+			"ambient2"		"particles/units/heroes/hero_shadow_demon/shadow_demon_ambient_ground.vpcf"
 		}
 	
 		"HeroValues"

@@ -1,47 +1,5 @@
 "DOTAAbilities"
 {
-	"item_gladiatrix_armor_5"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		"BaseClass"						"item_lua"
-		"ScriptFile"					"items/gladiatrix/item_gladiatrix_armor"
-		"AbilityTextureName"			"item_hood_of_defiance"
-		"ItemCost"						"1500"
-		"ItemShopTags"					"gladiatrix"
-		"ItemQuality"					"armor"
-		"ItemAliases"					"gladiatrix"
-		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
-		"MaxUpgradeLevel" 				"5" 
-		"ItemBaseLevel" 				"5"
-		
-		"Wearables"
-		{
-			"helm"						"models/items/legion_commander/stonehall_head/stonehall_head.vmdl"
-			"shoulder"					"models/items/legion_commander/stonehall_shoulder/stonehall_shoulder.vmdl"
-			"arms"						"models/items/legion_commander/stonehall_arms/stonehall_arms.vmdl"
-		}
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_hp"				"200 400 600 800 1000"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"evasion"				"12 15 17 20 25"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_armor"			"2 3 4 5 6"
-			}
-		}
-	}
 	//=================================================================================================================
 	// Bag of Gold
 	//=================================================================================================================
@@ -1874,6 +1832,14 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"head"					"models/items/sven/sven_mask.vmdl"
+			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
+			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
+			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -1903,6 +1869,14 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
+	
+		"Wearables"
+		{
+			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
+			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
+			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
+			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+		}
 	
 	
 		"AbilitySpecial"
@@ -1935,6 +1909,14 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
 	
+		"Wearables"
+		{
+			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
+			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
+			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
+			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+		}
+	
 	
 		"AbilitySpecial"
 		{
@@ -1965,6 +1947,14 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
+	
+		"Wearables"
+		{
+			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
+			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
+			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
+			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+		}
 	
 	
 		"AbilitySpecial"
@@ -1997,6 +1987,13 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
 	
+		"Wearables"
+		{
+			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
+			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
+			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
+			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5374,6 +5371,11 @@
 		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"armor"				"models/heroes/shadow_demon/shadow_demon_chain.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -5399,6 +5401,10 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
 	
+		"Wearables"
+		{
+			"armor"					"models/items/shadow_demon/chains_bishobola/chains_bishobola.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5425,6 +5431,11 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
 	
+		"Wearables"
+		{
+			"armor"					"models/items/shadow_demon/chains_bishobola/chains_bishobola.vmdl"
+			"armor1"					"models/items/shadow_demon/malicioussting_armor/malicioussting_armor.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5451,6 +5462,12 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
 	
+		"Wearables"
+		{
+			"armor"					"models/items/shadow_demon/chains_bishobola/chains_bishobola.vmdl"
+			"armor1"				"models/items/shadow_demon/malicioussting_armor/malicioussting_armor.vmdl"
+			"armor2"				"models/items/shadow_demon/umbral_descent_armor/umbral_descent_armor.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5477,6 +5494,12 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
 	
+		"Wearables"
+		{
+			"armor"					"models/items/shadow_demon/chains_bishobola/chains_bishobola.vmdl"
+			"armor1"				"models/items/shadow_demon/malicioussting_armor/malicioussting_armor.vmdl"
+			"armor2"				"models/items/shadow_demon/conqueror_measurement_armor/conqueror_measurement_armor.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5508,6 +5531,12 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"belt"					"models/heroes/shadow_demon/shadow_demon_belt.vmdl"
+			"tail"					"models/heroes/shadow_demon/shadow_demon_tail.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5545,6 +5574,12 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"belt"					"models/items/shadow_demon/belt_demonlord/belt_demonlord.vmdl"
+			"tail"					"models/items/shadow_demon/umbral_descent_tail/umbral_descent_tail.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -5578,8 +5613,14 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"belt"					"models/items/shadow_demon/malicioussting_belt/malicioussting_belt.vmdl"
+			"tail"					"models/items/shadow_demon/tail_bishobola/tail_bishobola.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5617,6 +5658,12 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"belt"					"models/items/shadow_demon/umbral_descent_belt/umbral_descent_belt.vmdl"
+			"tail"					"models/items/shadow_demon/malicioussting_tail/malicioussting_tail.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -5653,6 +5700,12 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"belt"					"models/items/shadow_demon/conqueror_measurement_belt/conqueror_measurement_belt.vmdl"
+			"tail"					"models/items/shadow_demon/conqueror_measurement_tail/conqueror_measurement_tail.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -5688,6 +5741,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"back"					"models/heroes/shadow_demon/shadow_demon_cape.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5730,6 +5788,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/shadow_demon/back_ishobolaa/back_ishobolaa.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -5770,6 +5833,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"back"					"models/items/shadow_demon/umbral_descent_back/umbral_descent_back.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5812,6 +5880,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/shadow_demon/malicioussting_back/malicioussting_back.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -5850,8 +5923,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"back"						"models/items/shadow_demon/ti7_immortal_back/sd_ti7_immortal_back.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5894,6 +5972,13 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"head"					"models/heroes/phantom_assassin/phantom_assassin_helmet.vmdl"
+			"shoulder"				"models/heroes/phantom_assassin/phantom_assassin_shoulders.vmdl"
+			"belt"					"models/heroes/phantom_assassin/phantom_assassin_daggers.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -5924,6 +6009,12 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
 	
+		"Wearables"
+		{
+			"head"					"models/items/phantom_assassin/kiss_of_crows_head/kiss_of_crows_head.vmdl"
+			"shoulder"				"models/items/phantom_assassin/sentshoulders_001/sentshoulders_001.vmdl"
+			"belt"					"models/items/phantom_assassin/kiss_of_crows_belt/kiss_of_crows_belt.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5950,6 +6041,13 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
 	
+		"Wearables"
+		{
+			"head"					"models/items/phantom_assassin/dragonterror_helmet/dragonterror_helmet.vmdl"
+			"shoulder"				"models/items/phantom_assassin/dark_wraith_shoulder/dark_wraith_shoulder.vmdl"
+			"belt"					"models/items/phantom_assassin/kiss_of_crows_belt/kiss_of_crows_belt.vmdl"
+			"belt1"					"models/items/phantom_assassin/lodas_pa_set__belt/lodas_pa_set__belt.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -5981,6 +6079,14 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
 	
+		"Wearables"
+		{
+			"head"					"models/items/phantom_assassin/senhelm_001/senhelm_001.vmdl"
+			"shoulder"				"models/items/phantom_assassin/lodas_pa_set__shoulders/lodas_pa_set__shoulders.vmdl"
+			"belt"					"models/items/phantom_assassin/kiss_of_crows_belt/kiss_of_crows_belt.vmdl"
+			"belt1"					"models/items/phantom_assassin/lodas_pa_set__belt/lodas_pa_set__belt.vmdl"
+			"belt2"					"models/items/phantom_assassin/raiments_of_the_shadow_slayer_set_belt/raiments_of_the_shadow_slayer_set_belt.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -6012,6 +6118,15 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
 	
+		"Wearables"
+		{
+			"head"					"models/items/phantom_assassin/dark_wraith_helmet/dark_wraith_helmet.vmdl"
+			"shoulder"				"models/items/phantom_assassin/kiss_of_crows_shoulders/kiss_of_crows_shoulders.vmdl"
+			"belt"					"models/items/phantom_assassin/kiss_of_crows_belt/kiss_of_crows_belt.vmdl"
+			"belt1"					"models/items/phantom_assassin/lodas_pa_set__belt/lodas_pa_set__belt.vmdl"
+			"belt2"					"models/items/phantom_assassin/raiments_of_the_shadow_slayer_set_belt/raiments_of_the_shadow_slayer_set_belt.vmdl"
+			"belt3"					"models/items/phantom_assassin/pa_veil_of_the_shadow_assassin_veil_veil/pa_veil_of_the_shadow_assassin_veil_veil.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -6049,6 +6164,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/phantom_assassin/carreau_back/carreau_back.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -6079,6 +6199,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"back"					"models/heroes/phantom_assassin/phantom_assassin_cape.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -6111,6 +6236,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/phantom_assassin/pa_veil_of_the_shadow_assassin_back_final/pa_veil_of_the_shadow_assassin_back_final.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -6141,6 +6271,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"back"					"models/items/phantom_assassin/sentcloak_001/sentcloak_001.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -6173,6 +6308,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/phantom_assassin/dark_wraith_back/dark_wraith_back.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -6203,6 +6343,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/phantom_assassin/phantom_assasin_doubleblade.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -6240,6 +6385,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"weapon"					"models/items/phantom_assassin/weapon_reaper.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -6275,6 +6425,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/phantom_assassin/phantom_knight_weapon/phantom_knight_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -6312,6 +6467,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"weapon"					"models/items/phantom_assassin/creeping_shadow_weapon/creeping_shadow_weapon.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -6347,6 +6507,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/phantom_assassin/weta_solace_of_divinity_weapon/weta_solace_of_divinity_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -7072,6 +7237,14 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
+			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
+			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
+			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -7102,6 +7275,13 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
 	
+		"Wearables"
+		{
+			"head"					"models/items/wraith_king/sundered_head/sundered_head.vmdl"
+			"shoulder"				"models/items/wraith_king/sundered_shoulder/sundered_shoulder.vmdl"
+			"arms"					"models/items/wraith_king/sundered_arms/sundered_arms.vmdl"
+			"armor"					"models/items/wraith_king/sundered_armor/sundered_armor.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -7133,6 +7313,13 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
 	
+		"Wearables"
+		{
+			"head"					"models/items/wraith_king/kings_spite_head/kings_spite_head.vmdl"
+			"shoulder"				"models/items/wraith_king/kings_spite_shoulder/kings_spite_shoulder.vmdl"
+			"arms"					"models/items/wraith_king/kings_spite_arms/kings_spite_arms.vmdl"
+			"armor"					"models/items/wraith_king/kings_spite_armor/kings_spite_armor.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -7164,6 +7351,13 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
 	
+		"Wearables"
+		{
+			"head"					"models/items/wraith_king/the_scourge_of_winter_head/the_scourge_of_winter_head.vmdl"
+			"shoulder"				"models/items/wraith_king/the_scourge_of_winter_shoulder/the_scourge_of_winter_shoulder.vmdl"
+			"arms"					"models/items/wraith_king/the_scourge_of_winter_arms/the_scourge_of_winter_arms.vmdl"
+			"armor"					"models/items/wraith_king/the_scourge_of_winter_armor/the_scourge_of_winter_armor.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -7194,7 +7388,14 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
-	
+		
+		"Wearables"
+		{
+			"head"					"models/items/wraith_king/the_scourge_of_winter_head/the_scourge_of_winter_head.vmdl"
+			"shoulder"				"models/items/wraith_king/the_scourge_of_winter_shoulder/the_scourge_of_winter_shoulder.vmdl"
+			"arms"					"models/items/wraith_king/blistering_shade/mesh/blistering_shade.vmdl"
+			"armor"					"models/items/wraith_king/aspect_year_beast_armor/aspect_year_beast_armor.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -7232,6 +7433,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/heroes/wraith_king/wraith_king_cape.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -7262,6 +7468,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"back"					"models/items/wraith_king/sundered_back/sundered_back.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -7294,6 +7505,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/wraith_king/kings_spite_back/kings_spite_back.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -7324,6 +7540,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"back"					"models/items/wraith_king/the_scourge_of_winter_back/the_scourge_of_winter_back.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -7356,6 +7577,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/wraith_king/lord_of_the_hunt_back/lord_of_the_hunt_back.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -7386,6 +7612,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/wraith_king/regalia_of_the_bonelord_sword.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -7428,6 +7659,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"weapon"					"models/items/wraith_king/spine_splitter/spine_splitter.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -7468,6 +7704,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/wraith_king/kings_spite_weapon/kings_spite_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -7510,6 +7751,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"weapon"					"models/items/wraith_king/the_scourge_of_winter_weapon/the_scourge_of_winter_weapon.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -7550,6 +7796,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/wraith_king/winterblight_weapon/winterblight_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
