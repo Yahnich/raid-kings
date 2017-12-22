@@ -135,6 +135,7 @@
 			"legs"		"models/items/kunkka/kunkka_pegleg.vmdl"
 			"back"		"models/items/kunkka/first_chance_of_the_kunkkistadore/first_chance_of_the_kunkkistadore.vmdl"
 			"belt"		"models/items/kunkka/second_chance_of_the_kunkkistadore/second_chance_of_the_kunkkistadore.vmdl"
+			"ambient"	"particles/units/heroes/hero_kunkka/kunkka_weapon_glow_ambient.vpcf"
 		}
 		
 		"HeroValues"
@@ -347,6 +348,7 @@
 		"AttachWearables"
 		{
 			"hair"			"models/items/lina/esl_divine_flame_head/esl_divine_flame_head.vmdl"
+			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
 		}
 		
 		"HeroValues"
@@ -991,6 +993,11 @@
 		"Ability15"		"generic_empty_talent_3"
 		"Ability16"		"special_bonus_attack_damage_65"
 		"Ability17"		"generic_empty_talent_4"
+	
+		"AttachWearables"
+		{
+			"back"		"models/items/sven/bulwark_rogue_knight/bulwark_rogue_knight.vmdl"
+		}
 		
 		"HeroValues"
 		{
@@ -1097,7 +1104,9 @@
 		
 		"AttachWearables"
 		{
-			"ambient"			"particles/units/heroes/hero_templar_assassin/templar_assassin_ambient.vpcf"
+			"ambient"			"particles/econ/items/templar_assassin/templar_assassin_weapon_scholar/templar_assassin_ambient_scholar.vpcf"
+			"left_eye"			"particles/units/heroes/hero_templar_assassin/templar_assassin_ambient_eyel.vpcf"
+			"right_eye"			"particles/units/heroes/hero_templar_assassin/templar_assassin_ambient_eyer.vpcf"
 		}
 		
 		"HeroValues"
@@ -1148,14 +1157,14 @@
 		}
 		
 		"ArmorPhysical"		"1"
-		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
 		"AttackDamageMin"		"30"
 		"AttackDamageMax"		"36"
 		"AttackRate"		"1.700000"
 		"AttackAnimationPoint"		"0.300000"
 		"AttackAcquisitionRange"		"800"
 		"AttackRange"		"140"
-		"ProjectileModel"		"particles/units/heroes/hero_templar_assassin/templar_assassin_base_attack.vpcf"
+		"ProjectileModel"		""
 		"ProjectileSpeed"		"900"
 		
 		// Custom Attributes

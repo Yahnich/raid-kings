@@ -58,7 +58,6 @@
 		"Wearables"
 		{
 			"helm"						"models/items/kunkka/kunkka_bandana.vmdl"
-			//"shoulder"				"models/items/legion_commander/errant_pauldrons/errant_pauldrons.vmdl"
 			"arms"						"models/heroes/kunkka/kunkka_hands.vmdl"
 		}
 	
@@ -686,6 +685,12 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"head"					"models/heroes/treant_protector/head.vmdl"
+			"legs"					"models/heroes/treant_protector/legs.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -710,6 +715,12 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
+	
+		"Wearables"
+		{
+			"head"					"models/items/treant/ancient_seal_protector_set_head/ancient_seal_protector_set_head.vmdl"
+			"legs"					"models/items/treant/ancient_seal_protector_set_legs/ancient_seal_protector_set_legs.vmdl"
+		}
 	
 	
 		"AbilitySpecial"
@@ -737,6 +748,12 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
 	
+		"Wearables"
+		{
+			"head"					"models/items/treant/emberbark_head/emberbark_head.vmdl"
+			"legs"					"models/items/treant/emberbark_legs/emberbark_legs.vmdl"
+		}
+	
 	
 		"AbilitySpecial"
 		{
@@ -762,6 +779,11 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
+		"Wearables"
+		{
+			"head"					"models/items/treant/fungal_head/fungal_head.vmdl"
+			"legs"					"models/items/treant/fungal_legs/fungal_legs.vmdl"
+		}
 	
 	
 		"AbilitySpecial"
@@ -788,6 +810,12 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
+	
+		"Wearables"
+		{
+			"head"					"models/items/treant/lord_of_ancient_treant_head/lord_of_ancient_treant_head.vmdl"
+			"legs"					"models/items/treant/lord_of_ancient_treant_legs/lord_of_ancient_treant_legs.vmdl"
+		}
 	
 	
 		"AbilitySpecial"
@@ -820,6 +848,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"back"					"models/heroes/treant_protector/foliage.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -857,6 +890,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/treant/ancient_seal_protector_set_shoulder/ancient_seal_protector_set_shoulder.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -892,6 +930,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"back"					"models/items/treant/emberbark_shoulder/emberbark_shoulder.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -929,6 +972,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/treant/fungal_shoulder/fungal_shoulder.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -965,6 +1013,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"back"					"models/items/treant/immortal_shoulder/treant_ti7_immortal_shoulder.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -1000,6 +1053,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"hands"					"models/heroes/treant_protector/hands.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -1042,6 +1100,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"hands"					"models/items/treant/ancient_seal_protector_set_arms/ancient_seal_protector_set_arms.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -1082,6 +1145,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"hands"					"models/items/treant/emberbark_arms/emberbark_arms.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -1124,6 +1192,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"hands"					"models/items/treant/fungal_arms/fungal_arms.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -1164,6 +1237,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"hands"					"models/items/treant/lord_of_ancient_treant_arms/lord_of_ancient_treant_arms.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -1835,9 +1913,9 @@
 		"Wearables"
 		{
 			"head"					"models/items/sven/sven_mask.vmdl"
-			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
-			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
-			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+			"shoulder"				"models/items/sven/sven_shoulderpad.vmdl"
+			"belt"					"models/items/sven/sven_belt.vmdl"
+			"back"					"models/items/sven/beacon_cyclopean_marauder/beacon_cyclopean_marauder.vmdl"
 		}
 	
 		"AbilitySpecial"
@@ -1872,12 +1950,11 @@
 	
 		"Wearables"
 		{
-			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
-			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
-			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
-			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+			"head"					"models/items/sven/warriors_retribution_sven_head/warriors_retribution_sven_head.vmdl"
+			"shoulder"				"models/items/sven/warrirors_retribution_pauldrons_sven/warrirors_retribution_pauldrons_sven.vmdl"
+			"belt"					"models/items/sven/warriors_retribution_sven_belt/warriors_retribution_sven_belt.vmdl"
+			"back"					"models/items/sven/warriors_retribution_sven_cape/warriors_retribution_sven_cape.vmdl"
 		}
-	
 	
 		"AbilitySpecial"
 		{
@@ -1911,10 +1988,10 @@
 	
 		"Wearables"
 		{
-			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
-			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
-			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
-			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+			"head"					"models/items/sven/rhinoceros_head/rhinoceros_head.vmdl"
+			"shoulder"				"models/items/sven/rhinoceros_shoulder/rhinoceros_shoulder.vmdl"
+			"belt"					"models/items/sven/rhinoceros_belt/rhinoceros_belt.vmdl"
+			"back"					"models/items/sven/meranth_dragoon_sven_back/meranth_dragoon_sven_back.vmdl"
 		}
 	
 	
@@ -1950,10 +2027,10 @@
 	
 		"Wearables"
 		{
-			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
-			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
-			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
-			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+			"head"					"models/items/sven/fiend_cleaver_helmet/fiend_cleaver_helmet.vmdl"
+			"shoulder"				"models/items/sven/fiend_cleaver_shoulder_alt/fiend_cleaver_shoulder_alt.vmdl"
+			"belt"					"models/items/sven/fiend_cleaver_belt_demon/fiend_cleaver_belt_demon.vmdl"
+			"back"					"models/items/sven/rhinoceros_back/rhinoceros_back.vmdl"
 		}
 	
 	
@@ -1989,10 +2066,10 @@
 	
 		"Wearables"
 		{
-			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
-			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
-			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
-			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+			"head"					"models/items/sven/dotapit3_sven_head/dotapit3_sven_head.vmdl"
+			"shoulder"				"models/items/sven/dotapit3_sven_shoulder/dotapit3_sven_shoulder.vmdl"
+			"belt"					"models/items/sven/dotapit3_sven_belt/dotapit3_sven_belt.vmdl"
+			"back"					"models/items/sven/rhinoceros_back/rhinoceros_back.vmdl"
 		}
 	
 		"AbilitySpecial"
@@ -2030,6 +2107,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"arms"					"models/items/sven/fiend_cleaver_gauntlet/fiend_cleaver_gauntlet.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -2072,6 +2154,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"arms"					"models/items/sven/free2play_arms_fear/free2play_arms_fear.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -2112,6 +2199,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"arms"					"models/items/sven/meranth_dragoon_sven_arms/meranth_dragoon_sven_arms.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -2154,6 +2246,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"arms"					"models/items/sven/glittering_hawk_arms/glittering_hawk_arms.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -2195,6 +2292,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"arms"					"models/items/sven/arms_of_the_rogue/arms_of_the_rogue.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -2235,12 +2337,13 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
+	
 		"Wearables"
 		{
-			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
+			//"weapon"					"models/items/sven/sven_sword.vmdl"
+			"weapon"					"models/items/sven/sven_ti7_immortal_sword/sven_ti7_immortal_sword.vmdl"
 		}
-	
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -2279,12 +2382,12 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
+	
 		"Wearables"
 		{
-			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
+			"weapon"					"models/items/sven/rhinoceros_weapon/rhinoceros_weapon.vmdl"
 		}
 	
 		"AbilitySpecial"
@@ -2327,10 +2430,10 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
+	
 		"Wearables"
 		{
-			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
+			"weapon"					"models/items/sven/fiend_cleaver_axe/fiend_cleaver_axe.vmdl"
 		}
 	
 		"AbilitySpecial"
@@ -2373,10 +2476,10 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
+	
 		"Wearables"
 		{
-			"hands"			"particles/units/heroes/hero_lina/lina_flame_hand_dual.vpcf"
+			"weapon"					"models/items/sven/dotapit3_sven_weapon/dotapit3_sven_weapon.vmdl"
 		}
 	
 		"AbilitySpecial"
@@ -2419,10 +2522,10 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-		
+	
 		"Wearables"
 		{
-			"hands"			"particles/econ/items/lina/lina_head_headflame/lina_flame_hand_dual_headflame.vpcf"
+			"weapon"					"models/items/sven/sven_ti7_immortal_sword/sven_ti7_immortal_sword.vmdl"
 		}
 	
 		"AbilitySpecial"
@@ -4209,6 +4312,12 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"head"					"models/items/lanaya/whispering_dead_mask/whispering_dead_mask.vmdl"
+			"armor"					"models/items/lanaya/whispering_dead_armor/whispering_dead_armor.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -4239,6 +4348,11 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
 	
+		"Wearables"
+		{
+			"head"					"models/items/lanaya/dreaded_bravos_guise/dreaded_bravos_guise.vmdl"
+			"armor"					"models/items/lanaya/bravos_scarf/bravos_scarf.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4270,6 +4384,11 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
 	
+		"Wearables"
+		{
+			"head"					"models/items/lanaya/raiment_of_the_violet_archives_head_hood/raiment_of_the_violet_archives_head_hood.vmdl"
+			"armor"					"models/items/lanaya/raiment_of_the_violet_archives_armor/raiment_of_the_violet_archives_armor.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4301,6 +4420,11 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
 	
+		"Wearables"
+		{
+			"head"					"models/items/lanaya/concealed_raven_head/concealed_raven_head.vmdl"
+			"armor"					"models/items/lanaya/concealed_raven_armor/concealed_raven_armor.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4332,6 +4456,11 @@
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
 	
+		"Wearables"
+		{
+			"head"					"models/items/lanaya/shadow_of_wuxia_head/shadow_of_wuxia_head.vmdl"
+			"armor"					"models/items/lanaya/tashouldergold1021/tashouldergold1021.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4366,8 +4495,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"shoulder"					"models/items/lanaya/whispering_dead_drapes/whispering_dead_drapes.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4405,6 +4539,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"shoulder"					"models/items/lanaya/dancing_butterfly_shoulder/dancing_butterfly_shoulder.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -4441,6 +4580,11 @@
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 	
+		"Wearables"
+		{
+			"shoulder"					"models/items/lanaya/dancing_butterfly_shoulder/dancing_butterfly_shoulder.vmdl"
+		}
+	
 		"AbilitySpecial"
 		{
 			"01"
@@ -4474,8 +4618,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"shoulder"					"models/items/lanaya/concealed_raven_shoulder/concealed_raven_shoulder.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4510,8 +4659,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"shoulder"					"models/items/lanaya/the_timekeeper_goldens/the_timekeeper_goldens.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4546,8 +4700,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/heroes/lycan/lycan_blades.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4587,8 +4746,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/lycan/hunter_kings_weapon/hunter_kings_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4628,8 +4792,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/lycan/ambry_weapon/ambry_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4669,8 +4838,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/lycan/blood_moon_hunter_weapon/blood_moon_hunter_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -4710,8 +4884,13 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"Wearables"
+		{
+			"weapon"					"models/items/lycan/sanguinemoon_weapon/sanguinemoon_weapon.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
