@@ -572,6 +572,12 @@
 			"Tank"				"4"
 		}
 		
+		"AttachWearables"
+		{
+			"book"				"models/items/omniknight/misc_book_hierophant.vmdl"
+			"head"				"models/heroes/omniknight/head.vmdl"
+		}
+		
 		"Items"
 		{
 			"Armor"

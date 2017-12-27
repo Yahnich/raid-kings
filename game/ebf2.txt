@@ -118,8 +118,8 @@ Crystal Maiden: Khione, the Avalanche/Tundra
 -- Skill 3: Cold Ray: phoenix sun ray but applies chill and freezes after 3s of exposure, deals non% damage
 -- Skill 4: Arcane Blizzard: CM ult but point target, every blast applies a short chill, so 2 blasts hitting freezes
 -- Skill 5: Orb of Winter: sends out a serpentine moving orb that chills enemies and deals damage
--- Skill 6: Endothermic: Casting spells heals you for their mana cost and their cooldowns are reduced for 20 seconds
--- Skill 7: Arctic Avatar: auto-attacks apply chill for 30 seconds and all chills instantly become freezes.
+-- Skill 6: Endothermic: self-buff, Casting spells heals you for their mana cost and their cooldowns are reduced for 20 seconds
+-- Skill 7: Arctic Avatar: self-buff, auto-attacks apply chill for 30 seconds and all chills instantly become freezes.
 -- Skill 8: Frigid Slide: Toggle, turn rate is slowed drastically; Khione slides forwards, chilling and damaging all enemies caught in the path; if the enemy stands in the ice path for 2 seconds they become frozen for 1s. costs mana per 100 units traveled
 
 -- Passive 1: Enemies that die while frozen explode and freeze all enemies in radius

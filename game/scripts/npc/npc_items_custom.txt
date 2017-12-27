@@ -3139,6 +3139,13 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"bracers"					"models/items/omniknight/bracer_hierophant.vmdl"
+			"shoulders"					"models/items/omniknight/shoulder_hierophant.vmdl"
+			"helm"						"models/items/omniknight/head_hood_hiero/head_hood_hiero.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3174,7 +3181,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"2"
-	
+		
+		"Wearables"
+		{
+			"bracers"					"models/heroes/omniknight/bracer.vmdl"
+			"shoulders"					"models/heroes/omniknight/shoulder.vmdl"
+			"helm"						"models/heroes/omniknight/hair.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3210,6 +3223,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"3"
+		
+		"Wearables"
+		{
+			"bracers"					"models/items/omniknight/bracer_faith/bracer_faith.vmdl"
+			"shoulders"					"models/items/omniknight/shoulder_purist.vmdl"
+			"helm"						"models/items/omniknight/head_valor/head_valor.vmdl"
+		}
 	
 	
 		"AbilitySpecial"
@@ -3246,7 +3266,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"4"
-	
+		
+		"Wearables"
+		{
+			"bracers"					"models/items/omniknight/grey_night_arms/grey_night_arms.vmdl"
+			"shoulders"					"models/items/omniknight/grey_night_shoulders/grey_night_shoulders.vmdl"
+			"helm"						"models/items/omniknight/winged_helmet/winged_helmet.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3282,7 +3308,13 @@
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
 		"MaxUpgradeLevel" 				"5" 
 		"ItemBaseLevel" 				"5"
-	
+		
+		"Wearables"
+		{
+			"bracers"					"models/items/omniknight/omniknight_sacred_light_arms/omniknight_sacred_light_arms.vmdl"
+			"shoulders"					"models/items/omniknight/omniknight_sacred_light_shoulder/omniknight_sacred_light_shoulder.vmdl"
+			"helm"						"models/items/omniknight/omniknight_sacred_light_head/omniknight_sacred_light_head.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3324,6 +3356,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"cape"					"models/heroes/omniknight/cape.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3360,6 +3397,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"cape"					"models/items/omniknight/thunderwraths_cape/thunderwraths_cape.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3396,6 +3438,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"cape"					"models/items/omniknight/cape_crusader.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3432,7 +3479,12 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
-	
+		
+		"Wearables"
+		{
+			"cape"					"models/items/omniknight/cape_heavenly_light/cape_heavenly_light.vmdl"
+		}
+		
 		"AbilitySpecial"
 		{
 			"01"
@@ -3468,6 +3520,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"cape"					"models/items/omniknight/the_unbroken_knight_back/the_unbroken_knight_back.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3504,6 +3561,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hammer"					"models/heroes/omniknight/hammer.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3540,6 +3602,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hammer"					"models/items/omniknight/weapon_purist.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3576,6 +3643,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hammer"					"models/items/omniknight/dingus_hammer.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3612,6 +3684,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hammer"					"models/items/omniknight/weapon_hope_hammer.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{
@@ -3648,6 +3725,11 @@
 		"ItemKillable"					"0"
 		"ItemDroppable"				"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"hammer"					"models/items/omniknight/light_hammer/mesh/light_hammer_model.vmdl"
+		}
 	
 		"AbilitySpecial"
 		{

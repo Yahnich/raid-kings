@@ -180,7 +180,7 @@ function UpdateInfoHud()
 	$("#InfoDamageResistanceLabel").text = ( -heroInfo.damageresistance.toFixed(1) ) + "%"
 	$("#InfoSpellAmpLabel").text = heroInfo.spellamp.toFixed(1) + "%"
 	$("#InfoCooldownReductionLabel").text = heroInfo.cdr.toFixed(1) + "%"
-	$("#InfoCastRangeLabel").text = heroInfo.castrange.toFixed(1) + "%"
+	$("#InfoCastRangeLabel").text = heroInfo.castrange.toFixed(0)
 	$("#InfoStatusAmpLabel").text = heroInfo.statusamp.toFixed(1) + "%"
 	$("#InfoHealAmpLabel").text = heroInfo.healamp.toFixed(1) + "%"
 	$("#InfoDayVisionLabel").text = Entities.GetDayTimeVisionRange( localHero )
