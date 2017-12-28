@@ -1,0 +1,57 @@
+"gladiatrix_valiant_rush"
+{
+	"BaseClass"                     "ability_lua"
+	"ScriptFile"                    "heroes/gladiatrix/gladiatrix_valiant_rush.lua"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityTextureName"			"custom/gladiatrix_valiant_rush"
+	"RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1200"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"10.0 9.0 8.0 7.0 6.0 5.0 4.0"
+	
+	"precache"
+	{
+		"particle"					"particles/heroes/gladiatrix/gladiatrix_valiant_rush_taunt.vpcf"
+		"particle"					"particles/heroes/gladiatrix/gladiatrix_valiant_rush_movement.vpcf"
+		"particle"  				"particles/heroes/gladiatrix/gladiatrix_valiant_rush.vpcf"
+
+
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_monkey_king.vsndevts"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"                      "FIELD_INTEGER"
+			"rush_speed"     				"900"
+		}
+		"02"
+		{
+			"var_type"                      "FIELD_INTEGER"
+			"taunt_radius"     				"600"
+		}
+		"03"
+		{
+			"var_type"                      "FIELD_FLOAT"
+			"taunt_duration"     			"5.0"
+		}
+		"04"
+		{
+			"var_type"                      "FIELD_INTEGER"
+			"talent_slow"     				"-200"
+		}
+
+	}
+}

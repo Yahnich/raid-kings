@@ -1,0 +1,56 @@
+"guardian_challenge"
+{
+	"BaseClass"                     "ability_lua"
+	"ScriptFile"                    "heroes/guardian/guardian_challenge.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"custom/guardian_challenge"
+	"RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+
+	"AbilityCastPoint"              "0.3"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	
+	"precache"
+	{
+		"particle"					"particles/heroes/guardian/guardian_challenge.vpcf"
+		"particle"					"particles/heroes/guardian/guardian_challenge_debuff.vpcf"
+		"particle"                  "particles/heroes/justicar/justicar_absolution_beam_2.vpcf"
+	}
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"12"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1500"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"35"
+
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"debuff_duration"		"9"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attackspeed_slow"		"-30 -45 -60 -75 -90 -105 -120"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"movespeed_slow"		"-10 -15 -20 -25 -30 -35 -40"
+		}
+	}
+}

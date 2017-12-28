@@ -1,0 +1,54 @@
+//=================================================================================================================
+// Forest - Treant
+//=================================================================================================================
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//=================================================================================================================
+"forest_iron_bark"
+{
+	"BaseClass"                     "ability_lua"
+	"ScriptFile"                    "heroes/forest/forest_iron_bark.lua"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"custom/forest_iron_bark"
+	"MaxLevel"						"1"
+	"InnateAbility"					"1"
+	"HasScepterUpgrade"				"1"
+	
+	"precache"
+	{
+		"particle"					"particles/heroes/forest/forest_iron_bark.vpcf"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"armor_per_level"			"1"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"duration"					"10"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"radius"					"900"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_bonus_stacks"		"1"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"talent_mr_per_level"		"0.2"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"talent_dr_per_level"		"0.2"
+		}
+	}
+}

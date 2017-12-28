@@ -1,0 +1,39 @@
+"lich_mage_damage_amp"
+{
+	"BaseClass"                     "ability_lua"
+	"ScriptFile"                    "summons/lich_mage/lich_mage_damage_amp.lua"
+	"AbilityBehavior"              	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityTextureName"			"custom/lich_mage_damage_amp"
+	"RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCooldown"				"15 14 13 12 11 10 9"
+	
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+		"particle"					"particles/heroes/puppeteer/lich_mage_damage_amp.vpcf"
+	}
+	
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"          "FIELD_INTEGER"
+			"amp"     			"25"
+		}
+		"02"
+		{
+			"var_type"          "FIELD_INTEGER"
+			"duration"     		"7"
+		}
+		"03"
+		{
+			"var_type"          "FIELD_INTEGER"
+			"cast_range"     	"900"
+		}
+	}
+}

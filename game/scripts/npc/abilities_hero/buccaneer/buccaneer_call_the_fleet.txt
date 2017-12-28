@@ -1,0 +1,69 @@
+//=================================================================================================================
+// Call the Fleet
+//=================================================================================================================
+"buccaneer_call_the_fleet"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/buccaneer/buccaneer_call_the_fleet.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"buccaneer_call_the_fleet"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"  		"0"
+
+	"AbilityCastRange"				"1000"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"50 45 40 35 30 25 20"
+
+	"AbilityManaCost"				"90 100 110 120 130 140 150"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"buff_duration"				"10.0"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"ghostship_absorb"			"10 20 30 40 50 60 70"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"ghostship_damage"			"25 35 45 55 65 75 85"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"ghostship_distance"		"2000"
+		}		
+		"06"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"stun_duration"				"1.4" //fucking valve default ghostship stun duration
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/heroes/buccaneer/buccaneer_call_the_fleet_ship.vpcf"
+		"particle"  "particles/units/heroes/hero_kunkka/kunkka_ghostship_marker.vpcf"
+		"particle"  "particles/status_fx/status_effect_rum.vpcf"
+		"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+	}
+}
