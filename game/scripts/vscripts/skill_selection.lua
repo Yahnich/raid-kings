@@ -161,10 +161,17 @@ function SkillSelection:LoadHeroSkills(hero)
 	for i = 0, #hero.abilityIndexingList do
 		local index = self:FindNextAbilityIndex(hero)
 		local ability = hero.abilityIndexingList[i]
+		local talentIndex = self:FindNextTalentIndex(hero)
 		
-		if ability and index then
+		if ability and index and talentIndex then
 			hero:RemoveAbility(hero:GetAbilityByIndex(index):GetName())
 			hero:AddAbilityPrecache(ability):SetAbilityIndex(index)
+
+			hero:RemoveAbility(hero:GetAbilityByIndex(talentIndex):GetName())
+			local talentName = ability.."_talent_1"
+			local talent = hero:AddAbility(talentName)
+			print(talentName)
+			talent:SetAbilityIndex(talentIndex)
 		end
 	end
 end
@@ -173,6 +180,16 @@ function SkillSelection:FindNextAbilityIndex(hero)
 	for i = 0, 23 do
 		if hero:GetAbilityByIndex(i) then
 			if string.match(hero:GetAbilityByIndex(i):GetName(), "empty") then
+				return i 
+			end
+		end
+	end
+end
+
+function SkillSelection:FindNextTalentIndex(hero)
+	for i = 0, 23 do
+		if hero:GetAbilityByIndex(i) then
+			if string.match(hero:GetAbilityByIndex(i):GetName(), "generic_empty_talent") then
 				return i 
 			end
 		end

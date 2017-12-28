@@ -256,10 +256,10 @@ end
 	-- end
 -- end
 
-function CDOTA_BaseNPC:AddAbilityPrecache(abName)
+ function CDOTA_BaseNPC:AddAbilityPrecache(abName)
 	-- PrecacheAbility(abName)
-	return self:AddAbility(abName)
-end
+ 	return self:AddAbility(abName)
+ end
 
 function CDOTA_BaseNPC:HasTalent(talentName)
 	if self:HasAbility(talentName) then
@@ -935,4 +935,42 @@ end
 
 function CDOTABaseAbility:Stun(target, duration, bDelay)
 	target:AddNewModifier(self:GetCaster(), self, "modifier_stunned_generic", {duration = duration, delay = bDelay})
+end
+
+function CDOTA_BaseNPC:AddChill(hAbility, hCaster, chillDuration)
+	self:AddNewModifier(hCaster, hAbility, "modifier_chill_generic", {Duration = chillDuration}):IncrementStackCount()
+end
+
+function CDOTA_BaseNPC:GetChillCount()
+	if self:HasModifier("modifier_chill_generic") then
+		return self:FindModifierByName("modifier_chill_generic"):GetStackCount()
+	else
+		return 0
+	end
+end
+
+function CDOTA_BaseNPC:SetChillCount( count )
+	if self:HasModifier("modifier_chill_generic") then
+		self:FindModifierByName("modifier_chill_generic"):SetStackCount(count)
+	end
+end
+
+function CDOTA_BaseNPC:Freeze(hAbility, hCaster, duration)
+	self:AddNewModifier(hCaster, hAbility, "modifier_frozen_generic", {Duration = duration})
+end
+
+function CDOTA_BaseNPC:IsChilled()
+	if self:HasModifier("modifier_chill_generic"):GetStackCount() > 0 then
+		return true
+	else
+		return false
+	end
+end
+
+function CDOTA_BaseNPC:IsFrozenGeneric()
+	if self:HasModifier("modifier_frozen_generic") then
+		return true
+	else
+		return false
+	end
 end
