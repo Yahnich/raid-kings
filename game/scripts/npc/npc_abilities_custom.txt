@@ -725,7 +725,7 @@
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"kunkka_x_marks_the_spot"
+		"AbilityTextureName"			"buccaneer_jolly_roger"
 		"MaxLevel"						"1"
 		"InnateAbility"					"1"
 	
@@ -767,7 +767,7 @@
 	
 		"precache"
 		{
-			"particle"  "particles/heroes/buccaneer/buccaneer_jolly_roger.vpcf"
+			"particle"  "particles/heroes/buccaneer/buccaneer_x_marks.vpcf"
 	
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 		}
