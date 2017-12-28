@@ -1,12 +1,12 @@
-buccaneer_x_marks = class({})
-LinkLuaModifier( "modifier_x_marks", "heroes/buccaneer/buccaneer_x_marks.lua" ,LUA_MODIFIER_MOTION_NONE )
-LinkLuaModifier( "modifier_x_marks_passive", "heroes/buccaneer/buccaneer_x_marks.lua" ,LUA_MODIFIER_MOTION_NONE )
+buccaneer_jolly_roger = class({})
+LinkLuaModifier( "modifier_buccaneer_jolly_roger", "heroes/buccaneer/buccaneer_jolly_roger.lua" ,LUA_MODIFIER_MOTION_NONE )
+LinkLuaModifier( "modifier_buccaneer_jolly_roger_passive", "heroes/buccaneer/buccaneer_jolly_roger.lua" ,LUA_MODIFIER_MOTION_NONE )
 --------------------------------------------------------------------------------
-function buccaneer_x_marks:GetIntrinsicModifierName()
-	return "modifier_x_marks_passive"
+function buccaneer_jolly_roger:GetIntrinsicModifierName()
+	return "modifier_buccaneer_jolly_roger_passive"
 end
 
-function buccaneer_x_marks:OnSpellStart()
+function buccaneer_jolly_roger:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
@@ -14,29 +14,29 @@ function buccaneer_x_marks:OnSpellStart()
 
 	local units = caster:FindEnemyUnitsInRadius(caster:GetAbsOrigin(), FIND_UNITS_EVERYWHERE, {})
 	for _,unit in pairs(units) do
-		unit:RemoveModifierByName("modifier_x_marks")
+		unit:RemoveModifierByName("modifier_buccaneer_jolly_roger")
 	end
 	
 	if target and not target:IsMagicImmune() then
-		target:AddNewModifier(caster,self,"modifier_x_marks",{Duration=duration})
+		target:AddNewModifier(caster,self,"modifier_buccaneer_jolly_roger",{Duration=duration})
 		EmitSoundOn("Ability.XMarksTheSpot.Target",target)
 	end
 end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-modifier_x_marks_passive = class({})
+modifier_buccaneer_jolly_roger_passive = class({})
 
-function modifier_x_marks_passive:DeclareFunctions()
+function modifier_buccaneer_jolly_roger_passive:DeclareFunctions()
 	local funcs = {
 		MODIFIER_EVENT_ON_ATTACK_LANDED
 	}
 	return funcs
 end
 
-function modifier_x_marks_passive:OnAttackLanded(params)
+function modifier_buccaneer_jolly_roger_passive:OnAttackLanded(params)
 	if params.attacker == self:GetCaster() then
-		if params.target:HasModifier("modifier_x_marks") then
+		if params.target:HasModifier("modifier_buccaneer_jolly_roger") then
 			self:GetCaster():ModifyGold(self:GetAbility():GetSpecialValueFor( "gold" ),true,0)
 			SendOverheadEventMessage(self:GetCaster():GetPlayerOwner(),OVERHEAD_ALERT_GOLD,self:GetCaster(),self:GetAbility():GetSpecialValueFor( "gold" ),self:GetCaster())
 		elseif RollPercentage(self:GetAbility():GetSpecialValueFor( "gold_chance" )) then
@@ -46,21 +46,21 @@ function modifier_x_marks_passive:OnAttackLanded(params)
 	end
 end
 
-function modifier_x_marks_passive:IsHidden()
+function modifier_buccaneer_jolly_roger_passive:IsHidden()
 	return true
 end
 
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
-modifier_x_marks = class({})
+modifier_buccaneer_jolly_roger = class({})
 
-function modifier_x_marks:OnCreated( kv )
+function modifier_buccaneer_jolly_roger:OnCreated( kv )
 	self.unitOgPos = self:GetParent():GetAbsOrigin()
 	self.caster = self:GetCaster()
 	EmitSoundOn("Ability.XMark.Target_Movement",self:GetParent())
 end
 
-function modifier_x_marks:OnRemoved()
+function modifier_buccaneer_jolly_roger:OnRemoved()
 	if IsServer() then
 		if self:GetRemainingTime() < 1 then
 			FindClearSpaceForUnit(self:GetParent(),self.unitOgPos,true)
@@ -70,25 +70,25 @@ function modifier_x_marks:OnRemoved()
 	end
 end
 
-function modifier_x_marks:GetEffectName()
-	return "particles/heroes/buccaneer/buccaneer_x_marks.vpcf"
+function modifier_buccaneer_jolly_roger:GetEffectName()
+	return "particles/heroes/buccaneer/buccaneer_jolly_roger.vpcf"
 end
 
-function modifier_x_marks:GetEffectAttachType()
+function modifier_buccaneer_jolly_roger:GetEffectAttachType()
 	return PATTACH_OVERHEAD_FOLLOW
 end
 
-function modifier_x_marks:DeclareFunctions()
+function modifier_buccaneer_jolly_roger:DeclareFunctions()
 	local funcs = {
 		MODIFIER_PROPERTY_INCOMING_PHYSICAL_DAMAGE_PERCENTAGE
 	}
 	return funcs
 end
 
-function modifier_x_marks:GetModifierIncomingPhysicalDamage_Percentage()
+function modifier_buccaneer_jolly_roger:GetModifierIncomingPhysicalDamage_Percentage()
 	return self:GetSpecialValueFor( "bonus_damage" )
 end
 
-function modifier_x_marks:IsDebuff()
+function modifier_buccaneer_jolly_roger:IsDebuff()
 	return true
 end

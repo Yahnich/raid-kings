@@ -116,7 +116,7 @@ Crystal Maiden: Khione, the Avalanche/Tundra
 -- Skill 1: Frost Blast: literally crystal nova with chill
 -- Skill 2: Ice Shard: Flings an ice shard that deals damage, damage is tripled against frozen enemies
 -- Skill 3: Cold Ray: phoenix sun ray but applies chill and freezes after 3s of exposure, deals non% damage
--- Skill 4: Arcane Blizzard: CM ult but point target, every blast applies a short chill, so 2 blasts hitting freezes
+-- Skill 4: Arcane Blizzard: CM ult but point target, every blast applies a shor1t chill, so 2 blasts hitting freezes
 -- Skill 5: Orb of Winter: sends out a serpentine moving orb that chills enemies and deals damage
 -- Skill 6: Endothermic: self-buff, Casting spells heals you for their mana cost and their cooldowns are reduced for 20 seconds
 -- Skill 7: Arctic Avatar: self-buff, auto-attacks apply chill for 30 seconds and all chills instantly become freezes.
@@ -880,7 +880,7 @@ Tusk: Tyr, the Brawler
 
 
 Kunkka: Poseidon, the Buccaneer
--- Innate: X Marked - 2 charges, 15s charge time; marks an enemy for 30 seconds; marked enemies take 15% more damage and Buccaneer's spells react differently. Also passively gives a chance to gain gold on hit, guarantees gold from marked units
+-- Innate: Jolly Roger - 2 charges, 15s charge time; marks an enemy for 30 seconds; marked enemies take 15% more damage and Buccaneer's spells react differently. Also passively gives a chance to gain gold on hit, guarantees gold from marked units
 
 -- Skill 1: Hand Cannon - Fires a very fast (3000ish speed?) linear projectile, knocks Buccaneer back and the first target it hits, target takes auto-attack damage + knockback distance as physical damage. Marked enemies will be slowed 100% for 2s afterwards
 -- Skill 2: Call the Fleet - Summons a ghost ship that moves to the target point, ghost ship always travels 2000 units; upon reaching target point will stun and damage all units in an aoe; allies that touch the ship receive a buff reducing the damage they take. This damage is then dealt over time as HP removal (its kunkka's ghost ship). Marked enemies will be dazed afterwards, moving in random directions.
