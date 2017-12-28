@@ -1,5 +1,576 @@
 "DOTAAbilities"
 {
+	"item_avalanche_armor_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"armor"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"1"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"sleeves"					"models/heroes/lina/lina_arms.vmdl"
+			"skirt"						"models/heroes/lina/lina_belt.vmdl"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"200 400 600 800 1000"
+			}
+		}
+	}
+	"item_avalanche_armor_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"avalanche"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"2"
+		
+		"Wearables"
+		{
+			"sleeves"					"models/items/lina/everlastingheat_arms/everlastingheat_arms.vmdl"
+			"skirt"						"models/items/lina/everlastingheat_belt/everlastingheat_belt.vmdl"
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"200 400 600 800 1000"
+			}
+		}
+	}
+	"item_avalanche_armor_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"avalanche"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"3"
+	
+		"Wearables"
+		{
+			"sleeves"					"models/items/lina/bewitching_flame_arms/bewitching_flame_arms.vmdl"
+			"skirt"						"models/items/lina/bewitching_flame_belt/bewitching_flame_belt.vmdl"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"200 400 600 800 1000"
+			}
+		}
+	}
+	"item_avalanche_armor_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"avalanche"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"4"
+	
+		"Wearables"
+		{
+			"sleeves"					"models/items/lina/warhawk_vestiments_arms/warhawk_vestiments_arms.vmdl"
+			"skirt"						"models/items/lina/warhawk_vestiments_skirt/warhawk_vestiments_skirt.vmdl"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"200 400 600 800 1000"
+			}
+		}
+	}
+	"item_avalanche_armor_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"avalanche"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"5"
+	
+		"Wearables"
+		{
+			"sleeves"					"models/items/lina/esl_divine_flame_arms/esl_divine_flame_arms.vmdl"
+			"skirt"						"models/items/lina/esl_divine_flame_belt/esl_divine_flame_belt.vmdl"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"200 400 600 800 1000"
+			}
+		}
+	}
+	"item_avalanche_other_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"1"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"necklace"					"models/heroes/lina/lina_neck.vmdl"
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cdr"					"10 20 30 40 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"20 20 20 20 20"
+			}
+		}
+	}
+	"item_avalanche_other_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"2"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"necklace"					"models/items/lina/warhawk_vestiments_necklace/warhawk_vestiments_necklace.vmdl"
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cdr"					"10 20 30 40 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"20 20 20 20 20"
+			}
+		}
+	}
+	"item_avalanche_other_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"3"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"necklace"					"models/items/lina/scales_of_the_burning_dragon_neck/scales_of_the_burning_dragon_neck.vmdl"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cdr"					"10 20 30 40 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"20 20 20 20 20"
+			}
+		}
+	}
+	"item_avalanche_other_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"4"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"necklace"					"models/items/lina/migrant_blaze_neck/migrant_blaze_neck.vmdl"
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cdr"					"10 20 30 40 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"20 20 20 20 20"
+			}
+		}
+	}
+	"item_avalanche_other_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"5"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"necklace"					"models/items/lina/esl_divine_flame_neck/esl_divine_flame_neck.vmdl"
+		}
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cdr"					"10 20 30 40 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"20 20 20 20 20"
+			}
+		}
+	}
+	"item_avalanche_weapon_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_weapon"
+		"AbilityTextureName"			"item_bloodthorn"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"1"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"25 50 75 100 125"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"35 35 35 35 40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_damage"			"140 160 180 200 200"
+			}
+		}
+	}
+	"item_avalanche_weapon_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_weapon"
+		"AbilityTextureName"			"item_bloodthorn"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"2"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"25 50 75 100 125"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"35 35 35 35 40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_damage"			"140 160 180 200 200"
+			}
+		}
+	}
+	"item_avalanche_weapon_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_weapon"
+		"AbilityTextureName"			"item_bloodthorn"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"3"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"25 50 75 100 125"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"35 35 35 35 40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_damage"			"140 160 180 200 200"
+			}
+		}
+	}
+	"item_avalanche_weapon_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_weapon"
+		"AbilityTextureName"			"item_bloodthorn"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"4"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"25 50 75 100 125"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"35 35 35 35 40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_damage"			"140 160 180 200 200"
+			}
+		}
+	}
+	"item_avalanche_weapon_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_weapon"
+		"AbilityTextureName"			"item_bloodthorn"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"5"
+	
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+	
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"25 50 75 100 125"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"35 35 35 35 40"
+			}
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_damage"			"140 160 180 200 200"
+			}
+		}
+	}
 	//=================================================================================================================
 	// Bag of Gold
 	//=================================================================================================================

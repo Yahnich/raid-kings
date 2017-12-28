@@ -1,0 +1,1 @@
+avalanche_endothermic = class({})

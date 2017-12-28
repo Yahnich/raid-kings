@@ -1,6 +1,760 @@
 "DOTAAbilities"
 {
 	//=================================================================================================================
+	// Aracne Blizzard
+	//=================================================================================================================
+	"avalanche_arcane_blizzard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_arcane_blizzard.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_CHANNELLED | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/avalanche_arcane_blizzard"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+	
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+		"AbilityChannelTime"      		"10.0"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"110 100 90 80 70 60 50"
+	
+		"AbilityManaCost"				"20 40 60 80 100 120 140"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"channel_time"				"10.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"chill_count"				"50"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"chill_duration"			"2.5"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"10 20 30 40 50 60 70"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"icechunck_radius"			"75"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"storm_radius"				"250"
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/heroes/avalanche/avalanche_arcane_blizzard.vpcf"
+			"particle"  "particles/heroes/avalanche/avalanche_arcane_blizzard_snowflake.vpcf"
+	
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"avalanche_arcane_blizzard_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Arctic Avatar
+	//=================================================================================================================
+	"avalanche_arctic_avatar"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_arctic_avatar.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/avalanche_arctic_avatar"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+	
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+	
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"30.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"chill_duration"			"4.0"
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_buff.vpcf"
+			"particle"  "particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_frostbite_body_snow.vpcf"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"avalanche_arctic_avatar_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Cold Ray
+	//=================================================================================================================
+	"avalanche_cold_ray"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_cold_ray.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/avalanche_cold_ray"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+	
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+	
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"10.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_absorb"			"10 20 30 40 50 60 70"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_damage"			"25 35 45 55 65 75 85"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_distance"		"2000"
+			}		
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.4" //fucking valve default ghostship stun duration
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/heroes/buccaneer/buccaneer_call_the_fleet_ship.vpcf"
+			"particle"  "particles/units/heroes/hero_kunkka/kunkka_ghostship_marker.vpcf"
+			"particle"  "particles/status_fx/status_effect_rum.vpcf"
+			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+	
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"avalanche_cold_ray_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Endothermic
+	//=================================================================================================================
+	"avalanche_endothermic"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_endothermic.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/avalanche_endothermic"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+	
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+	
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"10.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_absorb"			"10 20 30 40 50 60 70"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_damage"			"25 35 45 55 65 75 85"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_distance"		"2000"
+			}		
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.4" //fucking valve default ghostship stun duration
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/heroes/buccaneer/buccaneer_call_the_fleet_ship.vpcf"
+			"particle"  "particles/units/heroes/hero_kunkka/kunkka_ghostship_marker.vpcf"
+			"particle"  "particles/status_fx/status_effect_rum.vpcf"
+			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+	
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"avalanche_endothermic_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Frigid Slide
+	//=================================================================================================================
+	"avalanche_frigid_slide"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_frigid_slide.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/avalanche_frigid_slide"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+	
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+	
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"10.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_absorb"			"10 20 30 40 50 60 70"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_damage"			"25 35 45 55 65 75 85"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_distance"		"2000"
+			}		
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.4" //fucking valve default ghostship stun duration
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/heroes/buccaneer/buccaneer_call_the_fleet_ship.vpcf"
+			"particle"  "particles/units/heroes/hero_kunkka/kunkka_ghostship_marker.vpcf"
+			"particle"  "particles/status_fx/status_effect_rum.vpcf"
+			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+	
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"avalanche_frigid_slide_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Frostbrand
+	//=================================================================================================================
+	"avalanche_frostbrand"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_frostbrand.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/avalanche_frostbrand"
+		"MaxLevel"						"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"1"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"avalanche_frostbrand_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Frost Blast
+	//=================================================================================================================
+	"avalanche_frost_blast"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_frost_blast.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/avalanche_frost_blast"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+	
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+	
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"10.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_absorb"			"10 20 30 40 50 60 70"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_damage"			"25 35 45 55 65 75 85"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_distance"		"2000"
+			}		
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.4" //fucking valve default ghostship stun duration
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/heroes/buccaneer/buccaneer_call_the_fleet_ship.vpcf"
+			"particle"  "particles/units/heroes/hero_kunkka/kunkka_ghostship_marker.vpcf"
+			"particle"  "particles/status_fx/status_effect_rum.vpcf"
+			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+	
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"avalanche_frost_blast_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Ice Shard
+	//=================================================================================================================
+	"avalanche_ice_shard"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_ice_shard.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/avalanche_ice_shard"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+	
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+	
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"10.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_absorb"			"10 20 30 40 50 60 70"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_damage"			"25 35 45 55 65 75 85"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_distance"		"2000"
+			}		
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.4" //fucking valve default ghostship stun duration
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/heroes/buccaneer/buccaneer_call_the_fleet_ship.vpcf"
+			"particle"  "particles/units/heroes/hero_kunkka/kunkka_ghostship_marker.vpcf"
+			"particle"  "particles/status_fx/status_effect_rum.vpcf"
+			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+	
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"avalanche_ice_shard_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
+	// Orb of Winter
+	//=================================================================================================================
+	"avalanche_orb_of_winter"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_orb_of_winter.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/avalanche_orb_of_winter"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+	
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+	
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"10.0"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_absorb"			"10 20 30 40 50 60 70"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_damage"			"25 35 45 55 65 75 85"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"ghostship_distance"		"2000"
+			}		
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.4" //fucking valve default ghostship stun duration
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/heroes/buccaneer/buccaneer_call_the_fleet_ship.vpcf"
+			"particle"  "particles/units/heroes/hero_kunkka/kunkka_ghostship_marker.vpcf"
+			"particle"  "particles/status_fx/status_effect_rum.vpcf"
+			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+	
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"avalanche_orb_of_winter_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
 	// Call the Fleet
 	//=================================================================================================================
 	"buccaneer_call_the_fleet"
@@ -14,7 +768,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"buccaneer_call_the_fleet"
+		"AbilityTextureName"			"custom/buccaneer_call_the_fleet"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 	
@@ -106,7 +860,7 @@
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"FightRecapLevel"				"1"
-		"AbilityTextureName"			"buccaneer_cannon_barrage"
+		"AbilityTextureName"			"custom/buccaneer_cannon_barrage"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 	
@@ -199,7 +953,7 @@
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_POINT"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-		"AbilityTextureName"			"buccaneer_captains_rum"
+		"AbilityTextureName"			"custom/buccaneer_captains_rum"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 	
@@ -292,7 +1046,7 @@
 	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
 	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-		"AbilityTextureName"			"buccaneer_crestrider"
+		"AbilityTextureName"			"custom/buccaneer_crestrider"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 		
@@ -374,7 +1128,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"buccaneer_gangplank"
+		"AbilityTextureName"			"custom/buccaneer_gangplank"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 	
@@ -459,7 +1213,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"buccaneer_hand_cannon"
+		"AbilityTextureName"			"custom/buccaneer_hand_cannon"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 	
@@ -525,6 +1279,88 @@
 		}
 	}
 	//=================================================================================================================
+	// X Marks
+	//=================================================================================================================
+	"buccaneer_jolly_roger"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/buccaneer/buccaneer_jolly_roger.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/buccaneer_jolly_roger"
+		"MaxLevel"						"1"
+		"InnateAbility"					"1"
+	
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+	
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+	
+		"AbilityManaCost"				"1"
+	
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold"					"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_chance"			"33"
+			}
+		}
+	
+		"precache"
+		{
+			"particle"  "particles/heroes/buccaneer/buccaneer_x_marks.vpcf"
+	
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
+	}
+	//=================================================================================================================
+	// Ability: Rallying Cry Redirect Damage Taken
+	//=================================================================================================================
+	"buccaneer_jolly_roger_talent_1" 
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"special_bonus_undefined"
+		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"value"						"300"
+			}
+		}
+	}
+	//=================================================================================================================
 	// Maelstrom
 	//=================================================================================================================
 	"buccaneer_maelstrom"
@@ -538,7 +1374,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"buccaneer_maelstrom"
+		"AbilityTextureName"			"custom/buccaneer_maelstrom"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 	
@@ -634,7 +1470,7 @@
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 		"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"buccaneer_wavebreaker"
+		"AbilityTextureName"			"custom/buccaneer_wavebreaker"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"  		"0"
 	
@@ -694,88 +1530,6 @@
 	// Ability: Rallying Cry Redirect Damage Taken
 	//=================================================================================================================
 	"buccaneer_wavebreaker_talent_1" 
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"special_bonus_undefined"
-		"AbilityType"					"DOTA_ABILITY_TYPE_ATTRIBUTES"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-		
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"					"FIELD_INTEGER"
-				"value"						"300"
-			}
-		}
-	}
-	//=================================================================================================================
-	// X Marks
-	//=================================================================================================================
-	"buccaneer_jolly_roger"
-	{
-		// General
-		//-------------------------------------------------------------------------------------------------------------
-		"BaseClass"						"ability_lua"
-		"ScriptFile"					"heroes/buccaneer/buccaneer_jolly_roger.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-		"AbilityTextureName"			"buccaneer_jolly_roger"
-		"MaxLevel"						"1"
-		"InnateAbility"					"1"
-	
-		"AbilityCastRange"				"1000"
-		"AbilityCastPoint"				"0.4"
-		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-	
-		// Time		
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilityCooldown"				"1"
-	
-		"AbilityManaCost"				"1"
-	
-		// Special
-		//-------------------------------------------------------------------------------------------------------------
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"bonus_damage"			"25"
-			}
-			"02"
-			{
-				"var_type"				"FIELD_FLOAT"
-				"duration"				"8.0"
-			}
-			"03"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gold"					"10"
-			}
-			"04"
-			{
-				"var_type"				"FIELD_INTEGER"
-				"gold_chance"			"33"
-			}
-		}
-	
-		"precache"
-		{
-			"particle"  "particles/heroes/buccaneer/buccaneer_x_marks.vpcf"
-	
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
-		}
-	}
-	//=================================================================================================================
-	// Ability: Rallying Cry Redirect Damage Taken
-	//=================================================================================================================
-	"forest_ancient_tether_talent_1" 
 	{
 		// General
 		//-------------------------------------------------------------------------------------------------------------
