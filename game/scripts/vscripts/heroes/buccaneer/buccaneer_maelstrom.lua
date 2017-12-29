@@ -57,9 +57,9 @@ function modifier_torrent:OnRemoved()
 			self:GetAbility():DealDamage(self:GetCaster(), unit, self:GetSpecialValueFor("damage"), {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 			unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_knockback", knockbackModifierTable )
 			unit:AddNewModifier( self:GetCaster(), self:GetAbility(), "modifier_torrent_slow", {Duration=self:GetSpecialValueFor("slow_duration")+self:GetSpecialValueFor("stun_duration")})
-			if unit:HasModifier("modifier_x_marks") then
+			if unit:HasModifier("modifier_buccaneer_jolly_roger") then
 				CreateModifierThinker(self:GetCaster(), self:GetAbility(), "modifier_torrent", {Duration = self:GetSpecialValueFor("torrent_delay")}, unit:GetAbsOrigin(), self:GetCaster():GetTeam(), false)
-				unit:RemoveModifierByName("modifier_x_marks")
+				unit:RemoveModifierByName("modifier_buccaneer_jolly_roger")
 			end
 		end
 	end

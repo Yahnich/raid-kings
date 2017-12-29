@@ -1,63 +1,66 @@
-//=================================================================================================================
-// Gangplank
-//=================================================================================================================
-"buccaneer_gangplank"
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/buccaneer/buccaneer_gangplank.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"custom/buccaneer_gangplank"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"  		"0"
-
-	"AbilityCastRange"				"1000"
-	"AbilityCastPoint"				"0.4"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"44 38 32 26 20 14 8"
-
-	"AbilityManaCost"				"50"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//=================================================================================================================
+	// Gangplank
+	//=================================================================================================================
+	"buccaneer_gangplank"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"10 15 20 25 30 35 40"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"2.0"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"gold_multiplier"		"2"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"stun_duration"			"1.0"
-		}
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/buccaneer/buccaneer_gangplank.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/buccaneer_gangplank"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
 
-	"precache"
-	{
-		"particle"  "particles/status_fx/status_effect_rum.vpcf"
-		"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
-		"particle"  "particles/econ/courier/courier_kunkka_parrot/courier_kunkka_parrot_splash.vpcf"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"44 38 32 26 20 14 8"
+
+		"AbilityManaCost"				"50"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"10 15 20 25 30 35 40"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"2.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_multiplier"		"2"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"stun_duration"			"1.0"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/status_fx/status_effect_rum.vpcf"
+			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+			"particle"  "particles/econ/courier/courier_kunkka_parrot/courier_kunkka_parrot_splash.vpcf"
+
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
 	}
 }

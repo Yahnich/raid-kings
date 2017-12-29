@@ -1,45 +1,48 @@
-//=================================================================================================================
-// SYLPH - WINDRUNNER
-//=================================================================================================================
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//=================================================================================================================
-"sylph_zephyr"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/sylph/sylph_zephyr.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"custom/sylph_innate_zephyr"
-	"MaxLevel"						"1"
-	"HasScepterUpgrade"				"1"
-	"InnateAbility"					"1"
-	
-    "AbilitySpecial"
+    //=================================================================================================================
+    // SYLPH - WINDRUNNER
+    //=================================================================================================================
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //=================================================================================================================
+    "sylph_zephyr"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/sylph/sylph_zephyr.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    	"AbilityTextureName"			"custom/sylph_innate_zephyr"
+    	"MaxLevel"						"1"
+    	"HasScepterUpgrade"				"1"
+    	"InnateAbility"					"1"
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "ms_per_stack"     				"19"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "max_ms_per_stack"     			"25"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "evasion_per_stack"     		"6.25"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "max_stacks"     				"8"
-			"LinkedSpecialBonus"			"sylph_zephyr_talent_1"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "scepter_radius"     			"900"
+            "01"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "ms_per_stack"     				"19"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "max_ms_per_stack"     			"25"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "evasion_per_stack"     		"6.25"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "max_stacks"     				"8"
+    			"LinkedSpecialBonus"			"sylph_zephyr_talent_1"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "scepter_radius"     			"900"
+            }
         }
     }
 }

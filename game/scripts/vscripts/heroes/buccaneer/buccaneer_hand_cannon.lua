@@ -35,7 +35,7 @@ function buccaneer_hand_cannon:OnSpellStart()
 
 			Timers:CreateTimer(0,function()
 				distance = (enemy:GetAbsOrigin() - casterPos):Length2D()
-				if enemy:HasModifier("modifier_x_marks") then
+				if enemy:HasModifier("modifier_buccaneer_jolly_roger") then
 					if distance < knock_back*2 then
 						enemy:SetAbsOrigin(enemy:GetAbsOrigin()+casterDirection*75)
 						return FrameTime()
@@ -92,7 +92,7 @@ function modifier_hand_cannon:IsHidden()
 end
 
 function modifier_hand_cannon:OnRemoved()
-	if self:GetParent():HasModifier("modifier_x_marks") then
+	if self:GetParent():HasModifier("modifier_buccaneer_jolly_roger") then
 		self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_hand_cannon_slow", {Duration=self:GetSpecialValueFor("slow_duration")})
 	end
 end

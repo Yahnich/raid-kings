@@ -1,57 +1,60 @@
-//=================================================================================================================
-// Hand Cannon
-//=================================================================================================================
-"buccaneer_hand_cannon"
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/buccaneer/buccaneer_hand_cannon.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"custom/buccaneer_hand_cannon"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"  		"0"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16 14 12 10 8 6 4"
-
-	"AbilityManaCost"				"90 100 110 120 130 140 150"
-
-	"AbilityCastRange"				"500"
-	"AbilityCastPoint"				"0.1"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//=================================================================================================================
+	// Hand Cannon
+	//=================================================================================================================
+	"buccaneer_hand_cannon"
 	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"knock_back"				"250"
-		}
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"25"
-		}
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"2.5"
-		}
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/buccaneer/buccaneer_hand_cannon.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/buccaneer_hand_cannon"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
 
-	"precache"
-	{
-		"particle"  "particles/heroes/buccaneer/buccaneer_hand_cannon.vpcf"
-		"particle"  "particles/generic_ground_slide.vpcf"
-		"particle"  "particles/econ/items/kunkka/kunkka_weapon_gunsword/kunkka_shot_gun.vpcf"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10 8 6 4"
 
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+
+		"AbilityCastRange"				"500"
+		"AbilityCastPoint"				"0.1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"knock_back"				"250"
+			}
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow"						"25"
+			}
+			"01"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"2.5"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/heroes/buccaneer/buccaneer_hand_cannon.vpcf"
+			"particle"  "particles/generic_ground_slide.vpcf"
+			"particle"  "particles/econ/items/kunkka/kunkka_weapon_gunsword/kunkka_shot_gun.vpcf"
+
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
 	}
 }

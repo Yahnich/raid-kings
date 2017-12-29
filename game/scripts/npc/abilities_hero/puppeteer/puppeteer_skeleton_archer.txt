@@ -1,45 +1,48 @@
-"puppeteer_skeleton_archer"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/puppeteer/puppeteer_skeleton_archer.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityTextureName"			"custom/puppeteer_skeleton_archer"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastRange"				"1200"
-	"AbilityCooldown"				"30"
-	
-	"precache"
-	{
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
-		"particle"					"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
-		"particle"					"particles/units/heroes/hero_undying/undying_zombie_spawn.vpcf"
-	}
-	
-	
-    "AbilitySpecial"
+    "puppeteer_skeleton_archer"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/puppeteer/puppeteer_skeleton_archer.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    	"AbilityTextureName"			"custom/puppeteer_skeleton_archer"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCastRange"				"1200"
+    	"AbilityCooldown"				"30"
+    	
+    	"precache"
+    	{
+    		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+    		"particle"					"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+    		"particle"					"particles/units/heroes/hero_undying/undying_zombie_spawn.vpcf"
+    	}
+    	
+    	
+        "AbilitySpecial"
         {
-            "var_type"          "FIELD_INTEGER"
-            "dmg_pct"     		"100"
-        }
-		"02"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "hp_pct"     		"25"
-        }
-		"03"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "base_damage"     	"80 90 100 110 120 130 140"
-        }
-		"04"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "lifetime"     		"60"
+            "01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "dmg_pct"     		"100"
+            }
+    		"02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "hp_pct"     		"25"
+            }
+    		"03"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "base_damage"     	"80 90 100 110 120 130 140"
+            }
+    		"04"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "lifetime"     		"60"
+            }
         }
     }
 }

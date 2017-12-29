@@ -1,49 +1,52 @@
-//=================================================================================================================
-// JUSTICAR - OMNIKNIGHT
-//=================================================================================================================
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//=================================================================================================================
-"justicar_inner_sun"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/justicar/justicar_inner_sun.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"custom/justicar_inner_sun"
-	"MaxLevel"						"1"
-	"InnateAbility"					"1"
-	"HasScepterUpgrade"				"1"
-	
-	"precache"
+	//=================================================================================================================
+	// JUSTICAR - OMNIKNIGHT
+	//=================================================================================================================
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	//=================================================================================================================
+	"justicar_inner_sun"
 	{
-		"particle"					"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_purification_immortal_cast.vpcf"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/justicar/justicar_inner_sun.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/justicar_inner_sun"
+		"MaxLevel"						"1"
+		"InnateAbility"					"1"
+		"HasScepterUpgrade"				"1"
+		
+		"precache"
+		{
+			"particle"					"particles/econ/items/omniknight/hammer_ti6_immortal/omniknight_purification_immortal_cast.vpcf"
+		}
+		
+	    "AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"bonus_self_heal"				"35"
+			}
+			"02"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"min_heal"						"5"
+			}
+			"03"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"level_cap"						"50"
+			}
+			"04"
+			{
+				"var_type"						"FIELD_INTEGER"
+				"scepter_debuff_resistance"		"-20"
+			}
+			"05"
+			{
+				"var_type"						"FIELD_FLOAT"
+				"scepter_buff_duration"			"10"
+			}
+	    }
 	}
-	
-    "AbilitySpecial"
-    {
-        "01"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"bonus_self_heal"				"35"
-		}
-		"02"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"min_heal"						"5"
-		}
-		"03"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"level_cap"						"50"
-		}
-		"04"
-		{
-			"var_type"						"FIELD_INTEGER"
-			"scepter_debuff_resistance"		"-20"
-		}
-		"05"
-		{
-			"var_type"						"FIELD_FLOAT"
-			"scepter_buff_duration"			"10"
-		}
-    }
 }

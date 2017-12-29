@@ -1,50 +1,53 @@
-"sylph_cyclone" //Shush
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/sylph/sylph_cyclone.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityTextureName"			"custom/sylph_cyclone"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"7"
-	
-	"AbilityCooldown"				"35"
-	"AbilityManaCost"				"150 145 140 135 130 125 120"
-	"AbilityCastRange"				"800"
-	"AbilityDuration"				"10"
-	"HasPureCooldown"				"1"
-    "AbilityCastPoint"              "0.2"
-    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
-	
-	"precache"
-	{
-		"particle"	"particles/heroes/sylph/sylph_cyclone.vpcf"
-		"soundfile"	"soundevents/game_sounds_custom.vsndevts"
-	}
-	
-    "AbilitySpecial"
+    "sylph_cyclone" //Shush
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/sylph/sylph_cyclone.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+    	"AbilityTextureName"			"custom/sylph_cyclone"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"7"
+    	
+    	"AbilityCooldown"				"35"
+    	"AbilityManaCost"				"150 145 140 135 130 125 120"
+    	"AbilityCastRange"				"800"
+    	"AbilityDuration"				"10"
+    	"HasPureCooldown"				"1"
+        "AbilityCastPoint"              "0.2"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+    	
+    	"precache"
+    	{
+    		"particle"	"particles/heroes/sylph/sylph_cyclone.vpcf"
+    		"soundfile"	"soundevents/game_sounds_custom.vsndevts"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "effect_radius"     			"800"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "duration"     					"10"
-			"LinkedSpecialBonus"			"sylph_cyclone_talent_1"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "damage_mult"     				"300"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "damage"     					"20 40 60 80 100 120 140"
+            "01"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "effect_radius"     			"800"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "duration"     					"10"
+    			"LinkedSpecialBonus"			"sylph_cyclone_talent_1"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "damage_mult"     				"300"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "damage"     					"20 40 60 80 100 120 140"
+            }
         }
     }
 }

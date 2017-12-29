@@ -1,42 +1,45 @@
-//=================================================================================================================
-// Indictment
-//=================================================================================================================
-"peacekeeper_indictment"
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/peacekeeper/peacekeeper_indictment.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
-    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
-    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"custom/peacekeeper_indictment"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"  		"0"
-	"AbilityCastPoint"				"0.3"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
-	"AbilityCastRange"				"1000"
-
-	"AbilityManaCost"         		"1"
-    "AbilityCooldown"         		"10.0"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//=================================================================================================================
+	// Indictment
+	//=================================================================================================================
+	"peacekeeper_indictment"
 	{
-		"01"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/peacekeeper/peacekeeper_indictment.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/peacekeeper_indictment"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		"AbilityCastRange"				"1000"
+
+		"AbilityManaCost"         		"1"
+	    "AbilityCooldown"         		"10.0"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"10.0"
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10.0"
+			}
 		}
-	}
 
-	"precache"
-	{
-		"particle"  "particles/econ/items/templar_assassin/templar_assassin_focal/templar_meld_focal_overhead.vpcf"
+		"precache"
+		{
+			"particle"  "particles/econ/items/templar_assassin/templar_assassin_focal/templar_meld_focal_overhead.vpcf"
 
-		"sound"  	"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+			"sound"  	"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+		}
 	}
 }

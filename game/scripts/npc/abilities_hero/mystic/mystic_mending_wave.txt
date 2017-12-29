@@ -1,55 +1,58 @@
-"mystic_mending_wave"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/mystic/mystic_mending_wave.lua"
-	"AbilityTextureName"			"custom/mystic_mending_wave"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastRange"				"900"
-	"AbilityCooldown"				"9"
-	"AbilityManaCost"				"50 62 75 87 100 112 125"
-
-	"AbilityCastPoint"              "0.4"
-    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
-	
-	"precache"
+	"mystic_mending_wave"
 	{
-		"particle"					"particles/heroes/mystic/mystic_mending_wave.vpcf"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/mystic/mystic_mending_wave.lua"
+		"AbilityTextureName"			"custom/mystic_mending_wave"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		
+		"AbilityCastRange"				"900"
+		"AbilityCooldown"				"9"
+		"AbilityManaCost"				"50 62 75 87 100 112 125"
+
+		"AbilityCastPoint"              "0.4"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_3"
+		
+		"precache"
+		{
+			"particle"					"particles/heroes/mystic/mystic_mending_wave.vpcf"
+		}
+		
+	    "AbilitySpecial"
+	    {
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bounces"				"4 5 6 7 8 9 10"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"bounce_tick"			"0.2"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"search_radius"			"750"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"healdamage"			"200 300 400 500 600 700 800"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"damage_radius"			"300"
+			}
+	    }
 	}
-	
-    "AbilitySpecial"
-    {
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bounces"				"4 5 6 7 8 9 10"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"bounce_tick"			"0.2"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"search_radius"			"750"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"healdamage"			"200 300 400 500 600 700 800"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"damage_radius"			"300"
-		}
-    }
 }

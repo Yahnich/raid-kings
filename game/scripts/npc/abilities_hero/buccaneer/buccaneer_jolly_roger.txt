@@ -1,60 +1,63 @@
-//=================================================================================================================
-// X Marks
-//=================================================================================================================
-"buccaneer_jolly_roger"
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/buccaneer/buccaneer_jolly_roger.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"custom/buccaneer_jolly_roger"
-	"MaxLevel"						"1"
-	"InnateAbility"					"1"
-
-	"AbilityCastRange"				"1000"
-	"AbilityCastPoint"				"0.4"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"1"
-
-	"AbilityManaCost"				"1"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//=================================================================================================================
+	// Jolly Roger
+	//=================================================================================================================
+	"buccaneer_jolly_roger"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"25"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"8.0"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"gold"					"10"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"gold_chance"			"33"
-		}
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/buccaneer/buccaneer_jolly_roger.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/buccaneer_jolly_roger"
+		"MaxLevel"						"1"
+		"InnateAbility"					"1"
 
-	"precache"
-	{
-		"particle"  "particles/heroes/buccaneer/buccaneer_x_marks.vpcf"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
 
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+
+		"AbilityManaCost"				"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"8.0"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold"					"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"gold_chance"			"33"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/heroes/buccaneer/buccaneer_x_marks.vpcf"
+
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
 	}
 }

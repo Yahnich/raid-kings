@@ -1,59 +1,62 @@
-"forest_overgrowth"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/forest/forest_overgrowth.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
-	"AbilityTextureName"			"custom/forest_overgrowth"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"600"
-
-	"AbilityCastPoint"				"0.5"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
-	
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"40.0"
-	
-	"precache"
+	"forest_overgrowth"
 	{
-		"particle"					"particles/units/heroes/hero_treant/treant_overgrowth_cast.vpcf"
-		"particle"					"particles/units/heroes/hero_treant/treant_overgrowth_trails.vpcf"
-		"particle"					"particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
-		"particle"					"particles/items_fx/healing_tango.vpcf"
-		"particle"					"particles/units/heroes/hero_treant/treant_leech_seed_afromhand.vpcf"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/forest/forest_overgrowth.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
+		"AbilityTextureName"			"custom/forest_overgrowth"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"600"
+
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"40.0"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_treant/treant_overgrowth_cast.vpcf"
+			"particle"					"particles/units/heroes/hero_treant/treant_overgrowth_trails.vpcf"
+			"particle"					"particles/units/heroes/hero_treant/treant_overgrowth_vines.vpcf"
+			"particle"					"particles/items_fx/healing_tango.vpcf"
+			"particle"					"particles/units/heroes/hero_treant/treant_leech_seed_afromhand.vpcf"
+		}
+		
+	    "AbilitySpecial"
+	    {
+			"01"
+	        {	
+	            "var_type"                      "FIELD_INTEGER"
+	            "duration"     					"25"
+	        }
+			"02"
+	        {	
+	            "var_type"                      "FIELD_INTEGER"
+	            "root_radius"     				"600"
+	        }
+			"03"
+	        {	
+	            "var_type"                      "FIELD_INTEGER"
+	            "root_duration"     			"2"
+	        }
+			"04"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "bonus_max_hp"     				"1250 2000 2750 3500 4250 5000 5750"
+	        }
+			"04"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "talent_heal"     				"100"
+	        }
+	    }
 	}
-	
-    "AbilitySpecial"
-    {
-		"01"
-        {	
-            "var_type"                      "FIELD_INTEGER"
-            "duration"     					"25"
-        }
-		"02"
-        {	
-            "var_type"                      "FIELD_INTEGER"
-            "root_radius"     				"600"
-        }
-		"03"
-        {	
-            "var_type"                      "FIELD_INTEGER"
-            "root_duration"     			"2"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "bonus_max_hp"     				"1250 2000 2750 3500 4250 5000 5750"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "talent_heal"     				"100"
-        }
-    }
 }

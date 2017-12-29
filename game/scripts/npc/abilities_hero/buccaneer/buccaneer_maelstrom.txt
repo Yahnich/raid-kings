@@ -1,74 +1,77 @@
-//=================================================================================================================
-// Maelstrom
-//=================================================================================================================
-"buccaneer_maelstrom"
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/buccaneer/buccaneer_maelstrom.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"custom/buccaneer_maelstrom"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"  		"0"
-
-	"AbilityCastRange"				"1500"
-	"AbilityCastPoint"				"0.4"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16 14 12 10"
-
-	"AbilityManaCost"				"90 100 110 120"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//=================================================================================================================
+	// Maelstrom
+	//=================================================================================================================
+	"buccaneer_maelstrom"
 	{
-		"01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"damage"					"75 150 225 300"
-		}	
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"slow"						"-35"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"slow_duration"				"1.75 2.5 3.25 4"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun_duration"				"1.6"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"torrent_radius"			"225"
-		}
-		"06"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"torrent_delay"				"1.6"
-		}	
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/buccaneer/buccaneer_maelstrom.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/buccaneer_maelstrom"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
 
-	"precache"
-	{
-		"particle"  "particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf"
-		"particle"  "particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
-		"particle"  "particles/status_fx/status_effect_rum.vpcf"
-		"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.4"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
 
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16 14 12 10"
+
+		"AbilityManaCost"				"90 100 110 120"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"75 150 225 300"
+			}	
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"slow"						"-35"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"slow_duration"				"1.75 2.5 3.25 4"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"stun_duration"				"1.6"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"torrent_radius"			"225"
+			}
+			"06"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"torrent_delay"				"1.6"
+			}	
+		}
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_kunkka/kunkka_spell_torrent_bubbles.vpcf"
+			"particle"  "particles/units/heroes/hero_kunkka/kunkka_spell_torrent_splash.vpcf"
+			"particle"  "particles/status_fx/status_effect_rum.vpcf"
+			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		}
 	}
 }

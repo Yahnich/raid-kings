@@ -1,72 +1,75 @@
-"wraith_bloodletter"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/wraith/wraith_bloodletter.lua"
-	"AbilityTextureName"			"custom/wraith_bloodletter"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastRange"				"350"
-	"AbilityCastPoint"				"0.35"
-	"AbilityCastAnimation"			"ACT_DOTA_TELEPORT"
-	"AbilityCooldown"				"20"
-	"AbilityManaCost"				"80"
-	
-    "AbilitySpecial"
-    {
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_over_time"		"100 125 150 175 200 225 250"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"heal"					"500 750 1000 1250 1500 1750 2000"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"attackslow"			"-80"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"moveslow"				"-10 -12.5 -15 -17.5 -20 -22.5 -25"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"12"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"talent_duration"		"8"
-		}
-		"07"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"talent_radius"			"300"
-		}	
-		"08"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"talent_heal"			"10 15 20 25 30 35 40"
-		}			
-	}
-	"precache"
+	"wraith_bloodletter"
 	{
-		"particle"  	"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
-		"particle"		"particles/status_fx/status_effect_life_stealer_open_wounds.vpcf"
-		"particle"		"particles/heroes/justicar/justicar_sacred_ground.vpcf"
-		"particle"		"particles/frostivus_gameplay/wraith_king_hellfire_eruption_explosion.vpcf"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/wraith/wraith_bloodletter.lua"
+		"AbilityTextureName"			"custom/wraith_bloodletter"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		
+		"AbilityCastRange"				"350"
+		"AbilityCastPoint"				"0.35"
+		"AbilityCastAnimation"			"ACT_DOTA_TELEPORT"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"80"
+		
+	    "AbilitySpecial"
+	    {
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_over_time"		"100 125 150 175 200 225 250"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"heal"					"500 750 1000 1250 1500 1750 2000"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attackslow"			"-80"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"moveslow"				"-10 -12.5 -15 -17.5 -20 -22.5 -25"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"12"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"talent_duration"		"8"
+			}
+			"07"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"talent_radius"			"300"
+			}	
+			"08"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"talent_heal"			"10 15 20 25 30 35 40"
+			}			
+		}
+		"precache"
+		{
+			"particle"  	"particles/units/heroes/hero_life_stealer/life_stealer_open_wounds.vpcf"
+			"particle"		"particles/status_fx/status_effect_life_stealer_open_wounds.vpcf"
+			"particle"		"particles/heroes/justicar/justicar_sacred_ground.vpcf"
+			"particle"		"particles/frostivus_gameplay/wraith_king_hellfire_eruption_explosion.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_life_stealer.vsndevts"
+		}
 	}
 }

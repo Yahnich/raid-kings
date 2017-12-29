@@ -1,52 +1,55 @@
-"shinigami_slice_n_dice" //this
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/shinigami/shinigami_slice_n_dice.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
-    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
-    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
-	"AbilityTextureName"			"custom/shinigami_slice_n_dice"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastRange"				"1200 1250 1300 1350 1400 1450 1500"
-	"AbilityCooldown"				"12 11 10 9 8 7 6"
-	"AbilityManaCost"				"50"
-    "AbilityCastPoint"              "0.3"
-    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
-	
-	"precache"
-	{
-		"particle"					"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_attack_blink_blur.vpcf"
-		"particle"					"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf"
-		"particle"					"particles/units/heroes/hero_windrunner/windrunner_windrun_blur.vpcf"
-		"soundfile"					"game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
-	}
-	
-    "AbilitySpecial"
+    "shinigami_slice_n_dice" //this
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/shinigami/shinigami_slice_n_dice.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT_TARGET"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
+        "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+    	"AbilityTextureName"			"custom/shinigami_slice_n_dice"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCastRange"				"1200 1250 1300 1350 1400 1450 1500"
+    	"AbilityCooldown"				"12 11 10 9 8 7 6"
+    	"AbilityManaCost"				"50"
+        "AbilityCastPoint"              "0.3"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+    	
+    	"precache"
+    	{
+    		"particle"					"particles/econ/items/phantom_assassin/phantom_assassin_arcana_elder_smith/pa_arcana_attack_blink_blur.vpcf"
+    		"particle"					"particles/units/heroes/hero_phantom_assassin/phantom_assassin_phantom_strike_end.vpcf"
+    		"particle"					"particles/units/heroes/hero_windrunner/windrunner_windrun_blur.vpcf"
+    		"soundfile"					"game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "speed"     					"9000"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "max_distance"     				"1200"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "search_width"     				"450"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "cast_range"     				"1200 1250 1300 1350 1400 1450 1500"
+            "01"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "speed"     					"9000"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "max_distance"     				"1200"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "search_width"     				"450"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "cast_range"     				"1200 1250 1300 1350 1400 1450 1500"
+            }
         }
     }
 }

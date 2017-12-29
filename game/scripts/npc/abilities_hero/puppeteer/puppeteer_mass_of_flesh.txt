@@ -1,64 +1,67 @@
-"puppeteer_mass_of_flesh"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/puppeteer/puppeteer_mass_of_flesh.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityTextureName"			"custom/puppeteer_mass_of_flesh"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastRange"				"1200"
-	"AbilityCooldown"				"18"
-	"AbilityManaCost"				"50 75 100 125 150 175 200"
-	
-	"precache"
-	{
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
-	}
-	
-    "AbilitySpecial"
+    "puppeteer_mass_of_flesh"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/puppeteer/puppeteer_mass_of_flesh.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    	"AbilityTextureName"			"custom/puppeteer_mass_of_flesh"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCastRange"				"1200"
+    	"AbilityCooldown"				"18"
+    	"AbilityManaCost"				"50 75 100 125 150 175 200"
+    	
+    	"precache"
+    	{
+    		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_shredder.vsndevts"
+    		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_pudge.vsndevts"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_FLOAT"
-            "duration"     					"5.0"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "damage_on_hit"     			"0 250 500 750 1000 1250 1500"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "aura_damage"     				"40 45 50 55 60 65 70"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "aura_slow"     				"-100"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "aura_radius"     				"200"
-        }
-		"05"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "stun_radius"     				"225"
-        }
-		"06"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "stun_duration"     			"1.5"
-        }
-		"07"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "length"     					"900"
+            "01"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "duration"     					"5.0"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "damage_on_hit"     			"0 250 500 750 1000 1250 1500"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "aura_damage"     				"40 45 50 55 60 65 70"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "aura_slow"     				"-100"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "aura_radius"     				"200"
+            }
+    		"05"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "stun_radius"     				"225"
+            }
+    		"06"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "stun_duration"     			"1.5"
+            }
+    		"07"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "length"     					"900"
+            }
         }
     }
 }
