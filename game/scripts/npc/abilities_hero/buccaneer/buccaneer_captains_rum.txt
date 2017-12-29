@@ -1,68 +1,71 @@
-//=================================================================================================================
-// Captain's Rum
-//=================================================================================================================
-"buccaneer_captains_rum"
-{
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/buccaneer/buccaneer_captains_rum.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_POINT"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityTextureName"			"custom/buccaneer_captains_rum"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"  		"0"
-
-	"AbilityCastRange"				"1500"
-	"AbilityCastPoint"				"0.45"
-	"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"1"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+"DOTAAbilities"
+{	
+	//=================================================================================================================
+	// Captain's Rum
+	//=================================================================================================================
+	"buccaneer_captains_rum"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"drunk_damage"			"75"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"drunk_duration"		"2.5"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"drunk_miss"			"10"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"drunk_speed"			"100"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_bottles"			"3"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"recharge_rate"			"20.0"
-		}
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/buccaneer/buccaneer_captains_rum.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_POINT"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/buccaneer_captains_rum"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
 
-	"precache"
-	{
-		"particle"  "particles/units/heroes/hero_brewmaster/brewmaster_drunken_haze_debuff.vpcf"
-		"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+		"AbilityCastRange"				"1500"
+		"AbilityCastPoint"				"0.45"
+		"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
 
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"drunk_damage"			"75"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"drunk_duration"		"2.5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"drunk_miss"			"10"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"drunk_speed"			"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_bottles"			"3"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"recharge_rate"			"20.0"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_brewmaster/brewmaster_drunken_haze_debuff.vpcf"
+			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_brewmaster.vsndevts"
+		}
 	}
 }
