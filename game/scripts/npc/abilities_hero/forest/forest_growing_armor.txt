@@ -1,51 +1,54 @@
-"forest_growing_armor"
-{
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/forest/forest_growing_armor.lua"
-	"AbilityTextureName"			"custom/forest_growing_armor"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"6"
-	
-	"AbilityCastRange"				"900"
-	"AbilityCooldown"				"20"
-	"AbilityManaCost"				"75"
-
-	"AbilityCastPoint"				"0.5"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-	
-	"AbilitySpecial"
+"DOTAAbilities"
+{	
+	"forest_growing_armor"
 	{
-		"01"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"damage_block"		"80 120 160 200 240 280 320"
-		}
-		"02"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"damage_count"		"6 7 8 9 10 11 12"
-		}
-		"03"
-		{
-			"var_type"			"FIELD_FLOAT"
-			"duration"			"30"
-		}
-		"04"
-		{
-			"var_type"			"FIELD_INTEGER"
-			"regen_bonus"		"20 25 30 35 40 45 50"
-		}	
-	}
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "heroes/forest/forest_growing_armor.lua"
+		"AbilityTextureName"			"custom/forest_growing_armor"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+		"RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"6"
+		
+		"AbilityCastRange"				"900"
+		"AbilityCooldown"				"20"
+		"AbilityManaCost"				"75"
 
-	"precache"
-	{
-		"particle"  	"particles/units/heroes/hero_treant/treant_livingarmor.vpcf"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+		"AbilityCastPoint"				"0.5"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_block"		"80 120 160 200 240 280 320"
+			}
+			"02"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"damage_count"		"6 7 8 9 10 11 12"
+			}
+			"03"
+			{
+				"var_type"			"FIELD_FLOAT"
+				"duration"			"30"
+			}
+			"04"
+			{
+				"var_type"			"FIELD_INTEGER"
+				"regen_bonus"		"20 25 30 35 40 45 50"
+			}	
+		}
+
+		"precache"
+		{
+			"particle"  	"particles/units/heroes/hero_treant/treant_livingarmor.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+		}
 	}
 }
