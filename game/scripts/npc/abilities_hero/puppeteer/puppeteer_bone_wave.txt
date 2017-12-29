@@ -1,0 +1,44 @@
+"puppeteer_bone_wave"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/puppeteer/puppeteer_bone_wave.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"custom/puppeteer_bone_wave"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCooldown"				"15 14 13 12 11 10 9"
+	"AbilityManaCost"				"140 130 120 100 90 80 70"
+	"AbilityCastRange"				"350"
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "duration"     					"10"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "bonus_ms"     					"100"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "effect_damage"     			"150 250 350 450 550 650 750"
+        }
+		"04"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "effect_radius"     			"350"
+        }
+		"05"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "stun_duration"     			"1.6"
+        }
+    }
+}

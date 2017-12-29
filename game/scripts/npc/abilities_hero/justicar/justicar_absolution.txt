@@ -1,0 +1,58 @@
+"justicar_absolution"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/justicar/justicar_absolution.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"AbilityTextureName"			"custom/justicar_absolution"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.35"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
+	
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"110"
+	
+	"precache"
+	{
+		"particle"					"particles/heroes/justicar/justicar_absolution.vpcf"
+		"particle"  				"particles/heroes/justicar/justicar_absolution_beam_2.vpcf"
+	}
+	
+    "AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"heal_over_time"		"0.5 0.75 1 1.25 1.5 1.75 2"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_reduction"		"20"
+			"LinkedSpecialBonus"	"justicar_absolution_talent_1"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"debuff_reduction"		"40 50 60 70 80 90 100"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"10"
+		}			
+    }
+}

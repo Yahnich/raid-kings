@@ -1,0 +1,38 @@
+"shinigami_reversal"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/shinigami/shinigami_reversal.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+	"AbilityTextureName"			"custom/shinigami_reversal"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCooldown"				"10"
+	"HasPureCooldown"				"1"
+	"AbilityDuration"				"2.0 2.2 2.4 2.6 2.8 3 3.2"
+	
+	"precache"
+	{
+		"particle"					"particles/heroes/shinigami/shinigami_reversal.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_weaver.vsndevts"
+	}
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "duration"     					"2.0 2.2 2.4 2.6 2.8 3 3.2"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "bonus_damage"     				"290 300 310 320 330 340 350"
+        }
+    }
+}

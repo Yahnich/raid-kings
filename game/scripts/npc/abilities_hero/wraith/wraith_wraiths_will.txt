@@ -1,0 +1,58 @@
+"wraith_wraiths_will"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/wraith/wraith_wraiths_will.lua"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_ALL"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"custom/wraith_wraiths_will"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCastPoint"				"1.0"
+	"AbilityCastRange"				"600 700 800 900 1000 1100 1200"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+	
+	"AbilityCooldown"				"11"
+	
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_necrolyte.vsndevts"
+		"particle"					"particles/heroes/wraith/wraith_wraiths_will_blade_golden.vpcf"
+		"particle"					"particles/heroes/wraith/wraith_wraiths_will_ally_blade_golden.vpcf"
+
+        "particle"                  "particles/heroes/wraith/wraiths_will_ally_2/wraiths_will_ally_2.vpcf"
+	}
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage"     					"125 156 187 218 250 281 312 343"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "heal"     						"25 50 75 100 125 150 175"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "radius"     					"600 700 800 900 1000 1100 1200"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "duration"     					"8"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "break_buffer"     				"800"
+        }
+    }
+}

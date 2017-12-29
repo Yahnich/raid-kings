@@ -1,0 +1,57 @@
+"shinigami_reaper" //this
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/shinigami/shinigami_reaper.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"custom/shinigami_reaper"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCooldown"				"30"
+	"AbilityManaCost"				"200"
+    "AbilityCastPoint"              "0.3"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+	
+	"precache"
+	{
+		"particle"					"particles/heroes/shinigami/shinigami_reaper_buff_effect.vpcf"
+		"particle"					"particles/status_fx/status_effect_electrical.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_phantom_assassin.vsndevts"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_treant.vsndevts"
+	}
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "duration"						"15.0"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "base_attack_time"				"1.4"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "crit_chance"     				"16 20 24 28 32 36 40"
+        }
+		"04"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "crit_amount"     				"300"
+        }
+		"05"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "movespeed_bonus"     			"40 50 60 70 80 90 100"
+        }
+		"06"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "deep_wounds_lifesteal"     	"7"
+        }
+    }
+}

@@ -1,0 +1,64 @@
+//=================================================================================================================
+// Wraith - Skeleton King
+//=================================================================================================================
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//=================================================================================================================
+"wraith_one_for_all"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/wraith/wraith_one_for_all.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IMMEDIATE"
+	"AbilityTextureName"			"custom/wraith_one_for_all"
+	"MaxLevel"						"1"
+	"InnateAbility"					"1"
+	"HasScepterUpgrade"				"1"
+	
+	"AbilityCooldown"				"2.5"
+	
+	"precache"
+	{
+		"particle"					"particles/heroes/wraith/wraith_one_for_all.vpcf"
+		"particle"					"particles/heroes/wraith/wraith_all_for_one.vpcf"
+		"particle"					"particles/heroes/wraith/wraith_all_for_one_steal.vpcf"
+		"particle"					"particles/heroes/wraith/wraith_all_for_one_damage.vpcf"
+		"particle"					"particles/units/heroes/hero_skeletonking/wraith_king_ghosts_ambient.vpcf"
+		"particle"					"particles/status_fx/status_effect_wraithking_ghosts.vpcf"
+
+		"particle"  				"particles/heroes/wraith/wraith_oneforall/wraith_oneforall.vpcf"
+		"particle"  				"particles/heroes/wraith/wraith_allforone_beam/wraith_allforone_beam.vpcf"
+	}
+	
+    "AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"damage_redirection"		"-35"
+		}
+		"02"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"hp_steal"					"-15"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"aura_radius"				"900"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_duration"			"7"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"scepter_cooldown"			"40"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"talent_heal_amp"			"20"
+		}
+    }
+}

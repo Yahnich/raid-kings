@@ -1,0 +1,46 @@
+"puppeteer_zombie_brute"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/puppeteer/puppeteer_zombie_brute.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityTextureName"			"custom/puppeteer_zombie_brute"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCastRange"				"1200"
+	"AbilityCooldown"				"30"
+	
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_undying.vsndevts"
+		"particle"					"particles/heroes/puppeteer/flesh_behemoth_plague_aura.vpcf"
+		"particle"					"particles/heroes/puppeteer/puppeteer_zombie_screech.vpcf"
+		"particle"					"particles/heroes/puppeteer/zombie_screech_status_effect.vpcf"
+		"particle"					"particles/units/heroes/hero_undying/undying_zombie_spawn.vpcf"
+	}
+	
+    "AbilitySpecial"
+    {
+		"01"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "dmg_pct"     		"25"
+        }
+        "02"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "hp_pct"     		"150"
+        }
+		"03"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "base_health"     	"300 500 700 900 1100 1300 1500"
+        }
+		"04"
+        {
+            "var_type"          "FIELD_INTEGER"
+            "lifetime"     		"60"
+        }
+    }
+}

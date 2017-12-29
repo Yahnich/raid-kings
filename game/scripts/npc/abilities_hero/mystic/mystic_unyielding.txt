@@ -1,0 +1,42 @@
+"mystic_unyielding"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/mystic/mystic_unyielding.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+	"AbilityTextureName"			"custom/mystic_unyielding"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"35 32.5 30 27.5 25 22.5 20"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"900"
+	"AbilityCastPoint"              "0.4"
+    "AbilityCastAnimation"          "ACT_DOTA_SHALLOW_GRAVE"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"100"
+
+	
+    "AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"5"
+		}
+    }
+
+    "precache"
+	{
+		"particle"					"particles/heroes/mystic/mystic_unyielding.vpcf"
+	}
+}

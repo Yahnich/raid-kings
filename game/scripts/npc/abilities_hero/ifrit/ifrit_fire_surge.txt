@@ -1,0 +1,83 @@
+"ifrit_fire_surge"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/ifrit/ifrit_fire_surge.lua"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityTextureName"			"custom/ifrit_fire_surge"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"precache"
+	{
+		"particle"					"particles/heroes/ifrit/ifrit_fire_surge_2_base.vpcf"
+		"particle"					"particles/units/heroes/hero_lina/lina_spell_dragon_slave_impact.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lina.vsndevts"
+	}
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"800"
+	"AbilityCastPoint"				"0.45"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"8.5"
+	"AbilityDuration"				"0.6875"	
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"50 70 90 110 130 150 170"
+
+    "AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"speed"						"1200"
+		}
+		
+		"02"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"width_initial"				"275"
+		}
+		"03"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"width_end"					"200"
+		}
+		"04"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"distance"					"1075"
+		}
+		"05"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"max_damage"				"300 600 900 1200 1500 1800 2100"
+		}
+		"06"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"min_damage"				"150 300 450 600 750 900 1050"
+		}
+		"07"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"dot_dmg_pct"				"33"
+		}
+		"08"
+		{
+			"var_type"					"FIELD_FLOAT"
+			"dot_duration"				"5"
+		}
+		"09"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"kindled_total_surges"		"4 6 8 10 12 14 16"
+		}
+    }
+}

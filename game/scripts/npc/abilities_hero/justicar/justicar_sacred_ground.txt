@@ -1,0 +1,56 @@
+"justicar_sacred_ground"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/justicar/justicar_sacred_ground.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"custom/justicar_sacred_ground"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+
+	"AbilityCastPoint"              "0.2"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+	
+	"precache"
+	{
+		"particle" "particles/heroes/justicar/justicar_sacred_ground.vpcf"
+		"particle" "particles/units/heroes/hero_legion_commander/legion_commander_odds_buff.vpcf"
+		"particle" "particles/units/heroes/hero_legion_commander/legion_commander_odds_cast.vpcf"
+		"soundfile"	"game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+	}
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"25"
+
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"1000"
+	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"140"
+
+	
+    "AbilitySpecial"
+    {
+        "01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"450"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"spell_amplify"			"30 35 40 45 50 55 60"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"16"
+		}
+    }
+}

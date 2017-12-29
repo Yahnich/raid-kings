@@ -1,0 +1,82 @@
+//=================================================================================================================
+// Shade Walk
+//=================================================================================================================
+"revenant_shade_walk"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/revenant/revenant_shade_walk.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_MAGIC_IMMUNE_ENEMIES"
+    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityTextureName"			"custom/revenant_shade_walk"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"  		"0"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+	"AbilityCastRange"				"250"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"1"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"1"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"5"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"move_speed"			"75"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"illusion_damage_dealt"	"10 15 20 25 30 35 40"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"illusion_damage_taken"	"500"
+		}		
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"250"
+		}
+		"06"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"slow"					"-25"
+		}
+		"07"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"slow_duration"			"2.0"
+		}
+	}
+
+	"precache"
+	{
+		"particle" 		"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher.vpcf"
+		"particle"  	"particles/units/heroes/hero_shadow_demon/shadow_demon_soul_catcher_debuff.vpcf"
+		"particle"  	"particles/econ/items/abaddon/abaddon_alliance/abaddon_aphotic_shield_alliance_explosion.vpcf"
+
+		"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	}
+}

@@ -1,0 +1,70 @@
+//=================================================================================================================
+// Wavebreaker
+//=================================================================================================================
+"buccaneer_wavebreaker"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/buccaneer/buccaneer_wavebreaker.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+	"AbilityUnitDamageType"  		"DAMAGE_TYPE_MAGICAL"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	"AbilityTextureName"			"custom/buccaneer_wavebreaker"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"  		"0"
+
+	"AbilityCastPoint"				"0.3"
+	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"22 19 16 13 10 7 4"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_damage"			"25 45 65 85 105 125 145"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"5.0"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"move_slow"				"-25"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"miss_chance"			"25"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"wave_distance"			"500"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"wave_radius"			"150"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/heroes/buccaneer/buccaneer_wavebreaker.vpcf"
+		"particle"  "particles/status_fx/status_effect_rum.vpcf"
+		"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+
+		"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+	}
+}
