@@ -1,13 +1,13 @@
 // LICH MAGE SPELLS
 "lich_mage_heal"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "summons/lich_mage/lich_mage_heal.lua"
-	"AbilityBehavior"              	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "summons/lich_mage/lich_mage_heal.lua"
+    "AbilityBehavior"              	"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityTextureName"			"custom/lich_mage_heal"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
@@ -18,17 +18,17 @@
 		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
 	}
 	
-	"AbilitySpecial"
-	{
+    "AbilitySpecial"
+    {
 		"01"
-		{
-			"var_type"          "FIELD_INTEGER"
-			"heal"     			"60"
-		}
+        {
+            "var_type"          "FIELD_INTEGER"
+            "heal"     			"60"
+        }
 		"02"
-		{
-			"var_type"          "FIELD_INTEGER"
-			"cast_range"     	"900"
-		}
-	}
+        {
+            "var_type"          "FIELD_INTEGER"
+            "cast_range"     	"900"
+        }
+    }
 }

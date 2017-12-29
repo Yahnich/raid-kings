@@ -1,0 +1,54 @@
+"ifrit_searing_heat"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/ifrit/ifrit_searing_heat.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"			
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityTextureName"			"custom/ifrit_searing_heat"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastRange"				"600"
+	"AbilityCastPoint"				"0.45"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+
+	// Time		
+	//------------------------------------------------7-------------------------------------------------------------
+	"AbilityCooldown"				"30"
+	"AbilityManaCost"				"200 250 300 350 400 450 500"
+	
+	"precache"
+	{
+		"particle"					"particles/heroes/phoenix/phoenix_searing_heat.vpcf"
+		"soundfile"					"soundevents/game_sounds/game_sounds_lina.vsndevts"
+	}
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage"     					"1000 1500 2000 2500 3000 3500 4000"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "kindled_hits"     				"2"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "kindled_radius"     			"650"
+        }
+		"04"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "strike_delay"     				"0.25"
+        }
+    }
+}

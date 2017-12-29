@@ -1,12 +1,12 @@
 "gladiatrix_victorious_advance"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/gladiatrix/gladiatrix_victorious_advance.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_victorious_advance.lua"
+    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"custom/gladiatrix_victorious_advance"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 
@@ -35,9 +35,9 @@
 	"AbilityManaCost"				"100 100 100 100"
 
 	
-	"AbilitySpecial"
-	{
-		"01"
+    "AbilitySpecial"
+    {
+        "01"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"radius"				"450 500 550 600 650 700 750"
@@ -68,5 +68,5 @@
 			"duration"				"7.0"
 			"LinkedSpecialBonus"	"gladiatrix_victorious_advance_talent_1"
 		}
-	}
+    }
 }

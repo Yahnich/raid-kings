@@ -1,0 +1,39 @@
+//=================================================================================================================
+// PHOENIX - LINA
+//=================================================================================================================
+//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+//=================================================================================================================
+"ifrit_kindled_soul"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/ifrit/ifrit_kindled_soul.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"custom/ifrit_kindled_soul"
+	"HasScepterUpgrade"				"1"
+	"MaxLevel"						"1"
+	"InnateAbility"					"1"
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_dragon_knight/dragon_knight_transform_red.vpcf"
+		"particle"					"particles/econ/wards/lina/lina_ward/lina_ward_ambient.vpcf"
+		"particle"					"particles/status_effect_lina_enkindled.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_clinkz.vsndevts"
+	}
+	
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "spell_cast_requirement"     	"4"
+        }
+		"01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "active_stacks"     			"1"
+			"LinkedSpecialBonus"			"ifrit_kindled_soul_talent_1"
+        }
+    }
+}

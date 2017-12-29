@@ -1,0 +1,46 @@
+//=================================================================================================================
+// Conviction
+//=================================================================================================================
+"peacekeeper_conviction"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/peacekeeper/peacekeeper_conviction.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	"AbilityTextureName"			"custom/peacekeeper_conviction"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"  		"0"
+	"AbilityCastPoint"				"0.3"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+
+	"AbilityManaCost"         		"1"
+    "AbilityCooldown"         		"10.0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"attack_speed"			"100"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"duration"				"10.0"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/econ/items/templar_assassin/templar_assassin_focal/templar_meld_focal_overhead.vpcf"
+		"particle"  "particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf"
+
+		"sound"  	"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+	}
+}

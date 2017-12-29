@@ -1,16 +1,16 @@
 "gladiatrix_war_fury"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/gladiatrix/gladiatrix_war_fury.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_war_fury.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityTextureName"			"custom/gladiatrix_war_fury"
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
 	"AbilityCastPoint"              "0.3"
-	"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
 	
 	"AbilityCastRange"				"450"
 	"AbilityCooldown"				"60"
@@ -25,9 +25,9 @@
 		"particle" "particles/legion_war_fury_ring.vpcf"
 	}
 	
-	"AbilitySpecial"
-	{
-		"01"
+    "AbilitySpecial"
+    {
+        "01"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"bonus_damage_aura"		"35 70 105 140 175 210 245"
@@ -52,5 +52,5 @@
 			"var_type"	"FIELD_INTEGER"
 			"duration"	"15"
 		}
-	}
+    }
 }

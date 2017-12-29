@@ -1,0 +1,54 @@
+"ifrit_inferno"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/ifrit/ifrit_inferno.lua"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_AOE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"			
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+	"AbilityTextureName"			"custom/ifrit_inferno"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"7"
+	
+	"AbilityCooldown"				"60"
+	"AbilityManaCost"				"200 220 240 260 280 300 320"
+	"AbilityCastPoint"				"0.45"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+	"AbilityCastRange"				"1000"
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_warlock/warlock_rainofchaos_start_breakout.vpcf"
+		"particle"					"particles/heroes/ifrit/ifrit_inferno.vpcf"
+	}
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "inferno_duration"     			"15.0"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "inferno_damage"     			"66 100 133 166 200 233 266"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "inferno_radius"     			"800"
+        }
+		"04"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "kindled_burn_dot"     			"15 25 35 45 55 65 75"
+        }
+		"05"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "kindled_burn_duration"     	"8.0"
+        }
+    }
+}

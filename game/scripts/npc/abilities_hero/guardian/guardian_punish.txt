@@ -1,13 +1,13 @@
 "guardian_punish"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/guardian/guardian_punish.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/guardian/guardian_punish.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 	"AbilityTextureName"			"custom/guardian_punish"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
@@ -22,37 +22,37 @@
 	{
 		"particle"					"particles/heroes/guardian/guardian_punish.vpcf"
 		"particle"					"particles/heroes/guardian/guardian_punish_debuff.vpcf"
-		"particle"                  "particles/heroes/justicar/justicar_absolution_beam_2.vpcf"
+        "particle"                  "particles/heroes/justicar/justicar_absolution_beam_2.vpcf"
 
-		"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+        "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 	}
 	
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"damage"     					"350 600 850 1100 1350 1600 1850"
-		}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage"     					"350 600 850 1100 1350 1600 1850"
+        }
 		"02"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"armor_reduction"	     		"-4 -4.5 -5 -5.5 -6 -6.5 -7"
-		}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "armor_reduction"	     		"-4 -4.5 -5 -5.5 -6 -6.5 -7"
+        }
 		"03"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"magic_reduction"     			"-15 -20 -25 -30 -35 -40 -45"
-		}
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "magic_reduction"     			"-15 -20 -25 -30 -35 -40 -45"
+        }
 		"04"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"stun_reduction"     			"-20"
-		}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "stun_reduction"     			"-20"
+        }
 		"05"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"debuff_duration"     			"10"
-		}
-	}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "debuff_duration"     			"10"
+        }
+    }
 }

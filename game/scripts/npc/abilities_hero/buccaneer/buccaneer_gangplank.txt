@@ -12,7 +12,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"buccaneer_gangplank"
+	"AbilityTextureName"			"custom/buccaneer_gangplank"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"  		"0"
 

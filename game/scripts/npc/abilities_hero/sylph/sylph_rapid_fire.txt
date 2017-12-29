@@ -1,0 +1,45 @@
+"sylph_rapid_fire"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/sylph/sylph_rapid_fire.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityTextureName"			"custom/sylph_rapid_fire"
+    "AbilityUnitDamageType"         "DAMAGE_TYPE_PHYSICAL"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCooldown"				"20 19 18 17 16 15 14"
+	"AbilityManaCost"				"65"
+	
+	"precache"
+	{
+		"particle"	"particles/heroes/sylph/sylph_rapid_fire_base.vpcf"
+	}
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "min_arrows"     				"5"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "fire_duration"     			"1"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "spread_rad"     				"120"
+			"LinkedSpecialBonus"			"sylph_rapid_fire_talent_1"
+        }
+		"04"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "min_spread"     				"70"
+			"LinkedSpecialBonus"			"sylph_rapid_fire_talent_1"
+        }
+    }
+}

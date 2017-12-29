@@ -1,0 +1,57 @@
+"guardian_anchor_howl"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/guardian/guardian_anchor_howl.lua"
+	"AbilityTextureName"			"custom/guardian_anchor_howl"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_YES"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCastRange"				"900"
+	"AbilityCooldown"				"12 11 10 9 8 7 6"
+	"AbilityManaCost"				"80"
+
+	"AbilityCastPoint"              "0.3"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_STATUE"
+	
+	"precache"
+	{
+		"particle"					"particles/status_fx/status_effect_beserkers_call.vpcf"
+		"particle"					"particles/heroes/guardian/guardian_anchor_howl.vpcf"
+		"particle"					"particles/econ/events/ti7/hero_levelup_ti7.vpcf"
+		"particle"					"particles/heroes/guardian/guardian_anchor_howl_link.vpcf"
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_axe.vsndevts"
+	}
+	
+    "AbilitySpecial"
+    {
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"taunt_radius"			"900"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"taunt_duration"		"5"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"break_damage"			"400 750 1100 1450 1800 2150 2500"
+		}
+		"04"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"break_duration"		"6"
+		}
+		"05"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"talent_bonus_armor"	"30"
+		}
+    }
+}

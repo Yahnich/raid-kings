@@ -1,11 +1,11 @@
 "guardian_glorious_shield"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/guardian/guardian_glorious_shield.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/guardian/guardian_glorious_shield.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 	"AbilityTextureName"			"custom/guardian_glorious_shield"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
@@ -29,9 +29,9 @@
 		"particle"					"particles/units/heroes/hero_keeper_of_the_light/keeper_of_the_light_blinding_light_debuff.vpcf"
 	}
 	
-	"AbilitySpecial"
-	{
-		"01"
+    "AbilitySpecial"
+    {
+        "01"
 		{
 			"var_type"				"FIELD_INTEGER"
 			"miss_chance"			"25"
@@ -51,5 +51,5 @@
 			"var_type"				"FIELD_INTEGER"
 			"cone_radius"			"400"
 		}				
-	}
+    }
 }

@@ -1,12 +1,12 @@
 "gladiatrix_valiant_rush"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/gladiatrix/gladiatrix_valiant_rush.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_valiant_rush.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 	"AbilityTextureName"			"custom/gladiatrix_valiant_rush"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
@@ -30,28 +30,28 @@
 		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 	}
 	
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"rush_speed"     				"900"
-		}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "rush_speed"     				"900"
+        }
 		"02"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"taunt_radius"     				"600"
-		}
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "taunt_radius"     				"600"
+        }
 		"03"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"taunt_duration"     			"5.0"
-		}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "taunt_duration"     			"5.0"
+        }
 		"04"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"talent_slow"     				"-200"
-		}
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "talent_slow"     				"-200"
+        }
 
-	}
+    }
 }

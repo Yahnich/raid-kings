@@ -1,0 +1,73 @@
+"ifrit_solar_jet"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/ifrit/ifrit_solar_jet.lua"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+	"AbilityTextureName"			"custom/ifrit_solar_jet"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"precache"
+	{
+		"particle"					"particles/units/heroes/hero_lina/lina_spell_light_strike_array_ray_team.vpcf"
+		"particle"					"particles/units/heroes/hero_lina/lina_spell_light_strike_array.vpcf"
+		"particle"					"particles/units/heroes/hero_jakiro/jakiro_liquid_fire_debuff.vpcf"
+	}
+	
+	"AbilityCastRange"				"625"
+	"AbilityCastPoint"				"0.45"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_2"
+	"AbilityThreat"					"4"
+	
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"7.0"
+	"AbilityManaCost"				"120 135 150 165 180 195 210"
+	"AbilityDuration"				"1.8"
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "area_of_effect"     			"225 250 275 300 325 350 375"
+        }
+		"01"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "delay_time"     				"0.8"
+        }
+		"01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage"     					"250 400 550 700 850 1000 1150"
+        }
+		"01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage_over_time"     			"10 20 30 40 50 60 70"
+        }
+		"01"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "dot_duration"     				"8"
+        }
+		"01"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "stun_duration"     			"1.8"
+        }
+		"01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "kindled_offset"     			"600"
+        }
+		"01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "kindled_count"     			"4"
+        }
+    }
+}

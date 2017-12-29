@@ -1,0 +1,38 @@
+"sylph_winds_aid" //Shush
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/sylph/sylph_winds_aid.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"custom/sylph_winds_aid"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCooldown"				"35"
+	"AbilityManaCost"				"80"
+    "AbilityCastPoint"              "0.2"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+	
+	"precache"
+	{
+		"particle"	"particles/heroes/sylph/sylph_winds_aid.vpcf"
+	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "crit_per_stack"     			"7.5 10 12.5 15 17.5 20 22.5"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "duration"     					"15.0"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "talent_passive_damage"     	"5 10 15 20 25 30 35"
+        }
+    }
+}

@@ -1,0 +1,20 @@
+"peacekeeper_lady_justice"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/peacekeeper/peacekeeper_lady_justice.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"custom/peacekeeper_lady_justice"
+	"AbilityCastRange"				"450"
+	"MaxLevel"						"1"
+	"InnateAbility"					"1"
+	"HasScepterUpgrade"				"1"
+	
+	"precache"
+	{
+	}
+	
+    "AbilitySpecial"
+    {
+    }
+}

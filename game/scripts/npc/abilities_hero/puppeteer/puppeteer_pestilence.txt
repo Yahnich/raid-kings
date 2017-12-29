@@ -1,0 +1,38 @@
+"puppeteer_pestilence"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/puppeteer/puppeteer_pestilence.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"custom/puppeteer_pestilence"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCooldown"				"60"
+	"AbilityManaCost"				"200"
+	
+	"precache"
+	{
+		"particle"			"particles/units/heroes/hero_venomancer/venomancer_poison_nova.vpcf"
+		"soundfile"			"soundevents/game_sounds_heroes/game_sounds_venomancer.vsndevts"
+	}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "explode_damage" 			    "500 850 1200 1550 1900 2250 2600"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "explode_radius" 			    "600"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "plague_increase"     			"10"
+        }
+    }
+}

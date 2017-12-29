@@ -10,7 +10,7 @@
 	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_OPTIONAL_POINT"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityTextureName"			"buccaneer_captains_rum"
+	"AbilityTextureName"			"custom/buccaneer_captains_rum"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"  		"0"
 

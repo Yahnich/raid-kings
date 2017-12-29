@@ -1,0 +1,24 @@
+//=================================================================================================================
+// Frostbrand
+//=================================================================================================================
+"avalanche_frostbrand"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/avalanche/avalanche_frostbrand.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	"AbilityTextureName"			"custom/avalanche_frostbrand"
+	"MaxLevel"						"1"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"					"FIELD_INTEGER"
+			"bonus_damage"				"1"
+		}
+	}
+}

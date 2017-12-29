@@ -1,23 +1,23 @@
 "flesh_behemoth_plague_aura"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "summons/zombie_brute/flesh_behemoth_plague_aura.lua"
-	"AbilityBehavior"              	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "summons/zombie_brute/flesh_behemoth_plague_aura.lua"
+    "AbilityBehavior"              	"DOTA_ABILITY_BEHAVIOR_PASSIVE | DOTA_ABILITY_BEHAVIOR_AURA"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"AbilityTextureName"			"custom/flesh_behemoth_plague_aura"
 	"MaxLevel"						"1"
 	
-	"AbilitySpecial"
-	{
+    "AbilitySpecial"
+    {
 		"01"
-		{
-			"var_type"          "FIELD_INTEGER"
-			"damage"     		"3"
-		}
+        {
+            "var_type"          "FIELD_INTEGER"
+            "damage"     		"3"
+        }
 		"02"
-		{
-			"var_type"          "FIELD_INTEGER"
-			"radius"     		"900"
-		}
-	}
+        {
+            "var_type"          "FIELD_INTEGER"
+            "radius"     		"900"
+        }
+    }
 }
