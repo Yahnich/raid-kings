@@ -1,11 +1,11 @@
 "gladiatrix_cross_cut"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/gladiatrix/gladiatrix_cross_cut.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_cross_cut.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"AbilityTextureName"			"custom/gladiatrix_cross_cut"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
@@ -21,33 +21,33 @@
 		"particle"					"particles/heroes/gladiatrix/gladiatrix_cross_cut.vpcf"
 	}
 	
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"area_of_effect"     			"450"
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "area_of_effect"     			"450"
 			"LinkedSpecialBonus"			"gladiatrix_cross_cut_talent_1"
-		}
+        }
 		"02"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"damage"     					"350 550 750 950 1150 1350 1550"
-		}
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage"     					"350 550 750 950 1150 1350 1550"
+        }
 		"03"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"lifesteal"     				"100"
-		}
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "lifesteal"     				"100"
+        }
 		"04"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"debuff_duration"     			"10"
-		}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "debuff_duration"     			"10"
+        }
 		"05"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"damage_reduction"     			"-20"
-		}
-	}
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage_reduction"     			"-20"
+        }
+    }
 }

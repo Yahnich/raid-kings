@@ -5,17 +5,17 @@
 //=================================================================================================================
 "guardian_fortitude"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/guardian/guardian_fortitude.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/guardian/guardian_fortitude.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"custom/guardian_fortitude"
 	"MaxLevel"						"1"
 	"InnateAbility"					"1"
 	"HasScepterUpgrade"				"1"
 	
-	"AbilitySpecial"
-	{
-		"01"
+    "AbilitySpecial"
+    {
+        "01"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"total_resistance"			"-20"
@@ -25,5 +25,5 @@
 			"var_type"					"FIELD_INTEGER"
 			"scepter_total_resistance"	"-30"
 		}
-	}
+    }
 }

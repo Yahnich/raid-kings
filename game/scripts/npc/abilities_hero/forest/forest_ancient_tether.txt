@@ -1,12 +1,12 @@
 "forest_ancient_tether"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/forest/forest_ancient_tether.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/forest/forest_ancient_tether.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 	"AbilityTextureName"			"custom/forest_ancient_tether"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
@@ -23,9 +23,9 @@
 		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_enchantress.vsndevts"
 	}
 	
-	"AbilitySpecial"
-	{
-		"01"
+    "AbilitySpecial"
+    {
+        "01"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"duration"					"30"	
@@ -50,5 +50,5 @@
 			"var_type"					"FIELD_INTEGER"
 			"talent_damage_reduction"	"-20"
 		}
-	}
+    }
 }

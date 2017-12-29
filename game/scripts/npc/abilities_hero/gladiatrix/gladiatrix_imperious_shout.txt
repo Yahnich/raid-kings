@@ -1,10 +1,10 @@
 "gladiatrix_imperious_shout"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/gladiatrix/gladiatrix_imperious_shout.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_imperious_shout.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
 	"AbilityTextureName"			"custom/gladiatrix_imperious_shout"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
@@ -22,27 +22,27 @@
 		"particle"					"particles/heroes/gladiatrix/gladiatrix_imperious_shout.vpcf"
 	}
 	
-	"AbilitySpecial"
-	{
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "armor_steal"     				"-2 -3 -4 -5 -6 -7 -8"
+        }
 		"01"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"armor_steal"     				"-2 -3 -4 -5 -6 -7 -8"
-		}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "resist_steal"     				"-10 -12.5 -15 -17.5 -20 -22.5 -25"
+        }
 		"01"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"resist_steal"     				"-10 -12.5 -15 -17.5 -20 -22.5 -25"
-		}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "steal_duration"     			"10"
+        }
 		"01"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"steal_duration"     			"10"
-		}
-		"01"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"steal_radius"     				"900"
-		}
-	}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "steal_radius"     				"900"
+        }
+    }
 }

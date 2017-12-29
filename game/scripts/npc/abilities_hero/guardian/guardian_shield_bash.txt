@@ -1,19 +1,19 @@
 "guardian_shield_bash"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/guardian/guardian_shield_bash.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/guardian/guardian_shield_bash.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT_TARGET | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
 	"AbilityTextureName"			"custom/guardian_shield_bash"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
 	// Casting
 	//-------------------------------------------------------------------------------------------------------------
 	"AbilityCastRange"				"400"
-	"AbilityCastPoint"              "0.3"
-	"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+    "AbilityCastPoint"              "0.3"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
 	
 	// Time		
 	//-------------------------------------------------------------------------------------------------------------
@@ -24,30 +24,30 @@
 		"particle"					"particles/heroes/guardian/guardian_shield_smash_projectile.vpcf"
 
 		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_dragon_knight.vsndevts"
-		"soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
+        "soundfile"                 "soundevents/game_sounds_heroes/game_sounds_sven.vsndevts"
 	}
 	
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"damage"     					"400 600 800 1000 1200 1400 1600"
-		}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage"     					"400 600 800 1000 1200 1400 1600"
+        }
 		"02"
-		{	
-			"var_type"                      "FIELD_INTEGER"
-			"knockback"     				"400"
-		}
-		"04"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"radius"                        "100"
-		}
+        {	
+            "var_type"                      "FIELD_INTEGER"
+            "knockback"     				"400"
+        }
+        "04"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "radius"                        "100"
+        }
 		"03"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"stun_duration"     			"2.1"
-		}
-	}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "stun_duration"     			"2.1"
+        }
+    }
 }

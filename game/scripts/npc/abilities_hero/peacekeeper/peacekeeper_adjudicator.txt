@@ -1,0 +1,62 @@
+//=================================================================================================================
+// Adjudicator
+//=================================================================================================================
+"peacekeeper_adjudicator"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/peacekeeper/peacekeeper_adjudicator.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+	"AbilityTextureName"			"custom/peacekeeper_adjudicator"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"  		"0"
+	"AbilityCastPoint"				"0.0"
+	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
+
+	"AbilityManaCost"         		"1"
+    "AbilityCooldown"         		"10.0"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"	
+		{
+			"var_type"				"FIELD_FLOAT"
+			"armor_duration"		"5.0"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"armor_reduc"			"100"
+		}
+		"03"	
+		{
+			"var_type"				"FIELD_INTEGER"
+			"base_damage"			"25"
+		}
+		"04"	
+		{
+			"var_type"				"FIELD_INTEGER"
+			"bonus_damage"			"10"
+		}
+		"05"	
+		{
+			"var_type"				"FIELD_FLOAT"
+			"buff_duration"			"10.0"
+		}
+		"06"	
+		{
+			"var_type"				"FIELD_INTEGER"
+			"lifesteal"				"50"
+		}
+	}
+
+	"precache"
+	{
+		"particle"  "particles/units/heroes/hero_monkey_king/monkey_king_jump_armor_debuff.vpcf"
+
+		"sound"  	"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+	}
+}

@@ -12,7 +12,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_PHYSICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"buccaneer_hand_cannon"
+	"AbilityTextureName"			"custom/buccaneer_hand_cannon"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"  		"0"
 

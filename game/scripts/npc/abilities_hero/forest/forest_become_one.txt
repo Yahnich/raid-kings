@@ -1,12 +1,12 @@
 "forest_become_one"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/forest/forest_become_one.lua"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/forest/forest_become_one.lua"
 	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_TREE"
 	"AbilityTextureName"			"custom/forest_become_one"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
@@ -25,27 +25,27 @@
 		"particle"					"particles/units/heroes/hero_furion/furion_teleport_flash.vpcf"
 	}
 	
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"heal"     						"150 300 450 600 750 900 1050"
-		}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "heal"     						"150 300 450 600 750 900 1050"
+        }
 		"02"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"max_hp_heal"     				"7.5"
-		}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "max_hp_heal"     				"7.5"
+        }
 		"03"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"tp_delay"     					"1 0.9 0.8 0.7 0.6 0.5 0.4"
-		}
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "tp_delay"     					"1 0.9 0.8 0.7 0.6 0.5 0.4"
+        }
 		"03"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"talent_radius"     			"800"
-		}
-	}
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "talent_radius"     			"800"
+        }
+    }
 }

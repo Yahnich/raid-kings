@@ -1,0 +1,51 @@
+"mystic_life_swap"
+{
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/mystic/mystic_life_swap.lua"
+	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+	"AbilityTextureName"			"custom/mystic_life_swap"
+    "RequiredLevel"  				"7"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"			"5"
+	
+	"AbilityCastRange"				"600 700 800 900 1000 1100 1200"
+	"AbilityCastPoint"              "0.4"
+    "AbilityCastAnimation"          "ACT_DOTA_SHALLOW_GRAVE"
+	
+	"AbilityCooldown"				"30"
+	
+	"precache"
+	{
+		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+		"particle"					"particles/heroes/mystic/mystic_life_swap.vpcf"
+		"particle"					"particles/heroes/mystic/mystic_life_swap_buff.vpcf"
+		"particle"					"particles/status_fx/status_effect_ghost.vpcf"
+		"particle"					"particles/items_fx/ghost.vpcf"
+	}
+	
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "hp_swap"     					"40 45 50 55 60 65 70"
+        }
+		"02"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "duration"     					"30"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "cast_range"     				"600 700 800 900 1000 1100 1200"
+        }
+		"03"
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "talent_duration"     			"5"
+        }
+    }
+}

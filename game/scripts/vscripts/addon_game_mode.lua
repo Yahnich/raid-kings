@@ -37,6 +37,9 @@ function Precache( context )
 	PrecacheResource( "particle", "particles/generic_dazed_side.vpcf", context )
 	PrecacheResource( "particle", "particles/items_fx/courier_shield.vpcf", context )
 	PrecacheResource( "particle", "particles/units/heroes/hero_skeletonking/wraith_king_vampiric_aura_lifesteal.vpcf", context )
+	PrecacheResource( "particle", "particles/generic_gameplay/generic_slowed_cold.vpcf", context )
+	PrecacheResource( "particle", "particles/status_fx/status_effect_frost_armor.vpcf", context )
+	PrecacheResource( "particle", "particles/units/heroes/hero_crystalmaiden/maiden_frostbite_buff.vpcf", context )
 	
 	for hero, activated in pairs( LoadKeyValues("scripts/npc/activelist.txt") ) do
 		PrecacheUnitByNameSync(hero, context)
@@ -305,6 +308,8 @@ function CRaidKings:InitGenericModifiers()
 	LinkLuaModifier( "modifier_invisibility_custom", "libraries/modifiers/modifier_invisibility_custom.lua" ,LUA_MODIFIER_MOTION_NONE )
 	LinkLuaModifier( "modifier_shadow_clone", "libraries/modifiers/modifier_shadow_clone.lua" ,LUA_MODIFIER_MOTION_NONE )
 	LinkLuaModifier( "modifier_wearable", "libraries/modifiers/modifier_wearable.lua" ,LUA_MODIFIER_MOTION_NONE )
+	LinkLuaModifier( "modifier_chill_generic", "libraries/modifiers/modifier_chill_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
+	LinkLuaModifier( "modifier_frozen_generic", "libraries/modifiers/modifier_frozen_generic.lua" ,LUA_MODIFIER_MOTION_NONE )
 end
 
 function CRaidKings:OnHeroPick(event)

@@ -5,9 +5,9 @@
 //=================================================================================================================
 "gladiatrix_fearless_assault"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/gladiatrix/gladiatrix_fearless_assault.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_fearless_assault.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 	"AbilityTextureName"			"custom/gladiatrix_fearless_assault"
 	"MaxLevel"						"1"
 	"InnateAbility"					"1"
@@ -24,9 +24,9 @@
 	}
 	
 	
-	"AbilitySpecial"
-	{
-		"01"
+    "AbilitySpecial"
+    {
+        "01"
 		{
 			"var_type"					"FIELD_INTEGER"
 			"trigger_chance"			"35"
@@ -56,5 +56,5 @@
 			"var_type"					"FIELD_FLOAT"
 			"scepter_armor_duration"	"5"
 		}
-	}
+    }
 }

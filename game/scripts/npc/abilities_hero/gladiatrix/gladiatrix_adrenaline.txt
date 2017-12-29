@@ -1,41 +1,41 @@
 "gladiatrix_adrenaline"
 {
-	"BaseClass"                     "ability_lua"
-	"ScriptFile"                    "heroes/gladiatrix/gladiatrix_adrenaline.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+    "BaseClass"                     "ability_lua"
+    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_adrenaline.lua"
+    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
 	"AbilityTextureName"			"custom/gladiatrix_adrenaline"
-	"RequiredLevel"  				"7"
+    "RequiredLevel"  				"7"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"			"5"
 	
-	"AbilityCastPoint"              "0.3"
-	"AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+    "AbilityCastPoint"              "0.3"
+    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
 	"AbilityCooldown"				"20 18 16 14 12 10 8"
 	
 	"precache"
 	{
 		"particle"					"particles/heroes/gladiatrix/gladiatrix_adrenaline.vpcf"
 		"particle"					"particles/heroes/gladiatrix/status_effect_gladiatrix_imperious_shout.vpcf"
-		
+        
 		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_doombringer.vsndevts"
 	}
 	
-	"AbilitySpecial"
-	{
-		"01"
-		{
-			"var_type"                      "FIELD_FLOAT"
-			"duration"     					"5.0"
-		}
+    "AbilitySpecial"
+    {
+        "01"
+        {
+            "var_type"                      "FIELD_FLOAT"
+            "duration"     					"5.0"
+        }
 		"02"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"damage_reduction"     			"-80"
-		}
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "damage_reduction"     			"-80"
+        }
 		"03"
-		{
-			"var_type"                      "FIELD_INTEGER"
-			"heal_amp"     					"100"
-		}
-	}
+        {
+            "var_type"                      "FIELD_INTEGER"
+            "heal_amp"     					"100"
+        }
+    }
 }

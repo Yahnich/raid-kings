@@ -1,0 +1,62 @@
+//=================================================================================================================
+// Dark Flay
+//=================================================================================================================
+"revenant_dark_flay"
+{
+	// General
+	//-------------------------------------------------------------------------------------------------------------
+	"BaseClass"						"ability_lua"
+	"ScriptFile"					"heroes/revenant/revenant_dark_flay.lua"
+	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+	"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+    "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+    "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+    "AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+	"AbilityTextureName"			"custom/revenant_dark_flay"
+	"MaxLevel"						"7"
+	"LevelsBetweenUpgrades"  		"0"
+	
+	// Casting
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCastPoint"				"0.3"
+	"AbilityCastAnimation"			"ACT_DOTA_GENERIC_CHANNEL_1"
+	"AbilityCastRange"				"800"
+
+	// Time		
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityCooldown"				"1"
+
+	// Cost
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilityManaCost"				"1"
+
+	// Special
+	//-------------------------------------------------------------------------------------------------------------
+	"AbilitySpecial"
+	{
+		"01"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"damage_second"			"50"
+		}
+		"02"
+		{
+			"var_type"				"FIELD_FLOAT"
+			"max_channel"			"3"
+		}
+		"03"
+		{
+			"var_type"				"FIELD_INTEGER"
+			"radius"				"500"
+		}
+	}
+
+	"precache"
+	{	
+		"particle" 		"particles/heroes/revenant/revenant_dark_flay.vpcf"
+		"particle"  	"particles/heroes/revenant/revenant_dark_flay_reflect.vpcf"
+
+		"soundfile" 	"soundevents/game_sounds_heroes/game_sounds_shadow_demon.vsndevts"
+	}
+}

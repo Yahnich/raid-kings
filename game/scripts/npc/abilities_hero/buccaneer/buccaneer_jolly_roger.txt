@@ -1,5 +1,5 @@
 //=================================================================================================================
-// Jolly Roger
+// X Marks
 //=================================================================================================================
 "buccaneer_jolly_roger"
 {
@@ -11,7 +11,7 @@
 	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"buccaneer_jolly_roger"
+	"AbilityTextureName"			"custom/buccaneer_jolly_roger"
 	"MaxLevel"						"1"
 	"InnateAbility"					"1"
 

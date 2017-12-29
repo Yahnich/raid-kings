@@ -12,7 +12,7 @@
 	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
 	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"buccaneer_call_the_fleet"
+	"AbilityTextureName"			"custom/buccaneer_call_the_fleet"
 	"MaxLevel"						"7"
 	"LevelsBetweenUpgrades"  		"0"
 
