@@ -1,15 +1,15 @@
 "DOTAAbilities"
-{
+{	
 	"forest_parasitic_growth"
 	{
-	    "BaseClass"                     "ability_lua"
-	    "ScriptFile"                    "heroes/forest/forest_parasitic_growth.lua"
-	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"BaseClass"                     "ability_lua"
+		"ScriptFile"                    "heroes/forest/forest_parasitic_growth.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
 		"AbilityTextureName"			"custom/forest_parasitic_growth"
-	    "RequiredLevel"  				"7"
+		"RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 
