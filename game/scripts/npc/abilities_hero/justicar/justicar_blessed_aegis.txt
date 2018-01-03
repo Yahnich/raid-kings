@@ -1,34 +1,37 @@
-"justicar_blessed_aegis"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/justicar/justicar_blessed_aegis.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityTextureName"			"custom/justicar_blessed_aegis"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastPoint"				"0.35"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-	"AbilityCastRange"				"450"
-	
-	"AbilityCooldown"				"11"
-	"AbilityManaCost"				"75"
-	
-	"precache"
+	"justicar_blessed_aegis"
 	{
-		"particle"					"particles/heroes/justicar/justicar_blessed_aegis.vpcf"
-		"particle"					"particles/heroes/justicar/justicar_absolution_beam_2.vpcf"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/justicar/justicar_blessed_aegis.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityTextureName"			"custom/justicar_blessed_aegis"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		
+		"AbilityCastPoint"				"0.35"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		"AbilityCastRange"				"450"
+		
+		"AbilityCooldown"				"11"
+		"AbilityManaCost"				"75"
+		
+		"precache"
+		{
+			"particle"					"particles/heroes/justicar/justicar_blessed_aegis.vpcf"
+			"particle"					"particles/heroes/justicar/justicar_absolution_beam_2.vpcf"
+		}
+		
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "barrier"     					"500 1000 1500 2000 2500 3000 3500"
+	        }
+	    }
 	}
-	
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "barrier"     					"500 1000 1500 2000 2500 3000 3500"
-        }
-    }
 }

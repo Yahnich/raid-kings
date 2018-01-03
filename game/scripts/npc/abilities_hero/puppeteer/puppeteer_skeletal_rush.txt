@@ -1,35 +1,38 @@
-"puppeteer_skeletal_rush"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/puppeteer/puppeteer_skeletal_rush.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityTextureName"			"custom/puppeteer_skeletal_rush"
-	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastRange"				"2000"
-	"AbilityCooldown"				"35"
-	"AbilityManaCost"				"160 180 200 220 240 260 280"
-	
-    "AbilitySpecial"
+    "puppeteer_skeletal_rush"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/puppeteer/puppeteer_skeletal_rush.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+    	"AbilityTextureName"			"custom/puppeteer_skeletal_rush"
+    	"AbilityType"					"DOTA_ABILITY_TYPE_ULTIMATE"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCastRange"				"2000"
+    	"AbilityCooldown"				"35"
+    	"AbilityManaCost"				"160 180 200 220 240 260 280"
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "damage_on_attack"     			"300 550 800 1050 1200 1550 1800"// if you adjust this value, also change skeleton warrior value
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "max_distance"     				"2000"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "skeleton_amt"     				"5"
+            "01"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "damage_on_attack"     			"300 550 800 1050 1200 1550 1800"// if you adjust this value, also change skeleton warrior value
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "max_distance"     				"2000"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "skeleton_amt"     				"5"
+            }
         }
     }
 }

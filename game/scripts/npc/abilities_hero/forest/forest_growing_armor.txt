@@ -1,5 +1,4 @@
 "DOTAAbilities"
-{	
 	"forest_growing_armor"
 	{
 		"BaseClass"                     "ability_lua"
@@ -20,7 +19,7 @@
 
 		"AbilityCastPoint"				"0.5"
 		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_3"
-		
+
 		"AbilitySpecial"
 		{
 			"01"

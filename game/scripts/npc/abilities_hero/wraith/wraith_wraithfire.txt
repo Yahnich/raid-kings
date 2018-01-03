@@ -1,67 +1,70 @@
-"wraith_wraithfire"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/wraith/wraith_wraithfire.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityTextureName"			"custom/wraith_wraithfire"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCooldown"				"8.0 8.0 8.0 8.0"
-	"AbilityManaCost"				"120"
-	"AbilityCastRange"				"525"
-	"AbilityCastPoint"				"0.35"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-
-	"AbilitySpecial"
+	"wraith_wraithfire"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"blast_speed"			"1000"
-		}		
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"blast_stun_duration"	"2.0"
-		}			
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"blast_slow"			"-20"
-		}		
-		"04"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"blast_dot_duration"	"4"
-		}			
-		"05"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"blast_dot_radius"		"450 500 550 600 650 700 750"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"blast_dot_damage"		"50 100 150 200 250 300 350"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"blast_damage"			"300 500 700 900 1100 1300 1500"
-		}
-	}
-	"precache"
-	{
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/wraith/wraith_wraithfire.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"AbilityTextureName"			"custom/wraith_wraithfire"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
 		
-		"particle"	"particles/heroes/wraith/wraith_wraithfire.vpcf"
-		"particle"	"particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast_explosion_ebf.vpcf"
-		"particle"	"particles/heroes/wraith/wraith_wraithfire_debuff.vpcf"
-		"particle"	"particles/heroes/wraith/wraith_wraithfire_warmup.vpcf"
+		"AbilityCooldown"				"8.0 8.0 8.0 8.0"
+		"AbilityManaCost"				"120"
+		"AbilityCastRange"				"525"
+		"AbilityCastPoint"				"0.35"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_speed"			"1000"
+			}		
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_stun_duration"	"2.0"
+			}			
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_slow"			"-20"
+			}		
+			"04"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_dot_duration"	"4"
+			}			
+			"05"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"blast_dot_radius"		"450 500 550 600 650 700 750"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_dot_damage"		"50 100 150 200 250 300 350"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"blast_damage"			"300 500 700 900 1100 1300 1500"
+			}
+		}
+		"precache"
+		{
+			"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+			
+			"particle"	"particles/heroes/wraith/wraith_wraithfire.vpcf"
+			"particle"	"particles/frostivus_gameplay/frostivus_skeletonking_hellfireblast_explosion_ebf.vpcf"
+			"particle"	"particles/heroes/wraith/wraith_wraithfire_debuff.vpcf"
+			"particle"	"particles/heroes/wraith/wraith_wraithfire_warmup.vpcf"
+		}
 	}
 }

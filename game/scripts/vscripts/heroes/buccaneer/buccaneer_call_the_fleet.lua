@@ -34,7 +34,7 @@ function buccaneer_call_the_fleet:OnSpellStart()
 				if not self.hitUnits[enemy:entindex()] then
 					self:GetAbility():DealDamage(caster, enemy, ghostship_damage, {}, 0)
 					enemy:AddNewModifier(caster, self:GetAbility(), "modifier_stunned_generic", {Duration=stun_duration})
-					if enemy:HasModifier("modifier_x_marks") then
+					if enemy:HasModifier("modifier_buccaneer_jolly_roger") then
 						Timers:CreateTimer(stun_duration, function()
 							enemy:AddNewModifier(caster, self:GetAbility(), "modifier_dazed_generic", {Duration=stun_duration})
 						end)

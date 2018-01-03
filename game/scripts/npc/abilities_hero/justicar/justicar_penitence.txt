@@ -1,71 +1,74 @@
-"justicar_penitence"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/justicar/justicar_penitence.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"AbilityTextureName"			"custom/justicar_penitence"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"800"
-    "AbilityCastPoint"              "0.5"
-    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
-	
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16.0"
-	
-	"precache"
-	{
-		"particle"					"particles/heroes/justicar/justicar_penitence.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
-	}
-	
-    "AbilitySpecial"
+    "justicar_penitence"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/justicar/justicar_penitence.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+    	"AbilityTextureName"			"custom/justicar_penitence"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	// Casting
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityCastRange"				"800"
+        "AbilityCastPoint"              "0.5"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_4"
+    	
+    	// Time		
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityCooldown"				"16.0"
+    	
+    	"precache"
+    	{
+    		"particle"					"particles/heroes/justicar/justicar_penitence.vpcf"
+    		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_chen.vsndevts"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "hp_damage"     				"60"
-        }
-		"02"
-        {	
-            "var_type"                      "FIELD_INTEGER"
-            "base_damage"     				"600 700 800 900 1000 1100 1200"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "hp_to_damage"     				"100"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "hp_to_barrier"     			"50"
-        }
-		"05"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "bonus_damage"     				"40 50 60 70 80 90 100"
-        }
-		"06"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "bonus_armor"     				"8 10 12 14 16 18 20"
-        }
-		"07"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "duration"     					"12.0"
-        }
-		"08"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "radius"     					"800"
+            "01"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "hp_damage"     				"60"
+            }
+    		"02"
+            {	
+                "var_type"                      "FIELD_INTEGER"
+                "base_damage"     				"600 700 800 900 1000 1100 1200"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "hp_to_damage"     				"100"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "hp_to_barrier"     			"50"
+            }
+    		"05"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "bonus_damage"     				"40 50 60 70 80 90 100"
+            }
+    		"06"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "bonus_armor"     				"8 10 12 14 16 18 20"
+            }
+    		"07"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "duration"     					"12.0"
+            }
+    		"08"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "radius"     					"800"
+            }
         }
     }
 }

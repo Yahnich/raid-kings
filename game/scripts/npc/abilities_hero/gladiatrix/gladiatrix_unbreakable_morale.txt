@@ -1,68 +1,71 @@
-"gladiatrix_unbreakable_morale"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_unbreakable_morale.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
-	"AbilityTextureName"			"custom/gladiatrix_unbreakable_morale"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"precache"
+	"gladiatrix_unbreakable_morale"
 	{
-		"soundfile"	"game_sounds_heroes/game_sounds_legion_commander.vsndevts"
-		"particle" "particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
-		"particle" "particles/units/heroes/hero_legion_commander/legion_commander_press_buff.vpcf"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_unbreakable_morale.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ALLIES_YES"
+		"AbilityTextureName"			"custom/gladiatrix_unbreakable_morale"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		
+		"precache"
+		{
+			"soundfile"	"game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+			"particle" "particles/units/heroes/hero_legion_commander/legion_commander_press.vpcf"
+			"particle" "particles/units/heroes/hero_legion_commander/legion_commander_press_buff.vpcf"
+		}
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"800"
+		"AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110"
+		
+	    "AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"10.0"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"attack_speed"			"200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"hp_regen"				"25 50 75 100 125 150 175"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"max_hp_bonus_talent"	"500 1000 1500 2000 2500 3000 3500"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"max_hp_bonus_talent_pct"	"50"
+			}	
+			"06"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"passive_chance"			"25"
+			}			
+	    }
 	}
-	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"800"
-	"AbilityCastPoint"              "0.3"
-    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
-	
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
-	
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"110"
-	
-    "AbilitySpecial"
-    {
-        "01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"10.0"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"attack_speed"			"200"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"hp_regen"				"25 50 75 100 125 150 175"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"max_hp_bonus_talent"	"500 1000 1500 2000 2500 3000 3500"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"max_hp_bonus_talent_pct"	"50"
-		}	
-		"06"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"passive_chance"			"25"
-		}			
-    }
 }

@@ -1,58 +1,61 @@
-//=================================================================================================================
-// PUPPETEER - NECROPHOS
-//=================================================================================================================
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//=================================================================================================================
-"puppeteer_black_plague"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/puppeteer/puppeteer_black_plague.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityTextureName"			"custom/puppeteer_black_plague"
-	"AbilityCastRange"				"450"
-	"MaxLevel"						"1"
-	"InnateAbility"					"1"
-	"HasScepterUpgrade"				"1"
-	
-	"precache"
-	{
-		"particle"					"particles/units/heroes/hero_broodmother/broodmother_poison_debuff.vpcf"
-		"particle"					"particles/heroes/puppeteer/puppeteer_black_plague.vpcf"
-	}
-	
-    "AbilitySpecial"
+    //=================================================================================================================
+    // PUPPETEER - NECROPHOS
+    //=================================================================================================================
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //=================================================================================================================
+    "puppeteer_black_plague"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/puppeteer/puppeteer_black_plague.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+    	"AbilityTextureName"			"custom/puppeteer_black_plague"
+    	"AbilityCastRange"				"450"
+    	"MaxLevel"						"1"
+    	"InnateAbility"					"1"
+    	"HasScepterUpgrade"				"1"
+    	
+    	"precache"
+    	{
+    		"particle"					"particles/units/heroes/hero_broodmother/broodmother_poison_debuff.vpcf"
+    		"particle"					"particles/heroes/puppeteer/puppeteer_black_plague.vpcf"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_FLOAT"
-            "duration"     					"20"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "radius"     					"450"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "spread_radius"     			"900"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "transfer_rate"     			"1"
-			"LinkedSpecialBonus"			"puppeteer_black_plague_talent_1"
-        }
-		"05"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "int_damage_pct"     			"25"
-        }
-		"06"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "scepter_reduction"     		"-20"
+            "01"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "duration"     					"20"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "radius"     					"450"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "spread_radius"     			"900"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "transfer_rate"     			"1"
+    			"LinkedSpecialBonus"			"puppeteer_black_plague_talent_1"
+            }
+    		"05"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "int_damage_pct"     			"25"
+            }
+    		"06"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "scepter_reduction"     		"-20"
+            }
         }
     }
 }

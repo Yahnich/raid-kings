@@ -1,41 +1,44 @@
-"puppeteer_lich_mage"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/puppeteer/puppeteer_lich_mage.lua"
-    "AbilityBehavior"              	"DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityTextureName"			"custom/puppeteer_lich_mage"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastRange"				"1200"
-	"AbilityCooldown"				"60 55 50 45 40 35 30"
-	
-	"precache"
-	{
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
-		"particle"					"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
-		"particle"					"particles/heroes/puppeteer/lich_mage_damage_amp.vpcf"
-		"particle"					"particles/units/heroes/hero_lich/lich_dark_ritual.vpcf"	
-		"particle"					"particles/units/heroes/hero_undying/undying_zombie_spawn.vpcf"
-	}
-	
-    "AbilitySpecial"
+    "puppeteer_lich_mage"
     {
-		"01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/puppeteer/puppeteer_lich_mage.lua"
+        "AbilityBehavior"              	"DOTA_ABILITY_BEHAVIOR_POINT"
+    	"AbilityTextureName"			"custom/puppeteer_lich_mage"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCastRange"				"1200"
+    	"AbilityCooldown"				"60 55 50 45 40 35 30"
+    	
+    	"precache"
+    	{
+    		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_lich.vsndevts"
+    		"particle"					"particles/units/heroes/hero_lich/lich_base_attack.vpcf"
+    		"particle"					"particles/heroes/puppeteer/lich_mage_damage_amp.vpcf"
+    		"particle"					"particles/units/heroes/hero_lich/lich_dark_ritual.vpcf"	
+    		"particle"					"particles/units/heroes/hero_undying/undying_zombie_spawn.vpcf"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"          "FIELD_INTEGER"
-            "lifetime"     		"60"
-        }
-		"02"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "dmg_pct"     		"50"
-        }
-        "03"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "hp_pct"     		"50"
+    		"01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "lifetime"     		"60"
+            }
+    		"02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "dmg_pct"     		"50"
+            }
+            "03"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "hp_pct"     		"50"
+            }
         }
     }
 }

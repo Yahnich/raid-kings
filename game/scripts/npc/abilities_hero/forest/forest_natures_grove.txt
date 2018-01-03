@@ -35,7 +35,6 @@
 		
 		"AbilitySpecial"
 		{
-			
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -65,7 +64,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"sleep_duration"		"6 7 8 9 10 11 12"
-			}			
+			}		
 		}
 	}
 }

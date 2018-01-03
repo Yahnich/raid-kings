@@ -1,5 +1,6 @@
 "DOTAAbilities"
 {	
+
 	//=================================================================================================================
 	// Crestrider
 	//=================================================================================================================
@@ -11,9 +12,9 @@
 		"ScriptFile"					"heroes/buccaneer/buccaneer_crestrider.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
 		"AbilityUnitTargetTeam"  		"DOTA_UNIT_TARGET_TEAM_ENEMY"
-		"AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
-		"AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
-		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+	  "AbilityUnitTargetType"  		"DOTA_UNIT_TARGET_ALL"
+	  "AbilityUnitTargetFlags" 		"DOTA_UNIT_TARGET_FLAG_NONE"
+	  "SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"AbilityTextureName"			"custom/buccaneer_crestrider"
 		"MaxLevel"						"7"

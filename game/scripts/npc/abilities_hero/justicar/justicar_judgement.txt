@@ -1,49 +1,52 @@
-"justicar_judgement"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/justicar/justicar_judgement.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"AbilityTextureName"			"custom/justicar_judgement"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastPoint"				"0.5"
-	"AbilityCastRange"				"900"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
-	
-	"AbilityCooldown"				"15"
-	
-	"precache"
-	{
-		"particle"					"particles/heroes/justicar/justicar_judgement.vpcf"
-        "particle"                  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold.vpcf"
-	}
-	
-    "AbilitySpecial"
+    "justicar_judgement"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/justicar/justicar_judgement.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+    	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+    	"AbilityTextureName"			"custom/justicar_judgement"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCastPoint"				"0.5"
+    	"AbilityCastRange"				"900"
+    	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_4"
+    	
+    	"AbilityCooldown"				"15"
+    	
+    	"precache"
+    	{
+    		"particle"					"particles/heroes/justicar/justicar_judgement.vpcf"
+            "particle"                  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_gold.vpcf"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "reflect_damage"     			"50 100 150 200 250 300 350"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "duration"	     				"8"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "damage_to_heal"     			"50"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "heal_duration"     			"3"
+            "01"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "reflect_damage"     			"50 100 150 200 250 300 350"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "duration"	     				"8"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "damage_to_heal"     			"50"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "heal_duration"     			"3"
+            }
         }
     }
 }

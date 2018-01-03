@@ -1,44 +1,47 @@
-"sylph_immaterialize"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/sylph/sylph_immaterialize.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityTextureName"			"custom/sylph_immaterialize"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCooldown"				"11 10 9 8 7 6 5"
-	"AbilityManaCost"				"50"
-    "AbilityCastPoint"              "0.3"
-    "AbilityCastAnimation"          "ACT_DOTA_DISABLED"
-	
-	"precache"
-	{
-		"particle"	"particles/units/heroes/hero_windrunner/windrunner_windrun.vpcf"
-		"particle"	"particles/heroes/sylph/sylph_immaterialize.vpcf"
-	}
-    "AbilitySpecial"
+    "sylph_immaterialize"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/sylph/sylph_immaterialize.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+    	"AbilityTextureName"			"custom/sylph_immaterialize"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCooldown"				"11 10 9 8 7 6 5"
+    	"AbilityManaCost"				"50"
+        "AbilityCastPoint"              "0.3"
+        "AbilityCastAnimation"          "ACT_DOTA_DISABLED"
+    	
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_windrunner/windrunner_windrun.vpcf"
+    		"particle"	"particles/heroes/sylph/sylph_immaterialize.vpcf"
+    	}
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_FLOAT"
-            "duration"    					"5.0"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "movespeed_bonus"    			"12 16 20 24 28 32 36"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "evasion"    					"-100"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "move_slow"    					"-20"
+            "01"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "duration"    					"5.0"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "movespeed_bonus"    			"12 16 20 24 28 32 36"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "evasion"    					"-100"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "move_slow"    					"-20"
+            }
         }
     }
 }

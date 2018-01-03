@@ -1,74 +1,77 @@
-"sylph_updraft"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/sylph/sylph_updraft.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"AbilityTextureName"			"custom/sylph_updraft"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"800"
-	"AbilityCastPoint"              "0.2"
-    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
-	
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"15.0"
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"145"
-	
-	"precache"
-	{
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
-		"soundfile"		"soundevents/game_sounds_items.vsndevts"
-
-		"particle"		"particles/econ/events/fall_major_2016/cyclone_fm06.vpcf"
-		"particle"		"particles/units/heroes/hero_tiny/tiny_toss_blur.vpcf"
-        "particle"      "particles/heroes/sylph/sylph_updraft_cast.vpcf"
-	}
-	
-    "AbilitySpecial"
+    "sylph_updraft"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/sylph/sylph_updraft.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+    	"AbilityTextureName"			"custom/sylph_updraft"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	// Casting
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityCastRange"				"800"
+    	"AbilityCastPoint"              "0.2"
+        "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+    	
+    	// Time		
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityCooldown"				"15.0"
+
+    	// Cost
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityManaCost"				"145"
+    	
+    	"precache"
+    	{
+    		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_rubick.vsndevts"
+    		"soundfile"		"soundevents/game_sounds_items.vsndevts"
+
+    		"particle"		"particles/econ/events/fall_major_2016/cyclone_fm06.vpcf"
+    		"particle"		"particles/units/heroes/hero_tiny/tiny_toss_blur.vpcf"
+            "particle"      "particles/heroes/sylph/sylph_updraft_cast.vpcf"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_FLOAT"
-            "lift_duration"     			"1.1"
-        }
-		"01"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "as_to_lift_damage"     		"5 10 15 25 30 35 40"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "fall_duration"     			"0.2"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "smash_damage"     				"300 450 600 750 900 1050 1200"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "grab_radius"     				"350"
-        }
-		"01"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "ms_to_radius"     				"100"
-        }
-		"05"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "talent_stun_duration"     		"0.8"
+            "01"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "lift_duration"     			"1.1"
+            }
+    		"01"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "as_to_lift_damage"     		"5 10 15 25 30 35 40"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "fall_duration"     			"0.2"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "smash_damage"     				"300 450 600 750 900 1050 1200"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "grab_radius"     				"350"
+            }
+    		"01"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "ms_to_radius"     				"100"
+            }
+    		"05"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "talent_stun_duration"     		"0.8"
+            }
         }
     }
 }

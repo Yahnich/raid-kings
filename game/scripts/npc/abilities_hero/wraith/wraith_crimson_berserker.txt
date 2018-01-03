@@ -1,55 +1,58 @@
-"wraith_crimson_berserker"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/wraith/wraith_crimson_berserker.lua"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
-	"AbilityTextureName"			"custom/wraith_crimson_berserker"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"15"
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"100"
-
-	
-   "AbilitySpecial"
+	"wraith_crimson_berserker"
 	{
-		"01"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"hp_cost"				"4.5"
-			"LinkedSpecialBonus"	"wraith_crimson_berserker_talent_1"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_reduction"		"-40"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_attackspeed"		"150 175 200 225 250 275 300"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"100"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"talent_crit"			"150 175 200 225 250 275 300"
-		}	
-	}
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/wraith/wraith_crimson_berserker.lua"
+	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE"
+		"AbilityTextureName"			"custom/wraith_crimson_berserker"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
 
-	"precache"
-	{
-		"particle"  	"particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_buff.vpcf"
-		"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"15"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100"
+
+		
+	   "AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"hp_cost"				"4.5"
+				"LinkedSpecialBonus"	"wraith_crimson_berserker_talent_1"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_reduction"		"-40"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_attackspeed"		"150 175 200 225 250 275 300"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"100"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"talent_crit"			"150 175 200 225 250 275 300"
+			}	
+		}
+
+		"precache"
+		{
+			"particle"  	"particles/units/heroes/hero_ogre_magi/ogre_magi_bloodlust_buff.vpcf"
+			"soundfile"		"soundevents/game_sounds_heroes/game_sounds_ogre_magi.vsndevts"
+		}
 	}
 }

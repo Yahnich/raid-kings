@@ -1,45 +1,48 @@
-"sylph_jetstream" //Shush
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/sylph/sylph_jetstream.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityTextureName"			"custom/sylph_jetstream"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCooldown"				"18 17 16 15 14 13 12"
-	"AbilityCastRange"				"1000 1100 1200 1300 1400 1500 1600"
-	"AbilityManaCost"				"60 50 40 30 20 10 0"
-	
-	"precache"
-	{
-		"particle"	"particles/units/heroes/hero_windrunner/windrunner_windrun.vpcf"
-		"particle"	"particles/heroes/sylph/sylph_jetstream_poof.vpcf"
-		
-	}
-    "AbilitySpecial"
+    "sylph_jetstream" //Shush
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/sylph/sylph_jetstream.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+    	"AbilityTextureName"			"custom/sylph_jetstream"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCooldown"				"18 17 16 15 14 13 12"
+    	"AbilityCastRange"				"1000 1100 1200 1300 1400 1500 1600"
+    	"AbilityManaCost"				"60 50 40 30 20 10 0"
+    	
+    	"precache"
+    	{
+    		"particle"	"particles/units/heroes/hero_windrunner/windrunner_windrun.vpcf"
+    		"particle"	"particles/heroes/sylph/sylph_jetstream_poof.vpcf"
+    		
+    	}
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_FLOAT"
-            "speed"     					"1000"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "cast_range"     				"1000 1100 1200 1300 1400 1500 1600"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "damage_radius"     			"100"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "damage"     					"400 725 1050 1375 1700 2025 2350"
+            "01"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "speed"     					"1000"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "cast_range"     				"1000 1100 1200 1300 1400 1500 1600"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "damage_radius"     			"100"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "damage"     					"400 725 1050 1375 1700 2025 2350"
+            }
         }
     }
 }

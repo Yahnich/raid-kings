@@ -92,7 +92,7 @@ function modifier_crestrider_enemy:OnCreated(table)
 end
 
 function modifier_crestrider_enemy:OnIntervalThink()
-	if self:GetParent():HasModifier("modifier_x_marks") then
+	if self:GetParent():HasModifier("modifier_buccaneer_jolly_roger") then
 		self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self:GetSpecialValueFor("damage"), {}, 0)
 	end
 end

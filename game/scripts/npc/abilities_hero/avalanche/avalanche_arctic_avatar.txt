@@ -1,51 +1,58 @@
-//=================================================================================================================
-// Arctic Avatar
-//=================================================================================================================
-"avalanche_arctic_avatar"
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/avalanche/avalanche_arctic_avatar.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityTextureName"			"custom/avalanche_arctic_avatar"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"  		"0"
 
-	"AbilityCastPoint"				"0.3"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"50 45 40 35 30 25 20"
-
-	"AbilityManaCost"				"90 100 110 120 130 140 150"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//=================================================================================================================
+	// Arctic Avatar
+	//=================================================================================================================
+	"avalanche_arctic_avatar"
 	{
-		"01"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_arctic_avatar.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/avalanche_arctic_avatar"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"attack_slow"				"-25"
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"attack_slow"				"-25"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"30.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"chill_duration"			"4.0"
+			}
 		}
-		"02"
+
+		"precache"
 		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"30.0"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"chill_duration"			"4.0"
+			"particle"  "particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_buff.vpcf"
+			"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_frosty_l2_radiant.vpcf"
+			"particle"  "particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_base_attack.vpcf"
+
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
 		}
 	}
 
-	"precache"
-	{
-		"particle"  "particles/units/heroes/hero_ancient_apparition/ancient_apparition_chilling_touch_buff.vpcf"
-		"particle"  "particles/econ/items/effigies/status_fx_effigies/status_effect_effigy_frosty_l2_radiant.vpcf"
-		"particle"  "particles/econ/items/crystal_maiden/ti7_immortal_shoulder/cm_ti7_immortal_base_attack.vpcf"
-	}
 }
