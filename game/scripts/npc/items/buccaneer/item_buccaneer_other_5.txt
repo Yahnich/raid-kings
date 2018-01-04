@@ -1,0 +1,52 @@
+"DOTAAbilities"
+{
+	"item_buccaneer_other_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/buccaneer/item_buccaneer_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"buccaneer"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"5"
+
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"back"					"models/items/kunkka/first_chance_of_the_kunkkistadore/first_chance_of_the_kunkkistadore.vmdl"
+			"belt"					"models/items/kunkka/flintlock_of_the_divine_anchor/flintlock_of_the_divine_anchor.vmdl"
+			"neck"					"models/items/kunkka/arm_lev_pipe/arm_lev_pipe.vmdl"
+			"neck2"					"models/items/kunkka/singsingkunkkaset__cannon/singsingkunkkaset__cannon.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_as"				"18 33 48 63 78"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"10 12 15 18 25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_damage"			"220 220 220 220 220"
+			}
+		}
+	}
+}

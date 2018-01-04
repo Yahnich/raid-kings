@@ -1,0 +1,45 @@
+"DOTAAbilities"
+{
+	"item_justicar_armor_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/justicar/item_justicar_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"justicar"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"justicar"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"4"
+		
+		"Wearables"
+		{
+			"bracers"					"models/items/omniknight/grey_night_arms/grey_night_arms.vmdl"
+			"shoulders"					"models/items/omniknight/grey_night_shoulders/grey_night_shoulders.vmdl"
+			"helm"						"models/items/omniknight/winged_helmet/winged_helmet.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"350 550 750 950 1150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist"			"12 16 20 24 28"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"2 2.5 3 4 5"
+			}
+		}
+	}
+}

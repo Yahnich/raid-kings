@@ -65,7 +65,7 @@
 			"07"
 			{
 				"var_type"					"FIELD_INTEGER"
-				"turn_rate"					"-200"
+				"turn_rate"					"-100"
 			}
 		}
 
@@ -73,7 +73,7 @@
 		{
 			"particle"  "particles/heroes/avalanche/avalanche_cold_ray.vpcf"
 
-			"soundfile" "soundevents/game_sounds_heroes/game_sounds_crystalmaiden.vsndevts"
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_phoenix.vsndevts"
 		}
 	}
 }

@@ -1,0 +1,47 @@
+"DOTAAbilities"
+{
+	"item_wraith_armor_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/wraith/item_wraith_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"armor"
+		"ItemAliases"					"wraith"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"1"
+
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+
+		"Wearables"
+		{
+			"head"					"models/heroes/wraith_king/wraith_king_head.vmdl"
+			"shoulder"				"models/heroes/wraith_king/wraith_king_shoulder.vmdl"
+			"arms"					"models/heroes/wraith_king/wraith_king_gauntlet.vmdl"
+			"armor"					"models/heroes/wraith_king/wraith_king_chest.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"400 650 900 1150 1400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"8 10 12 14 20"
+			}
+		}
+	}
+}

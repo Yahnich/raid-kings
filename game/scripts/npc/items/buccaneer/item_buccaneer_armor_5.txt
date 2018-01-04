@@ -1,0 +1,45 @@
+"DOTAAbilities"
+{
+	"item_buccaneer_armor_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/buccaneer/item_buccaneer_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"buccaneer"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"buccaneer"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"5"
+		
+		"Wearables"
+		{
+			"helm"						"models/items/kunkka/vengeful_ghost_captain_head/vengeful_ghost_captain_head.vmdl"
+			"shoulder"					"models/items/kunkka/kunkka_immortal/kunkka_shoulder_immortal.vmdl"
+			"arms"						"models/items/kunkka/vengeful_ghost_captain_gloves/vengeful_ghost_captain_gloves.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"300 500 700 900 1100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"6 7 8 10 12"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"1 2 3 4 5"
+			}
+		}
+	}
+}

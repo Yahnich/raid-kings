@@ -1,0 +1,115 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_templar_assassin" // Peacekeeper
+	{
+		"override_hero"			"npc_dota_hero_templar_assassin"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.528"
+		
+		"Ability1"				"class_empty_1"					// Ability 1
+		"Ability2"				"class_empty_2"					// Ability 2
+		"Ability3"				"class_empty_3"						// Ability 3
+		"Ability4"				"peacekeeper_lady_justice"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"class_empty_4"
+		// Talents
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+		
+		"AttachWearables"
+		{
+			"ambient"			"particles/econ/items/templar_assassin/templar_assassin_weapon_scholar/templar_assassin_ambient_scholar.vpcf"
+			"left_eye"			"particles/units/heroes/hero_templar_assassin/templar_assassin_ambient_eyel.vpcf"
+			"right_eye"			"particles/units/heroes/hero_templar_assassin/templar_assassin_ambient_eyer.vpcf"
+		}
+		
+		"HeroValues"
+		{
+			"Support"			"2"
+			"Damage"			"5"
+			"Tank"				"3"
+		}
+		
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_peacekeeper_armor_1"
+				"2"				"item_peacekeeper_armor_2"
+				"3"				"item_peacekeeper_armor_3"
+				"4"				"item_peacekeeper_armor_4"
+				"5"				"item_peacekeeper_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_peacekeeper_weapon_1"
+				"2"				"item_peacekeeper_weapon_2"
+				"3"				"item_peacekeeper_weapon_3"
+				"4"				"item_peacekeeper_weapon_4"
+				"5"				"item_peacekeeper_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_peacekeeper_other_1"
+				"2"				"item_peacekeeper_other_2"
+				"3"				"item_peacekeeper_other_3"
+				"4"				"item_peacekeeper_other_4"
+				"5"				"item_peacekeeper_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"peacekeeper_adjudicator"					"true"
+			"peacekeeper_casus_belli"					"true"
+			"peacekeeper_conviction"					"true"
+			"peacekeeper_corpus_juris"					"true"
+			"peacekeeper_indictment"					"true"
+			"peacekeeper_mens_rea"					"true"
+			"peacekeeper_mistrial"				"true"
+			"peacekeeper_vindication"						"true"
+		}
+		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"30"
+		"AttackDamageMax"		"36"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"140"
+		"ProjectileModel"		""
+		"ProjectileSpeed"		"900"
+		
+		// Custom Attributes
+		"AttributePrimary"							"DOTA_ATTRIBUTE_INTELLECT"
+		"BaseStrength"								"16"
+		"BaseIntellect"								"16"
+		"BaseAgility"								"30"
+		"BaseLuck"									"10"
+		"BaseVitality"								"16"
+		"BaseStrengthGain"							"1.5"
+		"BaseIntellectGain"							"1.3"
+		"BaseAgilityGain"							"2.1"
+		"BaseLuckGain"								"0.8"
+		"BaseVitalityGain"							"1.8"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"					"185"
+		"MovementTurnRate"				"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
+	}
+}

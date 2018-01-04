@@ -1,0 +1,34 @@
+"DOTAAbilities"
+{
+	"item_ifrit_armor_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/ifrit/item_ifrit_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"ifrit"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"ifrit"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"5"
+
+		"Wearables"
+		{
+			"sleeves"					"models/items/lina/esl_divine_flame_arms/esl_divine_flame_arms.vmdl"
+			"skirt"						"models/items/lina/esl_divine_flame_belt/esl_divine_flame_belt.vmdl"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"200 400 600 800 1000"
+			}
+		}
+	}
+}

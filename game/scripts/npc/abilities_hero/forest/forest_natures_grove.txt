@@ -1,14 +1,14 @@
 "DOTAAbilities"
-{	
+{
 	"forest_natures_grove"
 	{
-		"BaseClass"                     "ability_lua"
-		"ScriptFile"                    "heroes/forest/forest_natures_grove.lua"
-		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/forest/forest_natures_grove.lua"
+	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_AOE"
 		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
 		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
 		"AbilityTextureName"			"custom/forest_natures_grove"
-		"RequiredLevel"  				"7"
+	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 		
@@ -33,8 +33,9 @@
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
 		}
 		
-		"AbilitySpecial"
-		{
+	    "AbilitySpecial"
+	    {
+	        
 			"01"
 			{
 				"var_type"				"FIELD_INTEGER"
@@ -64,7 +65,7 @@
 			{
 				"var_type"				"FIELD_INTEGER"
 				"sleep_duration"		"6 7 8 9 10 11 12"
-			}		
-		}
+			}			
+	    }
 	}
 }

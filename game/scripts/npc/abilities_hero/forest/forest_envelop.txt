@@ -1,15 +1,15 @@
 "DOTAAbilities"
-{	
+{
 	"forest_envelop"
 	{
-		"BaseClass"                     "ability_lua"
-		"ScriptFile"                    "heroes/forest/forest_envelop.lua"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/forest/forest_envelop.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
 		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
 		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
 		"CastFilterRejectCaster"		"1"
 		"AbilityTextureName"			"custom/forest_envelop"
-		"RequiredLevel"  				"7"
+	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 		
@@ -24,19 +24,19 @@
 		{
 			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_furion.vsndevts"
 		}
-	
-		"AbilitySpecial"
-		{
-			"01"
-			{
-				"var_type"                      "FIELD_FLOAT"
-				"cooldown_reduction"     		"15 17.5 20 22.5 25 27.5 30"
-			}
+		
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"                      "FIELD_FLOAT"
+	            "cooldown_reduction"     		"15 17.5 20 22.5 25 27.5 30"
+	        }
 			"02"
-			{
-				"var_type"                      "FIELD_INTEGER"
-				"armor_to_ally"     			"58 65 72 79 86 93 100"
-			}
-		}
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "armor_to_ally"     			"58 65 72 79 86 93 100"
+	        }
+	    }
 	}
 }

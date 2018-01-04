@@ -1,0 +1,107 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_phantom_assassin" // Shinigami
+	{
+		"override_hero"				"npc_dota_hero_phantom_assassin"
+		"DisableWearables"			"1"
+		"ModelScale"				"0.516"
+		
+		"Ability1"					"class_empty_1"
+		"Ability2"					"class_empty_2"
+		"Ability3"					"class_empty_3"
+		"Ability4"					"shinigami_deep_wounds"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"class_empty_4"
+		// Talents
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+		
+		"HeroValues"
+		{
+			"Support"			"2"
+			"Damage"			"5"
+			"Tank"				"3"
+		}
+		
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_shinigami_armor_1"
+				"2"				"item_shinigami_armor_2"
+				"3"				"item_shinigami_armor_3"
+				"4"				"item_shinigami_armor_4"
+				"5"				"item_shinigami_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_shinigami_weapon_1"
+				"2"				"item_shinigami_weapon_2"
+				"3"				"item_shinigami_weapon_3"
+				"4"				"item_shinigami_weapon_4"
+				"5"				"item_shinigami_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_shinigami_other_1"
+				"2"				"item_shinigami_other_2"
+				"3"				"item_shinigami_other_3"
+				"4"				"item_shinigami_other_4"
+				"5"				"item_shinigami_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"shinigami_fan_the_blades"				"true"
+			"shinigami_reaper"						"true"
+			"shinigami_cutthroat_slice"				"true"
+			"shinigami_reversal"					"true"
+			"shinigami_flurry_of_blows"				"true"
+			"shinigami_whirling_slash"				"true"
+			"shinigami_slice_n_dice"				"true"
+			"shinigami_grievous_strike"				"true"
+		}
+		
+		"ArmorPhysical"		"1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"23"
+		"AttackDamageMax"		"25"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.300000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
+		// Custom Attributes
+		"AttributePrimary"							"DOTA_ATTRIBUTE_AGILITY"
+		"BaseStrength"								"23"
+		"BaseIntellect"								"15"
+		"BaseAgility"								"31"
+		"BaseLuck"									"13"
+		"BaseVitality"								"25"
+		"BaseStrengthGain"							"2.1"
+		"BaseIntellectGain"							"1.4"
+		"BaseAgilityGain"							"3.5"
+		"BaseLuckGain"								"0.5"
+		"BaseVitalityGain"							"1.5"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"			"185"
+		"MovementTurnRate"		"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
+		
+	}
+}

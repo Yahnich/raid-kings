@@ -1,12 +1,12 @@
 "DOTAAbilities"
-{		
+{
 	"forest_overgrowth"
 	{
-		"BaseClass"                     "ability_lua"
-		"ScriptFile"                    "heroes/forest/forest_overgrowth.lua"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/forest/forest_overgrowth.lua"
 		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_DONT_CANCEL_CHANNEL"
 		"AbilityTextureName"			"custom/forest_overgrowth"
-		"RequiredLevel"  				"7"
+	    "RequiredLevel"  				"7"
 		"MaxLevel"						"7"
 		"LevelsBetweenUpgrades"			"5"
 		
@@ -30,33 +30,33 @@
 			"particle"					"particles/units/heroes/hero_treant/treant_leech_seed_afromhand.vpcf"
 		}
 		
-		"AbilitySpecial"
-		{
+	    "AbilitySpecial"
+	    {
 			"01"
-			{	
-				"var_type"                      "FIELD_INTEGER"
-				"duration"     					"25"
-			}
+	        {	
+	            "var_type"                      "FIELD_INTEGER"
+	            "duration"     					"25"
+	        }
 			"02"
-			{	
-				"var_type"                      "FIELD_INTEGER"
-				"root_radius"     				"600"
-			}
+	        {	
+	            "var_type"                      "FIELD_INTEGER"
+	            "root_radius"     				"600"
+	        }
 			"03"
-			{	
-				"var_type"                      "FIELD_INTEGER"
-				"root_duration"     			"2"
-			}
+	        {	
+	            "var_type"                      "FIELD_INTEGER"
+	            "root_duration"     			"2"
+	        }
 			"04"
-			{
-				"var_type"                      "FIELD_INTEGER"
-				"bonus_max_hp"     				"1250 2000 2750 3500 4250 5000 5750"
-			}
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "bonus_max_hp"     				"1250 2000 2750 3500 4250 5000 5750"
+	        }
 			"04"
-			{
-				"var_type"                      "FIELD_INTEGER"
-				"talent_heal"     				"100"
-			}
-		}
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "talent_heal"     				"100"
+	        }
+	    }
 	}
 }

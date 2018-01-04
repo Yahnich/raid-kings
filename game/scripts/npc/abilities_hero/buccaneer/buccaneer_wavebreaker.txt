@@ -24,7 +24,7 @@
 		// Time		
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilityCooldown"				"22 19 16 13 10 7 4"
-    
+
 		// Special
 		//-------------------------------------------------------------------------------------------------------------
 		"AbilitySpecial"
@@ -60,11 +60,13 @@
 				"wave_radius"			"150"
 			}
 		}
+
 		"precache"
 		{
 			"particle"  "particles/heroes/buccaneer/buccaneer_wavebreaker.vpcf"
 			"particle"  "particles/status_fx/status_effect_rum.vpcf"
 			"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+
 			"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
 		}
 	}
