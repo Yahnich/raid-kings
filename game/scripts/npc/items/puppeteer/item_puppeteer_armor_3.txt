@@ -1,0 +1,38 @@
+"DOTAAbilities"
+{
+	"item_puppeteer_armor_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/puppeteer/item_puppeteer_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"puppeteer"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"puppeteer"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"3"
+		
+		"Wearables"
+		{
+			"shoulder"					"models/items/necrolyte/heretic_shoulder/heretic_shoulder.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"150 350 550 750 950"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"3 5 7 9 11"
+			}
+		}
+	}
+}

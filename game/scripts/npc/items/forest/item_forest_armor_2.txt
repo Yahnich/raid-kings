@@ -1,0 +1,35 @@
+"DOTAAbilities"
+{
+	"item_forest_armor_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/forest/item_forest_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"forest"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"forest"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"2"
+
+		"Wearables"
+		{
+			"head"					"models/items/treant/ancient_seal_protector_set_head/ancient_seal_protector_set_head.vmdl"
+			"legs"					"models/items/treant/ancient_seal_protector_set_legs/ancient_seal_protector_set_legs.vmdl"
+		}
+
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"300 600 900 1200 1500"
+			}
+		}
+	}
+}

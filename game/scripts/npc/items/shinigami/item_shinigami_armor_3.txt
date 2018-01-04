@@ -1,0 +1,41 @@
+"DOTAAbilities"
+{
+	"item_shinigami_armor_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/shinigami/item_shinigami_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"shinigami"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"shinigami"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"3"
+
+		"Wearables"
+		{
+			"head"					"models/items/phantom_assassin/dragonterror_helmet/dragonterror_helmet.vmdl"
+			"shoulder"				"models/items/phantom_assassin/dark_wraith_shoulder/dark_wraith_shoulder.vmdl"
+			"belt"					"models/items/phantom_assassin/kiss_of_crows_belt/kiss_of_crows_belt.vmdl"
+			"belt1"					"models/items/phantom_assassin/lodas_pa_set__belt/lodas_pa_set__belt.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"300 500 700 900 1100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"1 2 3 4 5"
+			}
+		}
+	}
+}

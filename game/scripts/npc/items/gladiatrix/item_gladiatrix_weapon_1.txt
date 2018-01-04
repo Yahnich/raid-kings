@@ -1,0 +1,39 @@
+"DOTAAbilities"
+{
+	"item_gladiatrix_weapon_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/gladiatrix/item_gladiatrix_weapon"
+		"AbilityTextureName"			"item_bloodthorn"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"gladiatrix"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"1"
+
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"halberd"					"models/items/legion_commander/errant_spear/errant_spear.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_dmg"				"50 75 100 125 150"
+			}
+		}
+	}
+}

@@ -1,0 +1,44 @@
+"DOTAAbilities"
+{
+	"item_puppeteer_other_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/puppeteer/item_puppeteer_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"puppeteer"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"5"
+
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"head"						"models/items/necrolyte/heretic_hood/heretic_hood.vmdl"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cdr"					"30 35 40 45 50"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"spell_amp"				"10 20 50 90 150"
+			}
+		}
+	}
+}

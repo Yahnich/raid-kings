@@ -1,0 +1,45 @@
+"DOTAAbilities"
+{
+	"item_revenant_other_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/revenant/item_revenant_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"revenant"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"4"
+
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+
+		"Wearables"
+		{
+			"belt"					"models/items/shadow_demon/umbral_descent_belt/umbral_descent_belt.vmdl"
+			"tail"					"models/items/shadow_demon/malicioussting_tail/malicioussting_tail.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atkspeed"		"30 60 90 120 150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cdr"					"10 20 30 40 50"
+			}
+		}
+	}
+}

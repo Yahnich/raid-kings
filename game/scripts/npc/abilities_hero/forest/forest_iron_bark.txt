@@ -1,6 +1,5 @@
 "DOTAAbilities"
-{	
-
+{
 	//=================================================================================================================
 	// Forest - Treant
 	//=================================================================================================================
@@ -8,9 +7,9 @@
 	//=================================================================================================================
 	"forest_iron_bark"
 	{
-		"BaseClass"                     "ability_lua"
-		"ScriptFile"                    "heroes/forest/forest_iron_bark.lua"
-		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/forest/forest_iron_bark.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
 		"AbilityTextureName"			"custom/forest_iron_bark"
 		"MaxLevel"						"1"
 		"InnateAbility"					"1"
@@ -21,9 +20,9 @@
 			"particle"					"particles/heroes/forest/forest_iron_bark.vpcf"
 		}
 		
-		"AbilitySpecial"
-		{
-			"01"
+	    "AbilitySpecial"
+	    {
+	        "01"
 			{
 				"var_type"					"FIELD_FLOAT"
 				"armor_per_level"			"1"
@@ -53,6 +52,6 @@
 				"var_type"					"FIELD_FLOAT"
 				"talent_dr_per_level"		"0.2"
 			}
-		}
+	    }
 	}
 }

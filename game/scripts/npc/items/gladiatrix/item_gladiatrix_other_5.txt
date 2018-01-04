@@ -1,0 +1,49 @@
+"DOTAAbilities"
+{
+	"item_gladiatrix_other_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/gladiatrix/item_gladiatrix_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"gladiatrix"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"5"
+
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+		
+		"Wearables"
+		{
+			"banner"					"models/items/legion_commander/battlefield_back/battlefield_back.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_as"				"15 30 45 60 75"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_chance"			"10 12 15 18 25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"crit_damage"			"240 240 240 240 240"
+			}
+		}
+	}
+}

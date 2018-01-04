@@ -1,0 +1,44 @@
+"DOTAAbilities"
+{
+	"item_peacekeeper_other_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/peacekeeper/item_peacekeeper_other"
+		"AbilityTextureName"			"item_refresher_shard"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"weapon"
+		"ItemAliases"					"peacekeeper"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"1"
+
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"					"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+
+		"Wearables"
+		{
+			"shoulder"					"models/items/lanaya/whispering_dead_drapes/whispering_dead_drapes.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_atkspeed"		"30 55 70 85 100"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"cdr"					"0 5 10 15 20"
+			}
+		}
+	}
+}

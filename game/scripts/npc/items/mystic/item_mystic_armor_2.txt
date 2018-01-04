@@ -1,0 +1,39 @@
+"DOTAAbilities"
+{
+	"item_mystic_armor_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/mystic/item_mystic_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"mystic"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"mystic"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"2"
+		"Wearables"
+		{
+			"sleeve"					"models/items/dazzle/dazzleset_arm/dazzleset_arm.vmdl"
+			"shoulder"					"models/items/dazzle/dazzleset_misc/dazzleset_misc.vmdl"
+			"dress"						"models/items/dazzle/dazzleset_legs/dazzleset_legs.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"200 350 500 750 900"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"magic_resist"			"10 15 20 25 30"
+			}
+		}
+	}
+}

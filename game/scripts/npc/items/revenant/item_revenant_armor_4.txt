@@ -1,0 +1,35 @@
+"DOTAAbilities"
+{
+	"item_revenant_armor_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/revenant/item_revenant_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"revenant"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"revenant"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"4"
+
+		"Wearables"
+		{
+			"armor"					"models/items/shadow_demon/chains_bishobola/chains_bishobola.vmdl"
+			"armor1"				"models/items/shadow_demon/malicioussting_armor/malicioussting_armor.vmdl"
+			"armor2"				"models/items/shadow_demon/umbral_descent_armor/umbral_descent_armor.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"300 600 900 1200 1500"
+			}
+		}
+	}
+}

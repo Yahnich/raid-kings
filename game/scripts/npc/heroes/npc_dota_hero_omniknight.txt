@@ -1,0 +1,112 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_omniknight" // Justicar
+	{
+		"override_hero"			"npc_dota_hero_omniknight"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.444"
+		
+		"Ability1"				"class_empty_1"					// Ability 1
+		"Ability2"				"class_empty_2"
+		"Ability3"				"class_empty_3"
+		"Ability4"				"justicar_inner_sun"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"class_empty_4"
+		// Talents
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+		
+		"HeroValues"
+		{
+			"Support"			"4"
+			"Damage"			"3"
+			"Tank"				"4"
+		}
+		
+		"AttachWearables"
+		{
+			"book"				"models/items/omniknight/misc_book_hierophant.vmdl"
+			"head"				"models/heroes/omniknight/head.vmdl"
+		}
+		
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_justicar_armor_1"
+				"2"				"item_justicar_armor_2"
+				"3"				"item_justicar_armor_3"
+				"4"				"item_justicar_armor_4"
+				"5"				"item_justicar_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_justicar_weapon_1"
+				"2"				"item_justicar_weapon_2"
+				"3"				"item_justicar_weapon_3"
+				"4"				"item_justicar_weapon_4"
+				"5"				"item_justicar_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_justicar_other_1"
+				"2"				"item_justicar_other_2"
+				"3"				"item_justicar_other_3"
+				"4"				"item_justicar_other_4"
+				"5"				"item_justicar_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"justicar_shining_light"				"true"
+			"justicar_sacred_ground"				"true"
+			"justicar_penitence"					"true"
+			"justicar_absolution"					"true"
+			"justicar_judgement"					"true"
+			"justicar_blessed_aegis"				"true"
+			"justicar_radiant_glory"				"true"
+			"justicar_avenging_wrath"				"true"
+		}
+		
+		"ArmorPhysical"		"3"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"31"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.433000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
+		// Custom Attributes
+		"AttributePrimary"							"DOTA_ATTRIBUTE_STRENGTH"
+		"BaseStrength"								"27"
+		"BaseIntellect"								"27"
+		"BaseAgility"								"27"
+		"BaseLuck"									"27"
+		"BaseVitality"								"27"
+		"BaseStrengthGain"							"1.5"
+		"BaseIntellectGain"							"2.4"
+		"BaseAgilityGain"							"2"
+		"BaseLuckGain"								"0.6"
+		"BaseVitalityGain"							"1.4"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"				"185"
+		"MovementTurnRate"			"1.5"
+		"BoundsHullName"			"DOTA_HULL_SIZE_SMALL"
+		
+	}
+}

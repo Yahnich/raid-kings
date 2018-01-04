@@ -1,0 +1,111 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_sven" // Guardian
+	{
+		"override_hero"			"npc_dota_hero_sven"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.504"
+		
+		"Ability1"				"class_empty_1"					// Ability 1
+		"Ability2"				"class_empty_2"					// Ability 2
+		"Ability3"				"class_empty_3"						// Ability 3
+		"Ability4"				"guardian_fortitude"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"class_empty_4"
+		// Talents
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+
+		"AttachWearables"
+		{
+			"back"		"models/items/sven/bulwark_rogue_knight/bulwark_rogue_knight.vmdl"
+		}
+		
+		"HeroValues"
+		{
+			"Support"			"2"
+			"Damage"			"2"
+			"Tank"				"5"
+		}
+		
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_guardian_armor_1"
+				"2"				"item_guardian_armor_2"
+				"3"				"item_guardian_armor_3"
+				"4"				"item_guardian_armor_4"
+				"5"				"item_guardian_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_guardian_weapon_1"
+				"2"				"item_guardian_weapon_2"
+				"3"				"item_guardian_weapon_3"
+				"4"				"item_guardian_weapon_4"
+				"5"				"item_guardian_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_guardian_other_1"
+				"2"				"item_guardian_other_2"
+				"3"				"item_guardian_other_3"
+				"4"				"item_guardian_other_4"
+				"5"				"item_guardian_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"guardian_anchor_howl"					"true"
+			"guardian_challenge"					"true"
+			"guardian_glorious_shield"				"true"
+			"guardian_guardians_spirit"				"true"
+			"guardian_punish"						"true"
+			"guardian_rallying_cry"					"true"
+			"guardian_shield_bash"					"true"
+			"guardian_stone_fortress"				"true"
+		}
+		
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"41"
+		"AttackDamageMax"		"43"
+		"AttackRate"		"1.800000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		
+		// Custom Attributes
+		"BaseStrength"								"28"
+		"BaseIntellect"								"18"
+		"BaseAgility"								"15"
+		"BaseLuck"									"13"
+		"BaseVitality"								"38"
+		"BaseStrengthGain"							"2.4"
+		"BaseIntellectGain"							"1.6"
+		"BaseAgilityGain"							"1.2"
+		"BaseLuckGain"								"0.4"
+		"BaseVitalityGain"							"3.2"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"				"175"
+		"MovementTurnRate"			"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
+	}
+}

@@ -1,0 +1,114 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_kunkka" // Buccaneer
+	{
+		"override_hero"			"npc_dota_hero_kunkka"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.588"
+		
+		"Ability1"				"class_empty_1"
+		"Ability2"				"class_empty_2"
+		"Ability3"				"class_empty_3"
+		"Ability4"				"buccaneer_jolly_roger"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"class_empty_4"
+		// Talents
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+
+		"AttachWearables"
+		{
+			"legs"		"models/items/kunkka/kunkka_pegleg.vmdl"
+			"back"		"models/items/kunkka/first_chance_of_the_kunkkistadore/first_chance_of_the_kunkkistadore.vmdl"
+			"belt"		"models/items/kunkka/second_chance_of_the_kunkkistadore/second_chance_of_the_kunkkistadore.vmdl"
+			"ambient"	"particles/units/heroes/hero_kunkka/kunkka_weapon_glow_ambient.vpcf"
+		}
+		
+		"HeroValues"
+		{
+			"Support"			"3"
+			"Damage"			"5"
+			"Tank"				"2"
+		}
+		
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_buccaneer_armor_1"
+				"2"				"item_buccaneer_armor_2"
+				"3"				"item_buccaneer_armor_3"
+				"4"				"item_buccaneer_armor_4"
+				"5"				"item_buccaneer_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_buccaneer_weapon_1"
+				"2"				"item_buccaneer_weapon_2"
+				"3"				"item_buccaneer_weapon_3"
+				"4"				"item_buccaneer_weapon_4"
+				"5"				"item_buccaneer_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_buccaneer_other_1"
+				"2"				"item_buccaneer_other_2"
+				"3"				"item_buccaneer_other_3"
+				"4"				"item_buccaneer_other_4"
+				"5"				"item_buccaneer_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"buccaneer_call_the_fleet"					"true"
+			"buccaneer_cannon_barrage"					"true"
+			"buccaneer_captains_rum"					"true"
+			"buccaneer_crestrider"						"true"
+			"buccaneer_gangplank"						"true"
+			"buccaneer_hand_cannon"						"true"
+			"buccaneer_maelstrom"						"true"
+			"buccaneer_wavebreaker"						"true"
+		}
+		
+		"ArmorPhysical"		"2"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"26"
+		"AttackDamageMax"		"36"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
+		// Custom Attributes
+		"AttributePrimary"							"DOTA_ATTRIBUTE_STRENGTH"
+		"BaseStrength"								"24"
+		"BaseIntellect"								"18"
+		"BaseAgility"								"14"
+		"BaseLuck"									"3"
+		"BaseVitality"								"25"
+		"BaseStrengthGain"							"3.3"
+		"BaseIntellectGain"							"1.5"
+		"BaseAgilityGain"							"1.3"
+		"BaseLuckGain"								"0.9"
+		"BaseVitalityGain"							"1.0"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"			"175"
+		"MovementTurnRate"		"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
+	}
+}

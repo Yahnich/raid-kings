@@ -1,0 +1,34 @@
+"DOTAAbilities"
+{
+	"item_avalanche_armor_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/avalanche/item_avalanche_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"avalanche"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"avalanche"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"3"
+
+		"Wearables"
+		{
+			"head"						"models/items/crystal_maiden/anuxi_snowdrop_hood/anuxi_snowdrop_hood.vmdl"
+			"arms"						"models/items/crystal_maiden/anuxi_snowdrop_glove/anuxi_snowdrop_glove.vmdl"
+		}
+		
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"200 400 600 800 1000"
+			}
+		}
+	}
+}

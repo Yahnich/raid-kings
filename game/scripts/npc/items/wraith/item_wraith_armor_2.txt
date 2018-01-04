@@ -1,0 +1,41 @@
+"DOTAAbilities"
+{
+	"item_wraith_armor_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/wraith/item_wraith_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"wraith"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"wraith"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"2"
+
+		"Wearables"
+		{
+			"head"					"models/items/wraith_king/sundered_head/sundered_head.vmdl"
+			"shoulder"				"models/items/wraith_king/sundered_shoulder/sundered_shoulder.vmdl"
+			"arms"					"models/items/wraith_king/sundered_arms/sundered_arms.vmdl"
+			"armor"					"models/items/wraith_king/sundered_armor/sundered_armor.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"400 650 900 1150 1400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"8 10 12 14 20"
+			}
+		}
+	}
+}

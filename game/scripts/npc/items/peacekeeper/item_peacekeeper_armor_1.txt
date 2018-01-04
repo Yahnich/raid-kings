@@ -1,0 +1,45 @@
+"DOTAAbilities"
+{
+	"item_peacekeeper_armor_1"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/peacekeeper/item_peacekeeper_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"armor"
+		"ItemAliases"					"peacekeeper"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"1"
+
+		"ItemQuality"					"epic"
+		"ItemPurchasable"				"0"
+		"ItemSellable"					"0"
+		"ItemKillable"					"0"
+		"ItemDroppable"				"0"
+		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
+
+		"Wearables"
+		{
+			"head"					"models/items/lanaya/whispering_dead_mask/whispering_dead_mask.vmdl"
+			"armor"					"models/items/lanaya/whispering_dead_armor/whispering_dead_armor.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"300 500 700 900 1200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"15 20 25 30 35"
+			}
+		}
+	}
+}
