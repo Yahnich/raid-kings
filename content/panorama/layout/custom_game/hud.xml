@@ -86,7 +86,7 @@
 		<Panel id="MainSelectionAbilityContainer">
 			<DOTAAbilityImage id="AbilityBarInnate" abilityname="ifrit_kindled_soul"/>
 		</Panel>
-		<Panel id="HeroInformationContainer">
+		<Panel id="HeroInformationContainer" class="InformationPanel">
 			<Button id="CloseInfoPanelBtn" onactivate="OpenInfoHud()">
 				<Image src="s2r://panorama/images/control_icons/x_close_png.vtex" hittest="false"/>
 			</Button> 
@@ -196,7 +196,7 @@
 				</Panel>
 			</Panel>
 		</Panel>
-		<Panel id="HeroInventory">
+		<Panel id="HeroInventoryPanel" class="InformationPanel">
 			
 		</Panel>
     </Panel>

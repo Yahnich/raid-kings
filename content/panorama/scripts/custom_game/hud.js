@@ -138,6 +138,7 @@ function CreateOverheadButtons()
 		equipmentButton.AddClass("DOTAHudMenuButtons")
 		equipmentButton.style.visibility = "visible";
 		equipmentButton.style.backgroundImage = "url(\"file://{images}/custom_game/equipmentIcon.png\")";
+		equipmentButton.SetPanelEvent("onactivate", OpenInventory );
 	}
 	if($("#InfoButton") == null){
 		var infoButton =  $.CreatePanel( "Button", $.GetContextPanel(), "InfoButton");
@@ -149,6 +150,12 @@ function CreateOverheadButtons()
 	}
 	
 	$("#HeroInformationContainer").SetHasClass( "Hidden", true )
+}
+
+function OpenInventory()
+{
+	var inventory = $("#HeroInventoryPanel") 
+	inventory.SetHasClass( "Hidden", !inventory.BHasClass("Hidden") )
 }
 
 function OpenInfoHud()

@@ -137,7 +137,7 @@
 .PickButton
 {
 	border: 3px solid #AFAFAFFF;
-	background-color: gradient( linear, 0% 0%, 100% 0%, from( #977316FF ), color-stop( .2, #DAA520FF), color-stop( .8, #DAA520FF), to( #977316FF ) );
+	background-color: gradient( linear, 0% 0%, 0% 100%, from( #977316FF ), color-stop( .4, #DAA520FF), color-stop( .6, #DAA520FF), to( #977316FF ) );
 	width: 200px;
 	margin: 10px;
 }
