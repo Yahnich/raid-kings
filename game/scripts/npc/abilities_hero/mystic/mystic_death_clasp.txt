@@ -1,70 +1,73 @@
-"mystic_death_clasp"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/mystic/mystic_death_clasp.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"AbilityTextureName"			"custom/mystic_death_clasp"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"150"
-	
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	//"AbilityChannelTime"			"2.5"
-    "AbilityCastPoint"              "0.3"
-    "AbilityCastAnimation"          "ACT_DOTA_GENERIC_CHANNEL_1"
-	"AbilityCooldown"				"16.0"
-
-	
-	"precache"
-	{
-		"particle"					"particles/heroes/mystic/mystic_death_clasp_ring.vpcf"
-		"particle"					"particles/heroes/mystic/mystic_death_clasp_slow.vpcf"
-	}
-	
-    "AbilitySpecial"
+    "mystic_death_clasp"
     {
-		"01"
-        {	
-            "var_type"                      "FIELD_INTEGER"
-            "initial_radius"     			"100"
-        }
-		"02"
-        {	
-            "var_type"                      "FIELD_INTEGER"
-            "radius_growth_speed"     		"240"
-        }
-		"03"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/mystic/mystic_death_clasp.lua"
+    	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_CHANNELLED"
+    	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+    	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+    	"AbilityTextureName"			"custom/mystic_death_clasp"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	// Casting
+    	//-------------------------------------------------------------------------------------------------------------
+    	"AbilityCastRange"				"150"
+    	
+    	// Time		
+    	//-------------------------------------------------------------------------------------------------------------
+    	//"AbilityChannelTime"			"2.5"
+        "AbilityCastPoint"              "0.3"
+        "AbilityCastAnimation"          "ACT_DOTA_GENERIC_CHANNEL_1"
+    	"AbilityCooldown"				"16.0"
+
+    	
+    	"precache"
+    	{
+    		"particle"					"particles/heroes/mystic/mystic_death_clasp_ring.vpcf"
+    		"particle"					"particles/heroes/mystic/mystic_death_clasp_slow.vpcf"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "slow"     						"-100"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "slow_duration"     			"2"
-        }
-		"05"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "total_damage"     				"400 800 1200 1600 2000 2400 2800"
-        }
-		"06"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "heal_percentage"     			"50"
-        }
-        "07"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "max_channel"                   "2.5"
+    		"01"
+            {	
+                "var_type"                      "FIELD_INTEGER"
+                "initial_radius"     			"100"
+            }
+    		"02"
+            {	
+                "var_type"                      "FIELD_INTEGER"
+                "radius_growth_speed"     		"240"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "slow"     						"-100"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "slow_duration"     			"2"
+            }
+    		"05"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "total_damage"     				"400 800 1200 1600 2000 2400 2800"
+            }
+    		"06"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "heal_percentage"     			"50"
+            }
+            "07"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "max_channel"                   "2.5"
+            }
         }
     }
 }

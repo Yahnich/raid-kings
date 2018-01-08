@@ -1,0 +1,111 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_skeleton_king" // Wraith
+	{
+		"override_hero"				"npc_dota_hero_skeleton_king"
+		"DisableWearables"			"1"
+		"ModelScale"				"0.564"
+		
+		"Ability1"					"class_empty_1"
+		"Ability2"					"class_empty_2"
+		"Ability3"					"class_empty_3"
+		"Ability4"					"wraith_one_for_all"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"class_empty_4"
+		// Talents
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+		
+		"AttachWearables"
+		{
+			"ambient"			"particles/units/heroes/hero_skeletonking/wraith_king_ambient.vpcf"
+		}
+		
+		"HeroValues"
+		{
+			"Support"			"2"
+			"Damage"			"4"
+			"Tank"				"4"
+		}
+		
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_wraith_armor_1"
+				"2"				"item_wraith_armor_2"
+				"3"				"item_wraith_armor_3"
+				"4"				"item_wraith_armor_4"
+				"5"				"item_wraith_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_wraith_weapon_1"
+				"2"				"item_wraith_weapon_2"
+				"3"				"item_wraith_weapon_3"
+				"4"				"item_wraith_weapon_4"
+				"5"				"item_wraith_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_wraith_other_1"
+				"2"				"item_wraith_other_2"
+				"3"				"item_wraith_other_3"
+				"4"				"item_wraith_other_4"
+				"5"				"item_wraith_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"wraith_bloodletter"				"true"
+			"wraith_crimson_berserker"			"true"
+			"wraith_sanguine_aura"				"true"
+			"wraith_blood_ritual"				"true"
+			"wraith_wraithfire"					"true"
+			"wraith_undying"					"true"
+			"wraith_life_strike"				"true"
+			"wraith_wraiths_will"				"true"
+		}
+		
+		"ArmorPhysical"		"0"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"39"
+		"AttackDamageMax"		"41"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.560000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		"ProjectileSpeed"		"0"
+		
+		// Custom Attributes
+		"BaseStrength"								"30"
+		"BaseIntellect"								"15"
+		"BaseAgility"								"15"
+		"BaseLuck"									"6"
+		"BaseVitality"								"23"
+		"BaseStrengthGain"							"3"
+		"BaseIntellectGain"							"1.5"
+		"BaseAgilityGain"							"1.5"
+		"BaseLuckGain"								"0.8"
+		"BaseVitalityGain"							"1.8"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"				"180"
+		"MovementTurnRate"			"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
+	}
+}

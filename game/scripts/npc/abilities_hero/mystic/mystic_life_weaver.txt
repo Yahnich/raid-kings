@@ -1,50 +1,53 @@
-//=================================================================================================================
-// MYSTIC - DAZZLE
-//=================================================================================================================
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//=================================================================================================================
-"mystic_life_weaver"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/mystic/mystic_life_weaver.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"custom/mystic_life_weaver"
-	"MaxLevel"						"1"
-	"InnateAbility"					"1"
-	"HasScepterUpgrade"				"1"
-	
-	"precache"
+	//=================================================================================================================
+	// MYSTIC - DAZZLE
+	//=================================================================================================================
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	//=================================================================================================================
+	"mystic_life_weaver"
 	{
-		"particle"					"particles/heroes/mystic/mystic_life_weaver.vpcf"
-	}
-	
-    "AbilitySpecial"
-    {
-        "01"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/mystic/mystic_life_weaver.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/mystic_life_weaver"
+		"MaxLevel"						"1"
+		"InnateAbility"					"1"
+		"HasScepterUpgrade"				"1"
+		
+		"precache"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"heal_share"				"30"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"duration"					"10"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"scepter_bonus_heal"		"15"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"scepter_duration"			"10"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"talent_overheal_barrier"	"100"
+			"particle"					"particles/heroes/mystic/mystic_life_weaver.vpcf"
 		}
 		
-    }
+	    "AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"heal_share"				"30"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"duration"					"10"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"scepter_bonus_heal"		"15"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"scepter_duration"			"10"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"talent_overheal_barrier"	"100"
+			}
+			
+	    }
+	}
 }

@@ -34,7 +34,7 @@ function buccaneer_cannon_barrage:OnSpellStart()
 					self:DealDamage(caster, unit, damage, {}, 0)
 					unit:AddNewModifier(caster,self,"modifier_cannon_ball_slow",{Duration = duration})
 
-					if unit:HasModifier("modifier_x_marks") then
+					if unit:HasModifier("modifier_buccaneer_jolly_roger") then
 						unit:AddNewModifier(caster, self, "modifier_cannon_ball_armor_remove", {Duration=duration})
 					end
 				end

@@ -1,42 +1,45 @@
-"wraith_undying"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/wraith/wraith_undying.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
-	"AbilityTextureName"			"custom/wraith_undying"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastPoint"				"0.35"
-	"AbilityCastRange"				"600"
-	"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
-	
-	"AbilityCooldown"				"100"
-	
-	"precache"
+	"wraith_undying"
 	{
-		"particle"					"particles/heroes/wraith/wraith_undying.vpcf"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/wraith/wraith_undying.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO"
+		"AbilityTextureName"			"custom/wraith_undying"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		
+		"AbilityCastPoint"				"0.35"
+		"AbilityCastRange"				"600"
+		"AbilityCastAnimation"			"ACT_DOTA_ATTACK"
+		
+		"AbilityCooldown"				"100"
+		
+		"precache"
+		{
+			"particle"					"particles/heroes/wraith/wraith_undying.vpcf"
+		}
+		
+	    "AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"duration"					"100 133 166 200 233 266 300"	
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"delay"						"3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"talent_duration"			"3"
+			}
+	    }
 	}
-	
-    "AbilitySpecial"
-    {
-        "01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"duration"					"100 133 166 200 233 266 300"	
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"delay"						"3"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"talent_duration"			"3"
-		}
-    }
 }

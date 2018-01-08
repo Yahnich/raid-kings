@@ -1,72 +1,75 @@
-"gladiatrix_victorious_advance"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_victorious_advance.lua"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"custom/gladiatrix_victorious_advance"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-
-	"AbilityCastPoint"				"0.3"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
-	
-	"precache"
+	"gladiatrix_victorious_advance"
 	{
-		"particle" "particles/units/heroes/hero_legion_commander/legion_commander_odds.vpcf"
-		"particle" "particles/units/heroes/hero_legion_commander/legion_commander_odds_buff.vpcf"
-		"particle" "particles/units/heroes/hero_legion_commander/legion_commander_odds_cast.vpcf"
-		"soundfile"	"game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_victorious_advance.lua"
+	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_AOE | DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_IGNORE_BACKSWING"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/gladiatrix_victorious_advance"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
+		
+		"precache"
+		{
+			"particle" "particles/units/heroes/hero_legion_commander/legion_commander_odds.vpcf"
+			"particle" "particles/units/heroes/hero_legion_commander/legion_commander_odds_buff.vpcf"
+			"particle" "particles/units/heroes/hero_legion_commander/legion_commander_odds_cast.vpcf"
+			"soundfile"	"game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+		}
+
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18.0 17.5 17.0 16.5 16.0 15.5 15.0"
+
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
+
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"100 100 100 100"
+
+		
+	    "AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"radius"				"450 500 550 600 650 700 750"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage"				"300 450 600 750 900 1050 1200"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"damage_per_unit"		"25 50 75 100 125 150 175"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_speed"			"5"
+			}
+			"05"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"2"
+			}
+			"06"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"7.0"
+				"LinkedSpecialBonus"	"gladiatrix_victorious_advance_talent_1"
+			}
+	    }
 	}
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"18.0 17.5 17.0 16.5 16.0 15.5 15.0"
-
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"1000"
-	"AbilityCastPoint"				"0.3 0.3 0.3 0.3"
-
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"100 100 100 100"
-
-	
-    "AbilitySpecial"
-    {
-        "01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"radius"				"450 500 550 600 650 700 750"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage"				"300 450 600 750 900 1050 1200"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"damage_per_unit"		"25 50 75 100 125 150 175"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_speed"			"5"
-		}
-		"05"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_armor"			"2"
-		}
-		"06"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"7.0"
-			"LinkedSpecialBonus"	"gladiatrix_victorious_advance_talent_1"
-		}
-    }
 }

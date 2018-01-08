@@ -19,7 +19,7 @@ function buccaneer_wavebreaker:OnSpellStart()
 		
 		local units = self:GetCaster():FindEnemyUnitsInRadius(position, radius, {})
 		for _,unit in pairs(units) do
-			if unit:HasModifier("modifier_x_marks") then
+			if unit:HasModifier("modifier_buccaneer_jolly_roger") then
 				unit:SetAbsOrigin(position)
 			end
 		end
@@ -30,7 +30,7 @@ function buccaneer_wavebreaker:OnSpellStart()
 			if not self.hitUnits[target:entindex()] then
 				EmitSoundOn("Hero_Kunkka.TidebringerDamage", target)
 				self:GetAbility():DealDamage(self:GetCaster(), target, self:GetCaster():GetAttackDamage()+self:GetAbility():GetSpecialValueFor("base_damage"), {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
-				if not target:HasModifier("modifier_x_marks") then
+				if not target:HasModifier("modifier_buccaneer_jolly_roger") then
 					target:AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_wavebreaker_slow", {Duration = self:GetAbility():GetSpecialValueFor("duration")})
 				end
 				self.hitUnits[target:entindex()] = true
@@ -38,7 +38,7 @@ function buccaneer_wavebreaker:OnSpellStart()
 		elseif not target then
 			local units = self:GetCaster():FindEnemyUnitsInRadius(position, radius, {})
 			for _,unit in pairs(units) do
-				if unit:HasModifier("modifier_x_marks") then
+				if unit:HasModifier("modifier_buccaneer_jolly_roger") then
 					FindClearSpaceForUnit(unit, unit:GetAbsOrigin(), true)
 				end
 			end

@@ -1,0 +1,39 @@
+"DOTAAbilities"
+{
+	"item_peacekeeper_armor_4"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/peacekeeper/item_peacekeeper_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"peacekeeper"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"peacekeeper"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"4"
+
+		"Wearables"
+		{
+			"head"					"models/items/lanaya/concealed_raven_head/concealed_raven_head.vmdl"
+			"armor"					"models/items/lanaya/concealed_raven_armor/concealed_raven_armor.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"300 500 700 900 1200"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"15 20 25 30 35"
+			}
+		}
+	}
+}

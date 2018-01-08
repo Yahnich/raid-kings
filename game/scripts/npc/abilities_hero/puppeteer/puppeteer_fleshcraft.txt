@@ -1,64 +1,67 @@
-"puppeteer_fleshcraft"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/puppeteer/puppeteer_fleshcraft.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"AbilityTextureName"			"custom/puppeteer_fleshcraft"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCooldown"				"15 13.5 12 10.5 9 7.5 6"
-	"AbilityManaCost"				"130"
-	"AbilityCastRange"				"1200"
-	
-	"precache"
-	{
-		"soundfile"		"soundevents/game_sounds_items.vsndevts"
-		"particle"		"particles/heroes/puppeteer/puppeteer_fleshcraft.vpcf"
-		"particle"		"particles/items2_fx/urn_of_shadows_damage.vpcf"
-		"particle"		"particles/items2_fx/urn_of_shadows_heal.vpcf"
-	}
-	
-    "AbilitySpecial"
+    "puppeteer_fleshcraft"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/puppeteer/puppeteer_fleshcraft.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+    	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_BOTH"
+    	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+    	"AbilityTextureName"			"custom/puppeteer_fleshcraft"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCooldown"				"15 13.5 12 10.5 9 7.5 6"
+    	"AbilityManaCost"				"130"
+    	"AbilityCastRange"				"1200"
+    	
+    	"precache"
+    	{
+    		"soundfile"		"soundevents/game_sounds_items.vsndevts"
+    		"particle"		"particles/heroes/puppeteer/puppeteer_fleshcraft.vpcf"
+    		"particle"		"particles/items2_fx/urn_of_shadows_damage.vpcf"
+    		"particle"		"particles/items2_fx/urn_of_shadows_heal.vpcf"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_FLOAT"
-            "base_heal"     				"150 300 450 600 750 900 1050"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "base_heal_pct"     			"7.5"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "base_regen"    	 			"20 25 30 35 40 45 50"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "base_regen_pct"     			"0.25"
-        }
-		"05"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "damage"     					"200 350 500 650 800 950 1100"
-        }
-		"06"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "damage_over_time"     			"30 35 40 45 50 55 60"
-        }
-		"07"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "duration"     					"5"
+            "01"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "base_heal"     				"150 300 450 600 750 900 1050"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "base_heal_pct"     			"7.5"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "base_regen"    	 			"20 25 30 35 40 45 50"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "base_regen_pct"     			"0.25"
+            }
+    		"05"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "damage"     					"200 350 500 650 800 950 1100"
+            }
+    		"06"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "damage_over_time"     			"30 35 40 45 50 55 60"
+            }
+    		"07"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "duration"     					"5"
+            }
         }
     }
 }

@@ -1,58 +1,61 @@
-"mystic_mist_barrier"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/mystic/mystic_mist_barrier.lua"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"custom/mystic_mist_barrier"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	// Casting
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCastRange"				"200"
-	"AbilityCastPoint"              "0.3"
-    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
-	
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
-	
-	// Cost
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityManaCost"				"110"
-	
-	"precache"
+	"mystic_mist_barrier"
 	{
-		"particle"					"particles/heroes/mystic/mystic_mist_barrier.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/mystic/mystic_mist_barrier.lua"
+	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_UNIT_TARGET"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_FRIENDLY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/mystic_mist_barrier"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		
+		// Casting
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCastRange"				"200"
+		"AbilityCastPoint"              "0.3"
+	    "AbilityCastAnimation"          "ACT_DOTA_CAST_ABILITY_1"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"16.0 15.0 14.0 13.0 12.0 11.0 10.0"
+		
+		// Cost
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityManaCost"				"110"
+		
+		"precache"
+		{
+			"particle"					"particles/heroes/mystic/mystic_mist_barrier.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_abaddon.vsndevts"
+		}
+		
+	    "AbilitySpecial"
+	    {
+	        
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_amt"			"250 400 550 700 850 1000 1150"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"barrier_regen"			"5"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"duration"				"20"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"talent_barrier"		"5"
+			}			
+	    }
 	}
-	
-    "AbilitySpecial"
-    {
-        
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"barrier_amt"			"250 400 550 700 850 1000 1150"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"barrier_regen"			"5"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"duration"				"20"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"talent_barrier"		"5"
-		}			
-    }
 }

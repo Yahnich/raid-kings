@@ -1,58 +1,61 @@
-"wraith_life_strike"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/wraith/wraith_life_strike.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"AbilityTextureName"			"custom/wraith_life_strike"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastRange"	"1200"
-	"AbilityCastAnimation"	"ACT_DOTA_ATTACK_EVENT"
-	"AbilityCooldown"	"12 11.5 11 10.5 10 9.5 9"
-	"AbilityManaCost"	"50"
-	"AbilityCastPoint"	"0.5"
-	
-	"precache"
-	{
-		"particle"	"particles/generic_gameplay/generic_lifesteal.vpcf"
-		"particle"	"particles/heroes/wraith/wraith_life_strikewave.vpcf"
-        "particle"  "particles/heroes/wraith/wraith_wraithfire_warmup.vpcf"
-        "particle"  "particles/units/heroes/wraith/wraith_lifestrike_wave/wraith_lifestrike_wave.vpcf"
-        "particle"  "particles/heroes/wraith_lifestrike_heal.vpcf"
-
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
-		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
-	}
-	
-    "AbilitySpecial"
+    "wraith_life_strike"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/wraith/wraith_life_strike.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+    	"AbilityTextureName"			"custom/wraith_life_strike"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCastRange"	"1200"
+    	"AbilityCastAnimation"	"ACT_DOTA_ATTACK_EVENT"
+    	"AbilityCooldown"	"12 11.5 11 10.5 10 9.5 9"
+    	"AbilityManaCost"	"50"
+    	"AbilityCastPoint"	"0.5"
+    	
+    	"precache"
+    	{
+    		"particle"	"particles/generic_gameplay/generic_lifesteal.vpcf"
+    		"particle"	"particles/heroes/wraith/wraith_life_strikewave.vpcf"
+            "particle"  "particles/heroes/wraith/wraith_wraithfire_warmup.vpcf"
+            "particle"  "particles/units/heroes/wraith/wraith_lifestrike_wave/wraith_lifestrike_wave.vpcf"
+            "particle"  "particles/heroes/wraith_lifestrike_heal.vpcf"
+
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_magnataur.vsndevts"
+    		"soundfile"	"soundevents/game_sounds_heroes/game_sounds_skeletonking.vsndevts"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_FLOAT"
-            "wave_speed"     				"5000"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "wave_distance"     			"1200"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "wave_width"     				"100"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "wave_damage"     				"250 450 650 850 1050 1250 1450"
-        }
-		"05"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "life_leeched"     				"100"
+            "01"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "wave_speed"     				"5000"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "wave_distance"     			"1200"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "wave_width"     				"100"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "wave_damage"     				"250 450 650 850 1050 1250 1450"
+            }
+    		"05"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "life_leeched"     				"100"
+            }
         }
     }
 }

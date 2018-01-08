@@ -5,10 +5,10 @@ function buccaneer_gangplank:OnSpellStart()
 	local caster = self:GetCaster()
 	local target = self:GetCursorTarget()
 
-	EmitSoundOn("Hero_Kunkka.TauntJig", caster)
+	EmitSoundOn("Hero_Kunkka.TauntJig", target)
 
-	if target:HasModifier("modifier_x_marks") then
-		local gold = caster:FindAbilityByName("buccaneer_x_marks"):GetSpecialValueFor( "gold" ) * self:GetSpecialValueFor( "gold_multiplier" )
+	if target:HasModifier("modifier_buccaneer_jolly_roger") then
+		local gold = caster:FindAbilityByName("buccaneer_jolly_roger"):GetSpecialValueFor( "gold" ) * self:GetSpecialValueFor( "gold_multiplier" )
 		caster:ModifyGold(gold,true,0)
 		SendOverheadEventMessage(caster:GetPlayerOwner(),OVERHEAD_ALERT_GOLD,caster,gold,caster)
 		target:AddNewModifier(caster, self, "modifier_gangplank", {Duration=self:GetSpecialValueFor( "duration" )})
@@ -37,6 +37,7 @@ function modifier_gangplank:OnRemoved()
 		ParticleManager:SetParticleControl(nfx, 0, self:GetParent():GetAbsOrigin())
 		ParticleManager:ReleaseParticleIndex(nfx)
 
+		StopSoundOn("Hero_Kunkka.TauntJig", self:GetParent())
 		self:GetParent():Stop()
 		self:GetAbility():DealDamage(self:GetCaster(), self:GetParent(), self:GetSpecialValueFor( "damage" ), {}, OVERHEAD_ALERT_BONUS_SPELL_DAMAGE)
 		self:GetParent():AddNewModifier(self:GetCaster(), self:GetAbility(), "modifier_stunned_generic", {Duration=self:GetSpecialValueFor( "stun_duration" )})

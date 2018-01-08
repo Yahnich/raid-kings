@@ -1,60 +1,63 @@
-//=================================================================================================================
-// GLADIATRIX - LEGION COMMANDER
-//=================================================================================================================
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//=================================================================================================================
-"gladiatrix_fearless_assault"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_fearless_assault.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"custom/gladiatrix_fearless_assault"
-	"MaxLevel"						"1"
-	"InnateAbility"					"1"
-	"HasScepterUpgrade"				"1"
-	"AbilityCooldown"				"2"
-	
-	"precache"
+	//=================================================================================================================
+	// GLADIATRIX - LEGION COMMANDER
+	//=================================================================================================================
+	//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+	//=================================================================================================================
+	"gladiatrix_fearless_assault"
 	{
-		"soundfile"	"game_sounds_heroes/game_sounds_legion_commander.vsndevts"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/gladiatrix/gladiatrix_fearless_assault.lua"
+	    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/gladiatrix_fearless_assault"
+		"MaxLevel"						"1"
+		"InnateAbility"					"1"
+		"HasScepterUpgrade"				"1"
+		"AbilityCooldown"				"2"
+		
+		"precache"
+		{
+			"soundfile"	"game_sounds_heroes/game_sounds_legion_commander.vsndevts"
 
-		"particle" "particles/units/heroes/hero_legion_commander/legion_commander_courage_hit.vpcf"
-		"particle" "particles/units/heroes/hero_legion_commander/legion_commander_courage_tgt.vpcf"
-		"particle" "particles/heroes/gladiatrix/gladiatrix_fearless_assault_b.vpcf"
+			"particle" "particles/units/heroes/hero_legion_commander/legion_commander_courage_hit.vpcf"
+			"particle" "particles/units/heroes/hero_legion_commander/legion_commander_courage_tgt.vpcf"
+			"particle" "particles/heroes/gladiatrix/gladiatrix_fearless_assault_b.vpcf"
+		}
+		
+		
+	    "AbilitySpecial"
+	    {
+	        "01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"trigger_chance"			"35"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"buff_duration"				"2.0"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"hp_leech_percent"			"50"
+			}
+			"04"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"talent_armor_pct"			"35"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"scepter_armor_bonus"		"7.5"
+			}
+			"05"
+			{
+				"var_type"					"FIELD_FLOAT"
+				"scepter_armor_duration"	"5"
+			}
+	    }
 	}
-	
-	
-    "AbilitySpecial"
-    {
-        "01"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"trigger_chance"			"35"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"buff_duration"				"2.0"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"hp_leech_percent"			"50"
-		}
-		"04"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"talent_armor_pct"			"35"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"scepter_armor_bonus"		"7.5"
-		}
-		"05"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"scepter_armor_duration"	"5"
-		}
-    }
 }

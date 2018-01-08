@@ -1,28 +1,31 @@
-// ZOMBIE BRUTE SPELLS
-"zombie_screech"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "summons/zombie_brute/zombie_screech.lua"
-    "AbilityBehavior"              	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
-	"AbilityTextureName"			"custom/zombie_screech"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"	
-	"AbilityCooldown"				"11 10 9 8 7 6 5"
-	"HasPureCooldown"				"1"
-	"AbilityDuration"				"10"
-	
-    "AbilitySpecial"
+    // ZOMBIE BRUTE SPELLS
+    "zombie_screech"
     {
-		"01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "summons/zombie_brute/zombie_screech.lua"
+        "AbilityBehavior"              	"DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_AUTOCAST"
+    	"AbilityTextureName"			"custom/zombie_screech"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"	
+    	"AbilityCooldown"				"11 10 9 8 7 6 5"
+    	"HasPureCooldown"				"1"
+    	"AbilityDuration"				"10"
+    	
+        "AbilitySpecial"
         {
-            "var_type"          "FIELD_INTEGER"
-            "duration"     		"10"
-        }
-		"02"
-        {
-            "var_type"          "FIELD_INTEGER"
-            "radius"     		"800"
+    		"01"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "duration"     		"10"
+            }
+    		"02"
+            {
+                "var_type"          "FIELD_INTEGER"
+                "radius"     		"800"
+            }
         }
     }
 }

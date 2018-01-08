@@ -1,0 +1,106 @@
+"DOTAHeroes"
+{
+    "npc_dota_hero_crystal_maiden" // avalanche -> need to do it like this for mergetables
+    {
+        "override_hero"         "npc_dota_hero_crystal_maiden"
+        "DisableWearables"      "1"
+        "ModelScale"            "0.474"
+        
+        "Ability1"              "class_empty_1"                 // Ability 1
+        "Ability2"              "class_empty_2"                 // Ability 2
+        "Ability3"              "class_empty_3"                     // Ability 3
+        "Ability4"              "avalanche_frostbrand"
+        "Ability5"              "generic_hidden"
+        "Ability6"              "class_empty_4"
+        // Talents
+        "Ability10"     ""
+        "Ability11"     ""
+        "Ability12"     ""
+        "Ability13"     ""
+        "Ability14"     ""
+        "Ability15"     ""
+        "Ability16"     ""
+        "Ability17"     ""
+        
+        "HeroValues"
+        {
+            "Support"           "5"
+            "Damage"            "4"
+            "Tank"              "1"
+        }
+        
+        "Items"
+        {
+            "Armor"
+            {
+                "1"             "item_avalanche_armor_1"
+                "2"             "item_avalanche_armor_2"
+                "3"             "item_avalanche_armor_3"
+                "4"             "item_avalanche_armor_4"
+                "5"             "item_avalanche_armor_5"
+            }
+            "Weapon"
+            {
+                "1"             "item_avalanche_weapon_1"
+                "2"             "item_avalanche_weapon_2"
+                "3"             "item_avalanche_weapon_3"
+                "4"             "item_avalanche_weapon_4"
+                "5"             "item_avalanche_weapon_5"
+            }
+            "Other"
+            {
+                "1"             "item_avalanche_other_1"
+                "2"             "item_avalanche_other_2"
+                "3"             "item_avalanche_other_3"
+                "4"             "item_avalanche_other_4"
+                "5"             "item_avalanche_other_5"
+            }
+        }
+        
+        "Abilities"
+        {
+            "avalanche_arcane_blizzard"              "true"
+            "avalanche_arctic_avatar"                "true"
+            "avalanche_cold_ray"                     "true"
+            "avalanche_endothermic"                  "true"
+            "avalanche_frigid_slide"                 "true"
+            "avalanche_frost_blast"                  "true"
+            "avalanche_ice_shard"                    "true"
+            "avalanche_orb_of_winter"                "true"
+        }
+        
+        "ArmorPhysical"     "-1"
+        "AttackCapabilities"        "DOTA_UNIT_CAP_RANGED_ATTACK"
+        "AttackDamageMin"       "19"
+        "AttackDamageMax"       "25"
+        "AttackRate"        "1.7"
+        "AttackAnimationPoint"      "0.55"
+        "AttackAcquisitionRange"        "800"
+        "AttackRange"       "600"
+        "ProjectileModel"       "particles/units/heroes/hero_crystalmaiden/maiden_base_attack.vpcf"
+        "ProjectileSpeed"       "900"
+        
+        // Custom Attributes
+        "AttributePrimary"                          "DOTA_ATTRIBUTE_INTELLECT"
+        "BaseStrength"                              "16"
+        "BaseIntellect"                             "16"
+        "BaseAgility"                               "16"
+        "BaseLuck"                                  "15"
+        "BaseVitality"                              "14"
+        "BaseStrengthGain"                          "2.0"
+        "BaseIntellectGain"                         "2.9"
+        "BaseAgilityGain"                           "1.6"
+        "BaseLuckGain"                              "0.8"
+        "BaseVitalityGain"                          "1.3"
+        // Override Default DOTA
+        "AttributeBaseStrength"         "0"
+        "AttributeStrengthGain"         "0"
+        "AttributeBaseIntelligence"     "0"
+        "AttributeIntelligenceGain"     "0"
+        "AttributeBaseAgility"          "0"
+        "AttributeAgilityGain"          "0"
+        
+        "MovementSpeed"                 "180"
+        "MovementTurnRate"              "1.5"
+    }
+}

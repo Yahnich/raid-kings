@@ -1,0 +1,106 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_treant" // Forest
+	{
+		"override_hero"				"npc_dota_hero_treant"
+		"DisableWearables"			"1"
+		"ModelScale"				"0.504"
+		
+		"Ability1"					"class_empty_1"
+		"Ability2"					"class_empty_2"
+		"Ability3"					"class_empty_3"
+		"Ability4"					"forest_iron_bark"
+		"Ability5"					"generic_hidden"
+		"Ability6"					"class_empty_4"
+		// Talents 
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+		
+		"HeroValues"
+		{
+			"Support"			"5"
+			"Damage"			"1"
+			"Tank"				"3"
+		}
+		
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_forest_armor_1"
+				"2"				"item_forest_armor_2"
+				"3"				"item_forest_armor_3"
+				"4"				"item_forest_armor_4"
+				"5"				"item_forest_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_forest_weapon_1"
+				"2"				"item_forest_weapon_2"
+				"3"				"item_forest_weapon_3"
+				"4"				"item_forest_weapon_4"
+				"5"				"item_forest_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_forest_other_1"
+				"2"				"item_forest_other_2"
+				"3"				"item_forest_other_3"
+				"4"				"item_forest_other_4"
+				"5"				"item_forest_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"forest_growing_armor"			"true"
+			"forest_parasitic_growth"		"true"
+			"forest_natures_grove"			"true"
+			"forest_overgrowth"				"true"
+			"forest_vine_whip"				"true"
+			"forest_ancient_tether"			"true"
+			"forest_envelop"				"true"
+			"forest_become_one"				"true"
+		}
+		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"62"
+		"AttackDamageMax"		"70"
+		"AttackRate"		"1.900000"
+		"AttackAnimationPoint"		"0.600000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
+		// Custom Attributes
+		"AttributePrimary"							"DOTA_ATTRIBUTE_STRENGTH"
+		"BaseStrength"								"30"
+		"BaseIntellect"								"20"
+		"BaseAgility"								"10"
+		"BaseLuck"									"8"
+		"BaseVitality"								"28"
+		"BaseStrengthGain"							"2.8"
+		"BaseIntellectGain"							"2.8"
+		"BaseAgilityGain"							"0.8"
+		"BaseLuckGain"								"0.4"
+		"BaseVitalityGain"							"2.4"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"				"160"
+		"MovementTurnRate"			"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
+	}
+}

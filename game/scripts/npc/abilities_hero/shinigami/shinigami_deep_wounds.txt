@@ -1,60 +1,63 @@
-//=================================================================================================================
-// SHINIGAMI - PHANTOM ASSASSIN
-//=================================================================================================================
-//~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-//=================================================================================================================
-"shinigami_deep_wounds"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/shinigami/shinigami_deep_wounds.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
-    "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
-    "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
-    "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
-	"AbilityTextureName"			"custom/shinigami_deep_wounds"
-	"HasScepterUpgrade"				"1"
-	"MaxLevel"						"1"
-	"InnateAbility"					"1"
-	
-	"precache"		
-	{		
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"		
-		"particle"					"particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf"		
-		"particle"					"particles/heroes/shinigami/shinigami_deep_wounds_debuff.vpcf"		
-	}
-	
-    "AbilitySpecial"
+    //=================================================================================================================
+    // SHINIGAMI - PHANTOM ASSASSIN
+    //=================================================================================================================
+    //~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    //=================================================================================================================
+    "shinigami_deep_wounds"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/shinigami/shinigami_deep_wounds.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_PASSIVE"
+        "AbilityUnitTargetTeam"         "DOTA_UNIT_TARGET_TEAM_ENEMY"
+        "AbilityUnitTargetType"         "DOTA_UNIT_TARGET_HERO | DOTA_UNIT_TARGET_BASIC"
+        "AbilityUnitTargetFlags"        "DOTA_UNIT_TARGET_FLAG_NONE"
+    	"AbilityUnitDamageType"			"DAMAGE_TYPE_PURE"
+    	"AbilityTextureName"			"custom/shinigami_deep_wounds"
+    	"HasScepterUpgrade"				"1"
+    	"MaxLevel"						"1"
+    	"InnateAbility"					"1"
+    	
+    	"precache"		
+    	{		
+    		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_sandking.vsndevts"		
+    		"particle"					"particles/units/heroes/hero_sandking/sandking_caustic_finale_explode.vpcf"		
+    		"particle"					"particles/heroes/shinigami/shinigami_deep_wounds_debuff.vpcf"		
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_INTEGER"
-            "damage_pct"     				"25"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "duration"     					"10"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "moveslow"     					"-1"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "turnslow"     					"-1"
-        }
-		"05"
-  	        {
-  	            "var_type"                      "FIELD_INTEGER"
-            "burst_threshold"     			"15"		
-        }
-		"05"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "scepter_damage_amp"     		"50"
+            "01"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "damage_pct"     				"25"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "duration"     					"10"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "moveslow"     					"-1"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "turnslow"     					"-1"
+            }
+    		"05"
+      	        {
+      	            "var_type"                      "FIELD_INTEGER"
+                "burst_threshold"     			"15"		
+            }
+    		"05"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "scepter_damage_amp"     		"50"
+            }
         }
     }
 }

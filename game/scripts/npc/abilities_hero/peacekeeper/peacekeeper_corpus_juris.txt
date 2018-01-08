@@ -1,47 +1,50 @@
-//================================================================================================================
-// Corpus Juris
-//=================================================================================================================
-"peacekeeper_corpus_juris"
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/peacekeeper/peacekeeper_corpus_juris.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
-	"AbilityTextureName"			"custom/peacekeeper_corpus_juris"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"  		"0"
-	"AbilityCastPoint"				"0.3"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
-
-	"AbilityManaCost"         		"1"
-    "AbilityCooldown"         		"2.0"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//================================================================================================================
+	// Corpus Juris
+	//=================================================================================================================
+	"peacekeeper_corpus_juris"
 	{
-		"01"	
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_damage"			"25"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"bonus_move"			"50"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"duration"				"5.0"
-		}
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/peacekeeper/peacekeeper_corpus_juris.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_NO_TARGET"
+		"AbilityTextureName"			"custom/peacekeeper_corpus_juris"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_5"
 
-	"precache"
-	{
-		"particle"  "particles/units/heroes/hero_monkey_king/monkey_king_jump_armor_debuff.vpcf"
+		"AbilityManaCost"         		"1"
+	    "AbilityCooldown"         		"2.0"
 
-		"sound"  	"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"	
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_damage"			"25"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_move"			"50"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"duration"				"5.0"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/units/heroes/hero_monkey_king/monkey_king_jump_armor_debuff.vpcf"
+
+			"sound"  	"soundevents/game_sounds_heroes/game_sounds_templar_assassin.vsndevts"
+		}
 	}
 }

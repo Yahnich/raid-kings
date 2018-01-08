@@ -1,24 +1,27 @@
-//=================================================================================================================
-// Frostbrand
-//=================================================================================================================
-"avalanche_frostbrand"
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/avalanche/avalanche_frostbrand.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
-	"AbilityTextureName"			"custom/avalanche_frostbrand"
-	"MaxLevel"						"1"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//=================================================================================================================
+	// Frostbrand
+	//=================================================================================================================
+	"avalanche_frostbrand"
 	{
-		"01"
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_frostbrand.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"AbilityTextureName"			"custom/avalanche_frostbrand"
+		"MaxLevel"						"1"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
 		{
-			"var_type"					"FIELD_INTEGER"
-			"bonus_damage"				"1"
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"bonus_damage"				"1"
+			}
 		}
 	}
 }

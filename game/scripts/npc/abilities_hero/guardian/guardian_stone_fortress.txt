@@ -1,37 +1,40 @@
-"guardian_stone_fortress"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/guardian/guardian_stone_fortress.lua"
-	"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
-	"AbilityTextureName"			"custom/guardian_stone_fortress"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCastPoint"              "0.3"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_STATUE"
-	
-	"AbilityCooldown"				"25 22.5 20 17.5 15 12.5 10"
-	"AbilityManaCost"				"120"
-	
-	"precache"
+	"guardian_stone_fortress"
 	{
-		"particle"					"particles/units/heroes/hero_earth_spirit/earthspirit_petrify_debuff_stoned.vpcf"
-		"particle"					"particles/status_fx/status_effect_earth_spirit_petrify.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/guardian/guardian_stone_fortress.lua"
+		"AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_NO_TARGET | DOTA_ABILITY_BEHAVIOR_IGNORE_PSEUDO_QUEUE"
+		"AbilityTextureName"			"custom/guardian_stone_fortress"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		
+		"AbilityCastPoint"              "0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_STATUE"
+		
+		"AbilityCooldown"				"25 22.5 20 17.5 15 12.5 10"
+		"AbilityManaCost"				"120"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_earth_spirit/earthspirit_petrify_debuff_stoned.vpcf"
+			"particle"					"particles/status_fx/status_effect_earth_spirit_petrify.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_earth_spirit.vsndevts"
+		}
+		
+	    "AbilitySpecial"
+	    {
+	        "01"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "duration"     					"5"
+	        }
+			"02"
+	        {
+	            "var_type"                      "FIELD_INTEGER"
+	            "explosion_damage"     			"500 750 1000 1250 1500 1750 2000"
+	        }
+	    }
 	}
-	
-    "AbilitySpecial"
-    {
-        "01"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "duration"     					"5"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "explosion_damage"     			"500 750 1000 1250 1500 1750 2000"
-        }
-    }
 }

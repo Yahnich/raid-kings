@@ -1,0 +1,41 @@
+"DOTAAbilities"
+{
+	"item_wraith_armor_3"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/wraith/item_wraith_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"wraith"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"wraith"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"3"
+
+		"Wearables"
+		{
+			"head"					"models/items/wraith_king/kings_spite_head/kings_spite_head.vmdl"
+			"shoulder"				"models/items/wraith_king/kings_spite_shoulder/kings_spite_shoulder.vmdl"
+			"arms"					"models/items/wraith_king/kings_spite_arms/kings_spite_arms.vmdl"
+			"armor"					"models/items/wraith_king/kings_spite_armor/kings_spite_armor.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"400 650 900 1150 1400"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"8 10 12 14 20"
+			}
+		}
+	}
+}

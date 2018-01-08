@@ -1,0 +1,41 @@
+"DOTAAbilities"
+{
+	"item_guardian_armor_5"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/guardian/item_guardian_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"guardian"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"guardian"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"5"
+
+		"Wearables"
+		{
+			"head"					"models/items/sven/dotapit3_sven_head/dotapit3_sven_head.vmdl"
+			"shoulder"				"models/items/sven/dotapit3_sven_shoulder/dotapit3_sven_shoulder.vmdl"
+			"belt"					"models/items/sven/dotapit3_sven_belt/dotapit3_sven_belt.vmdl"
+			"back"					"models/items/sven/rhinoceros_back/rhinoceros_back.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"300 600 900 1200 1500"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"armor"					"4 6 8 10 12"
+			}
+		}
+	}
+}

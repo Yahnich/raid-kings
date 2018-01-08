@@ -1,45 +1,48 @@
-"wraith_sanguine_aura"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/wraith/wraith_sanguine_aura.lua"
-    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_AURA"
-	"AbilityTextureName"			"custom/wraith_sanguine_aura"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"18 17 16 15 14 13 12"
-	
-	"precache"
+	"wraith_sanguine_aura"
 	{
-		"particle"					"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+	    "BaseClass"                     "ability_lua"
+	    "ScriptFile"                    "heroes/wraith/wraith_sanguine_aura.lua"
+	    "AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_TOGGLE | DOTA_ABILITY_BEHAVIOR_AURA"
+		"AbilityTextureName"			"custom/wraith_sanguine_aura"
+	    "RequiredLevel"  				"7"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"			"5"
+		
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"18 17 16 15 14 13 12"
+		
+		"precache"
+		{
+			"particle"					"particles/units/heroes/hero_skeletonking/skeletonking_hellfireblast_debuff.vpcf"
+			"soundfile"					"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+		}
+		
+	    "AbilitySpecial"
+	    {
+	        
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"slow"					"-65 -60 -55 -50 -45 -40 -35"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_FLOAT"
+				"lifesteal"				"35"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"aura_radius"			"900"
+			}
+			"04"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"talent_regen"			"1"
+			}				
+	    }
 	}
-	
-    "AbilitySpecial"
-    {
-        
-		"01"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"slow"					"-65 -60 -55 -50 -45 -40 -35"
-		}
-		"02"
-		{
-			"var_type"				"FIELD_FLOAT"
-			"lifesteal"				"35"
-		}
-		"03"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"aura_radius"			"900"
-		}
-		"04"
-		{
-			"var_type"				"FIELD_INTEGER"
-			"talent_regen"			"1"
-		}				
-    }
 }

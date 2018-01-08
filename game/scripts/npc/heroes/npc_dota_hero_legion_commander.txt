@@ -1,0 +1,107 @@
+"DOTAHeroes"
+{
+	//=================================================================================================================
+	// HERO: Gladiatrix
+	//=================================================================================================================
+	"npc_dota_hero_legion_commander"
+	{
+		"override_hero"			"npc_dota_hero_legion_commander"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.615"
+
+		
+		"Ability1"				"class_empty_1"					// Ability 1
+		"Ability2"				"class_empty_2"					// Ability 2
+		"Ability3"				"class_empty_3"						// Ability 3
+		"Ability4"				"gladiatrix_fearless_assault"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"class_empty_4"
+		// Talents
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+		
+		"HeroValues"
+		{
+			"Support"			"2"
+			"Damage"			"4"
+			"Tank"				"4"
+		}
+
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_gladiatrix_armor_1"
+				"2"				"item_gladiatrix_armor_2"
+				"3"				"item_gladiatrix_armor_3"
+				"4"				"item_gladiatrix_armor_4"
+				"5"				"item_gladiatrix_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_gladiatrix_weapon_1"
+				"2"				"item_gladiatrix_weapon_2"
+				"3"				"item_gladiatrix_weapon_3"
+				"4"				"item_gladiatrix_weapon_4"
+				"5"				"item_gladiatrix_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_gladiatrix_other_1"
+				"2"				"item_gladiatrix_other_2"
+				"3"				"item_gladiatrix_other_3"
+				"4"				"item_gladiatrix_other_4"
+				"5"				"item_gladiatrix_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"gladiatrix_victorious_advance"			"true"
+			"gladiatrix_unbreakable_morale"			"true"
+			"gladiatrix_imperious_shout"			"true"
+			"gladiatrix_war_fury"					"true"
+			"gladiatrix_valiant_rush"				"true"
+			"gladiatrix_cross_cut"					"true"
+			"gladiatrix_adrenaline"					"true"
+			"gladiatrix_leg_sweep"					"true"
+		}
+		
+		"ArmorPhysical"		"0.000000"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_MELEE_ATTACK"
+		"AttackDamageMin"		"35"
+		"AttackDamageMax"		"39"
+		"AttackRate"		"1.700000"
+		"AttackAnimationPoint"		"0.460000"
+		"AttackAcquisitionRange"		"600"
+		"AttackRange"		"150"
+		
+		// Custom Attributes
+		"BaseStrength"								"27"
+		"BaseIntellect"								"10"
+		"BaseAgility"								"27"
+		"BaseLuck"									"6"
+		"BaseVitality"								"25"
+		"BaseStrengthGain"							"3"
+		"BaseIntellectGain"							"0.6"
+		"BaseAgilityGain"							"1.8"
+		"BaseLuckGain"								"0.3"
+		"BaseVitalityGain"							"2.6"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"		"190"
+		"MovementTurnRate"			"1.5"
+	}
+}

@@ -71,7 +71,7 @@ function modifier_buccaneer_jolly_roger:OnRemoved()
 end
 
 function modifier_buccaneer_jolly_roger:GetEffectName()
-	return "particles/heroes/buccaneer/buccaneer_jolly_roger.vpcf"
+	return "particles/heroes/buccaneer/buccaneer_x_marks.vpcf"
 end
 
 function modifier_buccaneer_jolly_roger:GetEffectAttachType()

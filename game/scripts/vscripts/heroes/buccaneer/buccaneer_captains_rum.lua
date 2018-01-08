@@ -103,8 +103,8 @@ end
 
 function modifier_rum:OnAttackLanded(params)
 	if params.attacker == self:GetParent() and params.attacker ~= self:GetCaster() then
-		local ability = params.attacker:FindAbilityByName("buccaneer_x_marks")
-		if params.target:HasModifier("modifier_x_marks") then
+		local ability = params.attacker:FindAbilityByName("buccaneer_jolly_roger")
+		if params.target:HasModifier("modifier_buccaneer_jolly_roger") then
 			params.attacker:ModifyGold(ability:GetSpecialValueFor( "gold" ),true,0)
 			SendOverheadEventMessage(params.attacker:GetPlayerOwner(),OVERHEAD_ALERT_GOLD,params.attacker,ability:GetSpecialValueFor( "gold" ),params.attacker)
 		elseif RollPercentage(ability:GetSpecialValueFor( "gold_chance" )) then

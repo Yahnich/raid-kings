@@ -1,52 +1,55 @@
-"mystic_grim_harvest"
+"DOTAAbilities"
 {
-    "BaseClass"                     "ability_lua"
-    "ScriptFile"                    "heroes/mystic/mystic_grim_harvest.lua"
-    "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
-	"AbilityTextureName"			"custom/mystic_grim_harvest"
-    "RequiredLevel"  				"7"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"			"5"
-	
-	"AbilityCooldown"				"20"
-	"AbilityManaCost"				"110"
-	"AbilityCastRange"				"800"
-	"AbilityCastPoint"				"0.3"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
-	
-	"precache"
-	{
-		"particle"					"particles/heroes/mystic/mystic_grim_harvest.vpcf"
-		"particle"					"particles/heroes/mystic/mystic_grim_harvest_debuff.vpcf"
-		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
-	}
-	
-    "AbilitySpecial"
+    "mystic_grim_harvest"
     {
-        "01"
+        "BaseClass"                     "ability_lua"
+        "ScriptFile"                    "heroes/mystic/mystic_grim_harvest.lua"
+        "AbilityBehavior"               "DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+    	"AbilityTextureName"			"custom/mystic_grim_harvest"
+        "RequiredLevel"  				"7"
+    	"MaxLevel"						"7"
+    	"LevelsBetweenUpgrades"			"5"
+    	
+    	"AbilityCooldown"				"20"
+    	"AbilityManaCost"				"110"
+    	"AbilityCastRange"				"800"
+    	"AbilityCastPoint"				"0.3"
+    	"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_1"
+    	
+    	"precache"
+    	{
+    		"particle"					"particles/heroes/mystic/mystic_grim_harvest.vpcf"
+    		"particle"					"particles/heroes/mystic/mystic_grim_harvest_debuff.vpcf"
+    		"soundfile"					"soundevents/game_sounds_heroes/game_sounds_bloodseeker.vsndevts"
+    	}
+    	
+        "AbilitySpecial"
         {
-            "var_type"                      "FIELD_FLOAT"
-            "damage_amp"     				"35 37.5 40 42.5 45 47.5 50"
-        }
-		"02"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "lifesteal"     				"35"
-        }
-		"03"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "orb_speed"     				"300"
-        }
-		"04"
-        {
-            "var_type"                      "FIELD_FLOAT"
-            "orb_lifetime"     				"11"
-        }
-		"05"
-        {
-            "var_type"                      "FIELD_INTEGER"
-            "orb_radius"     				"450 525 600 675 750 825 900"
+            "01"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "damage_amp"     				"35 37.5 40 42.5 45 47.5 50"
+            }
+    		"02"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "lifesteal"     				"35"
+            }
+    		"03"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "orb_speed"     				"300"
+            }
+    		"04"
+            {
+                "var_type"                      "FIELD_FLOAT"
+                "orb_lifetime"     				"11"
+            }
+    		"05"
+            {
+                "var_type"                      "FIELD_INTEGER"
+                "orb_radius"     				"450 525 600 675 750 825 900"
+            }
         }
     }
 }

@@ -1,0 +1,113 @@
+"DOTAHeroes"
+{
+	"npc_dota_hero_windrunner" // Sylph
+	{
+		"override_hero"			"npc_dota_hero_windrunner"
+		"DisableWearables"		"1"
+		"ModelScale"			"0.588"
+		
+		"Ability1"				"class_empty_1"
+		"Ability2"				"class_empty_2"
+		"Ability3"				"class_empty_3"
+		"Ability4"				"sylph_zephyr"
+		"Ability5"				"generic_hidden"
+		"Ability6"				"class_empty_4"
+		// Talents
+		"Ability10"		""
+		"Ability11"		""
+		"Ability12"		""
+		"Ability13"		""
+		"Ability14"		""
+		"Ability15"		""
+		"Ability16"		""
+		"Ability17"		""
+		
+		"AttachWearables"
+		{
+			"hair"		"models/items/windrunner/wild_wind_hair/wild_wind_hair.vmdl"
+		}
+		
+		"HeroValues"
+		{
+			"Support"			"3"
+			"Damage"			"5"
+			"Tank"				"2"
+		}
+		
+		"Items"
+		{
+			"Armor"
+			{
+				"1"				"item_sylph_armor_1"
+				"2"				"item_sylph_armor_2"
+				"3"				"item_sylph_armor_3"
+				"4"				"item_sylph_armor_4"
+				"5"				"item_sylph_armor_5"
+			}
+			"Weapon"
+			{
+				"1"				"item_sylph_weapon_1"
+				"2"				"item_sylph_weapon_2"
+				"3"				"item_sylph_weapon_3"
+				"4"				"item_sylph_weapon_4"
+				"5"				"item_sylph_weapon_5"
+			}
+			"Other"
+			{
+				"1"				"item_sylph_other_1"
+				"2"				"item_sylph_other_2"
+				"3"				"item_sylph_other_3"
+				"4"				"item_sylph_other_4"
+				"5"				"item_sylph_other_5"
+			}
+		}
+		
+		"Abilities"
+		{
+			"sylph_mistral_breeze"					"true"
+			"sylph_immaterialize"					"true"
+			"sylph_cyclone"							"true"
+			"sylph_jetstream"						"true"
+			"sylph_winds_aid"						"true"
+			"sylph_aerodynamic"						"true"
+			"sylph_rapid_fire"						"true"
+			"sylph_updraft"							"true"
+		}
+		
+		"ArmorPhysical"		"-1"
+		"AttackCapabilities"		"DOTA_UNIT_CAP_RANGED_ATTACK"
+		"AttackDamageMin"		"22"
+		"AttackDamageMax"		"34"
+		"AttackRate"		"1.500000"
+		"AttackAnimationPoint"		"0.400000"
+		"AttackAcquisitionRange"		"800"
+		"AttackRange"		"600"
+		"ProjectileModel"		"particles/units/heroes/hero_windrunner/windrunner_base_attack.vpcf"
+		"ProjectileSpeed"		"1250"
+		
+		// Custom Attributes
+		"AttributePrimary"							"DOTA_ATTRIBUTE_AGILITY"
+		"BaseStrength"								"18"
+		"BaseIntellect"								"30"
+		"BaseAgility"								"20"
+		"BaseLuck"									"3"
+		"BaseVitality"								"15"
+		"BaseStrengthGain"							"1.5"
+		"BaseIntellectGain"							"2.4"
+		"BaseAgilityGain"							"2.4"
+		"BaseLuckGain"								"0.9"
+		"BaseVitalityGain"							"1.2"
+		// Override Default DOTA
+		"AttributeBaseStrength"			"0"
+		"AttributeStrengthGain"			"0"
+		"AttributeBaseIntelligence"		"0"
+		"AttributeIntelligenceGain"		"0"
+		"AttributeBaseAgility"			"0"
+		"AttributeAgilityGain"			"0"
+		
+		"MovementSpeed"			"175"
+		"MovementTurnRate"		"1.5"
+		"BoundsHullName"		"DOTA_HULL_SIZE_SMALL"
+		"RingRadius"			"42"
+	}
+}

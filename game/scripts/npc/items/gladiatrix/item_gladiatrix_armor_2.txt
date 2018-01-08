@@ -1,0 +1,45 @@
+"DOTAAbilities"
+{
+	"item_gladiatrix_armor_2"
+	{
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_PASSIVE"
+		"BaseClass"						"item_lua"
+		"ScriptFile"					"items/gladiatrix/item_gladiatrix_armor"
+		"AbilityTextureName"			"item_hood_of_defiance"
+		"ItemCost"						"1500"
+		"ItemShopTags"					"gladiatrix"
+		"ItemQuality"					"armor"
+		"ItemAliases"					"gladiatrix"
+		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
+		"MaxUpgradeLevel" 				"5" 
+		"ItemBaseLevel" 				"2"
+		
+		"Wearables"
+		{
+			"helm"						"models/heroes/legion_commander/legion_commander_head.vmdl"
+			"shoulder"					"models/heroes/legion_commander/legion_commander_shoulders.vmdl"
+			"arms"						"models/heroes/legion_commander/legion_commander_arms.vmdl"
+		}
+
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_hp"				"200 400 600 800 1000"
+			}
+			"02"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"evasion"				"12 15 17 20 25"
+			}
+			"03"
+			{
+				"var_type"				"FIELD_INTEGER"
+				"bonus_armor"			"2 3 4 5 6"
+			}
+		}
+	}
+}

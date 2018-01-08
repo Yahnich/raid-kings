@@ -1,69 +1,59 @@
-//=================================================================================================================
-// Ice Shard
-//=================================================================================================================
-"avalanche_ice_shard"
+"DOTAAbilities"
 {
-	// General
-	//-------------------------------------------------------------------------------------------------------------
-	"BaseClass"						"ability_lua"
-	"ScriptFile"					"heroes/avalanche/avalanche_ice_shard.lua"
-	"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
-	"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
-	"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
-	"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
-	"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
-	"AbilityTextureName"			"custom/avalanche_ice_shard"
-	"MaxLevel"						"7"
-	"LevelsBetweenUpgrades"  		"0"
-
-	"AbilityCastRange"				"1000"
-	"AbilityCastPoint"				"0.3"
-	"AbilityCastAnimation"			"ACT_DOTA_CAST_GHOST_SHIP"
-
-	// Time		
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilityCooldown"				"50 45 40 35 30 25 20"
-
-	"AbilityManaCost"				"90 100 110 120 130 140 150"
-
-	// Special
-	//-------------------------------------------------------------------------------------------------------------
-	"AbilitySpecial"
+	//=================================================================================================================
+	// Ice Shard
+	//=================================================================================================================
+	"avalanche_ice_shard"
 	{
-		"01"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"buff_duration"				"10.0"
-		}
-		"02"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"ghostship_absorb"			"10 20 30 40 50 60 70"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"ghostship_damage"			"25 35 45 55 65 75 85"
-		}
-		"03"
-		{
-			"var_type"					"FIELD_INTEGER"
-			"ghostship_distance"		"2000"
-		}		
-		"06"
-		{
-			"var_type"					"FIELD_FLOAT"
-			"stun_duration"				"1.4" //fucking valve default ghostship stun duration
-		}
-	}
+		// General
+		//-------------------------------------------------------------------------------------------------------------
+		"BaseClass"						"ability_lua"
+		"ScriptFile"					"heroes/avalanche/avalanche_ice_shard.lua"
+		"AbilityBehavior"				"DOTA_ABILITY_BEHAVIOR_POINT | DOTA_ABILITY_BEHAVIOR_DIRECTIONAL"
+		"AbilityUnitTargetTeam"			"DOTA_UNIT_TARGET_TEAM_ENEMY"
+		"AbilityUnitTargetType"			"DOTA_UNIT_TARGET_ALL"
+		"AbilityUnitDamageType"			"DAMAGE_TYPE_MAGICAL"
+		"SpellImmunityType"				"SPELL_IMMUNITY_ENEMIES_NO"
+		"AbilityTextureName"			"custom/avalanche_ice_shard"
+		"MaxLevel"						"7"
+		"LevelsBetweenUpgrades"  		"0"
 
-	"precache"
-	{
-		"particle"  "particles/heroes/buccaneer/buccaneer_call_the_fleet_ship.vpcf"
-		"particle"  "particles/units/heroes/hero_kunkka/kunkka_ghostship_marker.vpcf"
-		"particle"  "particles/status_fx/status_effect_rum.vpcf"
-		"particle"  "particles/units/heroes/hero_siren/naga_siren_riptide_debuff.vpcf"
+		"AbilityCastRange"				"1000"
+		"AbilityCastPoint"				"0.3"
+		"AbilityCastAnimation"			"ACT_DOTA_CAST_ABILITY_2"
 
-		"soundfile" "soundevents/game_sounds_heroes/game_sounds_kunkka.vsndevts"
+		// Time		
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilityCooldown"				"50 45 40 35 30 25 20"
+
+		"AbilityManaCost"				"90 100 110 120 130 140 150"
+
+		// Special
+		//-------------------------------------------------------------------------------------------------------------
+		"AbilitySpecial"
+		{
+			"01"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"damage"					"110 120 130 140 150 160 170"
+			}
+			"02"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"multiplier"				"3"
+			}
+			"03"
+			{
+				"var_type"					"FIELD_INTEGER"
+				"range"						"1000"
+			}
+		}
+
+		"precache"
+		{
+			"particle"  "particles/heroes/avalanche/avalanche_ice_shard_1.vpcf"
+
+			"soundfile" "soundevents/game_sounds_heroes/game_sounds_tusk.vsndevts"
+		}
 	}
 }
