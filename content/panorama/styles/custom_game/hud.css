@@ -655,3 +655,22 @@
 {
 	background-color: gradient( linear, 0% 0%, 0% 100%, from( #2d2d2d ), to( #2d2d2d ) );
 }
+
+.EquipmentUpgradeContainer
+{
+	flow-children: right;
+	margin-bottom: 10px;
+	margin-top: 10px;
+}
+
+.EquipmentUpgradeIcon
+{
+	width: 64px;
+	height: 64px;
+	margin: 8px;
+}
+
+.CurrentUpgrade
+{
+	border: 2px solid #565656FF;
+}

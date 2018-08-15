@@ -8,7 +8,7 @@
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/sylph/item_sylph_other"
 		"AbilityTextureName"			"item_refresher_shard"
-		"ItemCost"						"1500"
+		"ItemCost"						"6000"
 		"ItemShopTags"					"weapon"
 		"ItemAliases"					"sylph"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"

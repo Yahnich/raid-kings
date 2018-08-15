@@ -1,11 +1,14 @@
 "use strict";
 var localID = Game.GetLocalPlayerID();
 
+
 GameEvents.Subscribe("dota_player_update_query_unit", UpdateSelectedUnit);
 GameEvents.Subscribe("dota_player_update_selected_unit", UpdateSelectedUnit);
 GameEvents.Subscribe("dota_player_gained_level", UpdateSelectedUnit);
 GameEvents.Subscribe( "EndSkillSelection", UpdateSelectedUnit);
 GameEvents.Subscribe( "EndSkillSelection", SetHud);
+GameEvents.Subscribe( "raid_kings_open_inventory", OpenInventory);
+GameEvents.Subscribe( "raid_kings_upgraded_equipment", UpdateInventory);
 
 var dotaHud = $.GetContextPanel().GetParent().GetParent().GetParent().FindChildTraverse("HUDElements");
 
@@ -138,7 +141,8 @@ function CreateOverheadButtons()
 		equipmentButton.AddClass("DOTAHudMenuButtons")
 		equipmentButton.style.visibility = "visible";
 		equipmentButton.style.backgroundImage = "url(\"file://{images}/custom_game/equipmentIcon.png\")";
-		equipmentButton.SetPanelEvent("onactivate", OpenInventory );
+		equipmentButton.SetPanelEvent("onactivate", QueryOpenInventory );
+		$("#HeroInventoryPanel") .SetHasClass( "Hidden", true )
 	}
 	if($("#InfoButton") == null){
 		var infoButton =  $.CreatePanel( "Button", $.GetContextPanel(), "InfoButton");
@@ -152,10 +156,85 @@ function CreateOverheadButtons()
 	$("#HeroInformationContainer").SetHasClass( "Hidden", true )
 }
 
-function OpenInventory()
+function QueryOpenInventory()
+{
+	GameEvents.SendCustomGameEventToServer( "QueryCurrentEquipment" + localID, {} )
+}
+
+var DOTA_TO_RAID_KING_TABLE = {	"npc_dota_hero_invoker":"primordial",
+								"npc_dota_hero_visage": "archon",
+								"npc_dota_hero_windrunner":"sylph",
+								"npc_dota_hero_necrolyte":"puppeteer",
+								"npc_dota_hero_phantom_assassin":"shinigami",
+								"npc_dota_hero_lina":"ifrit",
+								"npc_dota_hero_legion_commander":"gladiatrix",
+								"npc_dota_hero_omniknight":"justicar",
+								"npc_dota_hero_sven":"guardian",
+								"npc_dota_hero_dazzle":"mystic",
+								"npc_dota_hero_treant":"forest",
+								"npc_dota_hero_skeleton_king":"wraith",
+								"npc_dota_hero_lone_druid":"shifter",
+								"npc_dota_hero_templar_assassin":"peacekeeper",
+								"npc_dota_hero_kunkka":"buccaneer",
+								"npc_dota_hero_tusk":"brawler",
+								"npc_dota_hero_nevermore":"collector",
+								"npc_dota_hero_shadow_demon":"revenant",
+								"npc_dota_hero_crystal_maiden":"avalanche"}
+
+function OpenInventory(args)
 {
 	var inventory = $("#HeroInventoryPanel") 
 	inventory.SetHasClass( "Hidden", !inventory.BHasClass("Hidden") )
+	$.Msg("hello?")
+	UpdateInventory(args)
+}
+
+function UpdateInventory(args)
+{
+	var localHero = Players.GetPlayerHeroEntityIndex( localID )
+	var heroName = DOTA_TO_RAID_KING_TABLE[Players.GetPlayerSelectedHero( localID )]
+
+	for(var i = 1; i <= 5; i++){
+		(function(args, i){
+			var weapon = $("#WeaponUpgrade" + i);
+			weapon.SetHasClass("CurrentUpgrade", args.weapon == i);
+			
+			if( args.weapon + 1 == i && args.weapon + 1 <= 5 ){
+				weapon.SetPanelEvent("onactivate", function(){ GameEvents.SendCustomGameEventToServer( "TryUpgradeWeapon" + localID, {} ) } );
+			} else {
+				weapon.SetPanelEvent("onactivate", function(){} );
+			}
+			weapon.SetPanelEvent("onmouseout", function(){ $.DispatchEvent("DOTAHideAbilityTooltip", weapon); } );
+			weapon.SetPanelEvent("onmouseover", function(){ $.DispatchEvent("DOTAShowAbilityTooltipForEntityIndex", weapon, "item_" + heroName + "_weapon_" + i, localHero); } );
+		})(args, i);
+		
+		(function(args, i){
+			var armor = $("#ArmorUpgrade" + i);
+			armor.SetHasClass("CurrentUpgrade", args.armor == i);
+			if( args.armor + 1 == i && args.armor + 1 <= 5 ){
+				armor.SetPanelEvent("onactivate", function(){ GameEvents.SendCustomGameEventToServer( "TryUpgradeArmor" + localID, {} ) } );
+			} else {
+				armor.SetPanelEvent("onactivate", function(){} );
+			}
+			
+			armor.SetPanelEvent("onmouseout", function(){ $.DispatchEvent("DOTAHideAbilityTooltip", armor); } );
+			armor.SetPanelEvent("onmouseover", function(){ $.DispatchEvent("DOTAShowAbilityTooltipForEntityIndex", armor, "item_" + heroName + "_armor_" + i, localHero); } );
+		})(args, i);
+		
+		(function(args, i){
+			var other = $("#OtherUpgrade" + i);
+			other.SetHasClass("CurrentUpgrade", args.other == i);
+			
+			if( args.other + 1 == i && args.other + 1 <= 5 ){
+				other.SetPanelEvent("onactivate", function(){ GameEvents.SendCustomGameEventToServer( "TryUpgradeOther" + localID, {} ) } );
+			} else {
+				other.SetPanelEvent("onactivate", function(){} );
+			}
+			
+			other.SetPanelEvent("onmouseout", function(){ $.DispatchEvent("DOTAHideAbilityTooltip", other); } );
+			other.SetPanelEvent("onmouseover", function(){ $.DispatchEvent("DOTAShowAbilityTooltipForEntityIndex", other, "item_" + heroName + "_other_" + i, localHero); } );
+		})(args, i);
+	}
 }
 
 function OpenInfoHud()
@@ -390,6 +469,7 @@ function CreateAbility(unitID, abilityID, localPlayerOwned)
 	var ability = $.CreatePanel( "DOTAAbilityImage", abilityHolder, "AbilityUnit"+unitID+"Ability"+abilityID);
 	ability.AddClass("AbilityBarAbility");
 	abilityHolder.ability = ability
+
 	ability.abilityname = Abilities.GetAbilityName( abilityID );
 	
 	var toggleState = $.CreatePanel( "Panel", abilityHolder, "AbilityUnit"+unitID+"Ability"+abilityID);

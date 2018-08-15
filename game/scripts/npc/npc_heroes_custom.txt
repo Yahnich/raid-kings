@@ -12,3 +12,6 @@
 #base "heroes\npc_dota_hero_templar_assassin.txt"
 #base "heroes\npc_dota_hero_treant.txt"
 #base "heroes\npc_dota_hero_windrunner.txt"
+
+"DOTAHeroes"
+{}

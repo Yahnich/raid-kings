@@ -197,7 +197,27 @@
 			</Panel>
 		</Panel>
 		<Panel id="HeroInventoryPanel" class="InformationPanel">
-			
+				<Panel class="EquipmentUpgradeContainer" id="WeaponUpgradeContainer">
+					<Image src="file://{images}/custom_game/weapon_upgrade_1.png" id="WeaponUpgrade1" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/weapon_upgrade_2.png" id="WeaponUpgrade2" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/weapon_upgrade_3.png" id="WeaponUpgrade3" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/weapon_upgrade_4.png" id="WeaponUpgrade4" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/weapon_upgrade_5.png" id="WeaponUpgrade5" class="EquipmentUpgradeIcon" hittest="true"/>
+				</Panel>
+				<Panel class="EquipmentUpgradeContainer" id="ArmorUpgradeContainer">
+					<Image src="file://{images}/custom_game/armor_upgrade_1.png" id="ArmorUpgrade1" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/armor_upgrade_2.png" id="ArmorUpgrade2" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/armor_upgrade_3.png" id="ArmorUpgrade3" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/armor_upgrade_4.png" id="ArmorUpgrade4" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/armor_upgrade_5.png" id="ArmorUpgrade5" class="EquipmentUpgradeIcon" hittest="true"/>
+				</Panel>
+				<Panel class="EquipmentUpgradeContainer" id="OtherUpgradeContainer">
+					<Image src="file://{images}/custom_game/other_upgrade_1.png" id="OtherUpgrade1" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/other_upgrade_2.png" id="OtherUpgrade2" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/other_upgrade_3.png" id="OtherUpgrade3" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/other_upgrade_4.png" id="OtherUpgrade4" class="EquipmentUpgradeIcon" hittest="true"/>
+					<Image src="file://{images}/custom_game/other_upgrade_5.png" id="OtherUpgrade5" class="EquipmentUpgradeIcon" hittest="true"/>
+				</Panel>
 		</Panel>
     </Panel>
 </root>

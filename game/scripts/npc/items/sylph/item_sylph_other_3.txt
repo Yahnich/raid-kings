@@ -8,7 +8,7 @@
 		"BaseClass"						"item_lua"
 		"ScriptFile"					"items/sylph/item_sylph_other"
 		"AbilityTextureName"			"item_refresher_shard"
-		"ItemCost"						"1500"
+		"ItemCost"						"3000"
 		"ItemShopTags"					"weapon"
 		"ItemAliases"					"sylph"
 		"ItemDeclarations"				"DECLARE_PURCHASES_TO_TEAMMATES | DECLARE_PURCHASES_IN_SPEECH | DECLARE_PURCHASES_TO_SPECTATORS"
@@ -19,7 +19,7 @@
 		"ItemPurchasable"				"0"
 		"ItemSellable"					"0"
 		"ItemKillable"					"0"
-		"ItemDroppable"				"0"
+		"ItemDroppable"					"0"
 		"ItemShareability"				"ITEM_FULLY_SHAREABLE"
 		
 		"Wearables"

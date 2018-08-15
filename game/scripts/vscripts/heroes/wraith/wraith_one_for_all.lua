@@ -128,6 +128,7 @@ function modifier_wraith_one_for_all_aura:DeclareFunctions()
 end
 
 function modifier_wraith_one_for_all_aura:GetModifierIncomingDamage_Percentage(params)
+	if params.damage <= 0 then return end
 	if IsServer() and params.unit ~= self:GetCaster() and not self:GetCaster():HasModifier("modifier_wraith_all_for_one") and not self:GetParent():IsIllusion() and not HasBit(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then
 		local spread = math.abs(params.damage * self.damage_redirection) / 100
 		local hp = math.abs(params.damage / self:GetParent():GetMaxHealth() * (self.damage_redirection / 100)) * self:GetCaster():GetMaxHealth()
@@ -243,6 +244,7 @@ function modifier_wraith_all_for_one:GetModifierHealAmplify_Percentage()
 end
 
 function modifier_wraith_all_for_one:GetModifierIncomingDamage_Percentage(params)
+	if params.damage <= 0 then return end
 	if IsServer() and not self:GetCaster():HasModifier("modifier_wraith_one_for_all") and not self:GetParent():IsIllusion() and not HasBit(params.damage_flags, DOTA_DAMAGE_FLAG_REFLECTION) then
 		local allies = self:GetParent():FindFriendlyUnitsInRadius( self:GetParent():GetAbsOrigin(), self.aura_radius )
 		local filteredAllies = {}

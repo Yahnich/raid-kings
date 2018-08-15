@@ -74,7 +74,8 @@ function modifier_wraith_undying_buff:DeclareFunctions()
 end
 
 function modifier_wraith_undying_buff:ReincarnateTime(params)
-	if self:GetParent() == self:GetCaster() then self:GetAbility():UseResources(false, false, true) end
+	if self:GetParent() == self:GetCaster() then 
+	self:GetAbility():UseResources(false, false, true) end
 	Timers:CreateTimer(self.delay + FrameTime(), function() 
 		if not self:IsNull() then
 			self:Destroy() 

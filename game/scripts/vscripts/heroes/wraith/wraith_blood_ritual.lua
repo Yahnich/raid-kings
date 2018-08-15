@@ -34,11 +34,11 @@ function wraith_blood_ritual:OnSpellStart()
 		for _, enemy in ipairs( enemies ) do
 			self:DealDamage(caster, enemy, heal/spreadCount, {damage_type = DAMAGE_TYPE_PURE}, OVERHEAD_ALERT_DAMAGE)
 			ParticleManager:FireRopeParticle("particles/units/heroes/hero_undying/undying_soul_rip_damage.vpcf", PATTACH_POINT_FOLLOW, caster, enemy)
-			ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_lifestrike_heal/wraith_lifestrike_heal.vpcf", PATTACH_POINT_FOLLOW, target, enemy)
+			ParticleManager:FireRopeParticle("particles/units/heroes/hero_undying/undying_soul_rip_heal.vpcf", PATTACH_POINT_FOLLOW, target, enemy)
 		end
 		self:DealDamage(caster, caster, heal/spreadCount, {damage_type = DAMAGE_TYPE_PURE, damage_flags = DOTA_DAMAGE_FLAG_NON_LETHAL}, OVERHEAD_ALERT_DAMAGE)
 		ParticleManager:FireRopeParticle("particles/units/heroes/hero_undying/undying_soul_rip_damage.vpcf", PATTACH_POINT_FOLLOW, caster, caster)
-		ParticleManager:FireRopeParticle("particles/heroes/wraith/wraith_lifestrike_heal/wraith_lifestrike_heal.vpcf", PATTACH_POINT_FOLLOW, target, caster)
+		ParticleManager:FireRopeParticle("particles/units/heroes/hero_undying/undying_soul_rip_heal.vpcf", PATTACH_POINT_FOLLOW, target, caster)
 		
 		EmitSoundOn("Hero_Undying.SoulRip.Ally", target)
 		target:HealEvent(heal, self, caster)

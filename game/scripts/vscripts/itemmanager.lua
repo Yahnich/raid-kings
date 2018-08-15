@@ -46,6 +46,18 @@ function ItemManager:constructor(owner, itemTable)
 	
 	self.trinketTable = {}
 	self.relicTable = {}
+	
+	self.weaponUpgradeListener = CustomGameEventManager:RegisterListener('TryUpgradeWeapon'..self.owner:GetPlayerID(), Context_Wrap( self, 'UpgradeWeapon'))
+	self.armorUpgradeListener = CustomGameEventManager:RegisterListener('TryUpgradeArmor'..self.owner:GetPlayerID(), Context_Wrap( self, 'UpgradeArmor'))
+	self.otherUpgradeListener = CustomGameEventManager:RegisterListener('TryUpgradeOther'..self.owner:GetPlayerID(), Context_Wrap( self, 'UpgradeOther'))
+	
+	self.equipmentQueryListener = CustomGameEventManager:RegisterListener('QueryCurrentEquipment'..self.owner:GetPlayerID(), Context_Wrap( self, 'QueryCurrentEquipment'))
+end
+
+function ItemManager:QueryCurrentEquipment()
+	CustomGameEventManager:Send_ServerToPlayer(self.owner:GetPlayerOwner(), "raid_kings_open_inventory", {	weapon = self:GetWeaponLevel(), 
+																											armor = self:GetArmorLevel(), 
+																											other = self:GetOtherLevel() })
 end
 
 function ItemManager:InitWearables(hero)
@@ -86,13 +98,18 @@ end
 function ItemManager:UpgradeArmor()
 	if self.currentArmor < #self.armorTable then
 		if self:GetEquippedArmor() then
-			self:GetOwner():RemoveItem(self.armorTable[self:GetEquippedArmor()] )
+			self:GetOwner():RemoveItem( self.armorTable[self:GetEquippedArmor()] )
 		end
 		self.currentArmor = self.currentArmor + 1
-		self.equippedArmor = self:GetOwner():AddItemByName(self.armorTable[self.currentArmor])
+		local armor = CreateItem(self.armorTable[self.currentArmor], nil, nil)
+		self.equippedArmor = self:GetOwner():AddItem( armor )
 		self:GetOwner():SetArmorWearables( self.equippedArmor:GetWearables() )
+		
+		CustomGameEventManager:Send_ServerToPlayer(self.owner:GetPlayerOwner(), "raid_kings_upgraded_equipment", {	weapon = self:GetWeaponLevel(), 
+																													armor = self:GetArmorLevel(), 
+																													other = self:GetOtherLevel() })
 	else
-		return print("Armor is maxed")
+		return error("Armor is maxed")
 	end
 end
 
@@ -160,10 +177,16 @@ function ItemManager:UpgradeWeapon()
 			self:GetOwner():RemoveItem(self.weaponTable[self:GetEquippedWeapon()] )
 		end
 		self.currentWeapon = self.currentWeapon + 1
-		self.equippedWeapon = self:GetOwner():AddItemByName(self.weaponTable[self.currentWeapon])
-		self:GetOwner():SetWeaponWearables( self.equippedWeapon:GetWearables() )
+		
+		local weapon = CreateItem(self.weaponTable[self.currentWeapon], nil, nil)
+		self.equippedWeapon = self:GetOwner():AddItem( weapon )
+		self:GetOwner():SetWeaponWearables( weapon:GetWearables() )
+		
+		CustomGameEventManager:Send_ServerToPlayer(self.owner:GetPlayerOwner(), "raid_kings_upgraded_equipment", {	weapon = self:GetWeaponLevel(), 
+																													armor = self:GetArmorLevel(), 
+																													other = self:GetOtherLevel() })
 	else
-		return "Weapon is maxed"
+		return error("Weapon is maxed")
 	end
 end
 
@@ -231,10 +254,15 @@ function ItemManager:UpgradeOther()
 			self:GetOwner():RemoveItem(self.otherTable[self:GetEquippedOther()] )
 		end
 		self.currentOther = self.currentOther + 1
-		self.equippedOther = self:GetOwner():AddItemByName(self.otherTable[self.currentOther])
+		local other = CreateItem(self.otherTable[self.currentOther], nil, nil)
+		self.equippedOther = self:GetOwner():AddItem( other )
 		self:GetOwner():SetOtherWearables( self.equippedOther:GetWearables() )
+		
+		CustomGameEventManager:Send_ServerToPlayer(self.owner:GetPlayerOwner(), "raid_kings_upgraded_equipment", {	weapon = self:GetWeaponLevel(), 
+																													armor = self:GetArmorLevel(), 
+																													other = self:GetOtherLevel() })
 	else
-		return "Other is maxed"
+		return error("Other is maxed")
 	end
 end
 
@@ -289,7 +317,7 @@ function CDOTA_BaseNPC_Hero:SetOtherWearables( wearableTable )
 end
 
 function CDOTA_Item:GetWearables()
-	if GameRules.AbilityKV[self:GetName()]["Wearables"] then return GameRules.AbilityKV[self:GetName()]["Wearables"] end
+	if GameRules.AbilityKV[self:GetName()] and GameRules.AbilityKV[self:GetName()]["Wearables"] then return GameRules.AbilityKV[self:GetName()]["Wearables"] end
 	return {}
 end
 
