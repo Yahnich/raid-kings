@@ -1,0 +1,465 @@
+RAID KINGS EXTENSIVE DESIGN DOCUMENT
+
+CORE ATTRIBUTES
+======================
+Strength (CORE ROLE: POWER)
+Vigor (CORE ROLE: SURVIVABILITY)
+Agility (CORE ROLE: SWIFTNESS)
+Intellect (CORE ROLE: SPELLCASTING)
+Luck (CORE ROLE: STACKING THE DECK IN YOUR FAVOUR)
+
+Vigor
+----------------------
+Keeps you the fuck alive:
+Provides Health and Health Regeneration
+
+Strength
+----------------------
+Lets you wade into the frontline
+Provides armor and status resistance
+
+Agility
+----------------------
+Mobility and damage output
+Provides base movement speed and attack speed
+
+Intellect
+----------------------
+Spellcasting power
+Provides cooldown reduction and ability power
+
+Luck
+----------------------
+Stacks the deck in your favour
+Passively increases loot chance and proc chance.
+
+Every hero has a primary attribute, which decides what grants it bonus damage and bonus resource generation
+
+KEYWORDS
+======================
+
+Armor
+----------------------
+Reduces the damage taken from physical attacks. Every point of Armor
+
+Tenacity
+----------------------
+Decreases the effects of debuffs on heroes. Does not apply to debuffs that only deal damage. Stacks additively but is soft-capped at 50% (further increases have lowered efficiency)
+Slows: Have their strength decreased, duration unchanged
+Stuns: Have a chance to be ignored, duration is unchanged if the check fails.
+Other: Duration is reduced by the amount of status resistance.
+
+Swiftness
+----------------------
+Increases the movement speed of heroes.
+
+Tempo
+----------------------
+Increases the rate of attack of heroes. Hard-capped at 1000
+
+Spell Haste
+----------------------
+Reduces the cooldowns and cast time of abilities. Every source of cooldown reduction stacks additively.
+
+Ability Power
+----------------------
+Increases spell scaling of abilities, the amount of bonus scaling provided is ability-specific and mentioned on the tooltip.
+EXAMPLE: Punish (Guardian) - [ ] Deals 150 (+50% AP) damage, reduces armor by 5 (+10% AP) and all elemental armor by 3 (+10% AP)
+
+Greed
+----------------------
+When you gain gold or experience from loot (non-passively), you gain a bonus amount based on your loot chance. 10% loot chance = +10% xp/gold. Thus
+
+Certainty
+----------------------
+Increases the odds of dice rolls going in your favour. Additively adds to the chance.
+EXAMPLE: 25% Bash chance + 10% luck => +35% Bash chance
+
+Resilience
+----------------------
+Reduces damage from all sources inflicted on you.
+
+Intensity
+----------------------
+Increases damage dealt from all sources by you.
+
+Stun
+----------------------
+Completely disables minions. Champions and Bosses instead have their cast points and turn rate increased, as well as reducing their attack and movement speed to the lowest possible value.
+
+Slow
+----------------------
+Reduces movement speed.
+
+Silence
+----------------------
+Prevents non-right click like abilities from being cast. A boss ability called Swipe that functionally acts as an auto-attack but in an area of effect would not be disabled.
+
+Disarm
+--------------------
+Prevents right-clicks and casting right-click like abilities.
+
+Chill
+----------------------
+Stacks up to 100, slows enemy movement speed by 1% per stack of Chill. At 100, will freeze the enemy.
+
+Freeze
+----------------------
+Functionally equivalent to a stun, but freezes animations as well. Enemies that are Frozen cannot be Chilled.
+
+Paralyze
+----------------------
+100% movement and attack slow, generally short duration, unaffected by status resistance
+
+Barrier
+----------------------
+Prevents all damage before reductions. Degrades by 10% of the current value per second.
+
+Blind
+----------------------
+Causes the enemy to miss on attack.
+
+Resilience
+----------------------
+Reduces all types of damage.
+
+Signature
+----------------------
+An ability that functionally works as an auto-attack and whose cooldown is linked to your attack rate, leveled upon spawn
+
+Innate
+----------------------
+Passive ability that is leveled upon spawn
+
+Skill Trees
+----------------------
+Improve your hero and his abilities. Skill point cost is equal to the tier. 
+You need at least one skill in the previous tier to skill something in the next one, but that does not stop you from taking everything in the previous tier.
+Some talents require specific other talents to be skilled.
+
+Items
+----------------------
+You start with the initial lv1 gear, you can purchase the next levels with gold, improving your base equipment
+
+INITIAL RELEASE
+======================
+- [ ] Puppeteer
+- [ ] Mystic
+- [ ] Guardian
+- [ ] Shinigami
+- [ ] Avalanche
+
+
+
+GUARDIAN
+======================
+
+Items
+----------------------
+
+Armor: 
+-- Worn Armor (+1000 Max HP, +10 armor) 
+-> Platemail Armor (+2500 Max HP, +10 armor) 
+-> Heavy Platemail (+5000 Max HP, 15 armor) 
+-> Veteran's Platemail (+7500 Max HP, 15 armor) 
+-> Siegebreaker (15000 Max HP, 20 armor)
+
+Weapon: 
+-- Dull Bastard Sword (+100 damage, 20%/220% crit) 
+-> Heavy Bastard Sword (+150 damage, 20%/220% crit) 
+-> Defender's Greatsword (+200 damage, 20%/220% crit) 
+-> Honed Greatsword (+250 damage, 20%/220% crit) 
+-> Guillotine (+300 damage, 20%/220% crit)
+
+
+Offhand: 
+-- Bent Round Shield (+10/50% block, +5 armor) 
+-> Buckler (+20/50% block, +5 armor) 
+-> Kiteshield (+30/50% block, 10 armor 
+-> Greatshield (+45/50% block, 10 armor) 
+-> Warstopper (+60/50% block, +15 armor)
+
+
+Abilities
+----------------------
+
+-- Signature: Great Cleave - Swipes infront of Guardian, dealing 100% auto-attack damage to all enemies within the cone. Automatically triggers on attack, but can be point targeted.
+-- Innate: Fortitude - Grants 25% Resilience and Tenacity.
+
+-- Skill 1: Anchor Howl: Taunts all enemies within 600 radius to you, dealing 200 (+100% AP) damage to them if they change targets within 5 seconds of the debuff ending.
+-- Skill 2: Glorious Shield: Blinds enemies for 40% + (10% AP) in a cone for 5 seconds.
+-- Skill 3: Shield Bash: Smashes your shield into all enemies in front of you, dealing 80 (+75% AP) damage and knocking them back 250 units.
+-- Skill 4: Punish: Deals 150 (+80% AP) damage to a single target, reducing their armor by 5 (+20% AP) for 8 seconds.
+-- Skill 5: Challenge: Debuffs an enemy, slowing its attack speed by 500 and taunting it for 6 (+5% AP) seconds.
+-- Skill 6: Rallying Cry: Grants all allies 10 (+50% AP) armor for 8 seconds.
+-- Skill 7: Guardian's Spirit: Gain 25% bonus Strength and Vitality for 20 seconds (+10% AP).
+-- Skill 8: Stone Fortress: Becomes immune to all damage, for 3 (+15% AP) seconds or until an order is given. Can be cast through stun.
+
+Skill Tree
+----------------------
+
+Branch 1: Titan (Become as tanky as possible)
+
+TIER 1:
+1 - Vigorous: Grants 10 health regeneration.
+2 - Stone Skin: Grants 4 armor.
+
+TIER 2:
+1 - Impermeable: Fortitude bonus increased by 10% (Requires Stone Skin and Vigorous)
+2 - Unbreakable: Anchor Howl, Rallying Cry, Guardian's Spirit, Stone Fortress now grant +10 armor upon activation for their effect duration. This increase is unrelated to any buffs they may provide. (Requires Stone Skin)
+3 - Bulwark of Justice: Glorious Shield, Shield Bash, Punish and Challenge increases Guardian's block chance to 100%.
+
+TIER 3:
+1 - Blood for Blood: You lifesteal 25% of your damage dealt.
+2 - Titan's Heart: Grants 40 health regeneration. (Requires Vigorous)
+
+
+TIER 4:
+1 - Unstoppable: Fortitude Tenacity increased to 80% (Requires Impermeable)
+2 - Power Through: When you take lethal damage, Fortitude is disabled for 15 seconds; but you regain 35% of your health. Can only happen when Fortitude is active. (Requires Titan's Heart and Adrenaline)
+
+Branch 2: Warden (Focuses on crowd control)
+
+TIER 1:
+1 - Apply Pressure: Anchor Howl, Glorious Shield, Shield Bash, Punish and Challenge have their durations increased by 2.
+2 - Adrenaline: Grants 15% spell haste.
+
+TIER 2:
+1 - Guardian's Reach: Anchor Howl radius increased by 150, Glorious Shield distance increased by 300, Shield Bash cast range increased by 50, Punish and Challenge cast range increased by 150. (Requires Apply Pressure)
+2 - Intimidating Presence: All debuffs placed by Guardian also slow the enemy by 30% (Requi
+
+TIER 3:
+1 - 
+2 - 
+3 - 
+
+TIER 4:
+1 - 
+2 - 
+
+Branch 3: Punisher (Focuses on shanking fuckers in the liver)
+
+SHINIGAMI
+======================
+
+Items
+----------------------
+
+Abilities
+----------------------
+
+-- Signature: 
+-- Innate: 
+
+-- Skill 1: 
+-- Skill 2: 
+-- Skill 3: 
+-- Skill 4: 
+-- Skill 5: 
+-- Skill 6: 
+-- Skill 7: 
+-- Skill 8: 
+
+Skill Tree
+----------------------
+
+Branch 1: Titan (Become as tanky as possible)
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+
+Branch 2: 
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+
+Branch 3: 
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+AVALANCHE
+======================
+
+Items
+----------------------
+
+Abilities
+----------------------
+
+-- Signature: 
+-- Innate: 
+
+-- Skill 1: 
+-- Skill 2: 
+-- Skill 3: 
+-- Skill 4: 
+-- Skill 5: 
+-- Skill 6: 
+-- Skill 7: 
+-- Skill 8: 
+
+Skill Tree
+----------------------
+
+Branch 1: Titan (Become as tanky as possible)
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+
+Branch 2: 
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+
+Branch 3: 
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+PUPPETEER
+======================
+
+Items
+----------------------
+
+Abilities
+----------------------
+
+-- Signature: 
+-- Innate: 
+
+-- Skill 1: 
+-- Skill 2: 
+-- Skill 3: 
+-- Skill 4: 
+-- Skill 5: 
+-- Skill 6: 
+-- Skill 7: 
+-- Skill 8: 
+
+Skill Tree
+----------------------
+
+Branch 1: Titan (Become as tanky as possible)
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+
+Branch 2: 
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+
+Branch 3: 
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+
+MYSTIC
+======================
+
+Items
+----------------------
+
+Abilities
+----------------------
+
+-- Signature: 
+-- Innate: 
+
+-- Skill 1: 
+-- Skill 2: 
+-- Skill 3: 
+-- Skill 4: 
+-- Skill 5: 
+-- Skill 6: 
+-- Skill 7: 
+-- Skill 8: 
+
+Skill Tree
+----------------------
+
+Branch 1: Titan (Become as tanky as possible)
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+
+Branch 2: 
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
+
+
+Branch 3: 
+
+TIER 1:
+
+TIER 2:
+
+TIER 3:
+
+TIER 4:
